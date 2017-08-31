@@ -1,0 +1,10 @@
+FILE_NAME = ImutAVLFactoryUIntTypeType
+CLASS_SUFFIX = <DataT, ValT>
+AVL_TREE_TYPE = ImutAVLTreeUIntTypeType<DataT, ValT>
+AVL_FACTORY_TYPE = ImutAVLFactoryUIntTypeType<DataT, ValT>
+AVL_GENERIC_ITER_TYPE = ImutAVLTreeGenericIteratorUIntTypeType<DataT, ValT>
+AVL_ORDERED_ITER_TYPE = ImutAVLTreeInOrderIteratorUIntTypeType<DataT, ValT>
+INFO_TYPE = ImutAVLTreeInfoUIntTypeType<DataT, ValT>
+KEY_TYPE = /*uint*/int
+DATA_TYPE = DataT
+VALUE_TYPE = ValT

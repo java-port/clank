@@ -1,0 +1,55 @@
+org.clang.rewrite.core
+    DeltaTree.java
+    RewriteBuffer.java
+    RewriteRope.java
+    Rewriter.java
+    RopePiece.java
+    RopePieceBTree.java
+    RopePieceBTreeIterator.java
+    RopeRefCountString.java
+    TokenRewriter.java
+    html.java
+org.clang.rewrite.frontend
+    FixItAction.java
+    FixItOptions.java
+    FixItRecompile.java
+    FixItRewriter.java
+    HTMLPrintAction.java
+    RewriteClangGlobals.java
+    RewriteIncludesAction.java
+    RewriteMacrosAction.java
+    RewriteObjCAction.java
+    RewriteTestAction.java
+org.clang.rewrite.frontend.impl
+    FixItActionSuffixInserter.java
+    FixItRewriteInPlace.java
+    FixItRewriteToTemp.java
+    HTMLPrintClangGlobals.java
+    HTMLPrinter.java
+    InclusionRewriter.java
+    InclusionRewriterClangGlobals.java
+    InclusionRewriterStatics.java
+    MetaDataDlags.java
+    RewriteMacrosClangGlobals.java
+    RewriteMacrosStatics.java
+    RewriteModernObjC.java
+    RewriteModernObjCClangGlobals.java
+    RewriteModernObjCStatics.java
+    RewriteObjC.java
+    RewriteObjCClangGlobals.java
+    RewriteObjCFragileABI.java
+    RewriteObjCStatics.java
+    RewriteTestClangGlobals.java
+    RewritesReceiver.java
+org.clang.rewrite.impl
+    AtomicallyMovedFile.java
+    DeltaTreeInteriorNode.java
+    DeltaTreeNode.java
+    DeltaTreeStatics.java
+    HTMLRewriteStatics.java
+    RewriteRopeStatics.java
+    RewriterStatics.java
+    RopePieceBTreeInterior.java
+    RopePieceBTreeLeaf.java
+    RopePieceBTreeNode.java
+    SourceDelta.java

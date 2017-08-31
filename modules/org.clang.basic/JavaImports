@@ -1,0 +1,9 @@
+org.clang.basic.*
+org.clang.basic.vfs.*
+static org.clang.basic.tok.TokenKind.*
+static org.clang.basic.tok.PPKeywordKind.*
+static org.clang.basic.tok.ObjCKeywordKind.*
+static org.clang.basic.BasicClangGlobals.*
+org.clang.basic.target.*
+org.clang.basic.target.TargetInfo.*
+static org.clang.basic.target.impl.TargetsStatics.*

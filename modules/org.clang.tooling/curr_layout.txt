@@ -1,0 +1,65 @@
+org.clang.tooling
+    ArgumentInsertPosition.java
+    ClangTool.java
+    CommonOptionsParser.java
+    CompilationDatabase.java
+    CompilationDatabasePlugin.java
+    CompileCommand.java
+    FileMatchTrie.java
+    FixedCompilationDatabase.java
+    FrontendActionFactory.java
+    JSONCompilationDatabase.java
+    PathComparator.java
+    RefactoringCallback.java
+    RefactoringTool.java
+    ReplaceIfStmtWithItsBody.java
+    ReplaceStmtWithStmt.java
+    ReplaceStmtWithText.java
+    SourceFileCallbacks.java
+    ToolAction.java
+    ToolInvocation.java
+    ToolingGlobals.java
+org.clang.tooling.core
+    Range.java
+    Replacement.java
+    TranslationUnitReplacements.java
+org.clang.tooling.core.TypeName
+    TypeNameGlobals.java
+org.clang.tooling.core.TypeName.impl
+    TypeNameStatics.java
+org.clang.tooling.core.impl
+    LookupStatics.java
+    LookupToolingGlobals.java
+    MergedReplacement.java
+    ReplacementToolingGlobals.java
+    ReplacementToolingStatics.java
+org.clang.tooling.fixit
+    FixitGlobals.java
+org.clang.tooling.fixit.internal
+    InternalGlobals.java
+org.clang.tooling.impl
+    ASTBuilderAction.java
+    ArgumentsAdjustersToolingGlobals.java
+    ArgumentsAdjustingCompilations.java
+    CommandLineArgumentParser.java
+    CompilationDatabaseStatics.java
+    CompileJobAnalyzer.java
+    DefaultPathComparator.java
+    FileMatchTrieNode.java
+    JSONCompilationDatabasePlugin.java
+    JSONCompilationDatabaseToolingStatics.java
+    MatchesAny.java
+    RefactoringCallbacksToolingStatics.java
+    RefactoringToolingGlobals.java
+    SingleFrontendActionFactory.java
+    ToolingRegistry.java
+    ToolingStatics.java
+    ToolingToolingGlobals.java
+    ToolingToolingStatics.java
+    UnusedInputDiagConsumer.java
+org.clang.tooling.java
+    ToolingFunctionPointers.java
+org.clang.tooling.llvm.yaml
+    MappingTraitsReplacement.java
+    MappingTraitsTranslationUnitReplacements.java
+    SequenceTraitsVector$Replacement.java

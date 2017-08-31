@@ -1,0 +1,12 @@
+FILE_NAME = ImutAVLTreeLongBoolLong
+CLASS_SUFFIX = 
+AVL_TREE_TYPE = ImutAVLTreeLongBoolLong
+AVL_FACTORY_TYPE = ImutAVLFactoryLongBoolLong
+AVL_GENERIC_ITER_TYPE = ImutAVLTreeGenericIteratorLongBoolLong
+AVL_ORDERED_ITER_TYPE = ImutAVLTreeInOrderIteratorLongBoolLong
+INFO_TYPE = ImutAVLTreeInfoLongBoolLong
+CALLBACL_FUNC_TYPE = Long2Void
+KEY_TYPE = long
+DATA_TYPE = boolean
+VALUE_TYPE = long
+CLONE_VALUE_IMPL = V

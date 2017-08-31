@@ -1,0 +1,11 @@
+FILE_NAME = DenseMapULongChar
+CLASS_SUFFIX =
+PAIR_TYPE = std.pairULongChar
+PAIR_NAME = std.pairULongChar
+KEY_TYPE = long
+RAW_KEY_TYPE = long
+VALUE_TYPE = byte
+VALUE_CLASS = Class<Byte>
+DENSE_MAP_INFO = DenseMapInfoULong
+DENSE_MAP_BASE = DenseMapBaseULongChar<DenseMapULongChar>
+CREATE_NEW_BUCKET_PAIR = new std.pairULongChar()

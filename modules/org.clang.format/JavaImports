@@ -1,0 +1,32 @@
+[IMPORTS]
+org.clank.java.*
+org.clank.support.*
+org.clank.support.aliases.*
+org.clank.support.JavaDifferentiators.*
+static org.clank.java.built_in.*
+static org.clank.support.Casts.*
+static org.clank.java.io.*
+static org.clank.java.std.*
+static org.clank.java.std_pair.*
+static org.llvm.adt.ADTAliases.*
+static org.llvm.support.llvm.*
+static org.clank.support.NativePointer.*
+static org.clank.support.NativeType.*
+static org.clank.support.Native.*
+static org.clank.support.Unsigned.*
+org.clank.support.NativeCallback.*
+org.llvm.support.*
+org.llvm.adt.*
+org.llvm.adt.aliases.*
+org.clang.tooling.core.*
+org.clang.basic.*
+org.clang.basic.vfs.*
+org.clang.format.*
+org.llvm.support.yaml.*
+org.clang.lex.*
+static org.clang.format.impl.EncodingStatics.*
+static org.clang.format.impl.BreakableTokenFormatStatics.*
+static org.clang.basic.BasicClangGlobals.*
+static org.clang.format.impl.FormatStatics.*
+org.clang.format.java.FormatFunctionPointers.*
+static org.clang.format.FormatGlobals.*

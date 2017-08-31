@@ -1,0 +1,34 @@
+FILE_PATH = ../org.clang.lex/src/org/clang/lex/llvm/SmallVectorToken.java
+FILE_NAME = SmallVectorToken
+PACKAGE = org.clang.lex.llvm
+IMPORT = import org.clang.lex.Token;
+CLASS_SPECIFIER = final
+CONSTRUCTOR_VISIBILITY = public
+INNER_METHOD_VISIBILITY = /*friend*/
+CLASS_SUFFIX = 
+TYPE = Token
+BOXED_TYPE = Token
+ARRAY_TYPE = Token
+NEW_ZERO_ARRAY = new Token[0]
+NEW_CAPACITY_ARRAY = new Token[(int)capacity]
+POINTER_TYPE = type$ptr<Token>
+POINTER_FACTORY_MTD = create_type$ptr
+REFERENCE_TYPE = type$ref<Token>
+REFERENCE_FACTORY_MTD = create_type$ref
+ITERATOR_TYPE = type$ptr<Token>
+GENERIC_ITERATOR = type$iterator<?, Token>
+REV_ITERATOR_TYPE = std.reverse_iterator<Token>
+SET_IMPL = if (defaultValue == null) { array[(int) idx] = value; } else { if (array[(int) idx] == null) { array[(int) idx] = value.clone(); } else { array[(int) idx].$assign(value); } } return value;
+SET_MOVE_IMPL = if (defaultValue == null) { array[(int) idx] = value; } else { if (array[(int) idx] == null) { array[(int) idx] = value.clone(); } else { array[(int) idx].$assign(value); } } return value;
+REF_SET_IMPL = if (stored instanceof assignable) { ((assignable<Token>) stored).$assign(value); } else { array[index] = $tryClone(value); } return value;
+DESTROY_RANGE_IMPL = for (/*uint*/int i = from; i < to; i++) { array[(int) i] = null; }
+DESTROY_IMPL = // No need to destroy
+DEFAULT_VALUE = null
+SB_APPEND_ELEMENT_I=out.append(element).append('\\\\\\\\n')
+IS_DATA_POINTER_LIKE_IMPL=return defaultValue == null;
+ASSERT_DEFAULT_VALUE = defaultValue == null
+FINAL_DESTROY=final
+NATIVE_CONTAINER = NativeContainer<Token>
+JAVA_ITERATOR = JavaIterator
+COMMA_SMALL_VECTOR_IMPL_COMMON = 
+STD_COPY_TRAILING_ARG =, false

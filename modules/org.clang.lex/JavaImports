@@ -1,0 +1,18 @@
+[IMPORTS]
+org.clank.java.*
+org.clank.support.*
+static org.clank.java.io.*
+static org.clank.support.NativePointer.*
+static org.clank.support.NativeType.*
+static org.clang.basic.tok.TokenKind.*
+static org.clang.basic.tok.PPKeywordKind.*
+static org.clang.basic.tok.ObjCKeywordKind.*
+org.llvm.support.*
+org.llvm.adt.*
+org.clang.basic.*
+org.clang.lex.*
+org.clang.lex.llvm.*
+org.clang.lex.impl.*
+org.clang.lex.java.*
+org.clang.basic.target.*
+static org.clang.basic.BasicClangGlobals.*

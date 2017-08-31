@@ -1,0 +1,14 @@
+FILE_NAME = ImmutableMapTypeUInt
+CLASS_SUFFIX = <KeyT>
+CLASS_TYPE = ImmutableMapTypeUInt<KeyT>
+PAIR_TYPE = std.pairTypeUInt<KeyT>
+AVL_TREE_TYPE = ImutAVLTreeTypeUIntType<KeyT, std.pairTypeUInt<KeyT>>
+AVL_FACTORY_TYPE = ImutAVLFactoryTypeUIntType<KeyT, std.pairTypeUInt<KeyT>>
+AVL_VALUE_ITER_TYPE = ImutAVLValueIteratorTypeUIntType<std.pairTypeUInt<KeyT>>
+KEY_VALUE_INFO = ImutKeyValueInfo$TypeUInt<KeyT>
+KEY_TYPE = KeyT
+DATA_TYPE = /*uint*/int
+LOOKUP_TYPE = uint$ptr
+LOOKUP_RETURN_IMPL = uint$ptr$inout
+CALLBACK_FUNC_TYPE = TypeUInt2Void<KeyT>
+JAVA_ITERATOR = JavaIterator<std.pairTypeUInt<KeyT>>

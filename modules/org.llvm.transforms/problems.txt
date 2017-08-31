@@ -1,0 +1,7 @@
+/////////////////////////////////////////////
+/// MODULE org.llvm.transforms
+
+/// Non virtual functions with the same name
+BBInfo.infoString()->UseBBInfo.infoString() [1]
+GraphTraitsArgumentGraphNode$P.getEntryNode()->GraphTraitsArgumentGraph$P.getEntryNode() [1]
+PGOEdge.infoString()->PGOUseEdge.infoString() [1]

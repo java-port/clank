@@ -1,0 +1,21 @@
+org.clang.basic.*
+org.llvm.option.*
+org.llvm.support.llvm.*
+org.clang.basic.*
+org.clang.driver.*
+org.clang.driver.impl.*
+org.clang.driver.tools.impl.*
+org.clang.driver.toolchains.impl.*;
+org.llvm.support.sys.*;
+static org.clang.basic.BasicClangGlobals.*
+static org.clank.support.Casts.*
+static org.clang.driver.DriverGlobals.*
+static org.clang.driver.impl.DriverStatics.*
+static org.clang.driver.impl.ToolsStatics.*
+static org.llvm.option.arg_iterator.*
+static org.clang.driver.types.*
+static org.clang.driver.phases.*
+static org.llvm.support.sys.fs.*
+static org.clang.driver.impl.ToolChainStatics.*
+static org.clang.driver.impl.ToolChainsStatics.*
+static org.llvm.support.sys.sys.*

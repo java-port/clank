@@ -1,0 +1,36 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.clang.driver_delegates.properties"
+[DELEGATE_BODY=LLVM38]
+<include> "./commands_org.clang.driver_delegates.properties"
+[DELEGATE_BODY=LLVM36]
+<include> "./commands_prev_org.clang.driver_delegates.properties"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.clang.driver.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[ID_NAME_CONVERSION]
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[CALL_PARAMETERS_CONVENTIONS]
+org.clang.driver.impl.TypeInfo=KEEP(ALL)
+
+[TYPES_MAP]
+sparc::FloatABI = SparcStatics.FloatABI
+
+[MEMBER_ACCESS]
+clang::driver::ToolChain::Args = public
+clang::driver::toolchains::Darwin::isTargetIOSBased=public
+
+[EXTRA_MEMBERS]
+clang::CodeGenOptionsBase = FILE#./extra_members/CodeGenOptionsBaseExtraMembers.java
+clang::driver::Action = FILE#./extra_members/ActionExtraMembers.java
+clang::driver::Action = IMPLEMENTS#Iterable<Action/*P*/>
+clang::driver::Driver = FILE#./extra_members/DriverExtraMembers.java

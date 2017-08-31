@@ -1,0 +1,165 @@
+/////////////////////////////////////////////
+/// MODULE org.clang.ast
+
+/// Non virtual functions with the same name
+APFloatStorage.getValue()->FloatingLiteral.getValue() [1]
+APFloatStorage.setValue()->FloatingLiteral.setValue() [1]
+AbstractConditionalOperator.getCond()->ConditionalOperator.getCond() [2]
+AbstractConditionalOperator.getFalseExpr()->ConditionalOperator.getFalseExpr() [2]
+AbstractConditionalOperator.getTrueExpr()->ConditionalOperator.getTrueExpr() [2]
+AsmStmt.generateAsmString()->GCCAsmStmt.generateAsmString() [2]
+AsmStmt.getClobber()->GCCAsmStmt.getClobber() [2]
+AsmStmt.getInputConstraint()->GCCAsmStmt.getInputConstraint() [2]
+AsmStmt.getInputExpr()->GCCAsmStmt.getInputExpr() [2]
+AsmStmt.getOutputConstraint()->GCCAsmStmt.getOutputConstraint() [2]
+AsmStmt.getOutputExpr()->GCCAsmStmt.getOutputExpr() [2]
+Attr.clone()->FallThroughAttr.clone() [198]
+Attr.getSpelling()->FallThroughAttr.getSpelling() [198]
+Attr.printPretty()->FallThroughAttr.printPretty() [198]
+Comment.child_begin()->TextComment.child_begin() [9]
+Comment.child_end()->TextComment.child_end() [9]
+ConcreteTypeLoc.getExtraLocalDataAlignment()->BuiltinTypeLoc.getExtraLocalDataAlignment() [5]
+ConcreteTypeLoc.getExtraLocalDataSize()->BuiltinTypeLoc.getExtraLocalDataSize() [5]
+ConcreteTypeLoc.getInnerType()->AttributedTypeLoc.getInnerType() [11]
+ConcreteTypeLoc.getLocalDataSize()->AdjustedTypeLoc.getLocalDataSize() [1]
+ConcreteTypeLoc.isKind()->TypeSpecTypeLoc.isKind() [1]
+Decl.castFromDeclContext()->TranslationUnitDecl.castFromDeclContext() [11]
+Decl.castToDeclContext()->TranslationUnitDecl.castToDeclContext() [11]
+Decl.getASTContext()->TranslationUnitDecl.getASTContext() [1]
+Decl.getCanonicalDecl$Const()->NamespaceDecl.getCanonicalDecl$Const() [21]
+Decl.getLocEnd()->ObjCMethodDecl.getLocEnd() [2]
+Decl.getLocStart()->NamespaceDecl.getLocStart() [5]
+Decl.isParameterPack()->ParmVarDecl.isParameterPack() [4]
+DeclContext.getParent()->CXXMethodDecl.getParent() [1]
+DeclContext.getParent$Const()->CXXMethodDecl.getParent$Const() [1]
+Expr.getExprLoc()->OpaqueValueExpr.getExprLoc() [14]
+ExprEvaluatorBase.ZeroInitialization()->PointerExprEvaluator.ZeroInitialization() [9]
+ExternalASTSource.FindExternalLexicalDecls()->ASTReader.FindExternalLexicalDecls() [2]
+ExternalASTSource.getMemoryBufferSizes()->ChainedIncludesSourceImpl.getMemoryBufferSizes() [3]
+FunctionType.getTypeQuals()->FunctionProtoType.getTypeQuals() [1]
+NamedDecl.getIdentifier()->ObjCCategoryImplDecl.getIdentifier() [2]
+NamedDecl.getMostRecentDecl()->RecordDecl.getMostRecentDecl()->CXXRecordDecl.getMostRecentDecl()->ClassTemplateSpecializationDecl.getMostRecentDecl()->ClassTemplatePartialSpecializationDecl.getMostRecentDecl() [7]
+NamedDecl.getMostRecentDecl$Const()->CXXMethodDecl.getMostRecentDecl$Const() [6]
+NamedDecl.getName()->ObjCCategoryImplDecl.getName() [2]
+NamedDecl.getNameAsString()->ObjCCategoryImplDecl.getNameAsString() [2]
+OMPClause.children()->OMPPrivateClause.children() [46]
+OMPClauseWithPreInit.get_OMPClause$C$P()->OMPClauseWithPostUpdate.get_OMPClause$C$P() [1]
+OMPClauseWithPreInit.get_OMPClause$P()->OMPClauseWithPostUpdate.get_OMPClause$P() [1]
+ObjCListBase.set()->ObjCList.set()->ObjCProtocolList.set() [1]
+ObjCObjectType.desugar()->ObjCInterfaceType.desugar() [1]
+ObjCObjectType.isSugared()->ObjCInterfaceType.isSugared() [1]
+OverloadExpr.getNamingClass()->UnresolvedLookupExpr.getNamingClass() [2]
+PointerLikeTypeLoc.getLocalSourceRange()->MemberPointerTypeLoc.getLocalSourceRange() [1]
+PointerLikeTypeLoc.initializeLocal()->MemberPointerTypeLoc.initializeLocal() [1]
+RecordDecl.getPreviousDecl()->CXXRecordDecl.getPreviousDecl() [1]
+RecordDecl.getPreviousDecl$Const()->CXXRecordDecl.getPreviousDecl$Const() [1]
+RecordDecl.isLambda()->CXXRecordDecl.isLambda() [1]
+RedeclarableTemplateDecl.getCommonPtr()->FunctionTemplateDecl.getCommonPtr() [4]
+RedeclarableTemplateDecl.getInstantiatedFromMemberTemplate()->FunctionTemplateDecl.getInstantiatedFromMemberTemplate() [4]
+Stmt.IgnoreImplicit()->Expr.IgnoreImplicit() [1]
+Stmt.children()->DeclStmt.children() [130]
+Stmt.children$Const()->CompoundStmt.children$Const() [1]
+Stmt.getLocEnd()->DeclStmt.getLocEnd() [136]
+Stmt.getLocStart()->DeclStmt.getLocStart() [136]
+Stmt.getSourceRange()->CapturedStmt.getSourceRange() [12]
+SwitchCase.getColonLoc()->CaseStmt.getColonLoc() [2]
+SwitchCase.getSubStmt()->CaseStmt.getSubStmt() [2]
+SwitchCase.getSubStmt$Const()->CaseStmt.getSubStmt$Const() [2]
+SwitchCase.setColonLoc()->CaseStmt.setColonLoc() [2]
+TagDecl.completeDefinition()->EnumDecl.completeDefinition() [2]
+TagDecl.getDefinition()->EnumDecl.getDefinition() [2]
+TagType.getDecl()->RecordType.getDecl() [2]
+TemplateDecl.getTemplatedDecl()->FunctionTemplateDecl.getTemplatedDecl() [4]
+Type.getPointeeType()->PointerType.getPointeeType() [6]
+Type.isNonOverloadPlaceholderType()->BuiltinType.isNonOverloadPlaceholderType() [1]
+Type.isObjCClassType()->ObjCObjectPointerType.isObjCClassType() [1]
+Type.isObjCIdType()->ObjCObjectPointerType.isObjCIdType() [1]
+Type.isObjCQualifiedClassType()->ObjCObjectPointerType.isObjCQualifiedClassType() [1]
+Type.isObjCQualifiedIdType()->ObjCObjectPointerType.isObjCQualifiedIdType() [1]
+Type.isPlaceholderType()->BuiltinType.isPlaceholderType() [1]
+TypeLoc.getLocalSourceRange()->QualifiedTypeLoc.getLocalSourceRange() [1]
+TypeLoc.getNextTypeLoc()->QualifiedTypeLoc.getNextTypeLoc() [1]
+TypeLoc.getTypeLocClass()->UnqualTypeLoc.getTypeLocClass() [1]
+TypeLoc.getTypePtr()->UnqualTypeLoc.getTypePtr() [1]
+TypeLoc.getUnqualifiedLoc()->QualifiedTypeLoc.getUnqualifiedLoc() [1]
+TypeLoc.isKind()->UnqualTypeLoc.isKind() [2]
+TypeofLikeTypeLoc.getLocalSourceRange()->TypeOfExprTypeLoc.getLocalSourceRange() [1]
+TypeofLikeTypeLoc.initializeLocal()->TypeOfTypeLoc.initializeLocal() [1]
+VarDecl.getPointOfInstantiation()->VarTemplateSpecializationDecl.getPointOfInstantiation() [1]
+VectorType.desugar()->ExtVectorType.desugar() [1]
+VectorType.isSugared()->ExtVectorType.isSugared() [1]
+
+/// Ambiguous points
+Class ASTDumper inherits function Visit via multiple branches:
+[Base::Visit]
+[StmtVisitorBase::Visit]
+[TypeVisitor::Visit]
+
+Class ExtQuals inherits function $assign via multiple branches:
+[ExtQualsTypeCommonBase::$assign]
+[Node::$assign]
+
+Class ElaboratedType inherits function $assignMove via multiple branches:
+[TypeWithKeyword::$assignMove, ExtQualsTypeCommonBase::$assignMove]
+[Node::$assignMove]
+
+Class TranslationUnitDecl inherits function getDeclKindName via multiple branches:
+[Decl::getDeclKindName]
+[DeclContext::getDeclKindName]
+
+Class ExternCContextDecl inherits function getDeclKindName via multiple branches:
+[Decl::getDeclKindName]
+[DeclContext::getDeclKindName]
+
+Class NamespaceDecl inherits function getDeclKindName via multiple branches:
+[Decl::getDeclKindName]
+[DeclContext::getDeclKindName]
+
+Class FunctionDecl inherits function getDeclKindName via multiple branches:
+[Decl::getDeclKindName]
+[DeclContext::getDeclKindName]
+
+Class TagDecl inherits function getDeclKindName via multiple branches:
+[Decl::getDeclKindName]
+[DeclContext::getDeclKindName]
+
+Class BlockDecl inherits function getDeclKindName via multiple branches:
+[Decl::getDeclKindName]
+[DeclContext::getDeclKindName]
+
+Class CapturedDecl inherits function getDeclKindName via multiple branches:
+[Decl::getDeclKindName]
+[DeclContext::getDeclKindName]
+
+Class IntegerLiteral inherits function $assign via multiple branches:
+[Expr::$assign, Stmt::$assign]
+[APIntStorage::$assign, APNumericStorage::$assign]
+
+Class FloatingLiteral inherits function $assign via multiple branches:
+[Expr::$assign, Stmt::$assign]
+[APFloatStorage::$assign, APNumericStorage::$assign]
+
+Class ObjCMethodDecl inherits function getDeclKindName via multiple branches:
+[Decl::getDeclKindName]
+[DeclContext::getDeclKindName]
+
+Class ObjCContainerDecl inherits function getDeclKindName via multiple branches:
+[Decl::getDeclKindName]
+[DeclContext::getDeclKindName]
+
+Class LinkageSpecDecl inherits function getDeclKindName via multiple branches:
+[Decl::getDeclKindName]
+[DeclContext::getDeclKindName]
+
+Class OMPDeclareReductionDecl inherits function getDeclKindName via multiple branches:
+[Decl::getDeclKindName]
+[DeclContext::getDeclKindName]
+
+Class ASTNodeImporter inherits function Visit via multiple branches:
+[TypeVisitor::Visit]
+[Base::Visit]
+[StmtVisitorBase::Visit]
+
+CHECKS FROM DiagCommonHeaderInUnionsChecker
+UNION clang::TemplateArgument::(anonymous) [${LLVM_SRC}/llvm/tools/clang/include/clang/AST/TemplateBase.h:110]:
+  /*uint*/int Kind

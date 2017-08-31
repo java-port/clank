@@ -1,0 +1,197 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.clang.staticanalyzer_delegates.properties"
+[DELEGATE_BODY=LLVM38]
+<include> "./commands_org.clang.staticanalyzer_delegates.properties"
+[DELEGATE_BODY=LLVM36]
+<include> "./commands_prev_org.clang.staticanalyzer_delegates.properties"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.clang.staticanalyzer.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[TYPES_MAP]
+Environment::BindingsTy::Factory = ImmutableMap.Factory<EnvironmentEntry, SVal>
+ImmutableMap</*uint*/int, objc_retain.ArgEffect, ImutKeyValueInfo</*uint*/int, objc_retain.ArgEffect> > = ImmutableMapUIntType<objc_retain.ArgEffect>
+SymbolRef &=type$ptr</*const*/SymExpr/*P*/> /*&*/
+
+__normal_iterator<type$ptr<const_pointer>, vector<std.pair<BlockEdge, /*const*/ ExplodedNode /*P*/ >> > = std.vector.iterator<std.pair<BlockEdge, /*const*/ ExplodedNode /*P*/ >>
+__normal_iterator<type$ptr<const_pointer>, vector<std.pair</*const*/ CFGBlock /*P*/ , /*const*/ ExplodedNode /*P*/ >> > = std.vector.iterator<std.pair</*const*/ CFGBlock /*P*/ , /*const*/ ExplodedNode /*P*/ >>
+__normal_iterator<type$ptr<const_pointer>, vector<%CLASS> > = std.vector.iterator<%0>
+__normal_iterator<type$ptr<const_pointer>, vector<%CLASS_PTR> > = std.vector.iterator<%0>
+__normal_iterator<type$ptr<pointer>, vector<BugReportEquivClass /*P*/ > > = std.vector.iterator<BugReportEquivClass>
+
+dead_iterator=DenseSet.iterator</*const*/SymExpr/*P*/>
+int (* )(const PathDiagnostic * const * , const PathDiagnostic * const * ) = PathDiagnosticPathDiagnostic2Int
+region_iterator=DenseSet.iterator</*const*/MemRegion/*P*/>
+void (* )(CheckerRegistry & ) = CheckerRegistry2Void
+
+void (const CallEvent & , CheckerContext & ) = Check$CheckCallFunc
+
+void (const ObjCMethodCall & , CheckerContext & ) = Check$CheckObjCMessageFunc
+
+[ID_NAME_CONVERSION]
+#resolve collision from clang/Analysis module with local classes 
+_ZN5clang8PostStmtE = org.clang.analysis.PostStmt
+_ZN5clang7PreStmtE = org.clang.analysis.PreStmt
+
+[MEMBER_ACCESS]
+(anonymous namespace)::BindingKey::Profile = @Override public
+(anonymous namespace)::CountKey::Profile = @Override public
+(anonymous namespace)::LocalizedState::Profile = @Override public
+(anonymous namespace)::LockState::Profile = @Override public
+(anonymous namespace)::MacOSKeychainAPIChecker::AllocationState::Profile = @Override public
+(anonymous namespace)::NullabilityState::Profile = @Override public
+(anonymous namespace)::Range::Profile = @Override public
+(anonymous namespace)::RangeSet::Profile = @Override public
+(anonymous namespace)::ReallocPair::Profile = @Override public
+(anonymous namespace)::RefState::Profile = @Override public
+(anonymous namespace)::RefVal::Profile = @Override public
+(anonymous namespace)::RetainSummary::Profile = @Override public
+(anonymous namespace)::RetainSummary::getArgEffects=/*package*//*friend*/
+(anonymous namespace)::RetainSummary::getDefaultArgEffect=/*package*//*friend*/
+(anonymous namespace)::RetainSummaryManager::getPersistentSummary=/*package*//*friend*/
+(anonymous namespace)::StreamState::Profile = @Override public
+(anonymous namespace)::ZeroState::Profile = @Override public
+_ZN5clang4ento15AnyFunctionCallC1EPKNS_4DeclEN4llvm18IntrusiveRefCntPtrIKNS0_12ProgramStateEEEPKNS_15LocationContextE = /*use ctr with cleaner*/private
+_ZN5clang4ento15AnyFunctionCallC1EPKNS_4ExprEN4llvm18IntrusiveRefCntPtrIKNS0_12ProgramStateEEEPKNS_15LocationContextE = /*use ctr with cleaner*/private
+#CallEvent and derived constructors are changed to private to force using ctr with cleaner from extra members
+_ZN5clang4ento15CXXInstanceCallC1EPKNS_12FunctionDeclEN4llvm18IntrusiveRefCntPtrIKNS0_12ProgramStateEEEPKNS_15LocationContextE = /*use ctr with cleaner*/private
+_ZN5clang4ento15CXXInstanceCallC1EPKNS_8CallExprEN4llvm18IntrusiveRefCntPtrIKNS0_12ProgramStateEEEPKNS_15LocationContextE = /*use ctr with cleaner*/private
+_ZN5clang4ento3loc11ConcreteIntC1Ev=/*friend*/protected
+_ZN5clang4ento3loc12MemRegionValC1Ev=/*friend*/protected
+_ZN5clang4ento3loc9GotoLabelC1Ev=/*friend*/protected
+#somthing wrong in JConvet. FQN does mot work:
+
+_ZN5clang4ento6nonloc11CompoundValC1EPKNS0_15CompoundValDataE=/*friend*/public
+_ZN5clang4ento6nonloc11CompoundValC1Ev=/*friend*/protected
+_ZN5clang4ento6nonloc11ConcreteIntC1Ev=/*friend*/protected
+_ZN5clang4ento6nonloc12LocAsIntegerC1ERKSt4pairINS0_4SValEjE=/*friend*/public
+_ZN5clang4ento6nonloc12LocAsIntegerC1Ev=/*friend*/protected
+_ZN5clang4ento6nonloc15LazyCompoundValC1EPKNS0_19LazyCompoundValDataE=/*friend*/public
+_ZN5clang4ento6nonloc15LazyCompoundValC1Ev=/*friend*/protected
+_ZN5clang4ento6nonloc9SymbolValC1Ev=/*friend*/protected
+_ZN5clang4ento9CallEventC1EPKNS_4DeclEN4llvm18IntrusiveRefCntPtrIKNS0_12ProgramStateEEEPKNS_15LocationContextE = /*use ctr with cleaner*/private
+_ZN5clang4ento9CallEventC1EPKNS_4ExprEN4llvm18IntrusiveRefCntPtrIKNS0_12ProgramStateEEEPKNS_15LocationContextE = /*use ctr with cleaner*/private
+_ZN5clang4ento9KnownSValC1Ev=/*friend*/protected
+_ZN5clang4ento9KnownSValC1Ev=/*friend*/protected
+clang::ento::BlockCodeRegion::BlockCodeRegion=/*friend*/public
+clang::ento::BlockDataRegion::BlockDataRegion=/*friend*/public
+
+clang::ento::BugReportEquivClass::AddReport=/*package*//*friend*/
+clang::ento::BugReportEquivClass::Profile = @Override public
+clang::ento::CXXBaseObjectRegion::CXXBaseObjectRegion=/*friend*/public
+clang::ento::CXXBaseObjectRegion::ProfileRegion=/*friend*/public
+clang::ento::CXXTempObjectRegion::CXXTempObjectRegion=/*friend*/public
+clang::ento::CXXTempObjectRegion::ProfileRegion=/*friend*/public
+clang::ento::CXXThisRegion::CXXThisRegion=/*friend*/public
+clang::ento::CXXThisRegion::ProfileRegion=/*friend*/public
+clang::ento::CallDescription::FuncName=/*package*//*friend*/
+clang::ento::CallDescription::II=/*package*//*friend*/
+clang::ento::CallDescription::RequiredArgs=/*package*//*friend*/
+clang::ento::CallEvent::Release=/*RefCount*/public
+clang::ento::CallEvent::Retain=/*RefCount*/public
+
+clang::ento::CallEvent::State=/*package*//*friend*/
+clang::ento::CallEventManager::Cache = private final
+clang::ento::CallEventManager::allocate=/*package*//*friend*/
+clang::ento::CallEventManager::reclaim=/*package*//*friend*/
+clang::ento::CheckName::CheckName=/*friend*/public
+
+clang::ento::CheckerBase::Name=/*friend*/protected
+clang::ento::CodeSpaceRegion::CodeSpaceRegion=/*friend*/public
+clang::ento::CompoundLiteralRegion::CompoundLiteralRegion=/*friend*/public
+clang::ento::CompoundLiteralRegion::ProfileRegion=/*friend*/public
+clang::ento::CompoundValData::Profile = @Override public
+
+clang::ento::CoreEngine::FunctionSummaries=/*friend*/public
+
+clang::ento::CoreEngine::G=/*friend*/public
+clang::ento::CoreEngine::WList=/*friend*/public
+clang::ento::CoreEngine::blocksExhausted=/*friend*/public
+clang::ento::DefinedOrUnknownSVal::isKind=/*friend*/protected
+
+clang::ento::DefinedOrUnknownSVal::isUndef=public
+clang::ento::DefinedOrUnknownSVal::isValid=public
+clang::ento::DefinedSVal::isKind=/*friend*/protected
+clang::ento::DefinedSVal::isUnknown=public
+clang::ento::DefinedSVal::isUnknownOrUndef=public
+clang::ento::DefinedSVal::isValid=public
+clang::ento::DynamicTypeInfo::Profile = @Override public
+clang::ento::ElementRegion::ElementRegion=/*friend*/public
+clang::ento::ElementRegion::ProfileRegion=/*friend*/public
+clang::ento::Environment::Environment=/*friend*/public
+clang::ento::Environment::ExprBindings=/*package*//*friend*/
+clang::ento::Environment::Profile = @Override public
+clang::ento::EnvironmentEntry::Profile = @Override public
+clang::ento::ExplodedNode::NodeGroup=/*friend*/public
+
+clang::ento::ExplodedNode::Preds=/*friend*/public
+clang::ento::ExplodedNode::Profile = @Override public
+
+clang::ento::ExplodedNode::State=/*friend*/public
+clang::ento::ExplodedNode::Succs=/*friend*/public
+clang::ento::ExplodedNode::replacePredecessor=/*friend*/public
+clang::ento::ExplodedNode::replaceSuccessor=/*friend*/public
+clang::ento::FieldRegion::FieldRegion=/*friend*/public
+clang::ento::GlobalImmutableSpaceRegion::GlobalImmutableSpaceRegion=/*friend*/public
+clang::ento::GlobalInternalSpaceRegion::GlobalInternalSpaceRegion=/*friend*/public
+clang::ento::GlobalSystemSpaceRegion::GlobalSystemSpaceRegion=/*friend*/public
+clang::ento::HeapSpaceRegion::HeapSpaceRegion=/*friend*/public
+clang::ento::KnownSVal::isKind=/*friend*/protected
+clang::ento::LazyCompoundValData::Profile = @Override public
+clang::ento::Loc::isKind=/*friend*/protected
+clang::ento::NonLoc::isKind=/*friend*/protected
+clang::ento::ObjCIvarRegion::ObjCIvarRegion=/*friend*/public
+clang::ento::ObjCIvarRegion::ProfileRegion=/*friend*/public
+clang::ento::PathDiagnostic::Profile = @Override public
+clang::ento::PathDiagnosticConsumer::PDFileEntry::Profile = @Override public
+clang::ento::PathDiagnosticLocation::Profile = @Override public
+clang::ento::PathDiagnosticLocationPair::Profile = @Override public
+clang::ento::PathDiagnosticPiece::Profile = @Override public
+clang::ento::ProgramState::Env=/*friend*/public
+clang::ento::ProgramState::GDM=/*friend*/public
+clang::ento::ProgramState::Profile = @Override public
+
+clang::ento::ProgramState::refCount=/*friend*/public
+clang::ento::ProgramState::setStore=/*friend*/public
+clang::ento::ProgramState::store=/*friend*/public
+clang::ento::ProgramStateManager::ConstraintMgr=/*friend*/public
+clang::ento::ProgramStateManager::EnvMgr=/*friend*/public
+clang::ento::ProgramStateManager::StateSet=/*friend*/public
+clang::ento::ProgramStateManager::StoreMgr=/*friend*/public
+clang::ento::ProgramStateManager::freeStates=/*friend*/public
+clang::ento::ProgramStateManager::svalBuilder=/*friend*/public
+
+clang::ento::RegionRawOffset::RegionRawOffset=/*friend*/public
+clang::ento::SVal::isUndef = public final
+clang::ento::SVal::isUnknownOrUndef = public final
+clang::ento::SVal::isValid = public final
+clang::ento::StackArgumentsSpaceRegion::StackArgumentsSpaceRegion=/*friend*/public
+
+clang::ento::StackLocalsSpaceRegion::StackLocalsSpaceRegion=/*friend*/public
+clang::ento::StaticGlobalSpaceRegion::StaticGlobalSpaceRegion=/*friend*/public
+clang::ento::UndefinedVal::isKind=/*friend*/protected
+clang::ento::UnknownSpaceRegion::UnknownSpaceRegion=/*friend*/public
+clang::ento::UnknownVal::isKind=/*friend*/protected
+clang::ento::VarRegion::ProfileRegion=/*friend*/public
+clang::ento::VarRegion::VarRegion=/*friend*/public
+clang::ento::loc::ConcreteInt::isKind=/*friend*/protected
+clang::ento::loc::GotoLabel::isKind=/*friend*/protected
+clang::ento::loc::MemRegionVal::isKind=/*friend*/protected
+clang::ento::mpi::Request::Profile = @Override public
+clang::ento::nonloc::CompoundVal::isKind=/*friend*/protected
+clang::ento::nonloc::ConcreteInt::isKind=/*friend*/protected
+clang::ento::nonloc::LazyCompoundVal::isKind=/*friend*/protected
+clang::ento::nonloc::LocAsInteger::isKind=/*friend*/protected
+clang::ento::nonloc::SymbolVal::isKind=/*friend*/protected
+
+[EXTRA_MEMBERS]
+<include> "./StaticAnalyzerExtraMembers.txt"

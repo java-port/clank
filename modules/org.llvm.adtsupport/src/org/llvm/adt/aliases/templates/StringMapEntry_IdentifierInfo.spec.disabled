@@ -1,0 +1,14 @@
+FILE_NAME = IdentifierInfoStringMapEntry
+CLASS_SUFFIX = 
+INIT_1_PREFIX = <AllocatorTy extends NativeMemory.Allocator, InitType>
+INIT_1_TYPE = IdentifierInfo
+INIT_1_RET_TYPE = IdentifierInfo
+INIT_1_ALLOCATOR = AllocatorTy
+INIT_2_PREFIX = 
+INIT_2_TYPE = IdentifierInfo
+INIT_2_RET_TYPE = IdentifierInfo
+INITIALIZE_STRING = // REM
+VALUE_TYPE = IdentifierInfo
+VALUE_REFERENCE = type$ref<IdentifierInfo>
+VALUE_POINTER = type$ptr<IdentifierInfo>
+DEFAULT_VALUE = null

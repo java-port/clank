@@ -1,0 +1,87 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.clang.format.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[EXTRA_MEMBERS]
+clang::format::(anonymous namespace)::AnnotatingParser::Context = IMPLEMENTS#Native.NativePOD<Context>
+clang::format::(anonymous namespace)::AnnotatingParser::Context = FILE#./extra_members/ContextExtraMembers.java
+clang::format::(anonymous namespace)::Cleaner::FormatTokenLess = IMPLEMENTS#binary_functionArgArg2Bool<FormatToken, FormatToken>
+clang::format::(anonymous namespace)::IncludeDirective = FILE#./extra_members/IncludeDirectiveExtraMembers.java
+clang::format::(anonymous namespace)::IncludeDirective = IMPLEMENTS#Native.NativePOD<IncludeDirective>
+clang::format::(anonymous namespace)::OptimizingLineFormatter::CompareLineStatePointers = FILE#./extra_members/CompareLineStatePointersExtraMembers.java
+clang::format::(anonymous namespace)::OptimizingLineFormatter::CompareLineStatePointers = IMPLEMENTS#Compare<LineState>
+clang::format::CommaSeparatedList::ColumnFormat = IMPLEMENTS#NativePOD<ColumnFormat>
+clang::format::CommaSeparatedList::ColumnFormat = FILE#./extra_members/ColumnFormatExtraMembers.java
+clang::format::FormatStyle = IMPLEMENTS#NativePOD<FormatStyle>
+clang::format::FormatStyle = FILE#./extra_members/FormatStyleExtraMembers.java
+clang::format::FormatStyle::BraceWrappingFlags = FILE#./extra_members/BraceWrappingFlagsExtraMembers.java
+clang::format::FormatStyle::IncludeCategory = FILE#./extra_members/IncludeCategoryExtraMembers.java
+clang::format::FormatStyle::IncludeCategory = IMPLEMENTS#Native.NativePOD<IncludeCategory>
+clang::format::FormatToken = FILE#./extra_members/FormatTokenExtraMembers.java
+clang::format::JsImportedSymbol = IMPLEMENTS#Native.NativePOD<JsImportedSymbol>
+clang::format::JsImportedSymbol = FILE#./extra_members/JsImportedSymbolExtraMembers.java
+clang::format::JsModuleReference = IMPLEMENTS#Native.NativePOD<JsModuleReference>
+clang::format::JsModuleReference = FILE#./extra_members/JsModuleReferenceExtraMembers.java
+clang::format::ParenState = IMPLEMENTS#Native.NativePOD<ParenState>
+clang::format::ParenState = FILE#./extra_members/ParenStateExtraMembers.java
+clang::format::ParseError = IMPLEMENTS#std_errors.is_error_code_enum
+clang::format::ParseError = FILE#./extra_members/ParseErrorExtraMembers.java
+clang::format::UnwrappedLine = FILE#./extra_members/UnwrappedLineExtraMembers.java
+clang::format::UnwrappedLine = IMPLEMENTS#Native.NativeComparable<UnwrappedLine>
+clang::format::UnwrappedLine = IMPLEMENTS#Native.NativePOD<UnwrappedLine>
+clang::format::UnwrappedLine = IMPLEMENTS#NativeMoveable<UnwrappedLine>
+clang::format::UnwrappedLineNode = FILE#./extra_members/UnwrappedLineNodeExtraMembers.java
+clang::format::UnwrappedLineNode = IMPLEMENTS#NativePOD<UnwrappedLineNode>
+clang::format::WhitespaceManager::Change = IMPLEMENTS#Native.NativePOD<Change>
+clang::format::WhitespaceManager::Change = FILE#./extra_members/ChangeExtraMembers.java
+clang::format::WhitespaceManager::Change::IsBeforeInFile = IMPLEMENTS#Compare<Change>
+clang::format::WhitespaceManager::Change::IsBeforeInFile = FILE#./extra_members/IsBeforeInFileExtraMembers.java
+llvm::yaml::DocumentListTraits<vector<FormatStyle, allocator<FormatStyle> > > = IMPLEMENTS#DocumentListTraits<FormatStyle, std.vector<FormatStyle>>
+llvm::yaml::MappingTraits<FormatStyle> = IMPLEMENTS#MappingTraits<FormatStyle>
+llvm::yaml::MappingTraits<BraceWrappingFlags> = IMPLEMENTS#MappingTraits<FormatStyle.BraceWrappingFlags>
+llvm::yaml::MappingTraits<IncludeCategory> = IMPLEMENTS#MappingTraits<FormatStyle.IncludeCategory>
+
+llvm::yaml::ScalarEnumerationTraits<BinaryOperatorStyle> = IMPLEMENTS#ScalarEnumerationTraits<FormatStyle.BinaryOperatorStyle>
+llvm::yaml::ScalarEnumerationTraits<BraceBreakingStyle> = IMPLEMENTS#ScalarEnumerationTraits<FormatStyle.BraceBreakingStyle>
+llvm::yaml::ScalarEnumerationTraits<BracketAlignmentStyle> = IMPLEMENTS#ScalarEnumerationTraits<FormatStyle.BracketAlignmentStyle>
+llvm::yaml::ScalarEnumerationTraits<DefinitionReturnTypeBreakingStyle> = IMPLEMENTS#ScalarEnumerationTraits<FormatStyle.DefinitionReturnTypeBreakingStyle>
+llvm::yaml::ScalarEnumerationTraits<JavaScriptQuoteStyle> = IMPLEMENTS#ScalarEnumerationTraits<FormatStyle.JavaScriptQuoteStyle>
+llvm::yaml::ScalarEnumerationTraits<LanguageStandard> = IMPLEMENTS#ScalarEnumerationTraits<FormatStyle.LanguageStandard>
+llvm::yaml::ScalarEnumerationTraits<NamespaceIndentationKind> = IMPLEMENTS#ScalarEnumerationTraits<FormatStyle.NamespaceIndentationKind>
+llvm::yaml::ScalarEnumerationTraits<PointerAlignmentStyle> = IMPLEMENTS#ScalarEnumerationTraits<FormatStyle.PointerAlignmentStyle>
+llvm::yaml::ScalarEnumerationTraits<ReturnTypeBreakingStyle> = IMPLEMENTS#ScalarEnumerationTraits<FormatStyle.ReturnTypeBreakingStyle>
+llvm::yaml::ScalarEnumerationTraits<ShortFunctionStyle> = IMPLEMENTS#ScalarEnumerationTraits<FormatStyle.ShortFunctionStyle>
+llvm::yaml::ScalarEnumerationTraits<SpaceBeforeParensOptions> = IMPLEMENTS#ScalarEnumerationTraits<FormatStyle.SpaceBeforeParensOptions>
+llvm::yaml::ScalarEnumerationTraits<UseTabStyle> = IMPLEMENTS#ScalarEnumerationTraits<FormatStyle.UseTabStyle>
+
+llvm::yaml::SequenceTraits<vector<IncludeCategory, allocator<IncludeCategory> > > = IMPLEMENTS#SequenceTraits<FormatStyle.IncludeCategory, Sequence<type$ref<FormatStyle.IncludeCategory>>>
+llvm::yaml::SequenceTraits<vector<basic_string<char>, allocator<basic_string<char> > > > = IMPLEMENTS#SequenceTraits<std.string, Sequence<type$ref<std.string>>>
+
+[TYPES_MAP]
+
+(lambda at /export1/home/alsimon/LLVM39/llvm/tools/clang/lib/Format/Format.cpp:1421:23) = FormatStyleStringRefvectorStringRef2Replacements
+(lambda at /export1/home/alsimon/LLVM39/llvm/tools/clang/lib/Format/Format.cpp:1433:19) = FormatStyleStringRefvectorStringRef2Replacements
+(lambda at /export1/home/alsimon/LLVM39/llvm/tools/clang/lib/Format/Format.cpp:1603:18) = FormatStyleStringRefvectorStringRef2Replacements
+auto (const FormatStyle & , StringRef, std::vector<Range>, StringRef) const -> Replacements = FormatStyleStringRefvectorStringRef2Replacements
+auto (const FormatToken & ) const -> FormatToken * = FormatToken2FormatToken
+
+auto (const FormatToken * ) const -> const FormatToken * = FormatToken2FormatToken
+
+unsigned int (int) const = Int2UInt
+
+void (SourceLocation, unsigned int, StringRef) const = SourceLocationUIntStringRef2Void
+
+[MEMBER_ACCESS]
+clang::format::UnwrappedLineParser::CurrentLines = /*friend*/public
+clang::format::UnwrappedLineParser::Line = /*friend*/public
+clang::format::UnwrappedLineParser::MustBreakBeforeNextToken = /*friend*/public
+clang::format::UnwrappedLineParser::PreprocessorDirectives = /*friend*/public
+clang::format::UnwrappedLineParser::addUnwrappedLine = /*friend*/public

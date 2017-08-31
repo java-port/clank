@@ -1,0 +1,9 @@
+FILE_NAME = StdReverseIteratorUInt
+CLASS_SUFFIX =
+INTERFACE_ITERATOR = uint$iterator<std.reverse_iteratorUInt>
+STD_DUAL_ITERATOR = std.reverse_iteratorUInt
+VALUE_TYPE = int
+VALUE_ITERATOR = uint$iterator<?>
+VALUE_ITERATOR_GENERIC = uint$iterator
+VALUE_REFERENCE = uint$ref
+VALUE_POINTER = uint$ptr

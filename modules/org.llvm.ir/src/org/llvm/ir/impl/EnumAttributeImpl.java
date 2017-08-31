@@ -1,0 +1,162 @@
+/**
+ * This file was converted to Java from the original LLVM source file. The original
+ * source file follows the LLVM Release License, outlined below.
+ * 
+ * ==============================================================================
+ * LLVM Release License
+ * ==============================================================================
+ * University of Illinois/NCSA
+ * Open Source License
+ * 
+ * Copyright (c) 2003-2017 University of Illinois at Urbana-Champaign.
+ * All rights reserved.
+ * 
+ * Developed by:
+ * 
+ *     LLVM Team
+ * 
+ *     University of Illinois at Urbana-Champaign
+ * 
+ *     http://llvm.org
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal with
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+ * of the Software, and to permit persons to whom the Software is furnished to do
+ * so, subject to the following conditions:
+ * 
+ *     * Redistributions of source code must retain the above copyright notice,
+ *       this list of conditions and the following disclaimers.
+ * 
+ *     * Redistributions in binary form must reproduce the above copyright notice
+ *       this list of conditions and the following disclaimers in the
+ *       documentation and/or other materials provided with the distribution.
+ * 
+ *     * Neither the names of the LLVM Team, University of Illinois at
+ *       Urbana-Champaign, nor the names of its contributors may be used to
+ *       endorse or promote products derived from this Software without specific
+ *       prior written permission.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+ * CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH THE
+ * SOFTWARE.
+ * 
+ * ==============================================================================
+ * Copyrights and Licenses for Third Party Software Distributed with LLVM:
+ * ==============================================================================
+ * The LLVM software contains code written by third parties.  Such software will
+ * have its own individual LICENSE.TXT file in the directory in which it appears.
+ * This file will describe the copyrights, license, and restrictions which apply
+ * to that code.
+ * 
+ * The disclaimer of warranty in the University of Illinois Open Source License
+ * applies to all code in the LLVM Distribution, and nothing in any of the
+ * other licenses gives permission to use the names of the LLVM Team or the
+ * University of Illinois to endorse or promote products derived from this
+ * Software.
+ * 
+ * The following pieces of software have additional or alternate copyrights,
+ * licenses, and/or restrictions:
+ * 
+ * Program             Directory
+ * -------             ---------
+ * Autoconf            llvm/autoconf
+ *                     llvm/projects/ModuleMaker/autoconf
+ * Google Test         llvm/utils/unittest/googletest
+ * OpenBSD regex       llvm/lib/Support/{reg*, COPYRIGHT.regex}
+ * pyyaml tests        llvm/test/YAMLParser/{*.data, LICENSE.TXT}
+ * ARM contributions   llvm/lib/Target/ARM/LICENSE.TXT
+ * md5 contributions   llvm/lib/Support/MD5.cpp llvm/include/llvm/Support/MD5.h
+ */
+
+package org.llvm.ir.impl;
+
+import org.clank.support.*;
+import org.llvm.ir.*;
+
+
+//===----------------------------------------------------------------------===//
+/// \class
+/// \brief A set of classes that contain the value of the
+/// attribute object. There are three main categories: enum attribute entries,
+/// represented by Attribute::AttrKind; alignment attribute entries; and string
+/// attribute enties, which are for target-dependent attributes.
+//<editor-fold defaultstate="collapsed" desc="llvm::EnumAttributeImpl">
+@Converted(kind = Converted.Kind.AUTO,
+ source = "${LLVM_SRC}/llvm/lib/IR/AttributeImpl.h", line = 100,
+ FQN="llvm::EnumAttributeImpl", NM="_ZN4llvm17EnumAttributeImplE",
+ cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.ir/llvmToClangType ${LLVM_SRC}/llvm/lib/IR/Attributes.cpp -nm=_ZN4llvm17EnumAttributeImplE")
+//</editor-fold>
+public class EnumAttributeImpl extends /*public*/ AttributeImpl implements Destructors.ClassWithDestructor {
+  //<editor-fold defaultstate="collapsed" desc="llvm::EnumAttributeImpl::anchor">
+  @Converted(kind = Converted.Kind.AUTO,
+   source = "${LLVM_SRC}/llvm/lib/IR/Attributes.cpp", line = 407,
+   FQN="llvm::EnumAttributeImpl::anchor", NM="_ZN4llvm17EnumAttributeImpl6anchorEv",
+   cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.ir/llvmToClangType ${LLVM_SRC}/llvm/lib/IR/Attributes.cpp -nm=_ZN4llvm17EnumAttributeImpl6anchorEv")
+  //</editor-fold>
+  protected/*private*/ void anchor() {
+  }
+
+  private Attribute.AttrKind Kind;
+/*protected:*/
+  //<editor-fold defaultstate="collapsed" desc="llvm::EnumAttributeImpl::EnumAttributeImpl">
+  @Converted(kind = Converted.Kind.AUTO,
+   source = "${LLVM_SRC}/llvm/lib/IR/AttributeImpl.h", line = 105,
+   FQN="llvm::EnumAttributeImpl::EnumAttributeImpl", NM="_ZN4llvm17EnumAttributeImplC1ENS_13AttributeImpl13AttrEntryKindENS_9Attribute8AttrKindE",
+   cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.ir/llvmToClangType ${LLVM_SRC}/llvm/lib/IR/Attributes.cpp -nm=_ZN4llvm17EnumAttributeImplC1ENS_13AttributeImpl13AttrEntryKindENS_9Attribute8AttrKindE")
+  //</editor-fold>
+  protected EnumAttributeImpl(AttributeImpl.AttrEntryKind ID, Attribute.AttrKind Kind) {
+    // : AttributeImpl(ID), Kind(Kind) 
+    //START JInit
+    super(ID);
+    this.Kind = Kind;
+    //END JInit
+  }
+
+/*public:*/
+  //<editor-fold defaultstate="collapsed" desc="llvm::EnumAttributeImpl::EnumAttributeImpl">
+  @Converted(kind = Converted.Kind.AUTO,
+   source = "${LLVM_SRC}/llvm/lib/IR/AttributeImpl.h", line = 109,
+   FQN="llvm::EnumAttributeImpl::EnumAttributeImpl", NM="_ZN4llvm17EnumAttributeImplC1ENS_9Attribute8AttrKindE",
+   cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.ir/llvmToClangType ${LLVM_SRC}/llvm/lib/IR/Attributes.cpp -nm=_ZN4llvm17EnumAttributeImplC1ENS_9Attribute8AttrKindE")
+  //</editor-fold>
+  public EnumAttributeImpl(Attribute.AttrKind Kind) {
+    // : AttributeImpl(EnumAttrEntry), Kind(Kind) 
+    //START JInit
+    super(AttrEntryKind.EnumAttrEntry);
+    this.Kind = Kind;
+    //END JInit
+  }
+
+  
+  //<editor-fold defaultstate="collapsed" desc="llvm::EnumAttributeImpl::getEnumKind">
+  @Converted(kind = Converted.Kind.AUTO,
+   source = "${LLVM_SRC}/llvm/lib/IR/AttributeImpl.h", line = 112,
+   FQN="llvm::EnumAttributeImpl::getEnumKind", NM="_ZNK4llvm17EnumAttributeImpl11getEnumKindEv",
+   cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.ir/llvmToClangType ${LLVM_SRC}/llvm/lib/IR/Attributes.cpp -nm=_ZNK4llvm17EnumAttributeImpl11getEnumKindEv")
+  //</editor-fold>
+  public Attribute.AttrKind getEnumKind() /*const*/ {
+    return Kind;
+  }
+
+  //<editor-fold defaultstate="collapsed" desc="llvm::EnumAttributeImpl::~EnumAttributeImpl">
+  @Converted(kind = Converted.Kind.AUTO,
+   source = "${LLVM_SRC}/llvm/lib/IR/AttributeImpl.h", line = 100,
+   FQN="llvm::EnumAttributeImpl::~EnumAttributeImpl", NM="_ZN4llvm17EnumAttributeImplD0Ev",
+   cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.ir/llvmToClangType ${LLVM_SRC}/llvm/lib/IR/Attributes.cpp -nm=_ZN4llvm17EnumAttributeImplD0Ev")
+  //</editor-fold>
+  @Override public /*inline*/ void $destroy() {
+    super.$destroy();
+  }
+
+  
+  @Override public String toString() {
+    return "" + "Kind=" + Kind // NOI18N
+              + super.toString(); // NOI18N
+  }
+}

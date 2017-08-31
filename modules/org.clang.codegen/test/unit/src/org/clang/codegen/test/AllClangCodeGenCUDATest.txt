@@ -1,0 +1,265 @@
+  @Test
+  public void test_address_spaces_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/address-spaces.cu");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -emit-llvm ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/address-spaces.cu -o - -fcuda-is-device -triple nvptx-unknown-unknown | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/address-spaces.cu
+    RUN("%clang_cc1 -emit-llvm %s -o - -fcuda-is-device -triple nvptx-unknown-unknown")./*|*/
+      I("FileCheck %s");
+  }
+
+  @Test
+  public void test_alias_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/alias.cu");
+    // REQUIRES: x86-registered-target
+    if (!CHECK_REQUIRES("x86-registered-target")) {
+      return;
+    }
+    // REQUIRES: nvptx-registered-target
+    if (!CHECK_REQUIRES("nvptx-registered-target")) {
+      return;
+    }
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fcuda-is-device -triple nvptx-nvidia-cuda -emit-llvm -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/alias.cu | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/alias.cu
+    RUN("%clang_cc1 -fcuda-is-device -triple nvptx-nvidia-cuda -emit-llvm -o - %s")./*|*/
+      I("FileCheck %s");
+  }
+
+  @Test
+  public void test_convergent_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/convergent.cu");
+    // REQUIRES: x86-registered-target
+    if (!CHECK_REQUIRES("x86-registered-target")) {
+      return;
+    }
+    // REQUIRES: nvptx-registered-target
+    if (!CHECK_REQUIRES("nvptx-registered-target")) {
+      return;
+    }
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fcuda-is-device -triple nvptx-nvidia-cuda -emit-llvm -disable-llvm-passes -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/convergent.cu | ${LLVM_SRC}/build/bin/FileCheck -check-prefix DEVICE ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/convergent.cu
+    RUN("%clang_cc1 -fcuda-is-device -triple nvptx-nvidia-cuda -emit-llvm -disable-llvm-passes -o - %s")./*|*/
+      I("FileCheck -check-prefix DEVICE %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu -emit-llvm -disable-llvm-passes -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/convergent.cu | ${LLVM_SRC}/build/bin/FileCheck -check-prefix HOST ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/convergent.cu
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -emit-llvm -disable-llvm-passes -o - %s")./*|*/
+      I("FileCheck -check-prefix HOST %s");
+  }
+
+  @Test
+  public void test_cuda_builtin_vars_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/cuda-builtin-vars.cu");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple nvptx-nvidia-cuda -emit-llvm -fcuda-is-device -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/cuda-builtin-vars.cu | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/cuda-builtin-vars.cu
+    RUN("%clang_cc1 \"-triple\" \"nvptx-nvidia-cuda\" -emit-llvm -fcuda-is-device -o - %s")./*|*/
+      I("FileCheck %s");
+  }
+
+  @Test
+  public void test_device_stub_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-stub.cu");
+    // echo 'GPU binary would be here' > ${TEST_TEMP_DIR}/device-stub.cu.tmp
+    RUN("echo \"GPU binary would be here\" > %t");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-linux-gnu -emit-llvm ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-stub.cu -fcuda-include-gpubinary ${TEST_TEMP_DIR}/device-stub.cu.tmp -o - | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-stub.cu
+    RUN("%clang_cc1 -triple x86_64-linux-gnu -emit-llvm %s -fcuda-include-gpubinary %t -o -")./*|*/
+      I("FileCheck %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-linux-gnu -emit-llvm ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-stub.cu -fcuda-include-gpubinary ${TEST_TEMP_DIR}/device-stub.cu.tmp -o - -DNOGLOBALS | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-stub.cu -check-prefix=NOGLOBALS
+    RUN("%clang_cc1 -triple x86_64-linux-gnu -emit-llvm %s -fcuda-include-gpubinary %t -o -  -DNOGLOBALS")./*|*/
+      I("FileCheck %s -check-prefix=NOGLOBALS");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-linux-gnu -emit-llvm ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-stub.cu -o - | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-stub.cu -check-prefix=NOGPUBIN
+    RUN("%clang_cc1 -triple x86_64-linux-gnu -emit-llvm %s -o -")./*|*/
+      I("FileCheck %s -check-prefix=NOGPUBIN");
+  }
+
+  @Test
+  public void test_device_var_init_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-var-init.cu");
+    // REQUIRES: nvptx-registered-target
+    if (!CHECK_REQUIRES("nvptx-registered-target")) {
+      return;
+    }
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple nvptx64-nvidia-cuda -fcuda-is-device -std=c++11 -fno-threadsafe-statics -emit-llvm -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-var-init.cu | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-var-init.cu
+    RUN("%clang_cc1 -triple nvptx64-nvidia-cuda -fcuda-is-device -std=c++11 -fno-threadsafe-statics -emit-llvm -o - %s")./*|*/
+      I("FileCheck %s");
+  }
+
+  @Test
+  public void test_device_vtable_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-vtable.cu");
+    // REQUIRES: x86-registered-target
+    if (!CHECK_REQUIRES("x86-registered-target")) {
+      return;
+    }
+    // REQUIRES: nvptx-registered-target
+    if (!CHECK_REQUIRES("nvptx-registered-target")) {
+      return;
+    }
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu -emit-llvm -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-vtable.cu | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-vtable.cu -check-prefix=CHECK-HOST -check-prefix=CHECK-BOTH
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -emit-llvm -o - %s")./*|*/
+      I("FileCheck %s -check-prefix=CHECK-HOST -check-prefix=CHECK-BOTH");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple nvptx64-nvidia-cuda -fcuda-is-device -emit-llvm -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-vtable.cu | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/device-vtable.cu -check-prefix=CHECK-DEVICE -check-prefix=CHECK-BOTH
+    RUN("%clang_cc1 -triple nvptx64-nvidia-cuda -fcuda-is-device -emit-llvm -o - %s")./*|*/
+      I("FileCheck %s -check-prefix=CHECK-DEVICE -check-prefix=CHECK-BOTH");
+  }
+
+  @Test
+  public void test_filter_decl_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/filter-decl.cu");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple i386-pc-solaris2.11 -emit-llvm ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/filter-decl.cu -o - | ${LLVM_SRC}/build/bin/FileCheck -check-prefix=CHECK-HOST ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/filter-decl.cu
+    RUN("%clang_cc1 -triple %itanium_abi_triple -emit-llvm %s -o -")./*|*/
+      I("FileCheck -check-prefix=CHECK-HOST %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple i386-pc-solaris2.11 -emit-llvm ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/filter-decl.cu -o - -fcuda-is-device | ${LLVM_SRC}/build/bin/FileCheck -check-prefix=CHECK-DEVICE ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/filter-decl.cu
+    RUN("%clang_cc1 -triple %itanium_abi_triple -emit-llvm %s -o - -fcuda-is-device")./*|*/
+      I("FileCheck -check-prefix=CHECK-DEVICE %s");
+  }
+
+  @Test
+  public void test_flush_denormals_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/flush-denormals.cu");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fcuda-is-device -triple nvptx-nvidia-cuda -emit-llvm -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/flush-denormals.cu | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/flush-denormals.cu -check-prefix CHECK -check-prefix NOFTZ
+    RUN("%clang_cc1 -fcuda-is-device -triple nvptx-nvidia-cuda -emit-llvm -o - %s")./*|*/
+      I("FileCheck %s -check-prefix CHECK -check-prefix NOFTZ");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fcuda-is-device -fcuda-flush-denormals-to-zero -triple nvptx-nvidia-cuda -emit-llvm -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/flush-denormals.cu | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/flush-denormals.cu -check-prefix CHECK -check-prefix FTZ
+    RUN("%clang_cc1 -fcuda-is-device -fcuda-flush-denormals-to-zero -triple nvptx-nvidia-cuda -emit-llvm -o - %s")./*|*/
+      I("FileCheck %s -check-prefix CHECK -check-prefix FTZ");
+  }
+
+  @Test
+  public void test_fp_contract_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/fp-contract.cu");
+    // REQUIRES: x86-registered-target
+    if (!CHECK_REQUIRES("x86-registered-target")) {
+      return;
+    }
+    // REQUIRES: nvptx-registered-target
+    if (!CHECK_REQUIRES("nvptx-registered-target")) {
+      return;
+    }
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fcuda-is-device -triple nvptx-nvidia-cuda -S -disable-llvm-passes -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/fp-contract.cu | ${LLVM_SRC}/build/bin/FileCheck -check-prefix ENABLED ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/fp-contract.cu
+    RUN("%clang_cc1 -fcuda-is-device -triple nvptx-nvidia-cuda -S -disable-llvm-passes -o - %s")./*|*/
+      I("FileCheck -check-prefix ENABLED %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fcuda-is-device -triple nvptx-nvidia-cuda -S -ffp-contract=fast -disable-llvm-passes -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/fp-contract.cu | ${LLVM_SRC}/build/bin/FileCheck -check-prefix ENABLED ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/fp-contract.cu
+    RUN("%clang_cc1 -fcuda-is-device -triple nvptx-nvidia-cuda -S -ffp-contract=fast -disable-llvm-passes -o - %s")./*|*/
+      I("FileCheck -check-prefix ENABLED %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fcuda-is-device -triple nvptx-nvidia-cuda -S -ffp-contract=on -disable-llvm-passes -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/fp-contract.cu | ${LLVM_SRC}/build/bin/FileCheck -check-prefix DISABLED ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/fp-contract.cu
+    RUN("%clang_cc1 -fcuda-is-device -triple nvptx-nvidia-cuda -S -ffp-contract=on -disable-llvm-passes -o - %s")./*|*/
+      I("FileCheck -check-prefix DISABLED %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fcuda-is-device -triple nvptx-nvidia-cuda -S -ffp-contract=off -disable-llvm-passes -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/fp-contract.cu | ${LLVM_SRC}/build/bin/FileCheck -check-prefix DISABLED ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/fp-contract.cu
+    RUN("%clang_cc1 -fcuda-is-device -triple nvptx-nvidia-cuda -S -ffp-contract=off -disable-llvm-passes -o - %s")./*|*/
+      I("FileCheck -check-prefix DISABLED %s");
+  }
+
+  @Test
+  public void test_function_overload_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/function-overload.cu");
+    // REQUIRES: x86-registered-target
+    if (!CHECK_REQUIRES("x86-registered-target")) {
+      return;
+    }
+    // REQUIRES: nvptx-registered-target
+    if (!CHECK_REQUIRES("nvptx-registered-target")) {
+      return;
+    }
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu -emit-llvm -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/function-overload.cu | ${LLVM_SRC}/build/bin/FileCheck -check-prefix=CHECK-BOTH -check-prefix=CHECK-HOST ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/function-overload.cu
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -emit-llvm -o - %s")./*|*/
+      I("FileCheck -check-prefix=CHECK-BOTH -check-prefix=CHECK-HOST %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple nvptx64-nvidia-cuda -fcuda-is-device -emit-llvm -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/function-overload.cu | ${LLVM_SRC}/build/bin/FileCheck -check-prefix=CHECK-BOTH -check-prefix=CHECK-DEVICE ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/function-overload.cu
+    RUN("%clang_cc1 -triple nvptx64-nvidia-cuda -fcuda-is-device -emit-llvm -o - %s")./*|*/
+      I("FileCheck -check-prefix=CHECK-BOTH -check-prefix=CHECK-DEVICE %s");
+  }
+
+  @Test
+  public void test_host_device_calls_host_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/host-device-calls-host.cu");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/host-device-calls-host.cu -triple nvptx-unknown-unknown -fcuda-is-device -Wno-cuda-compat -emit-llvm -o - | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/host-device-calls-host.cu
+    RUN("%clang_cc1 %s -triple nvptx-unknown-unknown -fcuda-is-device -Wno-cuda-compat -emit-llvm -o -")./*|*/
+      I("FileCheck %s");
+  }
+
+  @Test
+  public void test_kernel_call_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/kernel-call.cu");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -emit-llvm ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/kernel-call.cu -o - | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/kernel-call.cu
+    RUN("%clang_cc1 -emit-llvm %s -o -")./*|*/
+      I("FileCheck %s");
+  }
+
+  @Test
+  public void test_launch_bounds_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/launch-bounds.cu");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/launch-bounds.cu -triple nvptx-unknown-unknown -fcuda-is-device -emit-llvm -o - | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/launch-bounds.cu
+    RUN("%clang_cc1 %s -triple nvptx-unknown-unknown -fcuda-is-device -emit-llvm -o -")./*|*/
+      I("FileCheck %s");
+  }
+
+  @Test
+  public void test_link_device_bitcode_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/link-device-bitcode.cu");
+    // REQUIRES: nvptx-registered-target
+    if (!CHECK_REQUIRES("nvptx-registered-target")) {
+      return;
+    }
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple nvptx-unknown-cuda -emit-llvm-bc -disable-llvm-passes -o ${TEST_TEMP_DIR}/link-device-bitcode.cu.tmp.bc ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/Inputs/device-code.ll
+    RUN("%clang_cc1 -triple nvptx-unknown-cuda -emit-llvm-bc -disable-llvm-passes -o %t.bc %S/Inputs/device-code.ll");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple nvptx-unknown-cuda -emit-llvm-bc -disable-llvm-passes -o ${TEST_TEMP_DIR}/link-device-bitcode.cu.tmp-2.bc ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/Inputs/device-code-2.ll
+    RUN("%clang_cc1 -triple nvptx-unknown-cuda -emit-llvm-bc -disable-llvm-passes -o %t-2.bc %S/Inputs/device-code-2.ll");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple nvptx-unknown-cuda -fcuda-is-device -mlink-cuda-bitcode ${TEST_TEMP_DIR}/link-device-bitcode.cu.tmp.bc -emit-llvm -disable-llvm-passes -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/link-device-bitcode.cu | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/link-device-bitcode.cu -check-prefix CHECK-IR
+    RUN("%clang_cc1 -triple nvptx-unknown-cuda -fcuda-is-device -mlink-cuda-bitcode %t.bc  -emit-llvm -disable-llvm-passes -o - %s")./*|*/
+      I("FileCheck %s -check-prefix CHECK-IR");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple nvptx-unknown-cuda -fcuda-is-device -mlink-cuda-bitcode ${TEST_TEMP_DIR}/link-device-bitcode.cu.tmp.bc -mlink-cuda-bitcode ${TEST_TEMP_DIR}/link-device-bitcode.cu.tmp-2.bc -emit-llvm -disable-llvm-passes -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/link-device-bitcode.cu | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/link-device-bitcode.cu -check-prefix CHECK-IR -check-prefix CHECK-IR-2
+    RUN("%clang_cc1 -triple nvptx-unknown-cuda -fcuda-is-device -mlink-cuda-bitcode %t.bc -mlink-cuda-bitcode %t-2.bc -emit-llvm -disable-llvm-passes -o - %s")./*|*/
+      I("FileCheck %s -check-prefix CHECK-IR -check-prefix CHECK-IR-2");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple nvptx-unknown-cuda -fcuda-is-device -mlink-bitcode-file ${TEST_TEMP_DIR}/link-device-bitcode.cu.tmp.bc -emit-llvm -disable-llvm-passes -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/link-device-bitcode.cu | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/link-device-bitcode.cu -check-prefix CHECK-IR-NLD
+    RUN("%clang_cc1 -triple nvptx-unknown-cuda -fcuda-is-device -mlink-bitcode-file %t.bc -emit-llvm -disable-llvm-passes -o - %s")./*|*/
+      I("FileCheck %s -check-prefix CHECK-IR-NLD");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple nvptx-unknown-cuda -fcuda-is-device -mlink-cuda-bitcode ${TEST_TEMP_DIR}/link-device-bitcode.cu.tmp.bc -S -o /dev/null ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/link-device-bitcode.cu -backend-option -debug-pass=Structure 2>&1 | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/link-device-bitcode.cu -check-prefix CHECK-REFLECT
+    RUN("%clang_cc1 -triple nvptx-unknown-cuda -fcuda-is-device -mlink-cuda-bitcode %t.bc -S -o /dev/null %s -backend-option -debug-pass=Structure 2>&1")./*|*/
+      I("FileCheck %s -check-prefix CHECK-REFLECT");
+  }
+
+  @Test
+  public void test_llvm_used_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/llvm-used.cu");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -emit-llvm ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/llvm-used.cu -o - -fcuda-is-device -triple nvptx64-unknown-unknown | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/llvm-used.cu
+    RUN("%clang_cc1 -emit-llvm %s -o - -fcuda-is-device -triple nvptx64-unknown-unknown")./*|*/
+      I("FileCheck %s");
+  }
+
+  @Test
+  public void test_printf_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/printf.cu");
+    // REQUIRES: x86-registered-target
+    if (!CHECK_REQUIRES("x86-registered-target")) {
+      return;
+    }
+    // REQUIRES: nvptx-registered-target
+    if (!CHECK_REQUIRES("nvptx-registered-target")) {
+      return;
+    }
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple nvptx64-nvidia-cuda -fcuda-is-device -emit-llvm -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/printf.cu | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/printf.cu
+    RUN("%clang_cc1 -triple nvptx64-nvidia-cuda -fcuda-is-device -emit-llvm -o - %s")./*|*/
+      I("FileCheck %s");
+  }
+
+  @Test
+  public void test_printf_aggregate_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/printf-aggregate.cu");
+    // REQUIRES: x86-registered-target
+    if (!CHECK_REQUIRES("x86-registered-target")) {
+      return;
+    }
+    // REQUIRES: nvptx-registered-target
+    if (!CHECK_REQUIRES("nvptx-registered-target")) {
+      return;
+    }
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple nvptx64-nvidia-cuda -fcuda-is-device -emit-llvm -o - ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/printf-aggregate.cu 2>&1 | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/printf-aggregate.cu
+    RUN("not %clang_cc1 -triple nvptx64-nvidia-cuda -fcuda-is-device -emit-llvm -o - %s 2>&1")./*|*/
+      I("FileCheck %s");
+  }
+
+  @Test
+  public void test_ptx_kernels_cu() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/ptx-kernels.cu");
+    // REQUIRES: nvptx-registered-target
+    if (!CHECK_REQUIRES("nvptx-registered-target")) {
+      return;
+    }
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/ptx-kernels.cu -triple nvptx-unknown-unknown -fcuda-is-device -emit-llvm -o - | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/CodeGenCUDA/ptx-kernels.cu
+    RUN("%clang_cc1 %s -triple nvptx-unknown-unknown -fcuda-is-device -emit-llvm -o -")./*|*/
+      I("FileCheck %s");
+  }
+

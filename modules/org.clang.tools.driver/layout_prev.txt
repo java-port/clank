@@ -1,0 +1,7 @@
+org.clang.tools.driver
+    AssemblerInvocation.java
+    DriverSuffix.java
+    StringSetSaver.java
+    cc1_mainStatics.java
+    cc1as_mainStatics.java
+    driverStatics.java

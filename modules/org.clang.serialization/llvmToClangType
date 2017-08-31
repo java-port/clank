@@ -1,0 +1,274 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.clang.serialization_delegates.properties"
+[DELEGATE_BODY=LLVM38]
+<include> "./commands_org.clang.serialization_delegates.properties"
+[DELEGATE_BODY=LLVM36]
+<include> "./commands_prev_org.clang.serialization_delegates.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+#local enums mapping
+[ENUM_TO_INT_CONVERSION]
+(anonymous namespace)::IndexRecordTypes=/*IndexRecordTypes*/int
+
+[EXTRA_MEMBERS]
+(anonymous namespace)::ASTDeclContextNameLookupTrait = IMPLEMENTS#MultiOnDiskHashTableGenerator.MultiEmitInfoInterface<DeclarationNameKey, std.pairUIntUInt, SmallVectorUInt, ModuleFile/*P*/>
+(anonymous namespace)::ASTIdentifierTableTrait = IMPLEMENTS#OnDiskChainedHashTableGenerator.EmitInfoInterface<IdentifierInfo, Integer, Void/*unused*/>
+(anonymous namespace)::ASTMethodPoolTrait = IMPLEMENTS#OnDiskChainedHashTableGenerator.EmitInfoInterface<Selector, ASTMethodPoolTrait.data_type, Void/*unused*/>
+(anonymous namespace)::ASTMethodPoolTrait::data_type = FILE#./extra_members/data_typeExtraMembers.java
+(anonymous namespace)::DeclIDComp = FILE#./extra_members/DeclIDCompExtraMembers.java
+(anonymous namespace)::DeclIDComp = IMPLEMENTS#ComparatorLower<Object, Object>
+(anonymous namespace)::HeaderFileInfoTrait = IMPLEMENTS#EmitInfoInterface<HeaderFileInfoTrait.key_type, HeaderFileInfo, Void/*unused*/>
+(anonymous namespace)::HeaderFileInfoTrait::key_type = FILE#./extra_members/key_typeExtraMembers.java
+(anonymous namespace)::HeaderFileInfoVisitor = IMPLEMENTS#ModuleFile$Ref2Bool
+(anonymous namespace)::IdentifierIndexReaderTrait = IMPLEMENTS#InfoInterface<StringRef, StringRef, SmallVectorUInt>
+(anonymous namespace)::IdentifierIndexReaderTrait = FILE#./extra_members/IdentifierIndexReaderTraitExtraMembers.java
+(anonymous namespace)::IdentifierIndexWriterTrait = IMPLEMENTS#EmitInfoInterface<StringRef, SmallVectorUInt, Void/*unused*/>
+(anonymous namespace)::IdentifierLookupVisitor = IMPLEMENTS#ModuleFile$Ref2Bool
+(anonymous namespace)::InterestingASTIdentifierLookupTrait = FILE#./extra_members/InterestingASTIdentifierLookupTraitExtraMembers.java
+(anonymous namespace)::MergedRedeclIterator = T0EXTENDS#Redeclarable
+(anonymous namespace)::MergedRedeclIterator = FILE#./extra_members/MergedRedeclIteratorExtraMembers.java
+(anonymous namespace)::MergedRedeclIterator = IMPLEMENTS#type$iterator<MergedRedeclIterator, DeclT>
+(anonymous namespace)::ModuleFileInfo = IMPLEMENTS#NativeCloneable<ModuleFileInfo>
+(anonymous namespace)::ModuleFileInfo = IMPLEMENTS#NativeMoveable<ModuleFileInfo>
+(anonymous namespace)::ModuleFileInfo = FILE#./extra_members/ModuleFileInfoExtraMembers.java
+(anonymous namespace)::ObjCCategoriesVisitor = IMPLEMENTS#ModuleFile$Ref2Bool
+(anonymous namespace)::PPEntityComp = IMPLEMENTS#Native.ComparatorLower<SourceLocation,PPEntityOffset>
+(anonymous namespace)::PPEntityComp = FILE#./extra_members/PPEntityCompExtraMembers.java
+ModuleInfo = FILE#./extra_members/ModuleInfoExtraMembers.java
+ModuleInfo = IMPLEMENTS#NativePOD<ModuleInfo>
+ModuleInfo = IMPLEMENTS#NativeMoveable<ModuleInfo>
+clang::ASTDeclReader = FILE#./ASTDeclReaderExtraMembers.java
+clang::ASTDeclReader::VisitRedeclarable = T0EXTENDS#Decl & Redeclarable
+clang::ASTDeclReader::attachLatestDeclImpl = T0EXTENDS#Decl & Redeclarable
+clang::ASTDeclReader::attachPreviousDeclImpl = T0EXTENDS#Decl & Redeclarable
+clang::ASTDeclReader::getMostRecentDeclImpl = T0EXTENDS#Decl & Redeclarable
+clang::ASTDeclReader::markIncompleteDeclChainImpl = T0EXTENDS#Decl & Redeclarable
+clang::ASTDeclReader::mergeMergeable = T0EXTENDS#Decl & Mergeable
+clang::ASTDeclReader::mergeRedeclarable = T0EXTENDS#Decl & Redeclarable
+clang::ASTDeclWriter::AddTemplateSpecializations = T0EXTENDS#RedeclarableTemplateDecl
+clang::ASTDeclWriter::VisitRedeclarable = T0EXTENDS#Decl & Redeclarable
+clang::ASTDeclWriter::getSpecializationDecl = T0EXTENDS#HasGetTemplateArgs$TemplateArgumentList & Redeclarable
+clang::ASTDeserializationListener = IMPLEMENTS#org.clang.ast.ASTDeserializationListenerImplementation
+clang::ASTReader = FILE#./extra_members/ASTReaderExtraMembers.java
+clang::ASTReader::FileDeclsInfo = IMPLEMENTS#NativePOD<FileDeclsInfo>
+clang::ASTReader::FileDeclsInfo = FILE#./extra_members/FileDeclsInfoExtraMembers.java
+clang::ASTReader::ImportedModule = FILE#./extra_members/ImportedModuleExtraMembers.java
+clang::ASTReader::ImportedModule = IMPLEMENTS#NativeCloneable<ImportedModule>
+clang::ASTReader::ImportedSubmodule = FILE#./extra_members/ImportedSubmoduleExtraMembers.java
+clang::ASTReader::ImportedSubmodule = IMPLEMENTS#NativeCloneable<ImportedSubmodule>
+clang::ASTReader::ModuleDeclIterator = FILE#./extra_members/ModuleDeclIteratorExtraMembers.java
+clang::ASTReader::PendingDeclContextInfo = FILE#./extra_members/PendingDeclContextInfoExtraMembers.java
+clang::ASTReader::PendingMacroInfo = FILE#./extra_members/PendingMacroInfoExtraMembers.java
+clang::ASTReader::PendingMacroInfo = IMPLEMENTS#NativePOD<PendingMacroInfo>
+clang::ASTReader::PendingVisibleUpdate = FILE#./extra_members/PendingVisibleUpdateExtraMembers.java
+clang::ASTReader::UnresolvedModuleRef = FILE#./extra_members/UnresolvedModuleRefExtraMembers.java
+clang::ASTReader::UnresolvedModuleRef = IMPLEMENTS#NativeCloneable<UnresolvedModuleRef>
+clang::ASTReader::forEachImportedKeyDecl = T0EXTENDS#Decl2Void
+clang::ASTWriter::DeclUpdate = IMPLEMENTS#NativePOD<DeclUpdate>
+clang::ASTWriter::DeclUpdate = FILE#./extra_members/DeclUpdateExtraMembers.java
+clang::ASTWriter::MacroInfoToEmitData = FILE#./extra_members/MacroInfoToEmitDataExtraMembers.java
+clang::ASTWriter::MacroInfoToEmitData = IMPLEMENTS#NativePOD<MacroInfoToEmitData>
+clang::ContinuousRangeMap = IMPLEMENTS#Destructors.ClassWithDestructor
+clang::ContinuousRangeMap = FILE#./extra_members/ContinuousRangeMapUIntPtrExtraMembers.java
+clang::GlobalModuleIndex = IMPLEMENTS#org.clang.lex.spi.GlobalModuleIndexImplementation
+clang::GlobalModuleIndex::ModuleInfo = IMPLEMENTS#NativeCloneable<ModuleInfo>
+clang::GlobalModuleIndex::ModuleInfo = IMPLEMENTS#NativeMoveable<ModuleInfo>
+clang::GlobalModuleIndex::ModuleInfo = FILE#./extra_members/ModuleInfoExtraMembers.java
+clang::ModuleFileExtensionMetadata = FILE#./extra_members/ModuleFileExtensionMetadataExtraMembers.java
+clang::serialization::DeclOffset = FILE#./extra_members/DeclOffsetExtraMembers.java
+clang::serialization::DeclOffset = IMPLEMENTS#SizeofCapable, ToByteArray, NativePOD<DeclOffset>
+clang::serialization::DeclarationNameKey = FILE#./extra_members/DeclarationNameKeyExtraMembers.java
+clang::serialization::DeclarationNameKey = IMPLEMENTS#NativePOD<DeclarationNameKey>
+clang::serialization::InputFile = IMPLEMENTS#NativePOD<InputFile>
+clang::serialization::InputFile = IMPLEMENTS#NativeMoveable<InputFile>
+clang::serialization::InputFile = FILE#./extra_members/InputFileExtraMembers.java
+clang::serialization::MakeTypeID = T0EXTENDS#QualType2TypeIdx
+clang::serialization::ModuleManager = IMPLEMENTS#NativeReverseIterable<std.reverse_iterator<ModuleFile>>, Iterable<ModuleFile>
+clang::serialization::ModuleManager = FILE#./extra_members/ModuleManagerExtraMembers.java
+clang::serialization::MultiOnDiskHashTable = FILE#./extra_members/MultiOnDiskHashTableExtraMembers.java
+clang::serialization::MultiOnDiskHashTable::AsOnDiskTable = IMPLEMENTS#NativeCallback.Converter<Object/*void P*/, OnDiskTable /*P*/>
+clang::serialization::MultiOnDiskHashTableGenerator = IMPLEMENTS#Destructors.ClassWithDestructor
+clang::serialization::MultiOnDiskHashTableGenerator = FILE#./extra_members/MultiOnDiskHashTableGeneratorExtraMembers.java
+clang::serialization::ObjCCategoriesInfo = FILE#./extra_members/ObjCCategoriesInfoExtraMembers.java
+clang::serialization::ObjCCategoriesInfo = IMPLEMENTS#NativeType.SizeofCapable, NativeType.ToByteArray
+clang::serialization::ObjCCategoriesInfo = IMPLEMENTS#NativePOD<ObjCCategoriesInfo>
+clang::serialization::ObjCCategoriesInfo = IMPLEMENTS#Native.ComparableLower
+clang::serialization::PPEntityOffset = FILE#./extra_members/PPEntityOffsetExtraMembers.java
+clang::serialization::PPEntityOffset = IMPLEMENTS#SizeofCapable, ToByteArray
+clang::serialization::PPEntityOffset = IMPLEMENTS#NativeCloneable<PPEntityOffset>
+clang::serialization::ReadMethodPoolVisitor = IMPLEMENTS#ModuleFile$Ref2Bool
+clang::serialization::TypeIdx = IMPLEMENTS#NativePOD<TypeIdx>
+clang::serialization::TypeIdx = FILE#./extra_members/TypeIdxExtraMembers.java
+clang::serialization::UnsafeQualTypeDenseMapInfo = FILE#./extra_members/UnsafeQualTypeDenseMapInfoExtraMembers.java
+clang::serialization::UnsafeQualTypeDenseMapInfo = IMPLEMENTS#DenseMapInfo<QualType>
+clang::serialization::numberAnonymousDeclsWithin = T0EXTENDS#NamedDeclUInt2Void
+clang::serialization::reader::ASTDeclContextNameLookupTrait = IMPLEMENTS#MultiOnDiskHashTable.MultiInfoInterface<DeclarationName, DeclarationNameKey, SmallVectorUInt, ASTDeclContextNameLookupTrait.data_type_builder>
+clang::serialization::reader::ASTDeclContextNameLookupTrait = FILE#./extra_members/ASTDeclContextNameLookupTraitExtraMembers.java
+clang::serialization::reader::ASTIdentifierLookupTraitBase = IMPLEMENTS#OnDiskChainedHashTable.InfoInterface<StringRef, StringRef, data_type>
+clang::serialization::reader::ASTIdentifierLookupTraitBase = FILE#./extra_members/ASTIdentifierLookupTraitBaseExtraMembers.java
+clang::serialization::reader::ASTSelectorLookupTrait = IMPLEMENTS#InfoInterface<Selector, Selector, ASTSelectorLookupTrait.data_type>
+clang::serialization::reader::ASTSelectorLookupTrait = FILE#./extra_members/ASTSelectorLookupTraitExtraMembers.java
+clang::serialization::reader::DeclContextLookupTable = IMPLEMENTS#NativeCloneable<DeclContextLookupTable>
+clang::serialization::reader::DeclContextLookupTable = IMPLEMENTS#NativeMoveable<DeclContextLookupTable>
+clang::serialization::reader::DeclContextLookupTable = FILE#./extra_members/DeclContextLookupTableExtraMembers.java
+clang::serialization::reader::HeaderFileInfoTrait = IMPLEMENTS#OnDiskChainedHashTable.InfoInterface<FileEntry, HeaderFileInfoTrait.internal_key_type, HeaderFileInfo>
+clang::serialization::reader::HeaderFileInfoTrait = FILE#./extra_members/HeaderFileInfoTraitExtraMembers.java
+clang::serialization::reader::HeaderFileInfoTrait::internal_key_type = FILE#./extra_members/internal_key_typeExtraMembers.java
+forAllLaterRedecls = T0EXTENDS#Redeclarable
+forAllLaterRedecls = T1EXTENDS#FunctionDecl2Void
+llvm::DenseMapInfo<DeclarationNameKey> = FILE#./extra_members/DenseMapInfoDeclarationNameKeyExtraMembers.java
+llvm::DenseMapInfo<DeclarationNameKey> = IMPLEMENTS#DenseMapInfo<DeclarationNameKey>
+merged_redecls = T0EXTENDS#Redeclarable
+
+[ID_NAME_CONVERSION]
+
+[TYPES_MAP]
+#forward class
+
+(lambda at /export1/home/alsimon/LLVM39/llvm/tools/clang/lib/Serialization/ASTWriter.cpp:4166:29) = Cmp
+
+(lambda at /export1/home/alsimon/LLVM39/llvm/tools/clang/lib/Serialization/ASTWriter.cpp:4450:34) = Eq
+
+(lambda at /export1/home/alsimon/LLVM39/llvm/tools/clang/lib/Serialization/ModuleManager.cpp:203:19) = IsVictim
+
+PCHContainerReader=PCHContainerReaderImplementation
+PCHContainerWriter=PCHContainerWriterImplementation
+
+auto (BitstreamCursor & , StringRef) const -> std::unique_ptr<MemoryBuffer> = BitstreamCursorStringRef2unique_ptr
+
+auto (const internal_key_type & ) const -> const FileEntry * = internal_key_type2FileEntry
+
+bool (ModuleFile & ) = ModuleFile$Ref2Bool
+
+bool (const ModuleInfo & , const ModuleInfo & ) const = ModuleInfoModuleInfo2Bool
+
+size_type (ModuleFile * ) const = ModuleFile2Size_type
+
+void (Decl * , PredefinedDeclIDs) const = DeclPredefinedDeclIDs2Void
+
+void (ModuleFile * , LexicalContents) const = ModuleFileLexicalContents2Void
+
+void (uint32_t, bool) const = UIntBool2Void
+
+void (uint32_t, uint32_t, RemapBuilder & ) const = UIntUIntRemapBuilder2Void
+
+[MEMBER_ACCESS]
+(anonymous namespace)::ASTDeclContextNameLookupTrait::ComputeHash = @Override public final
+(anonymous namespace)::ASTDeclContextNameLookupTrait::DeclIDs = private final
+(anonymous namespace)::ASTDeclContextNameLookupTrait::EmitData = @Override public final
+(anonymous namespace)::ASTDeclContextNameLookupTrait::EmitFileRef = @Override public final
+(anonymous namespace)::ASTDeclContextNameLookupTrait::EmitKey = @Override public final
+(anonymous namespace)::ASTDeclContextNameLookupTrait::EmitKeyDataLength = @Override public final
+(anonymous namespace)::ASTDeclContextNameLookupTrait::EqualKey = @Override public final
+(anonymous namespace)::ASTDeclContextNameLookupTrait::ImportData = @Override public final
+(anonymous namespace)::ASTIdentifierTableTrait::ComputeHash = @Override public final
+(anonymous namespace)::ASTIdentifierTableTrait::EmitData = @Override public final
+(anonymous namespace)::ASTIdentifierTableTrait::EmitKey = @Override public final
+(anonymous namespace)::ASTIdentifierTableTrait::EmitKeyDataLength = @Override public final
+(anonymous namespace)::ASTMethodPoolTrait::EmitData = @Override public final
+(anonymous namespace)::ASTMethodPoolTrait::EmitKey = @Override public final
+(anonymous namespace)::ASTMethodPoolTrait::EmitKeyDataLength = @Override public final
+(anonymous namespace)::HeaderFileInfoTrait::ComputeHash = @Override public final
+(anonymous namespace)::HeaderFileInfoTrait::EmitData = @Override public final
+(anonymous namespace)::HeaderFileInfoTrait::EmitKey = @Override public final
+(anonymous namespace)::HeaderFileInfoTrait::EmitKeyDataLength = @Override public final
+(anonymous namespace)::HeaderFileInfoTrait::strings_begin = @Override public final
+(anonymous namespace)::HeaderFileInfoTrait::strings_end = @Override public final
+(anonymous namespace)::IdentifierIndexReaderTrait::ComputeHash = @Override public final
+(anonymous namespace)::IdentifierIndexReaderTrait::EqualKey = @Override public final
+(anonymous namespace)::IdentifierIndexReaderTrait::GetExternalKey = @Override public final
+(anonymous namespace)::IdentifierIndexReaderTrait::GetInternalKey = @Override public final
+(anonymous namespace)::IdentifierIndexReaderTrait::ReadData = @Override public final
+(anonymous namespace)::IdentifierIndexReaderTrait::ReadKey = @Override public final
+(anonymous namespace)::IdentifierIndexReaderTrait::ReadKeyDataLength = @Override public final
+(anonymous namespace)::IdentifierLookupVisitor::Name = private final
+(anonymous namespace)::IdentifierLookupVisitor::NameHash = private final
+(anonymous namespace)::IdentifierLookupVisitor::PriorGeneration = private final
+(anonymous namespace)::IdentifierLookupVisitor::operator() = @Override public final
+(anonymous namespace)::InterestingASTIdentifierLookupTrait::ReadData = @Override public final
+clang::ASTDeclReader::RedeclarableResult=/*friend*/public
+clang::ASTReader::AnonymousDeclarationsForMerging = /*friend*/public
+clang::ASTReader::CategoriesDeserialized = /*friend*/public
+clang::ASTReader::Context = /*friend*/public
+clang::ASTReader::DeserializationListener = /*friend*/public
+clang::ASTReader::Diags = /*friend*/public
+clang::ASTReader::EnumDefinitions = /*friend*/public
+clang::ASTReader::Error = /*friend*/public
+clang::ASTReader::HiddenNamesMap = /*friend*/public
+clang::ASTReader::ImportedTypedefNamesForLinkage = /*friend*/public
+clang::ASTReader::KeyDecls = /*friend*/public
+clang::ASTReader::Lookups = /*friend*/public
+clang::ASTReader::MergedDeclContexts = /*friend*/public
+clang::ASTReader::ModuleMgr = /*friend*/public
+clang::ASTReader::NumMethodPoolEntriesRead = /*friend*/public
+clang::ASTReader::NumMethodPoolTableHits = /*friend*/public
+clang::ASTReader::NumMethodPoolTableLookups = /*friend*/public
+clang::ASTReader::NumSelectorsRead = /*friend*/public
+clang::ASTReader::ObjCClassesLoaded = /*friend*/public
+clang::ASTReader::PendingBodies = /*friend*/public
+clang::ASTReader::PendingDeclChains = /*friend*/public
+clang::ASTReader::PendingDefinitions = /*friend*/public
+clang::ASTReader::PendingExceptionSpecUpdates = /*friend*/public
+clang::ASTReader::PendingFakeDefinitionData = /*friend*/public
+clang::ASTReader::PendingFakeDefinitionKind = /*friend*/public
+clang::ASTReader::PendingFakeLookupResults = /*friend*/public
+clang::ASTReader::PendingMergedDefinitionsToDeduplicate = /*friend*/public
+clang::ASTReader::PendingOdrMergeChecks = /*friend*/public
+clang::ASTReader::PendingOdrMergeFailures = /*friend*/public
+clang::ASTReader::ReadLexicalDeclContextStorage = /*friend*/public
+clang::ASTReader::RecordLocation=/*friend*/public
+clang::ASTReader::addPendingDeclContextInfo = /*friend*/public
+clang::ASTReader::getGlobalBitOffset = /*friend*/public
+clang::ASTReader::getModuleFileLevelDecls=/*friend*/public
+clang::ASTReader::getModulePreprocessedEntities=/*friend*/public
+clang::ASTReader::readExceptionSpec = /*friend*/public
+clang::ASTStmtReader::F = /*friend*/public
+clang::ASTStmtReader::ReadDeclarationNameInfo = /*friend*/public
+clang::ASTStmtReader::ReadSourceLocation = /*friend*/public
+clang::ASTStmtReader::Reader = /*friend*/public
+clang::ASTWriter::Chain = /*friend*/public
+clang::ASTWriter::Context = /*friend*/public
+clang::ASTWriter::DeclUpdate = /*friend*/public
+clang::ASTWriter::DeclUpdates = /*friend*/public
+clang::ASTWriter::ObjCClassesWithCategories = /*friend*/public
+clang::ASTWriter::ParentStmts = /*friend*/public
+clang::ASTWriter::Stream = /*friend*/public
+clang::ASTWriter::SubStmtEntries = /*friend*/public
+clang::ASTWriter::TypeExtQualAbbrev = /*friend*/public
+clang::ASTWriter::UpdatedDeclContexts = /*friend*/public
+clang::ASTWriter::WriteDeclContextLexicalBlock = /*friend*/public
+clang::ASTWriter::WriteDeclContextVisibleBlock = /*friend*/public
+clang::ASTWriter::WriteSubStmt = /*friend*/public
+clang::ASTWriter::getSubmoduleID = /*friend*/public
+clang::serialization::MultiOnDiskHashTable::MergedTable = /*friend*/
+clang::serialization::MultiOnDiskHashTable::getMergedTable = /*friend*/
+clang::serialization::reader::ASTDeclContextNameLookupTrait::MergeDataInto = @Override public final
+clang::serialization::reader::ASTDeclContextNameLookupTrait::ReadDataInto = @Override public final
+clang::serialization::reader::ASTDeclContextNameLookupTrait::ReadFileRef = @Override public final
+clang::serialization::reader::ASTDeclContextNameLookupTrait::ReadKey = @Override public final
+clang::serialization::reader::ASTDeclContextNameLookupTrait::ReadKeyDataLength = @Override public final
+clang::serialization::reader::ASTIdentifierLookupTrait::ReadData = @Override public final
+clang::serialization::reader::ASTIdentifierLookupTraitBase::ComputeHash = @Override public final
+clang::serialization::reader::ASTIdentifierLookupTraitBase::EqualKey = @Override public final
+clang::serialization::reader::ASTIdentifierLookupTraitBase::GetExternalKey = @Override public final
+clang::serialization::reader::ASTIdentifierLookupTraitBase::GetInternalKey = @Override public final
+clang::serialization::reader::ASTIdentifierLookupTraitBase::ReadKey = @Override public final
+clang::serialization::reader::ASTIdentifierLookupTraitBase::ReadKeyDataLength = @Override public final
+clang::serialization::reader::ASTSelectorLookupTrait::ComputeHash = @Override public final
+clang::serialization::reader::ASTSelectorLookupTrait::EqualKey = @Override public final
+clang::serialization::reader::ASTSelectorLookupTrait::GetInternalKey = @Override public final
+clang::serialization::reader::ASTSelectorLookupTrait::ReadData = @Override public final
+clang::serialization::reader::ASTSelectorLookupTrait::ReadKey = @Override public final
+clang::serialization::reader::ASTSelectorLookupTrait::ReadKeyDataLength = @Override public final
+clang::serialization::reader::DeclContextLookupTable::DeclContextLookupTable = private/*use EMPTY_VALUE for default value in collections*/
+clang::serialization::reader::HeaderFileInfoTrait::ReadData = @Override public final
+clang::serialization::reader::HeaderFileInfoTrait::ReadKey = @Override public final
+clang::serialization::reader::HeaderFileInfoTrait::ReadKeyDataLength = @Override public final

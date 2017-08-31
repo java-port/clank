@@ -1,0 +1,22 @@
+/////////////////////////////////////////////
+/// MODULE org.clang.analysis
+
+/// Non virtual functions with the same name
+CFGImplicitDtor.isKind()->CFGAutomaticObjDtor.isKind() [5]
+ConversionSpecifier.isDoubleArg()->PrintfConversionSpecifier.isDoubleArg() [1]
+FormatSpecifier.setUsesPositionalArg()->PrintfSpecifier.setUsesPositionalArg() [1]
+FormatSpecifier.usesPositionalArg()->PrintfSpecifier.usesPositionalArg() [1]
+GraphTraitsCFGBlock$C$P.getEntryNode()->GraphTraitsCFG$C$P.getEntryNode() [1]
+GraphTraitsCFGBlock$P.getEntryNode()->GraphTraitsCFG$P.getEntryNode() [1]
+GraphTraitsCallGraphNode$C$P.getEntryNode()->GraphTraitsCallGraph$C$P.getEntryNode() [1]
+GraphTraitsCallGraphNode$P.getEntryNode()->GraphTraitsCallGraph$P.getEntryNode() [1]
+GraphTraitsDomTreeNodeBase$CFGBlock$P.getEntryNode()->GraphTraitsDominatorTree$P.getEntryNode() [1]
+GraphTraitsDomTreeNodeBase$CFGBlock$P.nodes_begin()->GraphTraitsDominatorTree$P.nodes_begin() [1]
+GraphTraitsDomTreeNodeBase$CFGBlock$P.nodes_end()->GraphTraitsDominatorTree$P.nodes_end() [1]
+GraphTraitsInverse$CFGBlock$C$P.getEntryNode()->GraphTraitsInverse$CFG$C$P.getEntryNode() [1]
+GraphTraitsInverse$CFGBlock$P.getEntryNode()->GraphTraitsInverse$CFG$P.getEntryNode() [1]
+ImplicitCallPoint.isKind()->PreImplicitCall.isKind() [2]
+LiveVariables.create()->RelaxedLiveVariables.create() [1]
+LiveVariables.getTag()->RelaxedLiveVariables.getTag() [1]
+StmtPoint.isKind()->PreStmt.isKind() [9]
+Terminator.successors()->Goto.successors() [3]

@@ -1,0 +1,37 @@
+  @Test
+  public void test_conv_prom_p2_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/conv/conv.prom/p2.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify -std=c++0x -triple x86_64-pc-linux-gnu -ffreestanding ${LLVM_SRC}/llvm/tools/clang/test/CXX/conv/conv.prom/p2.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify -std=c++0x -triple x86_64-pc-linux-gnu -ffreestanding %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify -std=c++0x -triple x86_64-pc-linux-gnu -ffreestanding -fshort-wchar ${LLVM_SRC}/llvm/tools/clang/test/CXX/conv/conv.prom/p2.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify -std=c++0x -triple x86_64-pc-linux-gnu -ffreestanding -fshort-wchar %s");
+  }
+
+  @Test
+  public void test_conv_ptr_p2_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/conv/conv.ptr/p2.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/conv/conv.ptr/p2.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_conv_mem_p4_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/conv/conv.mem/p4.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/conv/conv.mem/p4.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_conv_prom_p4_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/conv/conv.prom/p4.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify -std=c++0x ${LLVM_SRC}/llvm/tools/clang/test/CXX/conv/conv.prom/p4.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify -std=c++0x %s");
+  }
+
+  @Test
+  public void test_conv_qual_pr6089_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/conv/conv.qual/pr6089.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/conv/conv.qual/pr6089.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+

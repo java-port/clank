@@ -1,0 +1,3 @@
+CreateFrontendAction[F][_ZL20CreateFrontendActionRN5clang16CompilerInstanceE][org.clang.frontendtool.impl:ExecuteCompilerInvocation.cpp]
+CreateFrontendBaseAction[F][_ZL24CreateFrontendBaseActionRN5clang16CompilerInstanceE][org.clang.frontendtool.impl:ExecuteCompilerInvocation.cpp]
+clang::ExecuteCompilerInvocation[F][_ZN5clang25ExecuteCompilerInvocationEPNS_16CompilerInstanceE]

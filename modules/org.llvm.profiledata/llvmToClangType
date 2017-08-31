@@ -1,0 +1,22 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.llvm.profiledata_delegates.properties"
+[DELEGATE_BODY=LLVM38]
+<include> "./commands_org.llvm.profiledata_delegates.properties"
+[DELEGATE_BODY=LLVM36]
+<include> "./commands_prev_org.llvm.profiledata_delegates.properties"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.llvm.profiledata.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[EXTRA_MEMBERS]
+llvm::coverage::CounterExpression = TEXT#public CounterExpression() { }
+llvm::coverage::CounterMappingRegion = TEXT#public CounterMappingRegion() { }

@@ -1,0 +1,12 @@
+FILE_NAME = ImutAVLTreeUIntTypeType
+CLASS_SUFFIX = </*typename ImutInfo*/ DataT, ValT>
+AVL_TREE_TYPE = ImutAVLTreeUIntTypeType<DataT, ValT>
+AVL_FACTORY_TYPE = ImutAVLFactoryUIntTypeType<DataT, ValT>
+AVL_GENERIC_ITER_TYPE = ImutAVLTreeGenericIteratorUIntTypeType<DataT, ValT>
+AVL_ORDERED_ITER_TYPE = ImutAVLTreeInOrderIteratorUIntTypeType<DataT, ValT>
+INFO_TYPE = ImutAVLTreeInfoUIntTypeType<DataT, ValT>
+CALLBACL_FUNC_TYPE = Type2Void<ValT>
+KEY_TYPE = /*uint*/int
+DATA_TYPE = DataT
+VALUE_TYPE = ValT
+CLONE_VALUE_IMPL = Native.$tryClone(V)

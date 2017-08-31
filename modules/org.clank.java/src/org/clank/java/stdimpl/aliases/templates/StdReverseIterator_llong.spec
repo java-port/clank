@@ -1,0 +1,9 @@
+FILE_NAME = StdReverseIteratorLLong
+CLASS_SUFFIX =
+INTERFACE_ITERATOR = llong$iterator<std.reverse_iteratorLLong>
+STD_DUAL_ITERATOR = std.reverse_iteratorLLong
+VALUE_TYPE = long
+VALUE_ITERATOR = llong$iterator<?>
+VALUE_ITERATOR_GENERIC = llong$iterator
+VALUE_REFERENCE = llong$ref
+VALUE_POINTER = llong$ptr

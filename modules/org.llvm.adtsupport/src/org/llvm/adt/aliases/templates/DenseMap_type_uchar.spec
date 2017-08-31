@@ -1,0 +1,11 @@
+FILE_NAME = DenseMapTypeUChar
+CLASS_SUFFIX = <KeyT>
+PAIR_TYPE = std.pairTypeUChar<KeyT>
+PAIR_NAME = std.pairTypeUChar
+KEY_TYPE = KeyT
+RAW_KEY_TYPE = Object
+VALUE_TYPE = /*uchar*/byte
+VALUE_CLASS = Class<Byte>
+DENSE_MAP_INFO = DenseMapInfo<KeyT>
+DENSE_MAP_BASE = DenseMapBaseTypeUChar<DenseMapTypeUChar<KeyT>, KeyT>
+CREATE_NEW_BUCKET_PAIR = isKeyPointerLike() ? new std.pairPtrUChar() : new std.pairTypeUChar()

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+$SPUTNIK/contrib/JConvert/jclank.sh -print -java-options=${SPUTNIK}/modules/org.clang.format/llvmToClangType $LLVM_SRC/llvm/tools/clang/unittests/Format/CleanupTest.cpp         -test=CleanupTest         > $SPUTNIK/modules/org.clang.format/test/unit/src/org/clang/format/CleanupTest.java
+$SPUTNIK/contrib/JConvert/jclank.sh -print -java-options=${SPUTNIK}/modules/org.clang.format/llvmToClangType $LLVM_SRC/llvm/tools/clang/unittests/Format/FormatTest.cpp          -test=FormatTest          > $SPUTNIK/modules/org.clang.format/test/unit/src/org/clang/format/FormatTest.java
+$SPUTNIK/contrib/JConvert/jclank.sh -print -java-options=${SPUTNIK}/modules/org.clang.format/llvmToClangType $LLVM_SRC/llvm/tools/clang/unittests/Format/FormatTestJava.cpp      -test=FormatJavaTest      > $SPUTNIK/modules/org.clang.format/test/unit/src/org/clang/format/FormatJavaTest.java
+$SPUTNIK/contrib/JConvert/jclank.sh -print -java-options=${SPUTNIK}/modules/org.clang.format/llvmToClangType $LLVM_SRC/llvm/tools/clang/unittests/Format/FormatTestJS.cpp        -test=FormatJSTest        > $SPUTNIK/modules/org.clang.format/test/unit/src/org/clang/format/FormatJSTest.java
+$SPUTNIK/contrib/JConvert/jclank.sh -print -java-options=${SPUTNIK}/modules/org.clang.format/llvmToClangType $LLVM_SRC/llvm/tools/clang/unittests/Format/FormatTestProto.cpp     -test=FormatProtoTest     > $SPUTNIK/modules/org.clang.format/test/unit/src/org/clang/format/FormatProtoTest.java
+$SPUTNIK/contrib/JConvert/jclank.sh -print -java-options=${SPUTNIK}/modules/org.clang.format/llvmToClangType $LLVM_SRC/llvm/tools/clang/unittests/Format/FormatTestSelective.cpp -test=FormatSelectiveTest > $SPUTNIK/modules/org.clang.format/test/unit/src/org/clang/format/FormatSelectiveTest.java
+$SPUTNIK/contrib/JConvert/jclank.sh -print -java-options=${SPUTNIK}/modules/org.clang.format/llvmToClangType $LLVM_SRC/llvm/tools/clang/unittests/Format/SortImportsTestJS.cpp   -test=SortImportsJSTest   > $SPUTNIK/modules/org.clang.format/test/unit/src/org/clang/format/SortImportsJSTest.java
+$SPUTNIK/contrib/JConvert/jclank.sh -print -java-options=${SPUTNIK}/modules/org.clang.format/llvmToClangType $LLVM_SRC/llvm/tools/clang/unittests/Format/SortIncludesTest.cpp    -test=SortIncludesTest    > $SPUTNIK/modules/org.clang.format/test/unit/src/org/clang/format/SortIncludesTest.java
+# Statics
+$SPUTNIK/contrib/JConvert/jclank.sh -java-options=${SPUTNIK}/modules/org.clang.format/llvmToClangType $LLVM_SRC/llvm/tools/clang/unittests/Format/FormatTestUtils.h     -test=FormatTestUtils     > $SPUTNIK/modules/org.clang.format/test/unit/src/org/clang/format/FormatTestUtils.java
+$SPUTNIK/contrib/JConvert/jclank.sh -java-options=${SPUTNIK}/modules/org.clang.format/llvmToClangType $LLVM_SRC/llvm/tools/clang/unittests/Tooling/RewriterTestContext.h -file-filter=RewriterTestContext.h > $SPUTNIK/modules/org.clang.format/test/unit/src/org/clang/format/RewriterTestContext.java
+

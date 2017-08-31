@@ -1,0 +1,11 @@
+FILE_NAME = DenseMapTypeInt
+CLASS_SUFFIX = <KeyT>
+PAIR_TYPE = std.pairTypeInt<KeyT>
+PAIR_NAME = std.pairTypeInt
+KEY_TYPE = KeyT
+RAW_KEY_TYPE = Object
+VALUE_TYPE = int
+VALUE_CLASS = Class<Integer>
+DENSE_MAP_INFO = DenseMapInfo<KeyT>
+DENSE_MAP_BASE = DenseMapBaseTypeInt<DenseMapTypeInt<KeyT>, KeyT>
+CREATE_NEW_BUCKET_PAIR = isKeyPointerLike() ? new std.pairPtrInt() : new std.pairTypeInt()

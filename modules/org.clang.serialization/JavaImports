@@ -1,0 +1,39 @@
+org.clang.ast.*
+org.clang.basic.*
+org.clang.basic.target.*
+static org.clang.basic.BasicClangGlobals.*
+org.clang.lex.*
+org.clang.sema.*
+org.llvm.bitcode.*
+org.llvm.bitcode.bitc.*
+org.llvm.bitcode.java.BitcodeFunctionPointers.*
+org.clang.serialization.*
+org.clang.serialization.aliases.*
+org.clang.serialization.llvm.*
+org.clang.serialization.llvm.impl.*
+org.clang.serialization.impl.*
+org.clang.serialization.reader.impl.*
+org.clang.serialization.java.SerializationFunctionPointers.*
+static org.clang.ast.java.AstDeclarationsRTTI.*
+static org.clang.ast.java.AstExpressionsRTTI.*
+static org.clang.ast.java.AstAttributesRTTI.*
+static org.clang.ast.java.AstTypesRTTI.*
+static org.clang.ast.java.AstRTTI.*
+static org.clang.serialization.SerializationGlobals.*
+static org.clang.serialization.impl.ASTReaderDeclStatics.*
+static org.clang.serialization.impl.ASTReaderStatics.*
+static org.clang.serialization.impl.SerializationStatics.*
+org.llvm.support.sys.path
+static org.clang.ast.java.AstFunctionPointers.*
+org.clang.basic.StringMapIteratorIdentifierInfo
+org.clang.serialization.spi.PCHContainerReaderImplementation
+org.clank.java.stdimpl.aliases.StdVector
+static org.clang.lex.java.LexRTTI.*
+org.llvm.support.llvm.support.detail.packed_endian_specific_integral
+static org.clang.ast.ASTContextGlobals.*
+static org.clang.serialization.impl.ASTReaderStatics.*
+org.llvm.adt.*
+org.llvm.adt.aliases.*
+org.llvm.support.*
+org.llvm.support.llvm.support.endian
+org.llvm.support.llvm.support.endianness

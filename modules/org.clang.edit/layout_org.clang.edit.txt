@@ -1,0 +1,10 @@
+org.clang.edit
+    Commit.java
+    EditGlobals.java
+    EditedSource.java
+    EditsReceiver.java
+    FileOffset.java
+org.clang.edit.impl
+    EditedSourceStatics.java
+    LiteralInfo.java
+    RewriteObjCFoundationAPIStatics.java

@@ -1,0 +1,4 @@
+org.llvm.irreader
+    IrreaderLlvmGlobals.java
+org.llvm.irreader.impl
+    IRReaderStatics.java

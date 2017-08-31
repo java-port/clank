@@ -1,0 +1,54 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.clang.parse_delegates.properties"
+[DELEGATE_BODY=LLVM38]
+<include> "./commands_org.clang.parse_delegates.properties"
+[DELEGATE_BODY=LLVM36]
+<include> "./commands_prev_org.clang.parse_delegates.properties"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.clang.parse.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[EXTRA_MEMBERS]
+clang::Parser = FILE#./ParserExtraMembers.java
+clang::SuppressAccessChecks = IMPLEMENTS#NativeCloneable<SuppressAccessChecks>
+clang::SuppressAccessChecks = IMPLEMENTS#NativeMoveable<SuppressAccessChecks>
+clang::SuppressAccessChecks = FILE#./extra_members/SuppressAccessChecksExtraMembers.java
+
+[MEMBER_ACCESS]
+clang::Parser::ColonIsSacred=public
+clang::Parser::Tok=public
+clang::Parser::PrevTokLocation=public
+clang::Parser::Actions=public
+clang::Parser::Diags=public
+clang::Parser::ParenCount=public
+clang::Parser::BracketCount=public
+clang::Parser::BraceCount=public
+clang::Parser::BraceCount=public
+clang::Parser::ExpectAndConsume=public
+clang::Parser::ExpectAndConsumeSemi=public
+clang::Parser::cutOffParsing=public
+clang::Parser::ConsumeAnyToken=public
+clang::Parser::Ident_AbnormalTermination=public
+clang::Parser::Ident_GetExceptionCode=public
+clang::Parser::Ident_GetExceptionInfo=public
+clang::Parser::Ident__abnormal_termination=public
+clang::Parser::Ident__exception_code=public
+clang::Parser::Ident__exception_info=public
+clang::Parser::Ident___abnormal_termination=public
+clang::Parser::Ident___exception_code=public
+clang::Parser::Ident___exception_info=public
+clang::Parser::ConsumeParen=public/*MPtr*/
+clang::Parser::ConsumeBracket=public/*MPtr*/
+clang::Parser::ConsumeBrace=public/*MPtr*/
+
+[ID_NAME_CONVERSION]
+clang::Parser::takeTemplateIdAnnotation::tok = _tok

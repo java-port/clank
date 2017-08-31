@@ -1,0 +1,3 @@
+FILE_NAME = NativeContainerULLong
+TEMPLATE_PARAMS =
+VALUE_TYPE = long

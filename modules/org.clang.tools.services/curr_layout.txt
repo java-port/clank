@@ -1,0 +1,30 @@
+org.clang.tools.services
+    ClankCompilationDataBase.java
+    ClankPreprocessorServices.java
+    ClankProgressHandler.java
+    ClankRunPreprocessorSettings.java
+    ClankRunSettings.java
+org.clang.tools.services.impl
+    AbstractClankCompilationDataBase.java
+    AdvancedPreprocessorInitializer.java
+    CompilationDBFromDumpedEntries.java
+    CompilationDBFromNB.java
+    CompilationDBFromSourceFiles.java
+    DefaultDiagnosticConsumer.java
+    DelegatingFileSystem.java
+    PreprocessorInitializer.java
+    PreprocessorInitializerHelper.java
+    PreprocessorSupport.java
+    SharedMemoryBufferCache.java
+    SharedNoStatMissingCache.java
+    SharedStatCache.java
+org.clang.tools.services.support
+    ClangUtilities.java
+    DataBaseEntry.java
+    DataBaseEntryBuilder.java
+    DataBaseIncludePath.java
+    FileInfo.java
+    FileInfoCallback.java
+    Interrupter.java
+    PrintWriter_ostream.java
+    SkippedRangeBuilder.java

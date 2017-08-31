@@ -1,0 +1,7 @@
+org.clang.tools.driver
+    AssemblerInvocation.java
+    cc1_mainGlobals.java
+    cc1as_mainGlobals.java
+    driverGlobals.java
+org.clang.tools.driver.spi.impl
+    ExecuteCLangProgramProvider.java

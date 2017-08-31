@@ -1,0 +1,9 @@
+FILE_NAME = StdReverseIteratorChar
+CLASS_SUFFIX =
+INTERFACE_ITERATOR = char$iterator<std.reverse_iteratorChar>
+STD_DUAL_ITERATOR = std.reverse_iteratorChar
+VALUE_TYPE = byte
+VALUE_ITERATOR = char$iterator<?>
+VALUE_ITERATOR_GENERIC = char$iterator
+VALUE_REFERENCE = char$ref
+VALUE_POINTER = char$ptr

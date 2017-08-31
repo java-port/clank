@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.llvm.option
+OpenIDE-Module-Localizing-Bundle: org/llvm/option/resources/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.1
+

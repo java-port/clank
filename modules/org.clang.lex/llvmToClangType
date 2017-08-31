@@ -1,0 +1,121 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.clang.lex_delegates.properties"
+[DELEGATE_BODY=LLVM38]
+<include> "./commands_org.clang.lex_delegates.properties"
+[DELEGATE_BODY=LLVM36]
+<include> "./commands_prev_org.clang.lex_delegates.properties"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.clang.lex.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[TYPES_MAP]
+#forward class
+GlobalModuleIndex=GlobalModuleIndexImplementation
+#some pointers in Lexer module is type$ptr<>
+Token * = type$ptr<Token> /*P*/
+SourceLocation * = type$ptr<SourceLocation> /*P*/
+DirectoryLookup * = type$ptr<DirectoryLookup> /*P*/
+StringRef * = type$ptr<StringRef> /*P*/
+
+[MEMBER_ACCESS]
+#clang::ModuleMap
+//clang::HMapBucket::Key = public final
+//clang::HMapBucket::Prefix = public final
+//clang::HMapBucket::Suffix = public final
+// JAVA: changed fields to be final for emulation of reinterpret_cast implementation
+clang::HMapHeader::Magic = public final
+clang::HMapHeader::MaxValueLength = public final
+clang::HMapHeader::NumBuckets = public final
+clang::HMapHeader::NumEntries = public final
+clang::HMapHeader::Reserved = public final
+clang::HMapHeader::StringsOffset = public final
+clang::HMapHeader::Version = public final
+clang::HeaderSearch::FrameworkCacheEntry=/*friend*/
+clang::HeaderSearch::findUsableModuleForFrameworkHeader=/*friend*/
+clang::HeaderSearch::findUsableModuleForHeader=/*friend*/
+clang::HeaderSearch::getFileAndSuggestModule=/*friend*/
+
+#clang::HeaderSearch
+clang::HeaderSearch::loadFrameworkModule=/*friend*/
+clang::Lexer::BufferEnd=/*friend*/
+clang::Lexer::BufferPtr=/*friend*/
+clang::Lexer::BufferStart=/*friend*/
+clang::Lexer::FormTokenWithChars=/*friend*/
+clang::Lexer::Is_PragmaLexer=/*friend*/
+
+#clang::Lexer
+clang::Lexer::Lex=/*friend*/
+clang::Lexer::PropagateLineStartLeadingSpaceInfo=/*friend*/
+clang::Lexer::SkipBytes=/*friend*/
+clang::Lexer::cutOffLexing=/*friend*/
+clang::Lexer::isNextPPTokenLParen=/*friend*/
+
+#clang::MacroInfo
+clang::MacroInfo::FromASTFile=/*friend*/
+clang::MacroInfo::setOwningModuleID=/*friend*/
+clang::ModuleMap::Attributes=public /*friend*/
+clang::ModuleMap::HeaderInfo=public /*friend*/
+clang::ModuleMap::InferredDirectories=public /*friend*/
+clang::ModuleMap::InferredDirectory=public /*friend*/
+clang::ModuleMap::LangOpts=public /*friend*/
+clang::ModuleMap::SourceModule=public /*friend*/
+clang::ModuleMap::Target=public /*friend*/
+clang::ModuleMap::UmbrellaDirs=public /*friend*/
+clang::PTHManager::GetIdentifierInfo=/*friend*/
+
+#clang::PTHManager
+clang::PTHManager::SpellingBase=/*friend*/
+
+clang::PreprocessingRecord::PPEntityID=public
+clang::PreprocessingRecord::RegisterMacroDefinition = /*friend*/public
+clang::PreprocessingRecord::allocateLoadedEntities = /*friend*/public
+clang::PreprocessingRecord::getLoadedPreprocessedEntity = /*friend*/public
+clang::PreprocessingRecord::getNumLoadedPreprocessedEntities = /*friend*/public
+clang::PreprocessingRecord::getPPEntityID = /*friend*/public
+clang::PreprocessingRecord::getPreprocessedEntity = /*friend*/public
+clang::Preprocessor::AllocateDefMacroDirective = /*friend*/public
+clang::Preprocessor::AllocateUndefMacroDirective = /*friend*/public
+clang::Preprocessor::AllocateVisibilityMacroDirective = /*friend*/public
+clang::Preprocessor::ExitCachingLexMode=/*friend*/
+clang::Preprocessor::InCachingLexMode=/*friend*/
+clang::Preprocessor::InMacroArgPreExpansion=/*friend*/
+
+#Preprocessor
+clang::Preprocessor::MacroArgCache=/*friend*/
+clang::Preprocessor::cacheMacroExpandedTokens=/*friend*/
+clang::TokenLexer::PropagateLineStartLeadingSpaceInfo=/*friend*/
+
+#clang::TokenLexer
+clang::TokenLexer::Tokens=/*friend*/
+
+[EXTRA_MEMBERS]
+clang::MacroDefinition = IMPLEMENTS#NativePOD<MacroDefinition>
+clang::MacroDefinition = FILE#./extra_members/MacroDefinitionExtraMembers.java
+clang::ModuleMap::Attributes = FILE#./extra_members/AttributesExtraMembers.java
+clang::ModuleMap::Attributes = IMPLEMENTS#NativePOD<Attributes>
+clang::ModuleMap::InferredDirectory = FILE#./extra_members/InferredDirectoryExtraMembers.java
+clang::ModuleMap::KnownHeader = IMPLEMENTS#Native.NativePOD<KnownHeader>
+clang::ModuleMap::KnownHeader = IMPLEMENTS#NativeMoveable<KnownHeader>
+clang::ModuleMap::KnownHeader = FILE#./extra_members/KnownHeaderExtraMembers.java
+clang::PTHManager = EXTENDS#NativeTrace.CreateDestroy$Tracker
+clang::PTHManager = FILE#./extra_members/PTHManagerExtraMembers.java
+clang::Preprocessor = IMPLEMENTS#org.clang.basic.spi.PreprocessorImplementation
+clang::Preprocessor::MacroState = IMPLEMENTS#NativePOD<MacroState>
+clang::Preprocessor::MacroState = IMPLEMENTS#NativeMoveable<MacroState>
+clang::Preprocessor::MacroState = FILE#./extra_members/MacroStateExtraMembers.java
+clang::Preprocessor::SubmoduleState = IMPLEMENTS#NativeCloneable<SubmoduleState>
+clang::Preprocessor::SubmoduleState = IMPLEMENTS#NativeMoveable<SubmoduleState>
+clang::Preprocessor::SubmoduleState = FILE#./extra_members/SubmoduleStateExtraMembers.java
+clang::TokenValue = IMPLEMENTS#Native.NativeComparable<TokenValue>
+clang::TokenValue = IMPLEMENTS#NativePOD<TokenValue>
+clang::TokenValue = IMPLEMENTS#NativeMoveable<TokenValue>
+clang::TokenValue = FILE#./extra_members/TokenValueExtraMembers.java

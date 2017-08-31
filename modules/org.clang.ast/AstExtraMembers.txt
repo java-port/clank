@@ -1,0 +1,696 @@
+[EXTRA_MEMBERS]
+(anonymous namespace)::ASTDumper=FILE#./extra_members/ASTDumperExtraMembers.java
+(anonymous namespace)::Cleanup = IMPLEMENTS#NativeCloneable<Cleanup>
+(anonymous namespace)::Cleanup = TEXT#/*for collections*//*package*/Cleanup() { this(null, false);}
+(anonymous namespace)::Cleanup = TEXT#@Override public Cleanup clone() { return new Cleanup(this.Value.getPointer(), this.Value.getBool()); }
+(anonymous namespace)::CompoundAssignSubobjectHandler=IMPLEMENTS#SubobjectHandler
+(anonymous namespace)::CompoundAssignSubobjectHandler=TEXT#@Override public AccessKinds AccessKind() {return AccessKind;}
+(anonymous namespace)::CompoundAssignSubobjectHandler=TEXT#public CompoundAssignSubobjectHandler(EvalInfo I, Expr E, QualType Q, BinaryOperatorKind O, APValue R) {this.Info $EQ I; this.E $EQ E; this.PromotedLHSType $EQ Q; this.Opcode $EQ O; this.RHS $EQ R;}
+
+#extracted interface SubobjectHandler instead of general template
+(anonymous namespace)::ExtractSubobjectHandler=IMPLEMENTS#SubobjectHandler
+(anonymous namespace)::ExtractSubobjectHandler=TEXT#@Override public AccessKinds AccessKind() {return AccessKind;}
+(anonymous namespace)::ExtractSubobjectHandler=TEXT#public ExtractSubobjectHandler(EvalInfo I, APValue R) { this.Info $EQ I; this.Result $EQ R; }
+(anonymous namespace)::FinalOverriders::OverriderInfo = IMPLEMENTS#NativeCloneable<OverriderInfo>
+(anonymous namespace)::FinalOverriders::OverriderInfo = IMPLEMENTS#NativeMoveable<OverriderInfo>
+(anonymous namespace)::FinalOverriders::OverriderInfo = FILE#./extra_members/OverriderInfoExtraMembers.java
+
+(anonymous namespace)::GetContainedAutoVisitor=TEXT#@Override public AutoType /*P*/ $TypeVisitor$RetTy() { return (AutoType /*P*/)null; }
+(anonymous namespace)::IncDecSubobjectHandler=IMPLEMENTS#SubobjectHandler
+(anonymous namespace)::IncDecSubobjectHandler=TEXT#@Override public AccessKinds AccessKind() {return AccessKind;}
+(anonymous namespace)::IncDecSubobjectHandler=TEXT#public IncDecSubobjectHandler(EvalInfo I, Expr E, AccessKinds AK, APValue Old) { this.Info $EQ I; this.E $EQ E; this.AccessKind $EQ AK; this.Old $EQ Old; }
+(anonymous namespace)::LVBase=IMPLEMENTS#Destructors.ClassWithDestructor
+(anonymous namespace)::LVBase=TEXT#public static int/*uint*/ $sizeof_LVBase() { return 1; }
+(anonymous namespace)::LVBase=TEXT#public void $destroy() {   }
+(anonymous namespace)::LValue=IMPLEMENTS#LValueBase
+(anonymous namespace)::MemberPointerBase=IMPLEMENTS#Destructors.ClassWithDestructor
+(anonymous namespace)::MemberPointerBase=TEXT#public @Override void $destroy() {}
+(anonymous namespace)::MemberPointerBase=TEXT#public static int/*uint*/ $sizeof_MemberPointerBase() { throw new UnsupportedOperationException("$sizeof_MemberPointerBase() not implemented yet"); }
+(anonymous namespace)::ModifySubobjectHandler=IMPLEMENTS#SubobjectHandler
+(anonymous namespace)::ModifySubobjectHandler=FILE#./extra_members/ModifySubobjectHandlerExtraMemebrs.java
+
+(anonymous namespace)::NestedNameSpecifierAnnotation=TEXT#public type$ptr<?> $trailingObject; // see Sema::SaveNestedNameSpecifierAnnotation at SemaCXXScopeSpec.cpp:996
+(anonymous namespace)::SubobjectDesignator = FILE#./extra_members/SubobjectDesignatorExtraMembers.java
+(anonymous namespace)::SynthesizeIvarChunk = IMPLEMENTS#, NativeCloneable<SynthesizeIvarChunk>
+(anonymous namespace)::SynthesizeIvarChunk = FILE#./extra_members/SynthesizeIvarChunkExtraMembers.java
+
+(anonymous namespace)::TemplateDiff::DiffTree::DiffNode = IMPLEMENTS#NativeCloneable<DiffNode>
+(anonymous namespace)::TemplateDiff::DiffTree::DiffNode = IMPLEMENTS#NativeMoveable<DiffNode>
+(anonymous namespace)::TemplateDiff::DiffTree::DiffNode = FILE#./extra_members/TemplateDiffDiffTreeDiffNodeExtraMembers.java
+(anonymous namespace)::TemplateDiff::DiffTree::TemplateArgumentInfo=FILE#./extra_members/TemplateDiffDiffTreeTemplateArgumentInfoExtraMembers.java
+(anonymous namespace)::TemplateDiff::TSTiterator = FILE#./extra_members/TSTiteratorExtraMembers.java
+(anonymous namespace)::TemplateDiff::TSTiterator = IMPLEMENTS#type$iterator<TSTiterator, TemplateArgument>
+(anonymous namespace)::TemplateDiff::TSTiterator::InternalIterator = FILE#./extra_members/InternalIteratorExtraMembers.java
+(anonymous namespace)::TemplateDiff::TSTiterator::InternalIterator = IMPLEMENTS#type$iterator<InternalIterator, TemplateArgument>
+(anonymous namespace)::bad=TEXT#public bad() {}
+(anonymous namespace)::good=TEXT#public good() {}
+#llvm::DenseMapInfo<clang::BaseSubobject>
+_ZN4llvm12DenseMapInfoIN5clang13BaseSubobjectEEE=IMPLEMENTS#
+
+#llvm::DenseMapInfo<clang::ast_type_traits::ASTNodeKind>
+_ZN4llvm12DenseMapInfoIN5clang15ast_type_traits11ASTNodeKindEEE=TEXT#private static final DenseMapInfoASTNodeKind $INFO $EQ new DenseMapInfoASTNodeKind();
+_ZN4llvm12DenseMapInfoIN5clang15ast_type_traits11ASTNodeKindEEE=TEXT#private DenseMapInfoASTNodeKind() {}
+_ZN4llvm12DenseMapInfoIN5clang15ast_type_traits11ASTNodeKindEEE=TEXT#public static DenseMapInfoASTNodeKind $Info() { return $INFO; }
+#llvm::DenseMapInfo<clang::ast_type_traits::DynTypedNode>
+_ZN4llvm12DenseMapInfoIN5clang15ast_type_traits12DynTypedNodeEEE=TEXT#private static final DenseMapInfoDynTypedNode $INFO $EQ new DenseMapInfoDynTypedNode();
+_ZN4llvm12DenseMapInfoIN5clang15ast_type_traits12DynTypedNodeEEE=TEXT#private DenseMapInfoDynTypedNode() {}
+_ZN4llvm12DenseMapInfoIN5clang15ast_type_traits12DynTypedNodeEEE=TEXT#public static DenseMapInfoDynTypedNode $Info() { return $INFO; }
+#clang::CanProxyAdaptor<clang::RecordType>
+_ZN5clang15CanProxyAdaptorINS_10RecordTypeEEE=IMPLEMENTS#CanProxyAdaptor<RecordType>
+#clang::CanProxyAdaptor<clang::TypeOfType>
+_ZN5clang15CanProxyAdaptorINS_10TypeOfTypeEEE=IMPLEMENTS#CanProxyAdaptor<TypeOfType>
+#clang::CanProxyAdaptor<clang::VectorType>
+_ZN5clang15CanProxyAdaptorINS_10VectorTypeEEE=IMPLEMENTS#CanProxyAdaptor<VectorType>
+#clang::CanProxyAdaptor<clang::ComplexType>
+_ZN5clang15CanProxyAdaptorINS_11ComplexTypeEEE=IMPLEMENTS#CanProxyAdaptor<ComplexType>
+#clang::CanProxyAdaptor<clang::PointerType>
+_ZN5clang15CanProxyAdaptorINS_11PointerTypeEEE=IMPLEMENTS#CanProxyAdaptor<PointerType>
+#clang::CanProxyAdaptor<clang::DecltypeType>
+_ZN5clang15CanProxyAdaptorINS_12DecltypeTypeEEE=IMPLEMENTS#CanProxyAdaptor<DecltypeType>
+#clang::CanProxyAdaptor<clang::FunctionType>
+_ZN5clang15CanProxyAdaptorINS_12FunctionTypeEEE=IMPLEMENTS#CanProxyAdaptor<FunctionType>
+#clang::CanProxyAdaptor<clang::ExtVectorType>
+_ZN5clang15CanProxyAdaptorINS_13ExtVectorTypeEEE=IMPLEMENTS#CanProxyAdaptor<ExtVectorType>
+#clang::CanProxyAdaptor<clang::ReferenceType>
+_ZN5clang15CanProxyAdaptorINS_13ReferenceTypeEEE=IMPLEMENTS#CanProxyAdaptor<ReferenceType>
+#clang::CanProxyAdaptor<clang::ObjCObjectType>
+_ZN5clang15CanProxyAdaptorINS_14ObjCObjectTypeEEE=IMPLEMENTS#CanProxyAdaptor<ObjCObjectType>
+#clang::CanProxyAdaptor<clang::BlockPointerType>
+_ZN5clang15CanProxyAdaptorINS_16BlockPointerTypeEEE=IMPLEMENTS#CanProxyAdaptor<BlockPointerType>
+#clang::CanProxyAdaptor<clang::FunctionProtoType>
+_ZN5clang15CanProxyAdaptorINS_17FunctionProtoTypeEEE=IMPLEMENTS#CanProxyAdaptor<FunctionProtoType>
+#clang::CanProxyAdaptor<clang::MemberPointerType>
+_ZN5clang15CanProxyAdaptorINS_17MemberPointerTypeEEE=IMPLEMENTS#CanProxyAdaptor<MemberPointerType>
+#clang::CanProxyAdaptor<clang::UnaryTransformType>
+_ZN5clang15CanProxyAdaptorINS_18UnaryTransformTypeEEE=IMPLEMENTS#CanProxyAdaptor<UnaryTransformType>
+#clang::CanProxyAdaptor<clang::FunctionNoProtoType>
+_ZN5clang15CanProxyAdaptorINS_19FunctionNoProtoTypeEEE=IMPLEMENTS#CanProxyAdaptor<FunctionNoProtoType>
+#clang::CanProxyAdaptor<clang::LValueReferenceType>
+_ZN5clang15CanProxyAdaptorINS_19LValueReferenceTypeEEE=IMPLEMENTS#CanProxyAdaptor<LValueReferenceType>
+#clang::CanProxyAdaptor<clang::RValueReferenceType>
+_ZN5clang15CanProxyAdaptorINS_19RValueReferenceTypeEEE=IMPLEMENTS#CanProxyAdaptor<RValueReferenceType>
+#clang::CanProxyAdaptor<clang::TemplateTypeParmType>
+_ZN5clang15CanProxyAdaptorINS_20TemplateTypeParmTypeEEE=IMPLEMENTS#CanProxyAdaptor<TemplateTypeParmType>
+#clang::CanProxyAdaptor<clang::ObjCObjectPointerType>
+_ZN5clang15CanProxyAdaptorINS_21ObjCObjectPointerTypeEEE=IMPLEMENTS#CanProxyAdaptor<ObjCObjectPointerType>
+#clang::CanProxyAdaptor<clang::DependentSizedExtVectorType>
+_ZN5clang15CanProxyAdaptorINS_27DependentSizedExtVectorTypeEEE=IMPLEMENTS#CanProxyAdaptor<DependentSizedExtVectorType>
+#clang::CanProxyAdaptor<clang::TagType>
+_ZN5clang15CanProxyAdaptorINS_7TagTypeEEE=IMPLEMENTS#CanProxyAdaptor<TagType>
+#clang::CanProxyAdaptor<clang::EnumType>
+_ZN5clang15CanProxyAdaptorINS_8EnumTypeEEE=IMPLEMENTS#CanProxyAdaptor<EnumType>
+#clang::BeforeThanCompare<clang::RawComment>
+_ZN5clang17BeforeThanCompareINS_10RawCommentEEE=IMPLEMENTS#TypeType2Bool<RawComment>
+_ZN5clang17BeforeThanCompareINS_10RawCommentEEE=IMPLEMENTS#Native.ComparatorLower<RawComment, RawComment>
+_ZN5clang17BeforeThanCompareINS_10RawCommentEEE=TEXT#@Override public boolean $less(RawComment one, RawComment other) { return $call(one, other); }
+_ZN5clang17BeforeThanCompareINS_10RawCommentEEE=TEXT#@Override public boolean $call(final /*const*/ RawComment /*&*/ LHS, final /*const*/ RawComment /*&*/ RHS) {return $call$Ref(LHS, RHS);}
+
+#clang::RedeclarableTemplateDecl::SpecEntryTraits<clang::FunctionTemplateSpecializationInfo>
+_ZN5clang24RedeclarableTemplateDecl15SpecEntryTraitsINS_34FunctionTemplateSpecializationInfoEEE=IMPLEMENTS#SpecEntryTraits$Info<FunctionTemplateSpecializationInfo, FunctionDecl>
+_ZN5clang24RedeclarableTemplateDecl15SpecEntryTraitsINS_34FunctionTemplateSpecializationInfoEEE=TEXT#private SpecEntryTraitsFunctionTemplateSpecializationInfo() { }
+_ZN5clang24RedeclarableTemplateDecl15SpecEntryTraitsINS_34FunctionTemplateSpecializationInfoEEE=TEXT#private static final SpecEntryTraits$Info $INFO $EQ new SpecEntryTraitsFunctionTemplateSpecializationInfo();
+_ZN5clang24RedeclarableTemplateDecl15SpecEntryTraitsINS_34FunctionTemplateSpecializationInfoEEE=TEXT#public static SpecEntryTraits$Info<FunctionTemplateSpecializationInfo, FunctionDecl> $Info() { return $INFO; }
+## nested unnamed union
+_ZN5clang4TypeE_Unnamed_union11=FILE#./extra_members/TypeUnnamedUnion11ExtraMembers.java
+
+#extracted interface LValueBase instead of general template
+clang::APValue=IMPLEMENTS#LValueBase
+
+clang::APValue=IMPLEMENTS#NativeSwappable
+clang::APValue=TEXT#@Override public void swap(final NativeSwappable /*&*/ RHS) {swap((APValue)RHS);}
+clang::APValue=IMPLEMENTS#NativeCloneable<APValue>
+clang::APValue=TEXT#@Override public APValue clone() { return new APValue(this); }
+clang::APValue=FILE#./extra_members/APValueExtraMembers.java
+
+clang::APValue::AddrLabelDiffData=IMPLEMENTS#Destructors.ClassWithDestructor
+clang::APValue::AddrLabelDiffData=TEXT#@Override public void $destroy() {}
+clang::APValue::LV=TEXT#public static int $sizeof_LV(){return 1;}
+clang::APValue::LValuePathEntry=IMPLEMENTS#NativeCloneable<LValuePathEntry>
+clang::APValue::LValuePathEntry=TEXT#@Override public LValuePathEntry clone() { return new LValuePathEntry(this); }
+clang::APValue::LValuePathEntry=TEXT#public static int/*uint*/ $sizeof_LValuePathEntry() {return 1;}
+clang::APValue::NoLValuePath=TEXT#public NoLValuePath() {}
+clang::APValue::UninitArray=TEXT#public UninitArray() {}
+clang::APValue::UninitStruct=TEXT#public UninitStruct() {}
+clang::ASTContext=IMPLEMENTS#NativeMemory.Allocator
+clang::ASTContext::CanonicalTemplateTemplateParm=EXTENDS#FoldingSetImpl.NodeImpl
+clang::ASTContext::RawCommentAndCacheFlags=IMPLEMENTS#NativePOD<RawCommentAndCacheFlags>
+clang::ASTContext::RawCommentAndCacheFlags = FILE#./extra_members/RawCommentAndCacheFlagsExtraMembers.java
+clang::ASTContext::import_iterator=IMPLEMENTS#type$iterator<import_iterator,ImportDecl/*P*/>
+clang::ASTContext::import_iterator = FILE#./extra_members/import_iteratorExtraMembers.java
+
+clang::ASTRecordLayout::VBaseInfo=IMPLEMENTS#NativeCloneable<VBaseInfo>
+clang::ASTRecordLayout::VBaseInfo=TEXT#@Override public VBaseInfo clone() { return new VBaseInfo(this); }
+clang::ASTTemplateArgumentListInfo = FILE#./extra_members/ASTTemplateArgumentListInfoExtraMembers.java
+clang::ASTTemplateArgumentListInfo = EXTENDS#TrailingObjectsJavaBase<ASTTemplateArgumentListInfo, TemplateArgumentLoc>
+clang::ASTTemplateKWAndArgsInfo = FILE#./extra_members/ASTTemplateKWAndArgsInfoExtraMembers.java
+clang::ASTUnresolvedSet = FILE#./extra_members/ASTUnresolvedSetExtraMembers.java
+
+clang::AcquireCapabilityAttr=IMPLEMENTS#org.clang.ast.java.ArgsAttrBase
+clang::AcquiredAfterAttr=IMPLEMENTS#org.clang.ast.java.ArgsAttrBase
+clang::AcquiredBeforeAttr=IMPLEMENTS#org.clang.ast.java.ArgsAttrBase
+clang::AdjustedTypeLoc=TEXT#@Override protected Class<? extends AdjustedType> getTypeClass() { return AdjustedType.class; }
+clang::AlignedAttr::(anonymous) = FILE#./extra_members/Unnamed_union1ExtraMembers.java
+clang::ArrayLocInfo = IMPLEMENTS#NativeCloneable<ArrayLocInfo>
+clang::ArrayLocInfo = FILE#./extra_members/ArrayLocInfoExtraMembers.java
+clang::ArrayTypeLoc=TEXT#@Override protected Class<? extends ArrayType> getTypeClass() { return ArrayType.class; }
+clang::AssertExclusiveLockAttr=IMPLEMENTS#org.clang.ast.java.ArgsAttrBase
+clang::AssertSharedLockAttr=IMPLEMENTS#org.clang.ast.java.ArgsAttrBase
+clang::AtomicTypeLoc=TEXT#@Override protected Class<AtomicType> getTypeClass() { return AtomicType.class; }
+clang::AtomicTypeLocInfo = FILE#./extra_members/AtomicTypeLocInfoExtraMembers.java
+clang::AtomicTypeLocInfo = IMPLEMENTS#NativeCloneable<AtomicTypeLocInfo>
+clang::AttributedLocInfo = IMPLEMENTS#NativeCloneable<AttributedLocInfo>
+clang::AttributedLocInfo = FILE#./extra_members/AttributedLocInfoExtraMembers.java
+
+clang::AttributedStmt = TEXT#private final type$ptr</*const*/ Attr /*P*/ /*const*/ /*P*/> $Attrs;
+clang::AttributedTypeLoc=TEXT#@Override protected Class<AttributedType> getTypeClass() { return AttributedType.class; }
+clang::AutoTypeLoc=TEXT#@Override protected Class<AutoType> getTypeClass() { return AutoType.class; }
+clang::AvailabilitySpec = FILE#./extra_members/AvailabilitySpecExtraMembers.java
+clang::AvailabilitySpec = IMPLEMENTS#NativeCloneable<AvailabilitySpec>
+clang::AvailabilitySpec = IMPLEMENTS#NativeMoveable<AvailabilitySpec>
+
+clang::BaseSubobject=IMPLEMENTS#NativePOD<BaseSubobject>
+clang::BaseSubobject=TEXT#@Override public BaseSubobject clone() { return new BaseSubobject(this); }
+clang::BlockDecl::Capture = FILE#./extra_members/CaptureExtraMembers.java
+clang::BlockDecl::Capture = IMPLEMENTS#NativeCloneable<Capture>
+
+clang::BlockPointerTypeLoc=TEXT#@Override protected Class<BlockPointerType> getTypeClass() { return BlockPointerType.class; }
+clang::BuiltinLocInfo = IMPLEMENTS#NativeCloneable<BuiltinLocInfo>
+clang::BuiltinLocInfo = FILE#./extra_members/BuiltinLocInfoExtraMembers.java
+clang::BuiltinTypeLoc = FILE#./extra_members/BuiltinTypeLocExtraMembers.java
+clang::CStyleCastExpr = IMPLEMENTS#ITrailingObjectsJavaBase<CStyleCastExpr>
+clang::CStyleCastExpr = FILE#./extra_members/CStyleCastExprExtraMembers.java
+clang::CXXBasePath=TEXT#@Override public CXXBasePath clone() { return new CXXBasePath(this); }
+
+clang::CXXBasePathElement=IMPLEMENTS#NativePOD<CXXBasePathElement>
+clang::CXXBasePathElement=TEXT#@Override public CXXBasePathElement clone() { return new CXXBasePathElement().$assign(this); }
+clang::CXXBasePathElement=TEXT#@Override public CXXBasePathElement $assign(CXXBasePathElement $Prm0) {
+clang::CXXBasePathElement=TEXT#  this.Base $EQ $Prm0.Base;
+clang::CXXBasePathElement=TEXT#  this.Class $EQ $Prm0.Class;
+clang::CXXBasePathElement=TEXT#  this.SubobjectNumber $EQ $Prm0.SubobjectNumber;
+clang::CXXBasePathElement=TEXT#  return this;
+clang::CXXBasePathElement=TEXT#}
+
+clang::CXXBasePaths=IMPLEMENTS#Iterable<CXXBasePath>
+clang::CXXBasePaths=TEXT#@Override public java.util.Iterator<CXXBasePath> iterator() {return new JavaIterator(begin(), end());}
+clang::CXXConstCastExpr = FILE#./extra_members/CXXConstCastExprExtraMembers.java
+clang::CXXConstructorDecl = FILE#./extra_members/CXXConstructorDeclExtraMembers.java
+clang::CXXCtorInitializer = FILE#./extra_members/CXXCtorInitializerExtraMembers.java
+clang::CXXDependentScopeMemberExpr = FILE#./extra_members/CXXDependentScopeMemberExprExtraMembers.java
+clang::CXXDynamicCastExpr = FILE#./extra_members/CXXDynamicCastExprExtraMembers.java
+clang::CXXFunctionalCastExpr = FILE#./extra_members/CXXFunctionalCastExprExtraMembers.java
+
+#Trailing Objects support
+#2 trailing types
+clang::CXXMethodDecl=IMPLEMENTS#org.clang.basic.java.CXXMethodDeclImplementation
+clang::CXXReinterpretCastExpr = FILE#./extra_members/CXXReinterpretCastExprExtraMembers.java
+clang::CXXSpecialName=TEXT#public static FoldingSetTrait<CXXSpecialName> TRAIT;
+clang::CXXStaticCastExpr = FILE#./extra_members/CXXStaticCastExprExtraMembers.java
+clang::CXXTryStmt = IMPLEMENTS#ITrailingObjectsJavaBase<CXXTryStmt>
+clang::CXXTryStmt = FILE#./extra_members/CXXTryStmtExtraMembers.java
+clang::CXXUnresolvedConstructExpr = FILE#./extra_members/CXXUnresolvedConstructExprExtraMembers.java
+clang::CXXUnresolvedConstructExpr = IMPLEMENTS#ITrailingObjectsJavaBase<CXXUnresolvedConstructExpr>
+clang::CanProxyAdaptor<clang::FunctionProtoType> = IMPLEMENTS#ParamType
+clang::CanProxyBase=TEXT#public CanProxyBase() {this.Stored $EQ new CanQual();}
+clang::CanProxyBase=TEXT#public CanProxyBase(JD$Move _dparam, CanProxyBase<T> /*&&*/$Prm0) {this.Stored $EQ $Prm0.Stored; $Prm0.Stored $EQ null;}
+clang::CanQual = IMPLEMENTS#simplify_type
+clang::CanQual = IMPLEMENTS#NativeHashable
+clang::CanQual = IMPLEMENTS#NativePOD<CanQual<?>>
+clang::CanQual = FILE#./extra_members/CanQualExtraMembers.java
+
+clang::CanTypeIterator=TEXT#public CanTypeIterator(CanTypeIterator $Prm0) { super(JD$BaseOf.INSTANCE, $Prm0); }
+clang::CanTypeIterator=TEXT#public CanTypeIterator(JD$Move _dparm, CanTypeIterator $Prm0) { super(JD$Move.INSTANCE, $Prm0); }
+clang::CanTypeIterator=TEXT#@Override public CanTypeIterator clone() { return new CanTypeIterator(this); }
+clang::CapturedDecl = FILE#./extra_members/CapturedDeclExtraMembers.java
+clang::CapturedStmt = FILE#./extra_members/CapturedStmtExtraMembers.java
+clang::CapturedStmt = IMPLEMENTS#ITrailingObjectsJavaBase<CapturedStmt>
+clang::CapturedStmt::Capture = FILE#./extra_members/CaptureExtraMembers.java
+clang::CapturedStmt::Capture = IMPLEMENTS#NativeCloneable<Capture>
+
+clang::CharUnits = IMPLEMENTS#ComparableLowerGreater
+clang::CharUnits = IMPLEMENTS#NativePOD<CharUnits>
+clang::CharUnits = IMPLEMENTS#NativeMoveable<CharUnits>
+clang::CharUnits = FILE#./extra_members/CharUnitsExtraMembers.java
+
+clang::ClassTemplateSpecializationDecl = IMPLEMENTS#HasGetTemplateArgs$TemplateArgumentList
+clang::ClassTemplateSpecializationDecl = IMPLEMENTS#HasGetSpecializedTemplate<ClassTemplateDecl>
+clang::ComplexTypeLoc=TEXT#@Override protected Class<ComplexType> getTypeClass() { return ComplexType.class; }
+clang::ConstDeclVisitor=TEXT#public default void $destroy$ConstDeclVisitor() { }
+clang::ConstStmtIterator=TEXT#@Override public ConstStmtIterator clone() { return new ConstStmtIterator(this); }
+clang::ConstStmtVisitor=TEXT#public default void $destroy$ConstStmtVisitor() {/*StmtVisitorBase.super.$destroy$StmtVisitorBase();*/ }
+clang::ConstantArrayTypeLoc=TEXT#@Override protected Class<ConstantArrayType> getTypeClass() { return ConstantArrayType.class; }
+
+clang::DecayedTypeLoc=TEXT#@Override protected Class<DecayedType> getTypeClass() { return DecayedType.class; }
+clang::Decl=EXTENDS#FoldingSetImpl.NodeImpl
+clang::Decl = FILE#./extra_members/DeclExtraMembers.java
+clang::Decl::redecl_iterator=TEXT#@Override public redecl_iterator clone() { return new redecl_iterator(this); }
+clang::Decl::redecl_iterator=TEXT#@Override public boolean $eq(Object other) { return $eq_redecl_iterator(this, (redecl_iterator)other); }
+clang::DeclAccessPair=IMPLEMENTS#NativeCloneable<DeclAccessPair>
+clang::DeclAccessPair = FILE#./extra_members/DeclAccessPairExtraMembers.java
+
+clang::DeclContext=IMPLEMENTS#org.clang.basic.declcontext.DeclContextImplementation
+clang::DeclContext=FILE#./extra_members/DeclContextExtraMembers.java
+clang::DeclContext::all_lookups_iterator=IMPLEMENTS#type$iterator<all_lookups_iterator, DeclContextLookupResult>
+clang::DeclContext::all_lookups_iterator=TEXT#@Override public boolean $noteq(Object other) { return $noteq_all_lookups_iterator(this, (all_lookups_iterator)other); }
+clang::DeclContext::all_lookups_iterator=TEXT#@Override public boolean $eq(Object other) { return $eq_all_lookups_iterator(this, (all_lookups_iterator)other); }
+clang::DeclContext::all_lookups_iterator=TEXT#@Override public all_lookups_iterator clone() { return new all_lookups_iterator(this); }
+#clang::DeclContext::decl_iterator=TEXT#@Override public Decl $set(Decl/*P*/ value) { return this.Current = value; }
+#clang::DeclContext::decl_iterator=TEXT#@Override public Decl $deref() { return this.Current; }
+clang::DeclContext::ddiag_iterator=IMPLEMENTS#type$iterator<ddiag_iterator, DependentDiagnostic /*P*/>
+clang::DeclContext::ddiag_iterator=TEXT#@Override public boolean $eq(Object other) { return this.$eq((ddiag_iterator)other); }
+clang::DeclContext::ddiag_iterator=TEXT#@Override public boolean $noteq(Object other) { return this.$noteq((ddiag_iterator)other); }
+clang::DeclContext::ddiag_iterator=TEXT#@Override public ddiag_iterator clone() { return new ddiag_iterator(this); }
+clang::DeclContext::decl_iterator=IMPLEMENTS#type$iterator<decl_iterator, Decl/*P*/>
+#clang::DeclContext::decl_iterator=IMPLEMENTS#type$ref<Decl/*P*/>
+clang::DeclContext::decl_iterator=TEXT#@Override public boolean $noteq(Object other) { return $noteq_decl_iterator(this, (decl_iterator)other); }
+clang::DeclContext::decl_iterator=TEXT#@Override public boolean $eq(Object other) { return $eq_decl_iterator(this, (decl_iterator)other); }
+clang::DeclContext::decl_iterator=TEXT#@Override public decl_iterator clone() { return new decl_iterator(this); }
+clang::DeclContext::filtered_decl_iterator=IMPLEMENTS#type$iterator<filtered_decl_iterator, SpecificDecl>
+clang::DeclContext::filtered_decl_iterator = FILE#./extra_members/filtered_decl_iteratorExtraMembers.java
+clang::DeclContext::specific_decl_iterator=IMPLEMENTS#std.iterator<std.forward_iterator_tag, SpecificDecl>
+clang::DeclContext::specific_decl_iterator = FILE#./extra_members/specific_decl_iteratorExtraMembers.java
+clang::DeclContext::udir_iterator=TEXT#@Override public udir_iterator clone() { return new udir_iterator(this); }
+clang::DeclContextLookupResult = IMPLEMENTS#Iterable<NamedDecl /*P*/>, NativeMoveable<DeclContextLookupResult>
+clang::DeclContextLookupResult = FILE#./extra_members/DeclContextLookupResultExtraMembers.java
+
+clang::DeclContextLookupResult::iterator=TEXT#@Override public iterator clone() { return new iterator(this); }
+
+clang::DeclGroup=EXTENDS#TrailingObjectsJavaBase<DeclGroup, Decl /*P*/>
+clang::DeclGroup=TEXT#@Override protected int getTrailingObjects$Offset(Class<?> clazz) { assert clazz $EQ$EQ Decl.class : "unexpected class " + clazz; return 0; }
+clang::DeclGroupRef=IMPLEMENTS#Iterable<Decl>
+clang::DeclGroupRef=TEXT#@Override public java.util.Iterator<Decl> iterator() {return new JavaIterator<>(begin(), end());}
+clang::DeclRefExpr = FILE#./extra_members/DeclRefExprExtraMembers.java
+#4 trailing types
+clang::DeclarationName = IMPLEMENTS#NativeCloneable<DeclarationName>, NativeHashable
+clang::DeclarationName = IMPLEMENTS#NativeHashable, ComparableLower
+clang::DeclarationName = FILE#./extra_members/DeclarationNameExtraMembers.java
+clang::DeclarationNameExtra=EXTENDS#FoldingSetImpl.NodeImpl
+clang::DeclaratorChunk::ParamInfo=IMPLEMENTS#NativeCloneable<ParamInfo>
+clang::DeclaratorChunk::ParamInfo=TEXT#@Override public ParamInfo clone() { return new ParamInfo(this.Ident, this.IdentLoc, this.Param, this.DefaultArgTokens); }
+clang::DecltypeTypeLoc=TEXT#@Override protected Class<DecltypeType> getTypeClass() { return DecltypeType.class; }
+
+clang::DefaultArgStorage=TEXT#protected abstract Class<ParmDecl> getParmDeclClass();
+clang::DefaultArgStorage=TEXT#protected abstract Class<ArgType> getArgTypeClass();
+clang::DependentFunctionTemplateSpecializationInfo = FILE#./extra_members/DependentFunctionTemplateSpecializationInfoExtraMembers.java
+clang::DependentNameLocInfo = FILE#./extra_members/DependentNameLocInfoExtraMembers.java
+clang::DependentNameTypeLoc=TEXT#@Override protected Class<DependentNameType> getTypeClass() { return DependentNameType.class; }
+clang::DependentScopeDeclRefExpr = FILE#./extra_members/DependentScopeDeclRefExprExtraMembers.java
+clang::DependentSizedArrayTypeLoc=TEXT#@Override protected Class<DependentSizedArrayType> getTypeClass() { return DependentSizedArrayType.class; }
+clang::DependentSizedExtVectorTypeLoc=TEXT#@Override protected Class<DependentSizedExtVectorType> getTypeClass() { return DependentSizedExtVectorType.class; }
+clang::DependentTemplateName=EXTENDS#FoldingSetImpl.NodeImpl
+clang::DependentTemplateSpecializationLocInfo = FILE#./extra_members/DependentTemplateSpecializationLocInfoExtraMembers.java
+clang::DependentTemplateSpecializationType = IMPLEMENTS#Iterable<TemplateArgument>
+clang::DependentTemplateSpecializationType = FILE#./extra_members/DependentTemplateSpecializationTypeExtraMembers.java
+clang::DependentTemplateSpecializationTypeLoc=TEXT#@Override protected Class<DependentTemplateSpecializationType> getTypeClass() { return DependentTemplateSpecializationType.class; }
+clang::DependentTemplateSpecializationTypeLoc=IMPLEMENTS#TemplateSpecializationTypeLocBase
+clang::DesignatedInitExpr = FILE#./extra_members/DesignatedInitExprExtraMembers.java
+clang::DesignatedInitExpr::Designator = FILE#./extra_members/DesignatorExtraMembers.java
+clang::DesignatedInitExpr::Designator = IMPLEMENTS#NativeCloneable<Designator>
+clang::DesignatedInitExpr::Designator = IMPLEMENTS#Native.assignable<Designator>
+clang::DesignatedInitExpr::Designator = IMPLEMENTS#NativeMoveable<Designator>
+clang::DesignatedInitExpr::FieldDesignator = FILE#./extra_members/FieldDesignatorExtraMembers.java
+clang::ElaboratedLocInfo = IMPLEMENTS#NativeCloneable<ElaboratedLocInfo>
+clang::ElaboratedLocInfo = FILE#./extra_members/ElaboratedLocInfoExtraMembers.java
+clang::ElaboratedTypeLoc=TEXT#@Override protected Class<ElaboratedType> getTypeClass() { return ElaboratedType.class; }
+clang::EnumConstantDecl=TEXT#//public final EnumConstantDecl /*P*/ getFirstDecl() { return Mergeable.super.getFirstDecl$Mergeable(); }
+clang::EnumConstantDecl=TEXT#//public final /*const*/ EnumConstantDecl /*P*/ getFirstDecl$Const() /*const*/ { return Mergeable.super.getFirstDecl$Mergeable$Const(); }
+clang::EnumConstantDecl=TEXT#public final boolean isFirstDecl() /*const*/ { return Mergeable.super.isFirstDecl$Mergeable(); }
+clang::EnumConstantDecl=TEXT#public final Class<? extends EnumConstantDecl> getDeclType$Mergeable() { return this.getClass(); }
+clang::EnumTypeLoc=TEXT#@Override protected Class<EnumType> getTypeClass() { return EnumType.class; }
+clang::EvaluatedExprVisitorBase = FILE#./extra_members/EvaluatedExprVisitorBaseExtraMembers.java
+clang::ExclusiveTrylockFunctionAttr=IMPLEMENTS#org.clang.ast.java.ArgsAttrBase
+clang::Expr = FILE#./extra_members/ExprExtraMembers.java
+clang::ExprWithCleanups = FILE#./extra_members/ExprWithCleanupsExtraMembers.java
+clang::ExtQualsTypeCommonBase=EXTENDS#FoldingSetImpl.NodeImpl
+clang::ExtVectorTypeLoc=TEXT#@Override protected Class<ExtVectorType> getTypeClass() { return ExtVectorType.class; }
+clang::FieldDecl=TEXT#//public final FieldDecl /*P*/ getFirstDecl() { return Mergeable.super.getFirstDecl$Mergeable(); }
+clang::FieldDecl=TEXT#//public final /*const*/ FieldDecl /*P*/ getFirstDecl$Const() /*const*/ { return Mergeable.super.getFirstDecl$Mergeable$Const(); }
+clang::FieldDecl=TEXT#public final boolean isFirstDecl() /*const*/ { return Mergeable.super.isFirstDecl$Mergeable(); }
+clang::FieldDecl=TEXT#public final Class<? extends FieldDecl> getDeclType$Mergeable() { return this.getClass(); }
+clang::FriendDecl = FILE#./extra_members/FriendDeclExtraMembers.java
+clang::FunctionDecl = FILE#./extra_members/FunctionDeclExtraMembers.java
+clang::FunctionDecl = IMPLEMENTS#ExternC
+clang::FunctionLocInfo = FILE#./extra_members/FunctionLocInfoExtraMembers.java
+clang::FunctionLocInfo = IMPLEMENTS#NativeCloneable<FunctionLocInfo>
+clang::FunctionNoProtoTypeLoc=TEXT#@Override protected Class<FunctionNoProtoType> getTypeClass() { return FunctionNoProtoType.class; }
+clang::FunctionParmPackExpr = FILE#./extra_members/FunctionParmPackExprExtraMembers.java
+clang::FunctionProtoType=TEXT#private final type$ptr<? /*P*/> this$plus$1;
+clang::FunctionProtoType = IMPLEMENTS#ParamType
+clang::FunctionProtoTypeLoc=TEXT#@Override protected Class<FunctionProtoType> getTypeClass() { return FunctionProtoType.class; }
+clang::FunctionTemplateSpecializationInfo = IMPLEMENTS#FoldingSetTrait.Profilable
+clang::FunctionTemplateSpecializationInfo = EXTENDS#FoldingSetImpl.NodeImpl
+clang::FunctionTypeLoc = FILE#./extra_members/FunctionTypeLocExtraMembers.java
+
+
+clang::GCCAsmStmt::AsmStringPiece = FILE#./extra_members/AsmStringPieceExtraMembers.java
+clang::GCCAsmStmt::AsmStringPiece = IMPLEMENTS#NativeCloneable<AsmStringPiece>
+
+
+clang::GlobalDecl=IMPLEMENTS#NativeCloneable<GlobalDecl>, NativeHashable
+clang::GlobalDecl=FILE#./extra_members/GlobalDeclExtraMembers.java
+
+clang::GuardedByAttr=IMPLEMENTS#org.clang.ast.java.ArgAttrBase
+clang::ImplicitCastExpr = FILE#./extra_members/ImplicitCastExprExtraMembers.java
+clang::ImportDecl = FILE#./extra_members/ImportDeclExtraMembers.java
+clang::IncompleteArrayTypeLoc=TEXT#@Override protected Class<IncompleteArrayType> getTypeClass() { return IncompleteArrayType.class; }
+clang::IndirectFieldDecl=TEXT#//public final IndirectFieldDecl /*P*/ getFirstDecl() { return Mergeable.super.getFirstDecl$Mergeable(); }
+clang::IndirectFieldDecl=TEXT#//public final /*const*/ IndirectFieldDecl /*P*/ getFirstDecl$Const() /*const*/ { return Mergeable.super.getFirstDecl$Mergeable$Const(); }
+clang::IndirectFieldDecl=TEXT#public final boolean isFirstDecl() /*const*/ { return Mergeable.super.isFirstDecl$Mergeable(); }
+clang::IndirectFieldDecl=TEXT#public final Class<? extends IndirectFieldDecl> getDeclType$Mergeable() { return this.getClass(); }
+clang::InheritedConstructor = IMPLEMENTS#Native.NativePOD<InheritedConstructor>
+clang::InheritedConstructor = FILE#./extra_members/InheritedConstructorExtraMembers.java
+clang::InjectedClassNameTypeLoc=TEXT#@Override protected Class<InjectedClassNameType> getTypeClass() { return InjectedClassNameType.class; }
+clang::LValueReferenceTypeLoc=TEXT#@Override protected Class<LValueReferenceType> getTypeClass() { return LValueReferenceType.class; }
+
+clang::LambdaCapture=IMPLEMENTS#NativePOD<LambdaCapture>
+clang::LambdaCapture=TEXT#public LambdaCapture() { this.DeclAndBits $EQ new PointerIntPair<>(); this.EllipsisLoc $EQ new SourceLocation(); this.Loc $EQ new SourceLocation();}
+clang::LambdaCapture=TEXT#@Override public LambdaCapture clone() { return new LambdaCapture().$assign(this); }
+clang::LambdaExpr = FILE#./extra_members/LambdaExprExtraMembers.java
+#3 trailing types
+
+clang::LazyGenerationalUpdatePtr=FILE#./extra_members/LazyGenerationalUpdatePtrExtramembers.java
+clang::LazyVector = FILE#./extra_members/LazyVectorExtraMembers.java
+clang::LazyVector::iterator = FILE#./extra_members/LazyVectorIteratorExtraMembers.java
+clang::LocInfoType=TEXT#static { assert Type.TypeClass.LocInfoType$Java.getValue() $EQ$EQ LocInfo : "Type.TypeClass.LocInfoType$Java must exist and be equal to " + LocInfo + " vs. " + Type.TypeClass.LocInfoType$Java.getValue(); }
+clang::LocInfoType=TEXT#static { assert LocInfo $EQ$EQ (Type.TypeClass.TypeLast.getValue() + 1) : "we added LocInfoType$Java as TypeLast + 1:" + LocInfo + " vs. " + (Type.TypeClass.TypeLast.getValue() + 1); }
+clang::LockReturnedAttr=IMPLEMENTS#org.clang.ast.java.ArgAttrBase
+clang::LocksExcludedAttr=IMPLEMENTS#org.clang.ast.java.ArgsAttrBase
+clang::MemberExpr = FILE#./extra_members/MemberExprExtraMembers.java
+clang::MemberExprNameQualifier = FILE#./extra_members/MemberExprNameQualifierExtraMembers.java
+clang::MemberExprNameQualifier = IMPLEMENTS#NativeCloneable<MemberExprNameQualifier>
+clang::MemberPointerLocInfo = FILE#./extra_members/MemberPointerLocInfoExtraMembers.java
+clang::MemberPointerTypeLoc=TEXT#@Override protected Class<MemberPointerType> getTypeClass() { return MemberPointerType.class; }
+
+#resolve redirecting to Mergeable
+clang::Mergeable=TEXT#public default void $destroy$Mergeable() { /*for derived classes*/ }
+clang::Mergeable=TEXT#//public default/*interface*/ decl_type /*P*/ getFirstDecl() { return getFirstDecl$Mergeable(); }
+clang::Mergeable=TEXT#//public default/*interface*/ /*const*/ decl_type /*P*/ getFirstDecl$Const() /*const*/ { return getFirstDecl$Mergeable$Const(); }
+clang::Mergeable=TEXT#public default/*interface*/ boolean isFirstDecl() /*const*/ { return isFirstDecl$Mergeable(); }
+clang::Mergeable=TEXT#public abstract Class<? extends decl_type> getDeclType$Mergeable();
+
+clang::NamedDecl = FILE#./extra_members/NamedDeclExtraMembers.java
+clang::NamespaceAliasDecl = FILE#./extra_members/NamespaceAliasDeclExtraMembers.java
+clang::NamespaceDecl = FILE#./extra_members/NamespaceDeclExtraMembers.java
+clang::NamespaceDecl = IMPLEMENTS#Native.ComparableLower
+clang::NestedNameSpecifier=EXTENDS#FoldingSetImpl.NodeImpl
+
+clang::NestedNameSpecifierLoc = IMPLEMENTS#Native.ComparableLower
+clang::NestedNameSpecifierLoc = IMPLEMENTS#NativePOD<NestedNameSpecifierLoc>
+clang::NestedNameSpecifierLoc = FILE#./extra_members/NestedNameSpecifierLocExtraMembers.java
+clang::NestedNameSpecifierLocBuilder = FILE#./extra_members/NestedNameSpecifierLocBuilderExtraMembers.java
+clang::NonTypeTemplateParmDecl = IMPLEMENTS#DefaultArgStorageInterface<NonTypeTemplateParmDecl, Expr/*P*/>
+clang::NonTypeTemplateParmDecl = FILE#./extra_members/NonTypeTemplateParmDeclExtraMembers.java
+
+clang::OMPClause=FILE#./extra_members/OMPClauseExtraMembers.java
+clang::OMPClauseMappableExprCommon::MappableComponent = IMPLEMENTS#NativePOD<MappableComponent>
+clang::OMPClauseMappableExprCommon::MappableComponent = FILE#./extra_members/MappableComponentExtraMembers.java
+clang::OMPExecutableDirective=TEXT#protected OMPExecutableDirective() {}
+clang::OMPExecutableDirective::specific_clause_iterator=TEXT#private final Class<SpecificClause> clazz;
+clang::OMPExecutableDirective::specific_clause_iterator=TEXT#public specific_clause_iterator(specific_clause_iterator $Prm0) { super(JD$BaseOf.INSTANCE, $Prm0); this.clazz $EQ $Prm0.clazz; this.End $EQ $tryClone($Prm0.End); }
+clang::OMPExecutableDirective::specific_clause_iterator=TEXT#@Override public specific_clause_iterator clone() { return new specific_clause_iterator(this); }
+clang::OMPFromClause = TEXT#@Override public /*size_t*/int getNumTailingObject_OverloadToken$TrailingTy1() { return numTrailingObjects_OverloadToken$Expr$P((OverloadToken<Expr /*P*/>)null); }
+clang::OMPFromClause = TEXT#@Override public /*size_t*/int getNumTailingObject_OverloadToken$TrailingTy2() { return numTrailingObjects_OverloadToken$ValueDecl$P((OverloadToken<ValueDecl /*P*/>)null); }
+clang::OMPFromClause = TEXT#@Override public /*size_t*/int getNumTailingObject_OverloadToken$TrailingTy3() { return numTrailingObjects_OverloadTokenUInt((OverloadTokenUInt)null); }
+clang::OMPLoopDirective=TEXT#protected OMPLoopDirective() {}
+clang::OMPMapClause = TEXT#@Override public /*size_t*/int getNumTailingObject_OverloadToken$TrailingTy1() { return numTrailingObjects_OverloadToken$Expr$P((OverloadToken<Expr /*P*/>)null); }
+clang::OMPMapClause = TEXT#@Override public /*size_t*/int getNumTailingObject_OverloadToken$TrailingTy2() { return numTrailingObjects_OverloadToken$ValueDecl$P((OverloadToken<ValueDecl /*P*/>)null); }
+clang::OMPMapClause = TEXT#@Override public /*size_t*/int getNumTailingObject_OverloadToken$TrailingTy3() { return numTrailingObjects_OverloadTokenUInt((OverloadTokenUInt)null); }
+
+clang::OMPMappableExprListClause::const_component_lists_iterator=TEXT#@Override public const_component_lists_iterator clone() { return new const_component_lists_iterator(this); }
+clang::OMPToClause = TEXT#@Override public /*size_t*/int getNumTailingObject_OverloadToken$TrailingTy1() { return numTrailingObjects_OverloadToken$Expr$P((OverloadToken<Expr /*P*/>)null); }
+clang::OMPToClause = TEXT#@Override public /*size_t*/int getNumTailingObject_OverloadToken$TrailingTy2() { return numTrailingObjects_OverloadToken$ValueDecl$P((OverloadToken<ValueDecl /*P*/>)null); }
+clang::OMPToClause = TEXT#@Override public /*size_t*/int getNumTailingObject_OverloadToken$TrailingTy3() { return numTrailingObjects_OverloadTokenUInt((OverloadTokenUInt)null); }
+clang::ObjCArrayLiteral = IMPLEMENTS#ITrailingObjectsJavaBase<ObjCArrayLiteral>
+clang::ObjCArrayLiteral = FILE#./extra_members/ObjCArrayLiteralExtraMembers.java
+clang::ObjCAtTryStmt = TEXT#private final type$ptr</*const*/ Stmt /*P*/ /*const*/ /*P*/> $Stmts;
+clang::ObjCBridgeAttr = IMPLEMENTS#ObjCBridgedTypeAttr
+clang::ObjCBridgeMutableAttr = IMPLEMENTS#ObjCBridgedTypeAttr
+
+clang::ObjCDictionaryElement=IMPLEMENTS#NativeCloneable<ObjCDictionaryElement>
+clang::ObjCDictionaryElement = FILE#./extra_members/ObjCDictionaryElementExtraMembers.java
+clang::ObjCDictionaryLiteral = FILE#./extra_members/ObjCDictionaryLiteralExtraMembers.java
+clang::ObjCDictionaryLiteral_KeyValuePair=TEXT#public static int $sizeof_ObjCDictionaryLiteral_KeyValuePair() {return $sizeof_ptr(/*Stmt  */) * 2;}
+clang::ObjCInterfaceDecl = FILE#./extra_members/ObjCInterfaceDeclExtraMembers.java
+
+clang::ObjCInterfaceDecl::filtered_category_iterator=IMPLEMENTS#type$iterator<filtered_category_iterator, ObjCCategoryDecl>
+clang::ObjCInterfaceDecl::filtered_category_iterator=TEXT#private final BoolPredicate<ObjCCategoryDecl> Filter;
+clang::ObjCInterfaceDecl::filtered_category_iterator=TEXT#public filtered_category_iterator(filtered_category_iterator $Prm0) { this.Current $EQ $Prm0.Current; this.Filter $EQ $Prm0.Filter; }
+clang::ObjCInterfaceDecl::filtered_category_iterator=TEXT#@Override public filtered_category_iterator clone() { return new filtered_category_iterator(this); }
+clang::ObjCInterfaceDecl::filtered_category_iterator=TEXT#@Override public boolean $eq(Object other) { return $eq_filtered_category_iterator$Filter(this, (filtered_category_iterator)other); }
+clang::ObjCInterfaceDecl::filtered_category_iterator=TEXT#@Override public boolean $noteq(Object other) { return $noteq_filtered_category_iterator$Filter(this, (filtered_category_iterator)other); }
+
+clang::ObjCInterfaceLocInfo = IMPLEMENTS#NativeCloneable<ObjCInterfaceLocInfo>
+clang::ObjCInterfaceLocInfo = FILE#./extra_members/ObjCInterfaceLocInfoExtraMembers.java
+
+clang::ObjCInterfaceTypeLoc=TEXT#@Override protected Class<ObjCInterfaceType> getTypeClass() { return ObjCInterfaceType.class; }
+clang::ObjCList=IMPLEMENTS#Iterable<T>
+clang::ObjCList=TEXT#@Override public java.util.Iterator<T> iterator() {return new JavaIterator(begin(), end());}
+clang::ObjCMessageExpr = FILE#./extra_members/ObjCMessageExprExtraMembers.java
+clang::ObjCMethodDecl = IMPLEMENTS#ParamTypeObjC
+clang::ObjCObjectPointerTypeLoc=TEXT#@Override protected Class<ObjCObjectPointerType> getTypeClass() { return ObjCObjectPointerType.class; }
+clang::ObjCObjectType=TEXT#private final type$ptr<QualType /*P*/> $TypeArgs;
+clang::ObjCObjectType=TEXT#private final type$ptr<ObjCProtocolDecl /*P*/ /*P*/> $Protocols;
+clang::ObjCObjectTypeLoc = FILE#./extra_members/ObjCObjectTypeLocExtraMembers.java
+clang::ObjCObjectTypeLocInfo = FILE#./extra_members/ObjCObjectTypeLocInfoExtraMembers.java
+clang::ObjCObjectTypeLocInfo = IMPLEMENTS#NativeCloneable<ObjCObjectTypeLocInfo>
+clang::ObjCProtocolDecl = FILE#./extra_members/ObjCProtocolDeclExtraMembers.java
+clang::ObjCTypeParamList = IMPLEMENTS#Iterable<ObjCTypeParamDecl/*P*/>
+clang::ObjCTypeParamList = FILE#./extra_members/ObjCTypeParamListExtraMembers.java
+clang::OffsetOfExpr = FILE#./extra_members/OffsetOfExprExtraMembers.java
+clang::OffsetOfNode = IMPLEMENTS#NativePOD<OffsetOfNode>
+clang::OffsetOfNode = FILE#./extra_members/OffsetOfNodeExtraMembers.java
+clang::OpaqueValueExpr = IMPLEMENTS#NativePOD<OpaqueValueExpr>
+clang::OpaqueValueExpr = FILE#./extra_members/OpaqueValueExprExtraMembers.java
+clang::OverloadExpr = FILE#./extra_members/OverloadExprExtraMembers.java
+
+clang::OverloadedTemplateStorage = IMPLEMENTS#Iterable<NamedDecl /*P*/>
+clang::OverloadedTemplateStorage = FILE#./extra_members/OverloadedTemplateStorageExtraMembers.java
+clang::OverridingMethods = IMPLEMENTS#Iterable<std.vector.iterator<pairUIntType<SmallVector<UniqueVirtualMethod> >> >, NativeCloneable<OverridingMethods>
+clang::OverridingMethods = FILE#./extra_members/OverridingMethodsExtraMembers.java
+clang::PackExpansionTypeLoc=TEXT#@Override protected Class<PackExpansionType> getTypeClass() { return PackExpansionType.class; }
+clang::PackExpansionTypeLocInfo = FILE#./extra_members/PackExpansionTypeLocInfoExtraMembers.java
+clang::PackExpansionTypeLocInfo = IMPLEMENTS#NativeCloneable<PackExpansionTypeLocInfo>
+clang::ParenLocInfo = FILE#./extra_members/ParenLocInfoExtraMembers.java
+clang::ParenLocInfo = IMPLEMENTS#NativeCloneable<ParenLocInfo>
+clang::ParenTypeLoc=TEXT#@Override protected Class<ParenType> getTypeClass() { return ParenType.class; }
+clang::PipeTypeLoc=TEXT#@Override protected Class<PipeType> getTypeClass() { return PipeType.class; }
+clang::PipeTypeLocInfo = FILE#./extra_members/PipeTypeLocInfoExtraMembers.java
+clang::PipeTypeLocInfo = IMPLEMENTS#NativeCloneable<PipeTypeLocInfo>
+clang::PointerLikeLocInfo = IMPLEMENTS#NativeCloneable<PointerLikeLocInfo>
+clang::PointerLikeLocInfo = FILE#./extra_members/PointerLikeLocInfoExtraMembers.java
+
+clang::PointerLikeTypeLoc = FILE#./extra_members/PointerLikeTypeLocExtraMembers.java
+clang::PointerTypeLoc=TEXT#@Override protected Class<PointerType> getTypeClass() { return PointerType.class; }
+clang::PseudoObjectExpr = FILE#./extra_members/PseudoObjectExprExtraMembers.java
+clang::PtGuardedByAttr=IMPLEMENTS#org.clang.ast.java.ArgAttrBase
+
+clang::QualType = IMPLEMENTS#FoldingSetTrait.Profilable
+clang::QualType = IMPLEMENTS#simplify_type
+clang::QualType = IMPLEMENTS#NativeHashable
+clang::QualType = IMPLEMENTS#NativePOD<QualType>
+clang::QualType = IMPLEMENTS#Native.ComparableLower
+clang::QualType = FILE#./extra_members/QualTypeExtraMembers.java
+
+clang::QualTypeOrdering = TEXT#public QualTypeOrdering() { }
+clang::QualifiedTemplateName=EXTENDS#FoldingSetImpl.NodeImpl
+clang::Qualifiers = IMPLEMENTS#NativePOD<Qualifiers>
+clang::Qualifiers = TEXT#@Override public Qualifiers clone() { return new Qualifiers(this); }
+clang::RValueReferenceTypeLoc=TEXT#@Override protected Class<RValueReferenceType> getTypeClass() { return RValueReferenceType.class; }
+
+clang::RawComment=TEXT#protected static RawComment/*P*/ $new_uint_BumpPtrAllocatorImpl$AllocatorT$SlabSize$SizeThreshold(BumpPtrAllocatorImpl /*&*/ Allocator, New$ConstructorCallback<RawComment/*P*/> New$DeclCtr) { return New$DeclCtr.$call(null); }
+clang::RecordTypeLoc=TEXT#@Override protected Class<RecordType> getTypeClass() { return RecordType.class; }
+clang::RecursiveASTVisitor = FILE#./extra_members/RecursiveASTVisitorExtraMembers.java
+
+clang::Redeclarable = FILE#./extra_members/RedeclarableExtraMembers.java
+
+#resolve redirecting to Redeclarable
+clang::Redeclarable=TEXT#//public default/*interface*/ decl_type /*P*/ getFirstDecl() { return getFirstDecl$Redeclarable(); }
+clang::Redeclarable=TEXT#//public default/*interface*/ /*const*/ decl_type /*P*/ getFirstDecl$Const() /*const*/ { return getFirstDecl$Redeclarable$Const(); }
+clang::Redeclarable=TEXT#public default/*interface*/ decl_type /*P*/ getPreviousDecl() { return getPreviousDecl$Redeclarable(); }
+clang::Redeclarable=TEXT#public default/*interface*/ /*const*/ decl_type /*P*/ getPreviousDecl$Const() /*const*/ { return this.getPreviousDecl$Redeclarable$Const(); }
+clang::Redeclarable=TEXT#public default/*interface*/ decl_type /*P*/ getMostRecentDecl() { return getMostRecentDecl$Redeclarable(); }
+clang::Redeclarable=TEXT#public default/*interface*/ /*const*/ decl_type /*P*/ getMostRecentDecl$Const() /*const*/ { return getMostRecentDecl$Redeclarable$Const(); }
+clang::Redeclarable=TEXT#public default/*interface*/ boolean isFirstDecl() /*const*/ { return isFirstDecl$Redeclarable(); }
+
+clang::Redeclarable::DeclLink=TEXT#public DeclLink<decl_type> $assignMove(DeclLink<decl_type> $Prm0) { this.Next.$assignMove($Prm0.Next); return this; }
+clang::Redeclarable::redecl_iterator=IMPLEMENTS#type$iterator<redecl_iterator<decl_type>, decl_type>
+clang::Redeclarable::redecl_iterator = FILE#./extra_members/Redeclarable_redecl_iterator_ExtraMembers.java
+clang::RedeclarableTemplateDecl = FILE#./extra_members/RedeclarableTemplateDeclExtraMembers.java
+clang::RedeclarableTemplateDecl::CommonBase = TEXT#public void $destroy() { }
+clang::RedeclarableTemplateDecl::SpecEntryTraits = IMPLEMENTS#SpecEntryTraits$Info<EntryType, EntryType>
+clang::RedeclarableTemplateDecl::SpecEntryTraits=TEXT#private SpecEntryTraits() { }
+clang::RedeclarableTemplateDecl::SpecEntryTraits=TEXT#private static final SpecEntryTraits$Info $INFO $EQ new SpecEntryTraits();
+clang::RedeclarableTemplateDecl::SpecEntryTraits=TEXT#public static <EntryType extends HasGetTemplateArgs$TemplateArgumentList & Redeclarable/*<EntryType>*/> SpecEntryTraits$Info<EntryType, EntryType> $Info() { return (SpecEntryTraits$Info<EntryType, EntryType>)$INFO; }
+clang::RedeclarableTemplateDecl::SpecIterator=TEXT#public SpecIterator(SpecIterator $Prm0) { super((SpecIterator)$Prm0); this.SETraits $EQ $Prm0.SETraits; }
+clang::RedeclarableTemplateDecl::SpecIterator=TEXT#@Override public SpecIterator clone() { return new SpecIterator(this); }
+clang::RedeclarableTemplateDecl::SpecIterator = TEXT#private final SpecEntryTraits$Info<EntryType, DeclType> SETraits; // JAVA: moved from template args
+clang::ReferenceTypeLoc=TEXT#@Override protected Class<? extends ReferenceType> getTypeClass() { return ReferenceType.class; }
+clang::ReleaseCapabilityAttr=IMPLEMENTS#org.clang.ast.java.ArgsAttrBase
+clang::RequiresCapabilityAttr=IMPLEMENTS#org.clang.ast.java.ArgsAttrBase
+clang::SharedTrylockFunctionAttr=IMPLEMENTS#org.clang.ast.java.ArgsAttrBase
+clang::SizeOfPackExpr = FILE#./extra_members/SizeOfPackExprExtraMembers.java
+clang::Stmt = FILE#./extra_members/StmtExtraMembers.java
+clang::Stmt::ConstExprIterator=TEXT#@Override public ConstExprIterator clone() { return new ConstExprIterator(this); }
+clang::Stmt::ExprIterator=TEXT#@Override public ExprIterator clone() { return new ExprIterator(this); }
+clang::StmtIterator=TEXT#@Override public StmtIterator clone() { return new StmtIterator(this); }
+clang::StmtIteratorBase::(anonymous)=TEXT#public Unnamed_union1() { }
+clang::StmtIteratorImpl=IMPLEMENTS#type$iterator<DERIVED, REFERENCE>
+clang::StmtIteratorImpl = FILE#./extra_members/StmtIteratorImplExtraMembers.java
+clang::StmtVisitor=TEXT#public default void $destroy$StmtVisitor() { }
+clang::StoredDeclsList=IMPLEMENTS#NativeCloneable<StoredDeclsList>
+clang::StoredDeclsList= TEXT#public StoredDeclsList(final StoredDeclsList $Prm0) { this.Data $EQ $tryClone($Prm0.Data); }
+clang::StoredDeclsList= TEXT#@Override public StoredDeclsList clone() { return new StoredDeclsList(this.Value.getPointer(), this.Value.getBool()); }
+clang::StoredDeclsList=TEXT#private static Class<PointerBoolPair<SmallVector<NamedDecl /*P*/ > /*P*/>> PointerBoolPair$Class $EQ (Class<PointerBoolPair<SmallVector<NamedDecl /*P*/ > /*P*/>>)(Class<?>)PointerBoolPair /*&*/.class;
+clang::StringLiteral = IMPLEMENTS#ITrailingObjectsJavaBase<StringLiteral>
+clang::SubobjectAdjustment = IMPLEMENTS#NativeCloneable<SubobjectAdjustment>
+clang::SubobjectAdjustment = FILE#./extra_members/SubobjectAdjustmentExtraMembers.java
+clang::SubobjectAdjustment::(anonymous) = FILE#./extra_members/Unnamed_union3ExtraMembers.java
+clang::SubstTemplateTypeParmPackTypeLoc=TEXT#@Override protected Class<SubstTemplateTypeParmPackType> getTypeClass() { return SubstTemplateTypeParmPackType.class; }
+clang::SubstTemplateTypeParmTypeLoc=TEXT#@Override protected Class<SubstTemplateTypeParmType> getTypeClass() { return SubstTemplateTypeParmType.class; }
+clang::TagDecl = FILE#./extra_members/TagDeclExtraMembers.java
+clang::TagTypeLoc=TEXT#@Override protected Class<? extends TagType> getTypeClass() { return TagType.class; }
+clang::TemplateArgument=IMPLEMENTS#NativePOD<TemplateArgument>
+clang::TemplateArgument = FILE#./extra_members/TemplateArgumentExtraMembers.java
+clang::TemplateArgument::A = FILE#./extra_members/AExtraMembers.java
+clang::TemplateArgument::DA = FILE#./extra_members/DAExtraMembers.java
+clang::TemplateArgument::I = FILE#./extra_members/IExtraMembers.java
+clang::TemplateArgument::TA = FILE#./extra_members/TAExtraMembers.java
+clang::TemplateArgument::TV = FILE#./extra_members/TVExtraMembers.java
+clang::TemplateArgumentList=EXTENDS#TrailingObjectsJavaBase<TemplateArgumentList, TemplateArgument>
+clang::TemplateArgumentList=TEXT#@Override protected int getTrailingObjects$Offset(Class<?> clazz) { assert clazz $EQ$EQ TemplateArgument.class; return 0; }
+clang::TemplateArgumentListInfo = IMPLEMENTS#NativePOD<TemplateArgumentListInfo>
+clang::TemplateArgumentListInfo = TEXT#@Override public TemplateArgumentListInfo clone() { return new TemplateArgumentListInfo(this); }
+clang::TemplateArgumentLoc=IMPLEMENTS#NativePOD<TemplateArgumentLoc>
+clang::TemplateArgumentLoc=TEXT#@Override public TemplateArgumentLoc clone() { return new TemplateArgumentLoc(this); }
+clang::TemplateArgumentLocInfo=IMPLEMENTS#NativePOD<TemplateArgumentLocInfo>
+clang::TemplateArgumentLocInfo=TEXT#@Override public TemplateArgumentLocInfo clone() { return new TemplateArgumentLocInfo(this); }
+clang::TemplateNameLocInfo=IMPLEMENTS#Native.NativePOD<TemplateNameLocInfo>
+clang::TemplateNameLocInfo = FILE#./extra_members/TemplateNameLocInfoExtraMembers.java
+clang::TemplateParameterList=IMPLEMENTS#Iterable<NamedDecl>
+clang::TemplateParameterList=FILE#./extra_members/TemplateParameterListExtraMembers.java
+clang::TemplateSpecializationLocInfo = FILE#./extra_members/TemplateSpecializationLocInfoExtraMembers.java
+
+clang::TemplateSpecializationType=IMPLEMENTS#Iterable<TemplateArgument>
+clang::TemplateSpecializationType=TEXT#@Override public java.util.Iterator<TemplateArgument> iterator() {return new JavaIterator<>(begin(), end());}
+
+clang::TemplateSpecializationTypeLoc=FILE#./extra_members/TemplateSpecializationTypeLocExtraMembers.java
+clang::TemplateSpecializationTypeLoc=IMPLEMENTS#TemplateSpecializationTypeLocBase
+
+clang::TemplateTemplateParmDecl = IMPLEMENTS#DefaultArgStorageInterface<TemplateTemplateParmDecl, TemplateArgumentLoc/*P*/>
+clang::TemplateTemplateParmDecl = FILE#./extra_members/TemplateTemplateParmDeclExtraMembers.java
+clang::TemplateTypeParmDecl = IMPLEMENTS#DefaultArgStorageInterface<TemplateTypeParmDecl, TypeSourceInfo/*P*/>
+clang::TemplateTypeParmTypeLoc=TEXT#@Override protected Class<TemplateTypeParmType> getTypeClass() { return TemplateTypeParmType.class; }
+clang::TryAcquireCapabilityAttr=IMPLEMENTS#org.clang.ast.java.ArgsAttrBase
+
+#clang::Type
+clang::Type=FILE#./extra_members/TypeExtraMembers.java
+clang::TypeInfo=IMPLEMENTS#NativePOD<TypeInfo>
+clang::TypeInfo = FILE#./extra_members/TypeInfoExtraMembers.java
+
+clang::TypeLoc = FILE#./extra_members/TypeLocExtraMembers.java
+clang::TypeLoc = IMPLEMENTS#NativePOD<TypeLoc>
+clang::TypeLocVisitor = FILE#./extra_members/TypeLocVisitorExtraMembers.java
+clang::TypeOfExprTypeLoc=TEXT#@Override protected Class<TypeOfExprType> getTypeClass() { return TypeOfExprType.class; }
+clang::TypeOfExprTypeLocInfo = FILE#./extra_members/TypeOfExprTypeLocInfoExtraMembers.java
+clang::TypeOfTypeLoc=TEXT#@Override protected Class<TypeOfType> getTypeClass() { return TypeOfType.class; }
+clang::TypeOfTypeLocInfo = FILE#./extra_members/TypeOfTypeLocInfoExtraMembers.java
+
+#clang::TypePropertyCache
+clang::TypePropertyCache = TEXT#private static final ConcurrentMap<Class<?>, TypePropertyCache> $INSTANCES $EQ new ConcurrentHashMap<>(16);
+clang::TypePropertyCache = TEXT#public static TypePropertyCache $for(Class<?> key) { return $INSTANCES.computeIfAbsent(key, (clazz) -> new TypePropertyCache()); }
+clang::TypeSourceInfo=TEXT#public final type$ptr<?> $this$plus$1$TypeLocData;// JAVA: replacement for this+1
+clang::TypeSpecLocInfo = IMPLEMENTS#NativeCloneable<TypeSpecLocInfo>
+clang::TypeSpecLocInfo = FILE#./extra_members/TypeSpecLocInfoExtraMembers.java
+clang::TypeSpecTypeLoc=TEXT#@Override protected Class<? extends Type> getTypeClass() { return Type.class; }
+clang::TypeTraitExpr = FILE#./extra_members/TypeTraitExprExtraMembers.java
+
+clang::TypeVisitor=TEXT#public default void $destroy$TypeVisitor() { }
+clang::TypedefNameDecl = FILE#./extra_members/TypedefNameDeclExtraMembers.java
+clang::TypedefTypeLoc=TEXT#@Override protected Class<TypedefType> getTypeClass() { return TypedefType.class; }
+
+clang::TypeofLikeTypeLoc=FILE#./extra_members/TypeofLikeTypeLocExtraMembers.java
+clang::TypeofLocInfo = IMPLEMENTS#NativeCloneable<TypeofLocInfo>
+clang::TypeofLocInfo = FILE#./extra_members/TypeofLocInfoExtraMembers.java
+clang::UnaryTransformTypeLoc=TEXT#@Override protected Class<UnaryTransformType> getTypeClass() { return UnaryTransformType.class; }
+clang::UnaryTransformTypeLocInfo = FILE#./extra_members/UnaryTransformTypeLocInfoExtraMembers.java
+clang::UnaryTransformTypeLocInfo = IMPLEMENTS#NativeCloneable<UnaryTransformTypeLocInfo>
+clang::UncommonTemplateNameStorage=EXTENDS#FoldingSetImpl.NodeImpl
+clang::UniqueVirtualMethod = FILE#./extra_members/UniqueVirtualMethodExtraMembers.java
+clang::UniqueVirtualMethod = IMPLEMENTS#Native.NativePOD<UniqueVirtualMethod>
+clang::UnresolvedLookupExpr = FILE#./extra_members/UnresolvedLookupExprExtraMembers.java
+clang::UnresolvedLookupExpr = IMPLEMENTS#ITrailingObjectsJavaBase<UnresolvedLookupExpr>
+clang::UnresolvedMemberExpr = FILE#./extra_members/UnresolvedMemberExprExtraMembers.java
+clang::UnresolvedSet=IMPLEMENTS#Destructors.ClassWithDestructor
+clang::UnresolvedSet=FILE#./extra_members/UnresolvedSetExtraMembers.java
+clang::UnresolvedSetImpl=IMPLEMENTS#Iterable<NamedDecl /*P*/>
+clang::UnresolvedSetImpl=TEXT#@Override public java.util.Iterator<NamedDecl /*P*/> iterator() { return new JavaIterator(begin(), end()); }
+clang::UnresolvedSetIterator = FILE#./extra_members/UnresolvedSetIteratorExtraMembers.java
+
+clang::UnresolvedUsingTypeLoc=TEXT#@Override protected Class<UnresolvedUsingType> getTypeClass() { return UnresolvedUsingType.class; }
+clang::UnresolvedUsingTypenameDecl=TEXT#//public final UnresolvedUsingTypenameDecl /*P*/ getFirstDecl() { return Mergeable.super.getFirstDecl$Mergeable(); }
+clang::UnresolvedUsingTypenameDecl=TEXT#//public final /*const*/ UnresolvedUsingTypenameDecl /*P*/ getFirstDecl$Const() /*const*/ { return Mergeable.super.getFirstDecl$Mergeable$Const(); }
+clang::UnresolvedUsingTypenameDecl=TEXT#public final boolean isFirstDecl() /*const*/ { return Mergeable.super.isFirstDecl$Mergeable(); }
+clang::UnresolvedUsingTypenameDecl=TEXT#public final Class<? extends UnresolvedUsingTypenameDecl> getDeclType$Mergeable() { return this.getClass(); }
+clang::UnresolvedUsingValueDecl=TEXT#//public final UnresolvedUsingValueDecl /*P*/ getFirstDecl() { return Mergeable.super.getFirstDecl$Mergeable(); }
+clang::UnresolvedUsingValueDecl=TEXT#//public final /*const*/ UnresolvedUsingValueDecl /*P*/ getFirstDecl$Const() /*const*/ { return Mergeable.super.getFirstDecl$Mergeable$Const(); }
+clang::UnresolvedUsingValueDecl=TEXT#public final boolean isFirstDecl() /*const*/ { return Mergeable.super.isFirstDecl$Mergeable(); }
+clang::UnresolvedUsingValueDecl=TEXT#public final Class<? extends UnresolvedUsingValueDecl> getDeclType$Mergeable() { return this.getClass(); }
+clang::UsingDecl=TEXT#//public final UsingDecl /*P*/ getFirstDecl() { return Mergeable.super.getFirstDecl$Mergeable(); }
+clang::UsingDecl=TEXT#//public final /*const*/ UsingDecl /*P*/ getFirstDecl$Const() /*const*/ { return Mergeable.super.getFirstDecl$Mergeable$Const(); }
+clang::UsingDecl=TEXT#public final boolean isFirstDecl() /*const*/ { return Mergeable.super.isFirstDecl$Mergeable(); }
+clang::UsingDecl=TEXT#public final Class<? extends UsingDecl> getDeclType$Mergeable() { return this.getClass(); }
+
+clang::UsingDecl::shadow_iterator=IMPLEMENTS#type$iterator<shadow_iterator, UsingShadowDecl>
+clang::UsingDecl::shadow_iterator = FILE#./extra_members/shadow_iteratorExtraMembers.java
+clang::UsingShadowDecl = FILE#./extra_members/UsingShadowDeclExtraMembers.java
+clang::ValueDecl = FILE#./extra_members/ValueDeclExtraMembers.java
+clang::VarDecl = FILE#./extra_members/VarDeclExtraMembers.java
+clang::VarDecl = IMPLEMENTS#ExternC
+clang::VarTemplateSpecializationDecl = IMPLEMENTS#HasGetTemplateArgs$TemplateArgumentList
+clang::VarTemplateSpecializationDecl = IMPLEMENTS#HasGetSpecializedTemplate<VarTemplateDecl>
+clang::VariableArrayTypeLoc=TEXT#@Override protected Class<VariableArrayType> getTypeClass() { return VariableArrayType.class; }
+clang::VectorTypeLoc=TEXT#@Override protected Class<? extends VectorType> getTypeClass() { return VectorType.class; }
+clang::ast_type_traits::ASTNodeKind=IMPLEMENTS#NativePOD<ASTNodeKind>
+clang::ast_type_traits::ASTNodeKind = FILE#./extra_members/AstTypeTraitsASTNodeKindExtraMembers.java
+clang::ast_type_traits::ASTNodeKind::KindInfo=FILE#./extra_members/AstTypeTraitsASTNodeKindKindInfoExtraMembers.java
+
+clang::ast_type_traits::DynTypedNode::DenseMapInfo=TEXT#protected DenseMapInfo() {super(createEmptyKey(), createTombstoneKey());}
+clang::ast_type_traits::DynTypedNode::DenseMapInfo=TEXT#@Override public boolean isKeyPointerLike() {return false;}
+clang::ast_type_traits::DynTypedNode::DenseMapInfo=TEXT#private static final DenseMapInfo $INFO $EQ new DenseMapInfo();
+clang::ast_type_traits::DynTypedNode::DenseMapInfo=TEXT#public static DenseMapInfo $Info() {return $INFO;}
+clang::comments::(anonymous namespace)::bad=TEXT#public bad() {}
+clang::comments::(anonymous namespace)::good=TEXT#public good() {}
+clang::comments::CommandInfo=FILE#./extra_members/CommandInfoExtraMembers.java
+clang::comments::CommentVisitor=TEXT#public default void $destroy$CommentVisitor() { }
+clang::comments::CommentVisitorBase=TEXT#public default void $destroy$CommentVisitorBase() { }
+clang::comments::ConstCommentVisitor=TEXT#public default void $destroy$ConstCommentVisitor() { }
+clang::comments::HTMLStartTagComment::Attribute = IMPLEMENTS#NativeCloneable<Attribute>
+clang::comments::HTMLStartTagComment::Attribute = FILE#./extra_members/AttributeExtraMembers.java
+clang::comments::Token=IMPLEMENTS#NativePOD<Token>
+clang::comments::Token=TEXT#@Override public Token clone() { return new Token(this); }
+
+clang::specific_attr_iterator = IMPLEMENTS#type$iterator<specific_attr_iterator, SpecificAttr>
+clang::specific_attr_iterator = FILE#./extra_members/specific_attr_iteratorExtraMembers.java
+
+llvm::DenseMapInfo<clang::QualType>=IMPLEMENTS#org.llvm.adt.DenseMapInfo<QualType>
+llvm::DenseMapInfo<clang::QualType>=FILE#./extra_members/DenseMapInfoQualTypeExtraMembers.java
+
+llvm::DenseMapInfo<clang::CanQual<clang::Type> > = FILE#./extra_members/DenseMapInfoCanQual$TypeExtraMembers.java
+
+llvm::DenseMapInfo<clang::GlobalDecl>=IMPLEMENTS#org.llvm.adt.DenseMapInfo<GlobalDecl>
+llvm::DenseMapInfo<clang::GlobalDecl>=FILE#./extra_members/DenseMapInfoGlobalDeclExtraMembers.java
+llvm::DenseMapInfo<clang::BaseSubobject> = FILE#./extra_members/DenseMapInfoBaseSubobjectExtraMembers.java
+llvm::DenseMapInfo<clang::CharUnits> = FILE#./extra_members/DenseMapInfoCharUnitsExtraMembers.java
+llvm::DenseMapInfo<clang::DeclarationName> = FILE#./extra_members/DenseMapInfoDeclarationNameExtraMembers.java
+
+llvm::GraphTraits<clang::Stmt * > = IMPLEMENTS#GraphTraits<Stmt>
+llvm::GraphTraits<clang::Stmt * > = TEXT#private static final GraphTraitsStmt$P INSTANCE $EQ new GraphTraitsStmt$P();
+llvm::GraphTraits<clang::Stmt * > = TEXT#public static GraphTraitsStmt$P $GTraits() {
+llvm::GraphTraits<clang::Stmt * > = TEXT#  return INSTANCE;
+llvm::GraphTraits<clang::Stmt * > = TEXT#}
+
+llvm::GraphTraits<const clang::Stmt * > = IMPLEMENTS#GraphTraits<Stmt>
+llvm::GraphTraits<const clang::Stmt * > = TEXT#private static final GraphTraitsStmt$C$P INSTANCE $EQ new GraphTraitsStmt$C$P();
+llvm::GraphTraits<const clang::Stmt * > = TEXT#public static GraphTraitsStmt$C$P $GTraits() {
+llvm::GraphTraits<const clang::Stmt * > = TEXT#  return INSTANCE;
+llvm::GraphTraits<const clang::Stmt * > = TEXT#}
+

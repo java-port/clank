@@ -1,0 +1,7 @@
+/////////////////////////////////////////////
+/// MODULE org.clang.rewrite
+
+/// Non virtual functions with the same name
+RopePieceBTreeNode.erase()->RopePieceBTreeLeaf.erase() [2]
+RopePieceBTreeNode.insert()->RopePieceBTreeLeaf.insert() [2]
+RopePieceBTreeNode.split()->RopePieceBTreeLeaf.split() [2]

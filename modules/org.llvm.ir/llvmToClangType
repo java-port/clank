@@ -1,0 +1,318 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.llvm.ir_delegates.properties"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.llvm.ir.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[TYPES_MAP]
+
+AliasListType Module::*=Void2AliasListType
+AnalysisPassMapT::const_iterator = DenseMapIterator<Object, std_ptr.unique_ptr<AnalysisPassConcept<IRUnitT>>>
+AnalysisPassMapT::iterator = DenseMapIterator<Object, std_ptr.unique_ptr<AnalysisPassConcept<IRUnitT>>>
+AnalysisResultMapT::const_iterator = DenseMapIterator<pair<Object, IRUnitT>, std_list.list.iterator<pair<Object, std_ptr.unique_ptr<AnalysisResultConcept<IRUnitT>>>>>
+ArgumentListType Function::*=Void2ArgumentListType
+BaseT<AnalysisManager<IRUnitT>, %TEMPLATE>::ResultConceptT = AnalysisResultConcept<IRUnitT>
+BasicBlockListType Function::*=Void2BasicBlockListType
+CallSiteTy::arg_iterator = type$ptr<Use /*P*/>
+Config::ExtraData = /*Config.ExtraData*/Object
+
+ConstantRange (const ConstantRange & , const ConstantRange & ) const = TypeType2Type<ConstantRange, ConstantRange, ConstantRange>
+DenseMap<ValueMapCallbackVH<KeyT, ValueT>, ValueT, DenseMapInfo<ValueMapCallbackVH<KeyT, ValueT> > > = DenseMap<ValueMapCallbackVH<KeyT, ValueT>, ValueT>#DenseMapInfoValueMapCallbackVH.$Info()|new ValueT()
+DenseMap<ValueMapCallbackVH<KeyT, ValueT, Config>, ValueT, DenseMapInfo<ValueMapCallbackVH<KeyT, ValueT, Config> > > = DenseMap<ValueMapCallbackVH<KeyT, ValueT>, ValueT>#DenseMapInfoValueMapCallbackVH.$Info()|new ValueT()
+FunctionListType Module::*=Void2FunctionListType
+GlobalListType Module::*=Void2GlobalListType
+IFuncListType Module::*=Void2IFuncListType
+InstListType BasicBlock::*=Void2InstListType
+NamedMDListType Module::*=Void2NamedMDListType
+
+SymbolTableList<GlobalVariable> = SymbolTableList<GlobalVariable, Module>
+SymbolTableList<Instruction> = SymbolTableList<Instruction, BasicBlock>
+SymbolTableList<BasicBlock> = SymbolTableList<BasicBlock, Function>
+SymbolTableList<Argument> = SymbolTableList<Argument, Function>
+SymbolTableList<Function> = SymbolTableList<Function, Module>
+SymbolTableList<GlobalAlias> = SymbolTableList<GlobalAlias, Module>
+SymbolTableList<GlobalIFunc> = SymbolTableList<GlobalIFunc, Module>
+
+SymbolTableListParentType<ValueSubClass>::type = ItemParentClass
+Use *=type$ptr<Use /*P*/>
+ValueMap<KeyT, ValueT, Config> = ValueMap<KeyT, ValueT>#Config|
+ValueMapCallbackVH<KeyT, ValueT, Config> = ValueMapCallbackVH<KeyT, ValueT>
+
+bool (StringRef, unsigned int) const = StringRefUInt2Bool
+
+bool (const APInt & , const APInt & ) const = Compare<APInt>
+
+detail::AnalysisPassConcept<%TEMPLATE> = AnalysisPassConcept<%0>
+detail::AnalysisResultConcept<IRUnitT> & = AnalysisResultConcept<IRUnitT> /*&*/
+detail::AnalysisResultConcept<IRUnitT> * = AnalysisResultConcept<IRUnitT> /*P*/
+detail::AnalysisResultConcept<%CLASS> & = AnalysisResultConcept<%0> /*&*/
+detail::AnalysisResultConcept<%CLASS> * = AnalysisResultConcept<%0> /*P*/
+detail::AnalysisResultModel<%TEMPLATE, %TEMPLATE,  PassT.Result> = AnalysisResultModelTT1T2T3False<%0, %1, PassT.Result>
+opt<PassRemarksOpt, true, parserString> = optPassRemarksOpt
+param_iterator=type$ptr<Type /*P*/>
+std.iterator.pointer<std.random_access_iterator_tag, BB> = BB
+std.iterator.reference<std.random_access_iterator_tag, BB> = BB
+std::iterator<std.forward_iterator_tag, std.pair<KeyT,  DenseMapT.mapped_type>, ptrdiff_t>=std.iterator<std.forward_iterator_tag, std.pair<KeyT,  DenseMapT>>
+std::iterator<std::random_access_iterator_tag, BB, int, BB /*P*/ , BB /*P*/ > = std.iterator<std.random_access_iterator_tag, BB>
+std::pair</*uint*/int, AttributeSetNode /*P*/ > * = type$ptr<std::pairUIntType<AttributeSetNode /*P*/ >>
+std::pointer_to_unary_function</*const*/ Value /*P*/ , /*const*/ BasicBlock /*P*/ > = Value2BasicBlock
+std::pointer_to_unary_function<Value /*P*/ , BasicBlock /*P*/ > = Value2BasicBlock
+super<%CLASS, %TEMPLATE, %BUILTIN, Ptr /*P*/ , Ptr /*P*/ >::reference = %1
+super<%CLASS, %TEMPLATE, %BUILTIN, Ptr /*P*/ , Ptr /*P*/ >::pointer * = %1
+
+void (const SmallVectorImpl<AnalysisID> & ) const = Type2Void<SmallVectorImpl<Object>>
+
+[EXTRA_MEMBERS]
+<include> "./LlvmIRExtraMembers.txt"
+
+[MEMBER_ACCESS]
+
+(anonymous namespace)::BBPassManager::ID = // JAVA: moved to extra
+(anonymous namespace)::PrintBasicBlockPass::ID = // JAVA: moved to extra
+(anonymous namespace)::PrintFunctionPassWrapper::ID = // JAVA: moved to extra
+(anonymous namespace)::PrintModulePassWrapper::ID = // JAVA: moved to extra members
+(anonymous namespace)::Verifier::visitAddrSpaceCastInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitAllocaInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitAtomicCmpXchgInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitAtomicRMWInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitBasicBlock = /*implements*/ public
+(anonymous namespace)::Verifier::visitBinaryOperator = /*implements*/ public
+(anonymous namespace)::Verifier::visitBitCastInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitBranchInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitCallInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitCatchPadInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitCatchReturnInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitCatchSwitchInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitCleanupPadInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitCleanupReturnInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitExtractElementInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitExtractValueInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitFCmpInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitFPExtInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitFPToSIInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitFPToUIInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitFPTruncInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitFenceInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitFuncletPadInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitFunction = /*implements*/ public
+(anonymous namespace)::Verifier::visitGetElementPtrInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitICmpInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitIndirectBrInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitInsertElementInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitInsertValueInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitInstruction = /*implements*/ public
+(anonymous namespace)::Verifier::visitIntToPtrInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitInvokeInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitLandingPadInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitLoadInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitPHINode = /*implements*/ public
+(anonymous namespace)::Verifier::visitPtrToIntInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitReturnInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitSExtInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitSIToFPInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitSelectInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitShuffleVectorInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitStoreInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitSwitchInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitTerminatorInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitTruncInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitUIToFPInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitUserOp1 = /*implements*/ public
+(anonymous namespace)::Verifier::visitUserOp2 = /*implements*/ public
+(anonymous namespace)::Verifier::visitVAArgInst = /*implements*/ public
+(anonymous namespace)::Verifier::visitZExtInst = /*implements*/ public
+BuiltinEntry = public
+
+llvm::AnalysisManager<llvm::Module>::getResultImpl = protected
+llvm::AnalysisManager<llvm::Module>::getCachedResultImpl = protected
+llvm::AnalysisManager<llvm::Module>::invalidateImpl = protected
+llvm::AnalysisManager<llvm::Function>::getResultImpl = protected
+llvm::AnalysisManager<llvm::Function>::getCachedResultImpl = protected
+llvm::AnalysisManager<llvm::Function>::invalidateImpl = protected
+llvm::AnalysisManager<Module>::getResultImpl = protected
+llvm::AnalysisManager<Module>::getCachedResultImpl = protected
+llvm::AnalysisManager<Module>::invalidateImpl = protected
+llvm::AnalysisManager<Function>::getResultImpl = protected
+llvm::AnalysisManager<Function>::getCachedResultImpl = protected
+llvm::AnalysisManager<Function>::invalidateImpl = protected
+
+llvm::AnalysisManager::getCachedResultImpl = protected
+llvm::AnalysisManager::getResultImpl = protected
+llvm::AnalysisManager::invalidateImpl = protected
+llvm::Argument::setParent = public /*friend*/
+llvm::AssertingVH::getRawValPtr = /*private*//*friend*/
+llvm::AttributeSet::AttributeSet = /*friend*/public
+llvm::AttributeSet::get = /*friend*/public
+llvm::AttributeSet::getAttributes = /*friend*/public
+llvm::AttributeSet::pImpl = /*friend*//*package*/
+llvm::AttributeSetImpl::getNode = /*friend*/public
+llvm::BasicBlock::AdjustBlockAddressRefCount = /*friend*/ /*package*/
+llvm::BasicBlock::getInstList = public /*friend*/
+llvm::BasicBlock::setParent = public /*friend*/
+llvm::BlockAddress::destroyConstantImpl = /*friend*//*package*/
+llvm::BlockAddress::handleOperandChangeImpl = /*friend*//*package*/
+llvm::CallInst::CallInst = protected
+llvm::CallInst::hasDescriptor = /*friend*/ public
+llvm::CmpInst::CmpInst = protected
+llvm::Comdat::Comdat = /*friend*/
+llvm::Comdat::Name = /*friend*/
+llvm::Comdat::SK = /*friend*/
+llvm::ConstantAggregateZero::destroyConstantImpl = /*friend*//*package*/
+llvm::ConstantArray::ConstantArray = /*friend*/public
+llvm::ConstantArray::destroyConstantImpl = /*friend*//*package*/
+llvm::ConstantArray::handleOperandChangeImpl = /*friend*//*package*/
+llvm::ConstantAsMetadata::ConstantAsMetadata = /*friend*/
+llvm::ConstantData::ConstantData = protected
+llvm::ConstantData::handleOperandChangeImpl = /*friend*//*package*/
+llvm::ConstantDataArray::ConstantDataArray = /*friend*/
+llvm::ConstantDataArray::operator new = /*friend*/
+llvm::ConstantDataSequential::destroyConstantImpl = /*friend*//*package*/
+llvm::ConstantDataVector::ConstantDataVector = /*friend*/
+llvm::ConstantDataVector::operator new = /*friend*/
+llvm::ConstantExpr::destroyConstantImpl = /*friend*//*package*/
+llvm::ConstantExpr::handleOperandChangeImpl = /*friend*//*package*/
+llvm::ConstantExpr::setValueSubclassData=protected
+llvm::ConstantFP::destroyConstantImpl = /*friend*//*package*/
+llvm::ConstantInt::destroyConstantImpl = /*friend*//*package*/
+llvm::ConstantPointerNull::destroyConstantImpl = /*friend*//*package*/
+llvm::ConstantStruct::ConstantStruct = /*friend*/public
+llvm::ConstantStruct::destroyConstantImpl = /*friend*//*package*/
+llvm::ConstantStruct::handleOperandChangeImpl = /*friend*//*package*/
+llvm::ConstantTokenNone::destroyConstantImpl = /*friend*//*package*/
+llvm::ConstantVector::ConstantVector = /*friend*/public
+llvm::ConstantVector::destroyConstantImpl = /*friend*//*package*/
+llvm::ConstantVector::handleOperandChangeImpl = /*friend*//*package*/
+llvm::DIBasicType::cloneImpl = /*friend*/
+llvm::DICompileUnit::cloneImpl = /*friend*/
+llvm::DICompositeType::cloneImpl = /*friend*/
+llvm::DIDerivedType::cloneImpl = /*friend*/
+llvm::DIEnumerator::cloneImpl = /*friend*/
+llvm::DIExpression::cloneImpl = /*friend*/
+llvm::DIFile::cloneImpl = /*friend*/
+llvm::DIGlobalVariable::cloneImpl = /*friend*/
+llvm::DIImportedEntity::cloneImpl = /*friend*/
+llvm::DILexicalBlock::cloneImpl = /*friend*/
+llvm::DILexicalBlockFile::cloneImpl = /*friend*/
+llvm::DILocalVariable::cloneImpl = /*friend*/
+llvm::DILocation::cloneImpl = /*friend*/
+llvm::DILocation::replaceOperandWith=public
+llvm::DIMacro::cloneImpl = /*friend*/
+llvm::DIMacroFile::cloneImpl = /*friend*/
+llvm::DIModule::cloneImpl = /*friend*/
+llvm::DINamespace::cloneImpl = /*friend*/
+llvm::DIObjCProperty::cloneImpl = /*friend*/
+llvm::DISubprogram::cloneImpl = /*friend*/
+llvm::DISubrange::cloneImpl = /*friend*/
+llvm::DISubroutineType::cloneImpl = /*friend*/
+llvm::DITemplateTypeParameter::cloneImpl = /*friend*/
+llvm::DITemplateValueParameter::cloneImpl = /*friend*/
+llvm::DistinctMDOperandPlaceholder::Use = /*friend*/public
+llvm::DomTreeNodeBase<BasicBlock>::DominatedBy = /*friend*/public
+llvm::FPMathOperator::copyFastMathFlags = /*friend*/public
+llvm::FPMathOperator::setFastMathFlags = /*friend*/public
+llvm::FPMathOperator::setHasAllowReciprocal = /*friend*/public
+llvm::FPMathOperator::setHasNoInfs = /*friend*/public
+llvm::FPMathOperator::setHasNoNaNs = /*friend*/public
+llvm::FPMathOperator::setHasNoSignedZeros = /*friend*/public
+llvm::FPMathOperator::setHasUnsafeAlgebra = /*friend*/public
+llvm::FastMathFlags::FastMathFlags = /*friend*/public
+llvm::FastMathFlags::Flags = /*friend*/public
+llvm::FuncletPadInst::FuncletPadInst = /*friend*/protected
+llvm::Function::getArgumentList = public /*friend*/
+llvm::Function::getBasicBlockList = public /*friend*/
+llvm::Function::setParent = public /*friend*/
+llvm::GEPOperator::setIsInBounds = /*friend*/public
+llvm::GenericDINode::cloneImpl = /*friend*/
+llvm::GenericDINode::recalculateHash = /*friend*/public
+llvm::GenericDINode::setHash = /*friend*/public
+llvm::GlobalAlias::setParent = public /*friend*/
+llvm::GlobalIFunc::setParent = public /*friend*/
+llvm::GlobalValue::destroyConstantImpl = /*friend*//*package*/
+llvm::GlobalValue::handleOperandChangeImpl = /*friend*//*package*/
+llvm::GlobalVariable::setParent = public /*friend*/
+llvm::InlineAsm::InlineAsm = /*friend*/public
+llvm::Instruction::setParent = public /*friend*/
+llvm::Instruction::user_back = public final
+llvm::IntegerType::IntegerType = /*friend*/public
+llvm::Intrinsic::IITDescriptor::Unnamed_field1 = public final
+llvm::InvokeInst::hasDescriptor = /*friend*/ public
+llvm::LLVMContext::addModule = /*friend*/
+llvm::LLVMContext::removeModule = /*friend*/
+llvm::LocalAsMetadata::LocalAsMetadata = /*friend*/
+llvm::MDNode::Context = /*friend*//*package*/
+llvm::MDNode::decrementUnresolvedOperandCount = /*friend*/public
+llvm::MDNode::deleteAsSubclass = /*friend*/public
+llvm::MDNode::dropAllReferences = /*friend*/public
+llvm::MDNode::handleChangedOperand=protected
+llvm::MDNode::replaceWithDistinctImpl = /*friend*//*private*/
+llvm::MDNode::replaceWithPermanentImpl = /*friend*//*package*/
+llvm::MDNode::replaceWithUniquedImpl = /*friend*/
+llvm::MDString::MDString = /*friend*/public
+llvm::MDTuple::cloneImpl = /*friend*/
+llvm::MDTuple::recalculateHash = /*friend*/public
+llvm::MDTuple::setHash = /*friend*/public
+llvm::MetadataAsValue::dropUse = /*friend*/public
+llvm::MetadataAsValue::handleChangedMetadata = /*friend*/public
+llvm::NamedMDNode::NamedMDNode = /*friend*/
+llvm::NamedMDNode::setParent = /*friend*/
+llvm::OverflowingBinaryOperator::setHasNoSignedWrap = /*friend*/public
+llvm::OverflowingBinaryOperator::setHasNoUnsignedWrap = /*friend*/public
+llvm::Pass::PassID = // JAVA: in extra
+llvm::PassInfo = private final
+llvm::PassInfo::PassID = // JAVA: in extra
+llvm::PossiblyExactOperator::setIsExact = /*friend*/public
+llvm::StoreInst::setInstructionSubclassData = /*shadow*/protected
+llvm::StructLayout::StructLayout = /*friend*/
+llvm::SymbolTableListSentinelTraits<Instruction> = SymbolTableListTraits<Instruction, BasicBlock>
+
+llvm::SymbolTableListTraits<llvm::Function>::getListOwner = public /*friend*/
+llvm::SymbolTableListTraits<llvm::Function>::getList = public /*friend*/
+llvm::SymbolTableListTraits<llvm::Function>::getSymTab = public /*friend*/
+llvm::SymbolTableListTraits<llvm::GlobalVariable>::getListOwner = public /*friend*/
+llvm::SymbolTableListTraits<llvm::GlobalVariable>::getList = public /*friend*/
+llvm::SymbolTableListTraits<llvm::GlobalVariable>::getSymTab = public /*friend*/
+llvm::SymbolTableListTraits<llvm::GlobalAlias>::getListOwner = public /*friend*/
+llvm::SymbolTableListTraits<llvm::GlobalAlias>::getList = public /*friend*/
+llvm::SymbolTableListTraits<llvm::GlobalAlias>::getSymTab = public /*friend*/
+llvm::SymbolTableListTraits<llvm::GlobalIFunc>::getListOwner = public /*friend*/
+llvm::SymbolTableListTraits<llvm::GlobalIFunc>::getList = public /*friend*/
+llvm::SymbolTableListTraits<llvm::GlobalIFunc>::getSymTab = public /*friend*/
+llvm::SymbolTableListTraits<GlobalVariable>::addNodeToList = @Override public
+llvm::SymbolTableListTraits<GlobalVariable>::getSymTab = @Override public /*friend*/
+llvm::SymbolTableListTraits<GlobalVariable>::getListOwner = @Override public /*friend*/
+llvm::SymbolTableListTraits<Function>::getSymTab = @Override public
+llvm::SymbolTableListTraits<Function>::addNodeToList = @Override public
+
+llvm::TrackingVH::getValPtr = /*friend*/protected
+llvm::Type::Type = /*friend*/public
+llvm::TypedDINodeRef::TypedDINodeRef<T> = /*friend*/public
+llvm::TypedTrackingMDRef::Ref = private final
+llvm::UndefValue::destroyConstantImpl = /*friend*//*package*/
+llvm::Use::addToList = /*friend*/
+llvm::User::getHungOffOperands = /*IUser*/public
+llvm::User::getIntrusiveOperands = /*IUser*/public
+llvm::User::operator new = /*friend*/public
+llvm::Value::HasValueHandle = /*friend*/
+llvm::Value::Value = protected
+llvm::Value::user_back = public final
+llvm::ValueAsMetadata::dropUsers = /*friend*/public
+llvm::ValueAsMetadata::replaceAllUsesWith = public
+llvm::ValueHandleBase::PrevPair = private final
+llvm::ValueMap::Data = /*friend*/
+llvm::ValueMap::Map = /*friend*/
+llvm::ValueMapCallbackVH::ValueMapCallbackVH<KeyT, ValueT, Config> = /*friend*/public
+llvm::ValueSymbolTable::createValueName = /*friend*/
+llvm::ValueSymbolTable::reinsertValue = /*friend*/ public
+llvm::ValueSymbolTable::removeValueName = /*friend*/ public
+
+[FUNCTION_POINTERS]
+(lambda at /export1/home/alsimon/LLVM39/llvm/lib/IR/IntrinsicInst.cpp:69:16) = Cmp

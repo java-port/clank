@@ -1,0 +1,140 @@
+  @Test
+  public void test_over_match_best_p1_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.best/p1.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.best/p1.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_over_match_copy_p1_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.funcs/over.match.copy/p1.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++11 -fsyntax-only ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.funcs/over.match.copy/p1.cpp -verify
+    RUN("%clang_cc1 -std=c++11 -fsyntax-only %s -verify");
+  }
+
+  @Test
+  public void test_over_over_p1_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.over/p1.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.over/p1.cpp
+    RUN("%clang_cc1 -fsyntax-only %s");
+  }
+
+  @Test
+  public void test_over_literal_p2_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.oper/over.literal/p2.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++11 ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.oper/over.literal/p2.cpp -verify
+    RUN("%clang_cc1 -std=c++11 %s -verify");
+  }
+
+  @Test
+  public void test_over_over_p2_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.over/p2.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.over/p2.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_over_load_p2_0x_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.load/p2-0x.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++11 -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.load/p2-0x.cpp
+    RUN("%clang_cc1 -std=c++11 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_over_over_p2_resolve_single_template_id_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.over/p2-resolve-single-template-id.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify -Wno-bool-conversion ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.over/p2-resolve-single-template-id.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify -Wno-bool-conversion %s");
+  }
+
+  @Test
+  public void test_over_built_p23_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.built/p23.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -std=c++11 -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.built/p23.cpp
+    RUN("%clang_cc1 -fsyntax-only -std=c++11 -verify %s");
+  }
+
+  @Test
+  public void test_over_built_p25_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.built/p25.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify -std=c++11 ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.built/p25.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify -std=c++11 %s");
+  }
+
+  @Test
+  public void test_over_match_oper_p3_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.funcs/over.match.oper/p3.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify -std=c++11 ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.funcs/over.match.oper/p3.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify -std=c++11 %s");
+  }
+
+  @Test
+  public void test_over_literal_p3_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.oper/over.literal/p3.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++11 ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.oper/over.literal/p3.cpp -verify
+    RUN("%clang_cc1 -std=c++11 %s -verify");
+  }
+
+  @Test
+  public void test_over_ics_user_p3_0x_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.best/over.best.ics/over.ics.user/p3-0x.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -std=c++11 -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.best/over.best.ics/over.ics.user/p3-0x.cpp
+    RUN("%clang_cc1 -fsyntax-only -std=c++11 -verify %s");
+  }
+
+  @Test
+  public void test_over_ics_rank_p3_0x_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.best/over.ics.rank/p3-0x.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++11 -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.best/over.ics.rank/p3-0x.cpp
+    RUN("%clang_cc1 -std=c++11 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_over_over_p4_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.over/p4.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.over/p4.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_over_match_funcs_p4_0x_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.funcs/p4-0x.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++11 -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.funcs/p4-0x.cpp
+    RUN("%clang_cc1 -std=c++11 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_over_literal_p5_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.oper/over.literal/p5.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++11 ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.oper/over.literal/p5.cpp -verify
+    RUN("%clang_cc1 -std=c++11 %s -verify");
+  }
+
+  @Test
+  public void test_over_ics_list_p6_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.best/over.best.ics/over.ics.list/p6.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++11 -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.match/over.match.best/over.best.ics/over.ics.list/p6.cpp
+    RUN("%clang_cc1 -std=c++11 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_over_literal_p6_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.oper/over.literal/p6.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++11 ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.oper/over.literal/p6.cpp -verify
+    RUN("%clang_cc1 -std=c++11 %s -verify");
+  }
+
+  @Test
+  public void test_over_literal_p7_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.oper/over.literal/p7.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++11 ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.oper/over.literal/p7.cpp -verify
+    RUN("%clang_cc1 -std=c++11 %s -verify");
+  }
+
+  @Test
+  public void test_over_literal_p8_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.oper/over.literal/p8.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++11 ${LLVM_SRC}/llvm/tools/clang/test/CXX/over/over.oper/over.literal/p8.cpp -verify
+    RUN("%clang_cc1 -std=c++11 %s -verify");
+  }
+

@@ -1,0 +1,370 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.llvm.adtsupport_delegates.properties"
+[DELEGATE_BODY=LLVM38]
+<include> "./commands_org.llvm.adtsupport_delegates.properties"
+[DELEGATE_BODY=LLVM36]
+<include> "./commands_prev_org.llvm.adtsupport_delegates.properties"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.llvm.adtsupport.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[ID_NAME_CONVERSION]
+llvm::ARM::getDefaultExtensions::ArchKind=_ArchKind
+llvm::AArch64::getDefaultExtensions::ArchKind=_ArchKind
+llvm::sys::fs::make_absolute::path = _path
+
+[EXTRA_MEMBERS]
+(anonymous namespace)::HelpPrinter = IMPLEMENTS#type$ref<Boolean>
+(anonymous namespace)::HelpPrinter = FILE#./extra_members/HelpPrinterExtraMembers.java
+(anonymous namespace)::RunSafelyOnThreadInfo = FILE#./extra_members/RunSafelyOnThreadInfoExtraMembers.java
+llvm::APFloat = IMPLEMENTS#NativeMoveable<APFloat>
+llvm::APFloat = IMPLEMENTS#FoldingSetTrait.Profilable
+llvm::APFloat=TEXT#@Override public APFloat move() { return new APFloat(JD$Move.INSTANCE, this); }
+llvm::APInt = IMPLEMENTS#FoldingSetTrait.Profilable
+llvm::BitVector = IMPLEMENTS#BitVectorTy<BitVector>, NativeSwappable
+llvm::BumpPtrAllocatorImpl = FILE#./extra_members/BumpPtrAllocatorImplExtraMembers.java
+llvm::DataRegionData = FILE#./extra_members/DataRegionDataExtraMembers.java
+llvm::DomTreeNodeBase = IMPLEMENTS#Iterable</*const*/ DomTreeNodeBase<NodeT> /*P*/>
+llvm::DomTreeNodeBase = FILE#./extra_members/DomTreeNodeBaseExtraMembers.java
+llvm::DominatorBase = FILE#./extra_members/DominatorBaseExtraMembers.java
+llvm::DominatorTreeBase=IMPLEMENTS#Destructors.ClassWithDestructor
+llvm::DominatorTreeBase=TEXT#@Override public void $destroy() { throw new UnsupportedOperationException("Not supported yet."); }
+llvm::ErrorInfo = FILE#./extra_members/ErrorInfoExtraMembers.java
+llvm::FastFoldingSetNode=EXTENDS#FoldingSetImpl.NodeImpl
+llvm::FoldingSetVector=IMPLEMENTS#Iterable< pointee_iterator< type$ptr<T>>>
+llvm::FoldingSetVector=TEXT#@Override public Iterator< pointee_iterator< type$ptr<T>>> iterator() { return new JavaIterator(begin(), end()); }
+llvm::ImmutableList = FILE#./extra_members/ImmutableListExtraMembers.java
+llvm::ImmutableList = IMPLEMENTS#Iterable<T>
+llvm::ImmutableList = IMPLEMENTS#NativePOD<ImmutableList<T>>
+llvm::ImmutableList::iterator = FILE#./extra_members/iteratorExtraMembers.java
+llvm::ImmutableList::iterator = IMPLEMENTS#type$iterator<iterator<T>, T>
+llvm::MCAssembler = IMPLEMENTS#Iterable<MCSection>
+llvm::MCAssembler = FILE#./extra_members/MCAssemblerExtraMembers.java
+llvm::MCCFIInstruction = FILE#./extra_members/MCCFIInstructionExtraMembers.java
+llvm::MCCFIInstruction::(anonymous) = FILE#./extra_members/Unnamed_union1ExtraMembers.java
+llvm::MCCVLoc = FILE#./extra_members/MCCVLocExtraMembers.java
+llvm::MCContext::COFFSectionKey = IMPLEMENTS#NativeCloneable<COFFSectionKey>
+llvm::MCContext::COFFSectionKey = FILE#./extra_members/COFFSectionKeyExtraMembers.java
+llvm::MCContext::ELFSectionKey = IMPLEMENTS#NativeCloneable<ELFSectionKey>, NativeMoveable<ELFSectionKey>
+llvm::MCContext::ELFSectionKey = FILE#./extra_members/ELFSectionKeyExtraMembers.java
+llvm::MCDwarfLineEntry = FILE#./extra_members/MCDwarfLineEntryExtraMembers.java
+llvm::MCDwarfLoc = FILE#./extra_members/MCDwarfLocExtraMembers.java
+llvm::MCDwarfLoc = IMPLEMENTS#NativeCloneable<MCDwarfLoc>
+llvm::MCDwarfLoc = IMPLEMENTS#NativeMoveable<MCDwarfLoc>
+llvm::MCExpr = FILE#./extra_members/MCExprExtraMembers.java
+llvm::MCFixupKindInfo = FILE#./extra_members/MCFixupKindInfoExtraMembers.java
+llvm::MCGenDwarfLabelEntry = FILE#./extra_members/MCGenDwarfLabelEntryExtraMembers.java
+llvm::MCLOHDirective = FILE#./extra_members/MCLOHDirectiveExtraMembers.java
+llvm::MCOperand::(anonymous) = FILE#./extra_members/Unnamed_union1ExtraMembers.java
+llvm::MCRegisterInfo::DwarfLLVMRegPair = FILE#./extra_members/DwarfLLVMRegPairExtraMembers.java
+llvm::MCSection = IMPLEMENTS#Iterable<MCSection>
+llvm::MCSymbol = FILE#./extra_members/MCSymbolExtraMembers.java
+llvm::MCSymbol::(anonymous) = FILE#./extra_members/NameEntryStorageTyExtraMembers.java
+llvm::MD5 = FILE#./extra_members/MD5ExtraMembers.java
+llvm::MachO::any_relocation_info = FILE#./extra_members/any_relocation_infoExtraMembers.java
+llvm::MachO::dysymtab_command = FILE#./extra_members/dysymtab_commandExtraMembers.java
+llvm::MachO::linkedit_data_command = FILE#./extra_members/linkedit_data_commandExtraMembers.java
+llvm::MachO::linker_option_command = FILE#./extra_members/linker_option_commandExtraMembers.java
+llvm::MachO::mach_header = FILE#./extra_members/mach_headerExtraMembers.java
+llvm::MachO::mach_header_64 = FILE#./extra_members/mach_header_64ExtraMembers.java
+llvm::MachO::nlist = FILE#./extra_members/nlistExtraMembers.java
+llvm::MachO::nlist_64 = FILE#./extra_members/nlist_64ExtraMembers.java
+llvm::MachO::section = FILE#./extra_members/sectionExtraMembers.java
+llvm::MachO::section_64 = FILE#./extra_members/section_64ExtraMembers.java
+llvm::MachO::segment_command = FILE#./extra_members/segment_commandExtraMembers.java
+llvm::MachO::segment_command_64 = FILE#./extra_members/segment_command_64ExtraMembers.java
+llvm::MachO::symtab_command = FILE#./extra_members/symtab_commandExtraMembers.java
+llvm::MachO::version_min_command = FILE#./extra_members/version_min_commandExtraMembers.java
+llvm::MachO::x86_exception_state64_t = FILE#./extra_members/x86_exception_state64_tExtraMembers.java
+llvm::MachO::x86_exception_state_t = FILE#./extra_members/x86_exception_state_tExtraMembers.java
+llvm::MachO::x86_float_state_t = FILE#./extra_members/x86_float_state_tExtraMembers.java
+llvm::MachO::x86_thread_state64_t = FILE#./extra_members/x86_thread_state64_tExtraMembers.java
+llvm::MachO::x86_thread_state_t = FILE#./extra_members/x86_thread_state_tExtraMembers.java
+llvm::MachObjectWriter::MachSymbolData = IMPLEMENTS#ComparableLower
+llvm::MachObjectWriter::MachSymbolData = FILE#./extra_members/MachSymbolDataExtraMembers.java
+llvm::MachObjectWriter::RelAndSymbol = FILE#./extra_members/RelAndSymbolExtraMembers.java
+llvm::MemoryObject = FILE#./extra_members/MemoryObjectExtraMembers.java
+llvm::OnDiskChainedHashTable = FILE#./extra_members/OnDiskChainedHashTableExtraMembers.java
+llvm::OnDiskChainedHashTableGenerator = FILE#./extra_members/OnDiskChainedHashTableGeneratorExtraMembers.java
+llvm::OnDiskIterableChainedHashTable = FILE#./extra_members/OnDiskIterableChainedHashTableExtraMembers.java
+llvm::OnDiskIterableChainedHashTable::data_iterator = FILE#./extra_members/data_iteratorExtraMembers.java
+llvm::OnDiskIterableChainedHashTable::iterator_base = FILE#./extra_members/iterator_baseExtraMembers.java
+llvm::OnDiskIterableChainedHashTable::key_iterator = FILE#./extra_members/key_iteratorExtraMembers.java
+llvm::Optional=IMPLEMENTS#NativeSwappable
+llvm::Optional = FILE#./extra_members/OptionalExtraMembers.java
+llvm::PointerIntPair = IMPLEMENTS#NativePOD<PointerIntPair<PointerTy>>, NativeHashable, NativePointerLike
+llvm::PointerIntPair = FILE#./extra_members/PointerIntPairExtraMembers.java
+llvm::Regex = FILE#./extra_members/RegexExtraMembers.java
+llvm::Regex = IMPLEMENTS#Native.NativePOD<Regex>
+llvm::SMFixIt = IMPLEMENTS#NativePOD<SMFixIt>, ComparableLower
+llvm::SMFixIt = FILE#./extra_members/SMFixItExtraMembers.java
+llvm::SetVector=IMPLEMENTS#Iterable<T>
+llvm::SetVector=TEXT#@Override public Iterator<T> iterator() { return new JavaIterator<>(begin(), end()); }
+llvm::SmallBitVector=IMPLEMENTS#NativeSwappable
+llvm::SmallBitVector=TEXT#@Override public void swap(NativeSwappable RHS) { swap((SmallBitVector)RHS); }
+llvm::SmallPtrSetImpl = IMPLEMENTS#Insertable<SmallPtrSetIterator<PtrType>, PtrType>, NativeIterable<type$iterator<?, PtrType>>
+llvm::SmallPtrSetImplBase=IMPLEMENTS#NativeSwappable<SmallPtrSetImplBase<PtrType>>
+llvm::SmallSet = IMPLEMENTS#NativeCloneable<SmallSet>
+llvm::SmallSet = FILE#./extra_members/SmallSetExtraMembers.java
+llvm::SourceMgr::SrcBuffer = IMPLEMENTS#Native.NativePOD<SrcBuffer>
+llvm::SourceMgr::SrcBuffer = FILE#./extra_members/SrcBufferExtraMembers.java
+llvm::StringMapEntryBase = FILE#./extra_members/StringMapEntryBaseExtraMembers.java
+llvm::StringRef = IMPLEMENTS#OpCapable, NativePOD<StringRef>, ComparableLower, NativeSwappable, NativeMoveable<StringRef>
+llvm::TargetRegistry::iterator = IMPLEMENTS#type$iterator<iterator, Target>
+llvm::TargetRegistry::iterator = FILE#./extra_members/iteratorExtraMembers.java
+llvm::TimeRecord = IMPLEMENTS#NativePOD<TimeRecord>
+llvm::TimeRecord = IMPLEMENTS#ComparableLower
+llvm::TimeRecord = FILE#./extra_members/TimeRecordExtraMembers.java
+llvm::Timer = FILE#./extra_members/TimerExtraMembers.java
+llvm::Twine = FILE#./extra_members/TwineExtraMembers.java
+llvm::cl::Option = FILE#./extra_members/OptionExtraMembers.java
+llvm::cl::cat::apply=T0EXTENDS#opt
+llvm::cl::desc = FILE#./extra_members/descExtraMembers.java
+llvm::cl::generic_parser_base::printOptionDiff = T0EXTENDS#GenericOptionValue
+llvm::cl::list = FILE#./extra_members/listUIntBoolExtraMembers.java
+llvm::df_iterator=FILE#./extra_members/df_iterator_extra_members.java
+llvm::df_iterator=IMPLEMENTS#type$iterator<df_iterator, NodeType>
+llvm::df_iterator_storage=FILE#./extra_members/df_iterator_storage_extra_members.java
+llvm::ilist_embedded_sentinel_traits = T0EXTENDS#extends ilist_node<NodeTy>
+llvm::ilist_half_node = FILE#./extra_members/ilist_half_nodeExtraMembers.java
+llvm::ilist_iterator = FILE#./extra_members/ilist_iteratorExtraMembers.java
+llvm::ilist_iterator = T0EXTENDS#extends ilist_node<NodeTy>
+#llvm::ilist_iterator::operator== = T0EXTENDS#extends ilist_node<NodeTy>
+#llvm::ilist_iterator::operator!= = T0EXTENDS#extends ilist_node<NodeTy>
+llvm::ilist_node = T0EXTENDS#extends ilist_node<NodeTy>
+llvm::ilist_node = FILE#./extra_members/ilist_nodeExtraMembers.java
+llvm::ilist_node_with_parent = T0EXTENDS#extends ilist_node<NodeTy>
+llvm::ilist_node_with_parent = TEXT#public default void $destroy$ilist_node_with_parent() {}
+llvm::iplist = IMPLEMENTS#ilist_traits<NodeTy>, NativeIterable<ilist_iterator<? extends NodeTy>>
+llvm::iplist = FILE#./extra_members/iplistExtraMembers.java
+llvm::iterator_range = FILE#./extra_members/iterator_rangeExtraMembers.java
+llvm::iterator_range = IMPLEMENTS#NativeCloneable<iterator_range<Type>>
+llvm::mapped_iterator=TEXT#@Override public mapped_iterator<FromType, value_type> clone() { return new mapped_iterator<>(this.current, this.Fn); }
+llvm::po_iterator=FILE#./extra_members/po_iterator_extra_members.java
+llvm::po_iterator_storage=FILE#./extra_members/po_iterator_storage_extra_members.java
+#It seems that the below does not work; I live it here in case it will be fixed some day
+llvm::po_iterator_storage<type-parameter-0-0, true>=EXTENDS#po_iterator_storage<SetType>
+llvm::scc_iterator = FILE#./extra_members/scc_iteratorExtraMembers.java
+llvm::sys::SmartRWMutex = FILE#./extra_members/SmartRWMutexExtraMembers.java
+llvm::yaml::DocumentListTraits = FILE#./extra_members/DocumentListTraitsExtraMembers.java
+llvm::yaml::Hex32 = FILE#./extra_members/Hex32ExtraMembers.java
+llvm::yaml::Hex64 = FILE#./extra_members/Hex64ExtraMembers.java
+llvm::yaml::IO::enumCase = T0EXTENDS#Enum<?>
+llvm::yaml::MappingNode = IMPLEMENTS#Iterable<KeyValueNode>
+llvm::yaml::MappingNode = IMPLEMENTS#org.llvm.support.java.MappingSequenceInterface
+llvm::yaml::MappingNode = FILE#./extra_members/MappingNodeExtraMembers.java
+llvm::yaml::MappingTraits = FILE#./extra_members/MappingTraitsExtraMembers.java
+llvm::yaml::Node = FILE#./extra_members/NodeExtraMembers.java
+llvm::yaml::ScalarEnumerationTraits = TEXT#void enumeration(IO /*&*/io, type$ref<T> /*&*/value);
+
+llvm::yaml::ScalarTraits<bool> = IMPLEMENTS#ScalarTraits<bool$ref>
+llvm::yaml::ScalarTraits<double> = IMPLEMENTS#ScalarTraits<double$ref>
+llvm::yaml::ScalarTraits<float> = IMPLEMENTS#ScalarTraits<float$ref>
+llvm::yaml::ScalarTraits<Hex16> = IMPLEMENTS#ScalarTraits<Hex16>
+llvm::yaml::ScalarTraits<Hex32> = IMPLEMENTS#calarTraits<Hex32>
+llvm::yaml::ScalarTraits<Hex64> = IMPLEMENTS#ScalarTraits<Hex64>
+llvm::yaml::ScalarTraits<Hex8> = IMPLEMENTS#ScalarTraits<Hex8>
+llvm::yaml::ScalarTraits<int> = IMPLEMENTS#ScalarTraits<int$ref>
+llvm::yaml::ScalarTraits<long long> = IMPLEMENTS#ScalarTraits<long$ref>
+llvm::yaml::ScalarTraits<signed char> = IMPLEMENTS#ScalarTraits<char$ref>
+llvm::yaml::ScalarTraits<short> = IMPLEMENTS#ScalarTraits<short$ref>
+llvm::yaml::ScalarTraits<StringRef> = IMPLEMENTS#ScalarTraits<StringRef>
+llvm::yaml::ScalarTraits<basic_string<char> > = IMPLEMENTS#ScalarTraits<std.string>
+llvm::yaml::ScalarTraits<unsigned char> = IMPLEMENTS#ScalarTraits<char$ref>
+llvm::yaml::ScalarTraits<unsigned int> = IMPLEMENTS#ScalarTraits<uint$ref>
+llvm::yaml::ScalarTraits<unsigned long long> = IMPLEMENTS#ScalarTraits<ulong$ref>
+llvm::yaml::ScalarTraits<unsigned short> = IMPLEMENTS#ScalarTraits<ushort$ref>
+llvm::yaml::ScalarTraits = FILE#./extra_members/ScalarTraitsExtraMembers.java
+
+llvm::yaml::SequenceNode = IMPLEMENTS#Iterable<Node>
+llvm::yaml::SequenceNode = IMPLEMENTS#org.llvm.support.java.MappingSequenceInterface
+llvm::yaml::SequenceNode = FILE#./extra_members/SequenceNodeExtraMembers.java
+llvm::yaml::SequenceTraits = FILE#./extra_members/SequenceTraitsExtraMembers.java
+llvm::yaml::basic_collection_iterator = T0EXTENDS#MappingSequenceInterface
+llvm::yaml::basic_collection_iterator = T1EXTENDS#Node
+llvm::yaml::basic_collection_iterator = FILE#./extra_members/basic_collection_iteratorExtraMembers.java
+llvm::yaml::basic_collection_iterator = IMPLEMENTS#type$iterator<basic_collection_iterator, ValueT>
+llvm::yaml::begin = T0EXTENDS#MappingSequenceInterface
+llvm::yaml::skip = T0EXTENDS#MappingSequenceInterface
+
+[ENUM_TO_INT_CONVERSION]
+llvm::SmallBitVector::(anonymous)=/*uint*/int
+
+[TYPES_MAP]
+# the below looks strange, but I checked via find/grep that there are only 7 matches (+1 in test),
+# they all are within po_iterator or df_iterator, and typedefs to GraphTraits<GraphT>::NodeType
+# which in turn usually typedefs to GraphTraits template parameter
+GT::NodeType = NodeType
+ImutAVLTree<ImutInfo> = ImutAVLTree<KeyT, DataT, ValT>
+ImutAVLTreeGenericIterator<ImutInfo> = ImutAVLTreeGenericIterator<KeyT, DataT, ValT>
+ImutAVLTreeInOrderIterator<ImutInfo> = ImutAVLTreeInOrderIterator<KeyT, DataT, ValT>
+ImutInfo::data_type = DataT
+ImutInfo::data_type_ref = DataT
+
+# For ImutAVLTree
+ImutInfo::key_type = KeyT
+ImutInfo::key_type_ref = KeyT
+ImutInfo::value_type = ValT
+ImutInfo::value_type_ref = ValT
+ValInfo::data_type = DataT
+ValInfo::data_type_ref = DataT
+ValInfo::key_type = KeyT
+ValInfo::key_type_ref = KeyT
+ValInfo::value_type = ValT
+ValInfo::value_type_ref = ValT
+
+auto (size_t) const -> StringRef = UInt2StringRef
+
+bool (const Target & ) const = Target2Bool
+
+# Java types mapping for ImutAVLTree
+#ImutAVLTree.key_type<KeyT, ValT> = KeyT
+#ImutAVLTree.key_type_ref<KeyT, ValT> = KeyT
+#ImutAVLTree.value_type<_Kt, _Vt> = std.pair<_Kt, _Vt>
+#ImutAVLTree.value_type_ref<_Kt, _Vt> = std.pair<_Kt, _Vt>
+#ImutAVLTree.iterator<_Kt, _Vt> = ImutAVLTreeInOrderIterator<_Kt, _Vt>
+#ImutAVLTree.iterator<_Kt, _Vt> /*&*/ = ImutAVLTreeInOrderIterator<_Kt, _Vt> /*&*/
+#ImutAVLTree.Factory<ValInfo> = ImutAVLFactory<KeyT, ValT>
+
+integerPart          = long/*uint64_t*/
+integerPart &        = ulong$ref/*uint64_t &*/
+integerPart *        = ulong$ptr/*uint64_t P*/
+
+[MEMBER_ACCESS]
+
+(anonymous namespace)::HelpPrinter::ShowHidden = protected final
+(anonymous namespace)::StatisticInfo::Stats = /*friend*/public
+(anonymous namespace)::StatisticInfo::sort = /*friend*/public
+ImutAVLFactory<ImutInfo>::Cache=/*friend*/
+ImutAVLFactory<ImutInfo>::freeNodes=/*friend*/
+llvm::APFloat = /*friend*/public
+llvm::APFloat::category = /*friend*/public
+llvm::APFloat::makeQuiet = /*friend*/public
+llvm::APFloat::normalize = /*friend*/public
+llvm::APFloat::partCount = /*friend*/public
+llvm::APFloat::semantics = /*friend*/public
+llvm::APFloat::sign = /*friend*/public
+llvm::APFloat::significandParts = /*friend*/public
+llvm::APInt::APInt = /*friend*/public
+
+llvm::APInt::isSingleWord=/*friend*/public
+llvm::BumpPtrAllocator::AlignPtr=/*friend*/
+llvm::BumpPtrAllocator::CurPtr=/*friend*/
+llvm::BumpPtrAllocator::CurSlab=/*friend*/
+llvm::CrashRecoveryContextCleanup::next=/*friend*/
+
+llvm::CrashRecoveryContextCleanup::prev=/*friend*/
+llvm::DomTreeNodeBase::Children = /*friend*/public
+llvm::DomTreeNodeBase::DFSNumIn = /*friend*/public
+llvm::DomTreeNodeBase::DFSNumOut = /*friend*/public
+llvm::DomTreeNodeBase::DominatedBy = /*friend*/public
+llvm::DomTreeNodeBase::IDom = protected
+llvm::DomTreeNodeBase::TheBB = protected
+llvm::DominatorBase::Roots = /*friend*/public final
+
+llvm::DominatorTreeBase<NodeT>::Info = /*friend*/public final
+llvm::DominatorTreeBase<NodeT>::Vertex = /*friend*/public final
+llvm::DominatorTreeBase<NodeT>::IDoms = /*friend*/public final
+llvm::DominatorTreeBase<NodeT>::RootNode = /*friend*/public
+llvm::DominatorTreeBase<NodeT>::DomTreeNodes = /*friend*/public final
+
+llvm::DominatorTreeBase::getIDom = /*friend*/public
+llvm::DominatorTreeBase::getNodeForBlock = /*friend*/public
+
+llvm::Error::getPtr = /*friend*/public
+llvm::Error::takePayload = /*friend*/public
+llvm::FormattedNumber::DecValue = /*friend*/public
+llvm::FormattedNumber::Hex = /*friend*/public
+llvm::FormattedNumber::HexPrefix = /*friend*/public
+llvm::FormattedNumber::HexValue = /*friend*/public
+llvm::FormattedNumber::Upper = /*friend*/public
+llvm::FormattedNumber::Width = /*friend*/public
+llvm::FormattedString::RightJustify = /*friend*/public
+llvm::FormattedString::Str = /*friend*/public
+llvm::FormattedString::Width = /*friend*/public
+llvm::ImmutableListImpl::ImmutableListImpl<T> = /*friend*/
+llvm::MCDwarfLoc::MCDwarfLoc = /*friend*/public
+llvm::MCFragment::MCFragment = /*friend*/public
+llvm::MCFragment::Offset = /*friend*/public
+llvm::MCLabel::MCLabel = /*friend*/public
+llvm::MCRegisterInfo::DiffLists = /*friend*/public
+llvm::MCSectionCOFF::MCSectionCOFF = /*friend*/public
+llvm::MCSectionELF::MCSectionELF = /*friend*/public
+llvm::MCSectionELF::setSectionName = /*friend*/public
+llvm::MCSectionMachO::MCSectionMachO = /*friend*/public
+llvm::OnDiskChainedHashTable::Base = protected final
+llvm::OnDiskChainedHashTable::Buckets = protected final
+llvm::OnDiskChainedHashTable::InfoObj = protected final
+llvm::OnDiskChainedHashTable::NumBuckets = protected final
+llvm::OnDiskChainedHashTable::NumEntries = protected final
+llvm::OnDiskChainedHashTable::iterator::Data = private final
+llvm::OnDiskChainedHashTable::iterator::DataStartOffset = private final
+llvm::OnDiskChainedHashTable::iterator::InfoObj = private final
+llvm::OnDiskChainedHashTable::iterator::Key = private final
+llvm::OnDiskChainedHashTable::iterator::Len = private final
+llvm::OnDiskIterableChainedHashTable::iterator_base = public
+llvm::OnDiskIterableChainedHashTable::iterator_base::advance = protected
+llvm::PrettyStackTraceEntry::NextEntry = /*friend*/public
+llvm::Target::ArchMatchFn = /*friend*/public
+llvm::Target::AsmPrinterCtorFn = /*friend*/public
+llvm::Target::AsmStreamerCtorFn = /*friend*/public
+llvm::Target::HasJIT = /*friend*/public
+llvm::Target::MCAsmBackendCtorFn = /*friend*/public
+llvm::Target::MCAsmInfoCtorFn = /*friend*/public
+llvm::Target::MCAsmParserCtorFn = /*friend*/public
+llvm::Target::MCCodeEmitterCtorFn = /*friend*/public
+llvm::Target::MCCodeGenInfoCtorFn = /*friend*/public
+llvm::Target::MCDisassemblerCtorFn = /*friend*/public
+llvm::Target::MCInstPrinterCtorFn = /*friend*/public
+llvm::Target::MCInstrAnalysisCtorFn = /*friend*/public
+llvm::Target::MCInstrInfoCtorFn = /*friend*/public
+llvm::Target::MCObjectStreamerCtorFn = /*friend*/public
+llvm::Target::MCRegInfoCtorFn = /*friend*/public
+llvm::Target::MCRelocationInfoCtorFn = /*friend*/public
+llvm::Target::MCSubtargetInfoCtorFn = /*friend*/public
+llvm::Target::MCSymbolizerCtorFn = /*friend*/public
+llvm::Target::Name = /*friend*/public
+llvm::Target::Next = /*friend*/public
+llvm::Target::ShortDesc = /*friend*/public
+llvm::Target::TargetMachineCtorFn = /*friend*/public
+llvm::Target::TripleMatchQualityFn = /*friend*/public
+llvm::Timer::Name=/*friend*/
+llvm::Timer::Next=/*friend*/
+llvm::Timer::Prev=/*friend*/
+llvm::Timer::Started=/*friend*/
+
+llvm::Timer::TG=/*friend*/
+llvm::Timer::Time=/*friend*/
+llvm::TimerGroup::addTimer = /*friend*/
+llvm::TimerGroup::removeTimer = /*friend*/
+llvm::cl::desc::Desc = public final
+llvm::sys::TimeValue::nanos_ = /*friend*/ public
+llvm::sys::TimeValue::normalize = /*friend*/public
+llvm::sys::TimeValue::seconds_ = /*friend*/ public
+
+llvm::sys::fs::file_status::fs_st_dev=/*friend*/public
+llvm::sys::fs::file_status::fs_st_ino=/*friend*/public
+llvm::yaml::Document::NodeAllocator = /*friend*/public
+llvm::yaml::Document::failed = /*friend*/public
+llvm::yaml::Document::getNext = /*friend*/public
+llvm::yaml::Document::peekNext = /*friend*/public
+llvm::yaml::Document::setError = /*friend*/public
+llvm::yaml::Document::stream = /*friend*/public
+llvm::yaml::Input = /*friend*/public
+llvm::yaml::Input::EmptyHNode = /*friend*/public
+llvm::yaml::Input::HNode = /*friend*/public
+llvm::yaml::Input::MapHNode = /*friend*/public
+llvm::yaml::Input::ScalarHNode = /*friend*/public
+llvm::yaml::Input::SequenceHNode = /*friend*/public
+llvm::yaml::MappingNode::increment = public
+llvm::yaml::Stream::CurrentDoc = /*friend*/public
+llvm::yaml::Stream::scanner = /*friend*/public

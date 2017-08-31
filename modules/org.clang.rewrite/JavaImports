@@ -1,0 +1,11 @@
+org.clang.basic.*
+static org.clang.basic.BasicClangGlobals.*
+org.clang.rewrite.core.*
+org.clang.rewrite.impl.*
+org.clang.rewrite.frontend.*
+static org.clang.rewrite.frontend.RewriteClangGlobals.*
+org.clang.rewrite.frontend.impl.*
+org.clang.frontend.*
+org.clang.ast.*
+org.clang.lex.*
+org.clang.edit.*

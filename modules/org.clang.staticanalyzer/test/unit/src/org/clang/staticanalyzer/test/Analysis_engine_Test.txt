@@ -1,0 +1,7 @@
+  @Test
+  public void test_replay_without_inlining_c() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/engine/replay-without-inlining.c");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,unix.Malloc' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/engine/replay-without-inlining.c
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,unix.Malloc -verify %s");
+  }
+

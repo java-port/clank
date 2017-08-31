@@ -1,0 +1,27 @@
+org.clank.java.*
+org.clank.support.*
+org.clank.support.aliases.*
+static org.clank.java.built_in.*
+static org.clank.support.Casts.*
+static org.clank.java.io.*
+static org.clank.java.std.*
+static org.llvm.adt.ADTAliases.*
+static org.llvm.support.llvm.*
+static org.clang.basic.BasicClangGlobals.*
+static org.clank.support.NativePointer.*
+static org.clank.support.NativeType.*
+static org.clank.support.Native.*
+org.llvm.support.*
+org.llvm.cl.*
+org.llvm.adt.*
+org.llvm.adt.aliases.*
+org.clang.basic.*
+org.llvm.option.*
+org.clang.lex.*
+org.clang.driver.*
+static org.clang.driver.DriverGlobals.*
+static org.clang.tools.driver.driverGlobals.*
+static org.clang.frontend.FrontendClangGlobals.ParseDiagnosticArgs
+org.clang.frontend.*
+static org.clang.tools.driver.cc1_mainGlobals.cc1_main
+static org.clang.tools.driver.cc1as_mainGlobals.cc1as_main

@@ -1,0 +1,84 @@
+org.clang.ast.*
+org.clang.ast.java.AstFunctionPointers.*
+org.clang.ast.DeclContext.*
+org.clang.analysis.*
+org.clang.lex.*
+org.clang.basic.*
+org.clang.frontend.*
+org.clang.frontend.staticanalyzer.*
+org.clang.staticanalyzer.checkers.ento.*
+org.clang.staticanalyzer.checkers.ento.impl.*
+org.clang.staticanalyzer.checkers.impl.*
+org.clang.staticanalyzer.checkers.llvm.impl.*
+org.clang.staticanalyzer.checkers.mpi_checker.ento.impl.*
+org.clang.staticanalyzer.checkers.mpi_checker.ento.mpi.impl.*
+org.clang.staticanalyzer.core.*
+org.clang.staticanalyzer.core.bugreporter.ento.*
+org.clang.staticanalyzer.core.bugreporter.llvm.*
+org.clang.staticanalyzer.core.ento.*
+org.clang.staticanalyzer.core.ento.check.*
+org.clang.staticanalyzer.core.ento.impl.*
+org.clang.staticanalyzer.core.impl.*
+org.clang.staticanalyzer.core.llvm.impl.*
+org.clang.staticanalyzer.core.pathsensitive.ento.*
+org.clang.staticanalyzer.core.pathsensitive.ento.impl.*
+org.clang.staticanalyzer.core.pathsensitive.llvm.*
+org.clang.staticanalyzer.core.pathsensitive.llvm.impl.*
+org.clang.staticanalyzer.frontend.ento.*
+org.clang.staticanalyzer.frontend.ento.impl.*
+org.clang.staticanalyzer.frontend.impl.*
+org.clang.staticanalyzer.checkers.ento.objc_retain.*
+org.clang.staticanalyzer.checkers.ento.EntoGlobals.*
+static org.clang.staticanalyzer.checkers.ento.EntoGlobals.*
+org.clang.staticanalyzer.core.StaticanalyzerClangGlobals.*
+static org.clang.staticanalyzer.core.StaticanalyzerClangGlobals.*
+static org.clang.staticanalyzer.core.pathsensitive.llvm.StaticanalyzerLlvmGlobals.*
+org.clang.staticanalyzer.java.StaticAnalyzerFunctionPointers.*
+org.clang.staticanalyzer.java.StaticAnalyzerMemberPointers.*
+org.clang.staticanalyzer.java.StaticAnalyzerJavaDifferentiators.*
+org.clang.staticanalyzer.java.StaticAnalyzerCheckerManagerFunctions.*
+static org.clang.staticanalyzer.java.StaticAnalyzerJavaDifferentiators.*
+static org.clang.staticanalyzer.java.StaticanalyzerRTTI.*
+org.clang.analysis.support.*
+org.clang.analysis.domainspecific.*
+static org.clang.staticanalyzer.core.impl.IssueHashStatics.*
+static org.clang.staticanalyzer.core.impl.MemRegionStatics.*
+static org.clang.staticanalyzer.checkers.impl.CStringCheckerStatics.*
+static org.clang.ast.AstClangGlobals.*
+static org.clang.ast.java.AstRTTI.*
+static org.clang.ast.java.AstExpressionsRTTI.*
+static org.clang.ast.java.AstDeclarationsRTTI.*
+static org.clang.ast.java.AstTypesRTTI.*
+static org.clang.analysis.java.AnalysisRTTI.*
+static org.clang.staticanalyzer.core.impl.BugReporterStatics.*
+static org.clang.staticanalyzer.core.impl.PathDiagnosticStatics.*
+static org.clang.staticanalyzer.core.impl.BlockCounterStatics.*
+static org.clang.staticanalyzer.core.impl.ExprEngineStatics.*
+static org.clang.staticanalyzer.core.impl.EnvironmentStatics.*
+static org.clang.staticanalyzer.core.impl.LoopWideningStatics.*
+static org.clang.staticanalyzer.core.impl.ExplodedGraphStatics.*
+static org.clang.staticanalyzer.core.impl.CheckerManagerStatics.*
+static org.clang.staticanalyzer.core.impl.StoreStatics.*
+static org.clang.staticanalyzer.checkers.impl.LLVMConventionsCheckerStatics.*
+static org.clang.staticanalyzer.checkers.impl.AnalyzerStatsCheckerStatics.*
+static org.clang.staticanalyzer.checkers.impl.NSErrorCheckerStatics.*
+static org.clang.staticanalyzer.checkers.impl.RetainCountCheckerStatics.*
+static org.clang.staticanalyzer.checkers.impl.CastSizeCheckerStatics.*
+static org.clang.staticanalyzer.checkers.impl.ChrootCheckerStatics.*
+static org.clang.staticanalyzer.checkers.impl.DirectIvarAssignmentStatics.*
+static org.clang.staticanalyzer.checkers.impl.DynamicTypeCheckerStatics.*
+static org.clang.staticanalyzer.checkers.impl.ExprInspectionCheckerStatics.*
+static org.clang.staticanalyzer.checkers.impl.IdenticalExprCheckerStatics.*
+static org.clang.staticanalyzer.checkers.impl.LLVMConventionsCheckerStatics.*
+static org.clang.staticanalyzer.checkers.impl.NullabilityCheckerStatics.*
+static org.clang.staticanalyzer.checkers.impl.CheckObjCInstMethSignatureStatics.*
+org.clang.analysis.analyses.*
+static org.clang.ast.QualType.*
+static org.clang.ast.DeclContext.specific_decl_iterator.*
+static org.clang.staticanalyzer.core.impl.BugReporterVisitorsStatics.*
+static org.clang.staticanalyzer.frontend.impl.AnalysisConsumerStatics.*
+static org.clang.basic.BasicClangGlobals.*
+org.llvm.adt.java.ADTFunctionPointers.BumpPtrAllocator2VoidPtr
+org.clang.staticanalyzer.checkers.impl.java.ProgramStatePartialTrait
+org.clang.staticanalyzer.java.*
+org.clang.analysis.domainspecific.ento.*

@@ -1,0 +1,11 @@
+FILE_NAME = ImmutableSetUInt
+CLASS_SUFFIX =
+CLASS_TYPE = ImmutableSetUInt
+AVL_TREE_TYPE = ImutAVLTreeUIntBoolUInt
+AVL_FACTORY_TYPE = ImutAVLFactoryUIntBoolUInt
+AVL_VALUE_ITER_TYPE = ImutAVLValueIteratorUIntBoolUInt
+CONTAINER_INFO = ImutContainerInfoUInt
+KEY_TYPE = /*uint*/int
+CALLBACK_FUNC_TYPE = UInt2Void
+BOXED_KEY_TYPE = Integer
+JAVA_ITERATOR = JavaIteratorUInt

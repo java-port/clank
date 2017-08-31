@@ -1,0 +1,10 @@
+CHECKS FROM DiagSimilarNonVirtualFuncsChecker
+
+/////////////////////////////////////////////
+/// MODULE org.clang.basic
+
+/// Non virtual functions with the same name
+DarwinTargetInfo.getOSDefines()->DarwinARMTargetInfo.getOSDefines() [2]
+OSTargetInfo.getTargetDefines()->HaikuX86_32TargetInfo.getTargetDefines() [8]
+SourceLocation.dump()->FullSourceLoc.dump() [1]
+WindowsTargetInfo.getVisualStudioDefines()->WindowsARMTargetInfo.getVisualStudioDefines() [1]

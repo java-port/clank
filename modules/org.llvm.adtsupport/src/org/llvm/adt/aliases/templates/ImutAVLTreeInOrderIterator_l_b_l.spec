@@ -1,0 +1,5 @@
+FILE_NAME = ImutAVLTreeInOrderIteratorLongBoolLong
+CLASS_SUFFIX = 
+AVL_TREE_TYPE = ImutAVLTreeLongBoolLong
+AVL_GENERIC_ITER_TYPE = ImutAVLTreeGenericIteratorLongBoolLong
+AVL_ORDERED_ITER_TYPE = ImutAVLTreeInOrderIteratorLongBoolLong

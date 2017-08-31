@@ -1,0 +1,10 @@
+FILE_NAME = ImmutableSetRefPtr
+CLASS_SUFFIX = <KeyT>
+CLASS_TYPE = ImmutableSetRefPtr<KeyT>
+SET_TYPE = ImmutableSetPtr<KeyT>
+AVL_TREE_TYPE = ImutAVLTreePtrBoolPtr<KeyT, KeyT>
+AVL_FACTORY_TYPE = ImutAVLFactoryPtrBoolPtr<KeyT, KeyT>
+AVL_VALUE_ITER_TYPE = ImutAVLValueIteratorPtrBoolPtr<KeyT>
+KEY_TYPE = KeyT
+BOXED_KEY_TYPE = KeyT
+JAVA_ITERATOR = JavaIterator<KeyT>

@@ -1,0 +1,36 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.llvm.bitcode_delegates.properties"
+[DELEGATE_BODY=LLVM38]
+<include> "./commands_org.llvm.bitcode_delegates.properties"
+[DELEGATE_BODY=LLVM36]
+<include> "./commands_prev_org.llvm.bitcode_delegates.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[EXTRA_MEMBERS]
+(anonymous namespace)::IndexBitcodeWriter::iterator = FILE#./extra_members/iteratorExtraMembers.java
+(anonymous namespace)::WriteBitcodePass = TEXT#public static final/*char*/Class<WriteBitcodePass> ID $EQ WriteBitcodePass.class; // Pass identification, replacement for typeid
+llvm::BitCodeAbbrevOp = FILE#./extra_members/BitCodeAbbrevOpExtraMembers.java
+llvm::BitCodeAbbrevOp = IMPLEMENTS#NativeCloneable<BitCodeAbbrevOp>
+llvm::BitstreamCursor = IMPLEMENTS#NativeCloneable<BitstreamCursor>
+llvm::BitstreamCursor = FILE#./extra_members/BitstreamCursorExtraMembers.java
+llvm::BitstreamCursor::Block = IMPLEMENTS#NativePOD<Block>
+llvm::BitstreamCursor::Block = FILE#./extra_members/BlockExtraMembers.java
+llvm::BitstreamReader::BlockInfo = IMPLEMENTS#NativeCloneable<BlockInfo>
+llvm::BitstreamReader::BlockInfo = IMPLEMENTS#NativeMoveable<BlockInfo>
+llvm::BitstreamWriter::Block = FILE#./extra_members/BlockExtraMembers.java
+llvm::BitstreamWriter::Block = IMPLEMENTS#NativePOD<Block>
+llvm::BitstreamWriter::Block = IMPLEMENTS#NativeMoveable<Block>
+llvm::BitstreamWriter::BlockInfo = IMPLEMENTS#NativeCloneable
+llvm::BitstreamWriter::BlockInfo = FILE#./extra_members/BlockInfoExtraMembers.java
+llvm::SimpleBitstreamCursor = FILE#./extra_members/SimpleBitstreamCursorExtraMembers.java
+
+[MEMBER_ACCESS]
+(anonymous namespace)::WriteBitcodePass::ID = // JAVA: moved to extra

@@ -1,0 +1,9 @@
+FILE_NAME = DenseMapIterator
+CLASS_SUFFIX = <KeyT, ValueT>
+PAIR_TYPE = std.pair<KeyT, ValueT>
+KEY_TYPE = KeyT
+RAW_KEY_TYPE = Object
+VALUE_TYPE = ValueT
+DENSE_MAP_INFO = DenseMapInfo<KeyT>
+IS_DATA_POINTER_LIKE=true
+DENSE_MAP = DenseMap

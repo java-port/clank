@@ -1,0 +1,14 @@
+FILE_NAME = DenseSetULong
+CLASS_SUFFIX =
+DENSE_MAP_ITER = DenseMapIteratorULongChar
+DENSE_MAP_ITSELF = DenseMapULongChar
+DENSE_MAP_INFO = DenseMapInfoULong
+ITERATOR_TYPE = iterator
+REFERENCE_TO_VALUE = ulong$ref
+POINTER_TO_VALUE = ulong$ptr
+ITERATOR_INTERFACE = ulong$iterator<iterator>
+GENERIC_ITERATOR = ulong$iterator<?>
+VALUE_TYPE = long
+MAKE_PAIR_VALUE_CHAR_FACTORY_MTD = std.make_pair_ulong_char
+BOXED_TYPE = Long
+JAVA_ITERATOR = JavaIteratorULong

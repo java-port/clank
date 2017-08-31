@@ -1,0 +1,88 @@
+#to preprocess file
+#by Clang:
+${LLVM_SRC}/build/bin/clang -E /var/tmp/tmp/concat.cpp
+#by Clank:
+bash measure_macro_expansion.sh -J-Dtest.count=1 -J-Dtest.E=true -J-Dclank.checclank.check.files=/var/tmp/tmp/concat.cpp
+
+#to preprocess projects
+time $RUN_COLLECT $SPUTNIK/contrib/CLangServiceTools/dist/Linux_Release/GNU-Linux/clang-service-tools /home/vv159170/devarea/jdk9/jdk_trunk/common/nb_native/nbproject/private/db.out -nb-db --
+time $RUN_COLLECT $SPUTNIK/contrib/CLangServiceTools/dist/Linux_Release/GNU-Linux/clang-service-tools ${LLVM_SRC}/nbproject/private/db.out -nb-db --
+#(on Solaris)
+time $RUN_COLLECT $SPUTNIK/contrib/CLangServiceTools/dist/Solaris_Release/GNU-Solaris/clang-service-tools /net/10.162.82.98/export/devarea/jdk/jdk8-build-nbproject/common/nb_native/nbproject/private/db.out -nb-db --
+time $RUN_COLLECT $SPUTNIK/contrib/CLangServiceTools/dist/Solaris_Release/GNU-Solaris/clang-service-tools ${LLVM_SRC}/nbproject/private/db.out -nb-db --
+#to generate PTH
+$LLVM_SRC/build/bin/clang -cc1 -undef -emit-pth $LLVM_SRC/llvm.all.files.out -o $LLVM_SRC/all.files.pth $EMIT_PTH_PARAMS > $LLVM_SRC/error.out 2>&1
+
+#java
+bash measure_preproc_testdb.sh -J-d64 -J-Dclank.db=/home/vv159170/devarea/jdk9/jdk_trunk/common/nb_native/nbproject/private/db.out -J-Xmx2G -J-Dclank.threads=8 -J-Dclank.collect.macro.expansion=false
+bash measure_preproc_testdb.sh -J-d64 -J-Dclank.db=/net/10.162.82.98/export/devarea/jdk/jdk8-build-nbproject/common/nb_native/nbproject/private/db.out -J-Xmx2G -J-Dclank.threads=8 -J-Dclank.collect.macro.expansion=false
+bash measure_preproc_testdb.sh -J-d64 -J-Dclank.db=/net/volvo/export/devarea/osprojects/mozilla-central/nbproject/private/db.out -J-Xmx2G -J-Dclank.threads=8 -J-Dclank.collect.macro.expansion=true
+bash measure_preproc_testdb.sh -J-d64 -J-Dclank.db=/net/10.162.82.98/export/devarea/osprojects/boost_1_54_0/nbproject/private/db.out -J-Xmx2G -J-Dclank.threads=8 
+
+#by NB
+export RUN_JMC="-J-XX:+UnlockCommercialFeatures -J-XX:+FlightRecorder -J-XX:StartFlightRecording=name=Uint_Single,settings=$SPUTNIK/modules/org.clang.tools.services/test/unit/clank.jfc -J-XX:FlightRecorderOptions=dumponexit=true,defaultrecording=true,dumponexitpath=/var/tmp/java_nb_jfr/jdk8.2G.jfr -J-da -J-Dorg.netbeans.modules.masterfs.watcher.disable=true"
+rm -rf /var/tmp/vvoskres/jdk9.ram/var/cache/cnd/model && bash run.sh --nc -q --nodebug --laf Metal -J-Xmx2G --userdir /var/tmp/vvoskres/jdk9.ram --jdkhome /opt/jdk/latest8 $RUN_JMC
+
+#VM Flags
+-XX:+UnlockDiagnosticVMOptions -XX:+PrintCompilation -XX:+PrintInlining
+
+#Flags:
+export CLANK_QUIET=true - print less messages by wrapper scripts
+-J-Dtest.stop.start=true - stop before and after test run (i.e. to attach)
+-J-Dclank.optimize.pastetokens=true
+-J-Dorg.clank.verbose=true - minimal trace info
+-J-Dclank.service.statistics - Clank Services statistics
+-J-Dorg.clank.statistics=true -J-Dtest.print.stat=true - statistics
+-J-Dclank.statistics.out.folder=/var/tmp/clank.stat - print statistics as values into specified folder
+-J-Dclank.collect.macro.expansion=true - gather macro expansion in callback
+-J-Dclank.collect.tokens=false - father tokens in callback
+-J-Dclank.threads=8
+-J-Dclank.unexpanded=true - macro expansion only in pp directives, not in text
+-J-Dclank.check.unique_ptr=true - consitency check for unique_ptr 
+-J-Dclank.check.allocator=true - consistency check for allocators (turn on statistics as well to see stacks)
+-J-Dclank.print.diagnostics=true - diagnostics (false)
+-J-Dclank.print.progress=true - 
+-J-Dclank.interrupt.counter=2 - undefined
+-J-Dclank.slabs.pool=true - use pool of char$ptr for Slabs in Allocators
+-J-Dclank.collect.mainfile.only=true - restrict gathering info by compile file only
+-J-Dclank.collect.fullfile.once=true - keep information about fully included files and don't gather info in them second time
+-J-Dclank.callback.allow.skip.token=false - disable PP.SetSkipTokensBetweenDirectives optimization
+-J-Dclank.token.cache=$LLVM_SRC/all.files_clank.pth - token cache (PTH) file
+
+#file or list of files separated by #
+#to focus on
+-J-Dclank.check.files=/var/tmp/tmp/java_pp/file.h
+#to compile as start files (if empty, then clank.check.files list is used)
+-J-Dclank.compile.files=/var/tmp/tmp/java_pp/file.cc
+-J-Dclank.check.files=${SPUTNIK}/modules/org.clang.tools.services/test/unit/data/delay.c.txt
+
+#Performance Analyzer
+export RUN_COLLECT="/ws/ntrunk/builds/biweekly/latest/inst/intel-S2/bin/collect -j on -s 1 -p 1 -d /var/tmp/clank_measure -A off"
+export RUN_COLLECT="/ws/ntrunk/builds/biweekly/latest/inst/intel-S2/bin/collect -j on -p 1 -d /var/tmp/clank_measure -A off -h insts,,l3m,,dtlbm"
+export RUN_COLLECT="/ws/ntrunk/builds/biweekly/latest/inst/intel-S2/bin/collect -j on -p 1 -d /var/tmp/clank_measure -A off -h cycles,hi,insts,hi,l3h,hi,l3m,hi"
+export RUN_COLLECT="/ws/ntrunk/builds/biweekly/latest/inst/intel-S2/bin/collect -j on -p 1 -d /var/tmp/clank_measure -A off -h cycles,hi,insts,hi,dtlbm,hi,dtlbm_stall,hi"
+export RUN_COLLECT="/net/spb-zarya/export1/sqe_mounts/tools/distribution-builds/latest/intel-S2/solarisstudiodev/bin/collect -j on -p 1 -d /var/tmp/clank_measure -A off -h cycles,hi,insts,hi,dtlbm,hi,dtlbm_stall,hi"
+export RUN_COLLECT="/ws/ntrunk/builds/biweekly/latest/inst/intel-S2/solarisstudio12.4/bin/collect -j on -p 1 -d /var/tmp/clank_measure -A on -h cycles,,insts,,l3m,,l3h"
+export RUN_COLLECT="/opt/solarisstudio12.4/bin/collect -j on -p 1 -d /var/tmp/clank_measure -A on -h cycles,,insts,,l3m,,l3h"
+export RUN_COLLECT="/opt/analyzer12.4_16XX/bin/collect -j on -p 1 -d /var/tmp/clank_measure -A off -h cycles,,insts,,l3m,,resource_stalls.any"
+#C++
+export RUN_COLLECT="/opt/analyzer12.4_16XX/bin/collect -p 1 -d /var/tmp/clang++_measure -A off -h cycles,,insts,,l3m,,resource_stalls.any"
+
+#JMC:
+export RUN_JMC="-XX:StartFlightRecording=name=Preproc,settings=$SPUTNIK/modules/org.clang.tools.services/test/unit/clank.jfc -XX:FlightRecorderOptions=dumponexit=true,defaultrecording=true,dumponexitpath=/var/tmp/clank_jfr/jdk8.3G.jfr"
+
+#Profiling:
+export RUN_PROFILE="-da -d64 -agentpath:/export/opt/yjp/bin/solaris-x86-64/libyjpagent.so=dir=${HOME}/yjp_data/IDE -J-Dtest.stop.start=true"
+export RUN_PROFILE="-da -d32 -agentpath:/export/opt/yjp/bin/solaris-x86-32/libyjpagent.so=dir=${HOME}/yjp_data/IDE -J-Dtest.stop.start=true"
+export RUN_PROFILE="-da -d64 -agentpath:/opt/yjp/bin/linux-x86-64/libyjpagent.so=dir=/home/vv159170/Snapshots/ClankLLVM -J-Dtest.stop.start=true"
+
+#Debug:
+export RUN_DEBUG="-Xdebug -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5959 -Dtest.stop.start=true -ea"
+
+#how to check whether files in -java-options from generate_declarations.sh exist
+cd $SPUTNIK
+for F in `cat contrib/JConvert/generate_declarations.sh | grep jclank.sh |  awk -F-java-options= '{print $2}' | awk -F\  '{print $1}' | awk -F\> '{print $1}' | sed 's/\${SPUTNIK}/./g'`; do ls -ld $F; done > /dev/null
+
+#check that each converted module has llvmToClangType
+cd $SPUTNIK
+for D in `ls -1 $SPUTNIK/modules/ | egrep "(clang)|(llvm)"`; do ls modules/$D/llvmToClangType > /dev/null; done

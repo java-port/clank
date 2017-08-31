@@ -1,0 +1,7 @@
+org.clang.arcmigrate.arcmt
+    CheckAction.java
+    FileRemapper.java
+    MigrateAction.java
+    MigrateSourceAction.java
+    ModifyAction.java
+    ObjCMigrateAction.java

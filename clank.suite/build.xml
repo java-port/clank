@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See harness/README in the NetBeans platform -->
+<!-- for some information on what you could do (e.g. targets to override). -->
+<!-- If you delete this file and reopen the project it will be recreated. -->
+<project name="clank.suite" basedir=".">
+    <description>Builds the module suite clank.suite.</description>
+    <import file="nbproject/build-impl.xml"/>    
+
+    <!-- Layout of Hudson builds and development builds on our machines differ. Let's check both places. -->
+
+    <condition property="ant.ext.exists" value="true">
+      <resourceexists>
+        <file file="${basedir}/../../ant-ext/nbantext.jar"/>
+      </resourceexists>        
+    </condition>
+    
+    <target name="search-nbantext1" if="ant.ext.exists">
+      <property name="nbantext.jar" value="${basedir}/../../ant-ext/nbantext.jar"/>
+    </target>
+    <target name="search-nbantext2" unless="ant.ext.exists">
+      <property name="nbantext.jar" value="${nbplatform.active.dir}/../build/nbantext.jar"/>      
+    </target>    
+
+    <target name="init-tasks" unless="tasks-already-set" depends="search-nbantext1,search-nbantext2">
+      <echoproperties/>
+      <taskdef name="subant-junit" classname="org.netbeans.nbbuild.SubAntJUnitReport" classpath="${nbantext.jar}"/>
+      <taskdef name="repeat" classname="org.netbeans.nbbuild.Repeat" classpath="${nbantext.jar}"/>
+    </target>
+
+    <target name="test" depends="build" description="Runs tests for all modules in the suite.">
+      <sortsuitemodules unsortedmodules="${modules}" sortedmodulesproperty="modules.test.sorted"/> <!-- commented out sorttests="true" -->
+      <property name="continue.after.failing.tests" value="true"/> <!-- fallback -->
+      <property name="modules.test.sorted" value="${modules}"/> <!-- fallback -->
+      <!-- tests as such -->
+      <property name="log-tee" value="${basedir}/build/test-log-tee.log"/>
+      <record name="${log-tee}" action="start" append="false" />
+      <subant target="test" buildpath="${modules.test.sorted}" inheritrefs="false" inheritall="false">
+        <property name="cluster.path.evaluated" value="${cluster.path.evaluated}"/> <!-- Just for speed of pre-7.0 projects -->
+        <property name="harness.taskdefs.done" value="${harness.taskdefs.done}"/> <!-- optimization -->
+        <property name="continue.after.failing.tests" value="${continue.after.failing.tests}"/>
+      </subant>
+      <record name="${log-tee}" action="stop"/>
+      <!-- stacks aggregation -->
+      <property name="aggregated-logs" value="${basedir}/build/aggregated-stacks.log"/>
+      <property name="aggregator-args" value="-Daggregator.input=${log-tee} -Daggregator.out=${aggregated-logs} -Daggregator.analyze.passed=${basedir}/../modules -Daggregator.min.occurrences=1"/>
+      <echo message="Running tests aggregator with args = ${aggregator-args}"/>
+      <subant target="run-test-main" buildpath="../modules/org.clank.java">
+        <property name="main.class" value="org.clank.java.StackTraceAggregator"/>
+        <property name="suite.dir" value="${basedir}"/>
+        <!-- <property name="test.run.args" value="${aggregator-args}"/> -->
+        <property name="run.jvmargs.ide" value="${aggregator-args}"/>
+      </subant>
+    </target>
+
+    <target name="clank-diff">
+      <property name="clank-diff-args" value="-Dallow.sputnik.local.changes=true"/>
+      <subant target="run-test-main" buildpath="../modules/org.clank.java">
+        <property name="main.class" value="org.clank.java.ClankDiff"/>
+        <property name="suite.dir" value="${basedir}"/>
+        <property name="run.jvmargs.ide" value="${clank-diff-args}"/>
+      </subant>
+    </target>
+
+    <target name="an-existent-test-results-processing">
+      <!-- that's just for more convenient debugging of the target above -->
+      <property name="log-tee" value="${basedir}/build/test-log-tee.log"/>
+      <property name="aggregated-logs" value="${basedir}/build/aggregated-stacks.log"/>
+      <property name="aggregator-args" value="-Daggregator.input=${log-tee} -Daggregator.out=${aggregated-logs} -Daggregator.analyze.passed=${basedir}/../modules"/>
+      <echo message="Running tests aggregator with test.run.args = ${aggregator-args}"/>
+      <subant target="run-test-main" buildpath="../modules/org.clank.java">
+        <property name="main.class" value="org.clank.java.StackTraceAggregator"/>
+        <property name="suite.dir" value="${basedir}"/>
+        <!-- <property name="test.run.args" value="${aggregator-args}"/> -->
+        <property name="run.jvmargs.ide" value="${aggregator-args}"/>
+      </subant>
+    </target>
+
+    <target name="build-test-dist" depends="build,init-tasks" description="Runs tests for all modules in the suite.">
+      <sortsuitemodules unsortedmodules="${modules}" sortedmodulesproperty="modules.test.sorted"/> <!-- sorttests="true" -->
+      <property name="modules.test.sorted" value="${modules}"/> <!-- fallback -->      
+      <property name= "test.fail.on.error" value="true"/> <!-- if is 'false' it will ignore compilation error in subant  -->
+      <subant-junit buildpath="${modules.test.sorted}" target="test-build" failonerror="${test.fail.on.error}" report="build/build-all-tests.xml"/>
+    </target>
+
+    <target name="zip-one-module-test-src">
+      <echo message="adding module tests ${module} into ${test-dist-zip}"/>
+      <property name="zip.base.dir" value="${basedir}/../"/>
+      <zip destfile="${test-dist-zip}" update="true">
+        <zipfileset dir="${zip.base.dir}" includes="modules/${module}/test/**/*"/>
+        <zipfileset dir="${zip.base.dir}" includes="modules/${module}/nbproject/**/*"/>
+        <zipfileset dir="${zip.base.dir}" includes="modules/${module}/build.xml"/>
+        <zipfileset dir="${zip.base.dir}" includes="modules/${module}/manifest.mf"/>
+        <zipfileset dir="${zip.base.dir}" includes="modules/${module}/src"/>
+      </zip>
+    </target>
+
+    <macrodef name="zip-modules-test-src">
+      <attribute name="zipfile"/>
+      <attribute name="modules-to-zip"/>
+      <sequential>
+        <repeat target="zip-one-module-test-src" name="module" values="@{modules-to-zip}" />        
+      </sequential>
+    </macrodef>
+
+    <scriptdef name="transform_modules_list" language="javascript">
+      <attribute name="value"/>
+      <attribute name="property_to_store"/>
+      <attribute name="prefix_len"/>
+    <![CDATA[
+        values = attributes.get("value").split(":");
+        replacement = values[0].substring(attributes.get("prefix_len"))
+        for(i=1; i<values.length; i++) {
+            replacement = replacement + "," + values[i].substring(attributes.get("prefix_len"))
+        }
+        project.setNewProperty(attributes.get("property_to_store"), replacement);
+     ]]>
+    </scriptdef>
+
+    <target name="zip-tests" depends="build,init-tasks" description="Zips tests for all modules">
+      <sortsuitemodules unsortedmodules="${modules}" sortedmodulesproperty="modules.test.sorted"/> <!-- sorttests="true" -->
+      <property name="test-dist-zip" value="${suite.build.dir}/sputnik-testdist.zip"/>
+      <echo message="Zipping all tests into ${test-dist-zip}"/>
+      <transform_modules_list value="${modules}" property_to_store="modules-to-zip-tests" prefix_len="11"/>
+      <delete file="${test-dist-zip}"/>
+      <zip-modules-test-src zipfile="${test-dist-zip}" modules-to-zip="${modules-to-zip-tests}"/>
+      <property name="zip.base.dir" value="${basedir}/../"/>
+      <echo message="adding clank.suite into ${test-dist-zip}"/>
+      <zip destfile="${test-dist-zip}" update="true">
+        <zipfileset dir="${zip.base.dir}" includes="clank.suite/nbproject/**/*"/>
+        <zipfileset dir="${zip.base.dir}" includes="clank.suite/build/cluster/**/*"/>
+        <zipfileset dir="${zip.base.dir}" includes="clank.suite/build/public-package-jars/**/*"/>
+        <zipfileset dir="${zip.base.dir}" includes="clank.suite/*"/>
+      </zip>
+    </target>      
+</project>

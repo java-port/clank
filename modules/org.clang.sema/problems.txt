@@ -1,0 +1,9 @@
+/////////////////////////////////////////////
+/// MODULE org.clang.sema
+
+/// Non virtual functions with the same name
+Declarator.getDeclSpec()->ParsingDeclarator.getDeclSpec() [1]
+Declarator.getMutableDeclSpec()->ParsingDeclarator.getMutableDeclSpec() [1]
+PseudoOpBuilder.buildAssignmentOperation()->ObjCPropertyOpBuilder.buildAssignmentOperation() [2]
+PseudoOpBuilder.buildIncDecOperation()->ObjCPropertyOpBuilder.buildIncDecOperation() [1]
+PseudoOpBuilder.buildRValueOperation()->ObjCPropertyOpBuilder.buildRValueOperation() [2]

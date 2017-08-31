@@ -1,0 +1,11 @@
+FILE_NAME = DenseMapUIntType
+CLASS_SUFFIX = <ValueT>
+PAIR_TYPE = std.pairUIntType<ValueT>
+PAIR_NAME = std.pairUIntType
+KEY_TYPE = int
+RAW_KEY_TYPE = int
+VALUE_TYPE = ValueT
+VALUE_CLASS = Class<ValueT>
+DENSE_MAP_INFO = DenseMapInfoUInt
+DENSE_MAP_BASE = DenseMapBaseUIntType<DenseMapUIntType<ValueT>, ValueT>
+CREATE_NEW_BUCKET_PAIR = isDataPointerLike() ? new std.pairUIntPtr() : new std.pairUIntType()

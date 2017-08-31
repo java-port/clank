@@ -1,0 +1,14 @@
+FILE_NAME = ImmutableMapPtrPtr
+CLASS_SUFFIX = <KeyT, DataT>
+CLASS_TYPE = ImmutableMapPtrPtr<KeyT, DataT>
+PAIR_TYPE = std.pairPtrPtr<KeyT, DataT>
+AVL_TREE_TYPE = ImutAVLTreePtrPtrType<KeyT, DataT, std.pairPtrPtr<KeyT, DataT>>
+AVL_FACTORY_TYPE = ImutAVLFactoryPtrPtrType<KeyT, DataT, std.pairPtrPtr<KeyT, DataT>>
+AVL_VALUE_ITER_TYPE = ImutAVLValueIteratorPtrPtrType<std.pairPtrPtr<KeyT, DataT>>
+KEY_VALUE_INFO = ImutKeyValueInfo$TP$SP<KeyT, DataT>
+KEY_TYPE = KeyT
+DATA_TYPE = DataT
+LOOKUP_TYPE = type$ptr<DataT> /*P*/
+LOOKUP_RETURN_IMPL = type$ptr$inout<DataT>
+CALLBACK_FUNC_TYPE = TypeType2Void<KeyT, DataT>
+JAVA_ITERATOR = JavaIterator<std.pairPtrPtr<KeyT, DataT>>

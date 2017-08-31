@@ -1,0 +1,13 @@
+FILE_NAME = StringMapIdentifierInfo
+CLASS_SUFFIX = 
+CLASS_NAME = StringMapIdentifierInfo
+ENTRY = IdentifierInfoStringMapEntry
+ENTRY_CLASS = StringMapEntry
+ITERATOR = StringMapIteratorIdentifierInfo
+ALLOCATOR_TYPE = BumpPtrAllocator
+VALUE_TYPE = IdentifierInfo
+VALUE_CLASS = Class<IdentifierInfo>
+VALUE_REFERENCE = type$ref<IdentifierInfo>
+CREATE_ENTRY_STRING = IdentifierInfoStringMapEntry.<BumpPtrAllocator, IdentifierInfo>Create
+PAIR_TYPE = std.pair<StringRef, IdentifierInfo>
+ASSERT_DEFAULT_VALUE=NativeTrace.assertDefaultValue(defaultValue)

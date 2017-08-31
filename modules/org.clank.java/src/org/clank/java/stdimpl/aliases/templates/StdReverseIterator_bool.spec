@@ -1,0 +1,9 @@
+FILE_NAME = StdReverseIteratorBool
+CLASS_SUFFIX =
+INTERFACE_ITERATOR = bool$iterator<std.reverse_iteratorBool>
+STD_DUAL_ITERATOR = std.reverse_iteratorBool
+VALUE_TYPE = boolean
+VALUE_ITERATOR = bool$iterator<?>
+VALUE_ITERATOR_GENERIC = bool$iterator
+VALUE_REFERENCE = bool$ref
+VALUE_POINTER = bool$ptr

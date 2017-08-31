@@ -1,0 +1,13 @@
+org.clang.staticanalyzer.core
+    Analyses.java
+    AnalysisConstraints.java
+    AnalysisDiagClients.java
+    AnalysisInliningMode.java
+    AnalysisPurgeMode.java
+    AnalysisStores.java
+    AnalyzerOptions.java
+    CXXInlineableMemberKind.java
+    IPAKind.java
+org.clang.staticanalyzer.frontend.ento
+    AnalysisAction.java
+    ParseModelFileAction.java

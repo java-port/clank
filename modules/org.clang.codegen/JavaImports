@@ -1,0 +1,47 @@
+org.clang.ast.*
+org.clang.ast.java.*
+org.clang.basic.*
+org.clang.basic.java.*
+static org.clang.basic.BasicClangGlobals.*
+org.clang.lex.*
+org.clang.lex.java.*
+org.llvm.ir.*
+org.llvm.ir.java.*
+org.llvm.ir.java.IRJavaDifferentiators.*
+org.llvm.bitcode.*
+org.llvm.profiledata.*
+org.llvm.profiledata.coverage.*
+org.clang.codegen.*
+org.clang.codegen.impl.*
+org.clang.codegen.CodeGen.*
+org.clang.codegen.CodeGen.impl.*
+org.clang.codegen.CodeGen.swiftcall.*
+org.clang.codegen.CodeGen.target.impl.*
+org.clang.codegen.llvm.impl.*
+org.clang.codegen.target.impl.*
+org.clang.codegen.java.ClangCodeGenFunctionPointers.*
+org.clang.codegen.java.ClangCodeGenJavaDifferentiators.*
+org.clang.frontend.*
+org.clang.frontend.java.*
+org.clang.driver.frontend.CodeGenOptions
+org.clang.basic.target.TargetOptions
+org.clang.basic.target.TargetInfo
+org.llvm.ir.intrinsic.ID
+#static org.clang.codegen.target.impl.TargetInfoStatics.*
+static org.clang.ast.CharUnitsGlobals.*
+org.clang.ast.aliases.*
+org.llvm.support.ConvertUTFGlobals.*
+org.clang.ast.DeclContext.specific_decl_iterator
+static org.clang.ast.AstClangGlobals.*
+static org.clang.ast.java.AstRTTI.*
+static org.clang.ast.java.AstTypesRTTI.*
+static org.clang.ast.java.AstExpressionsRTTI.*
+static org.clang.ast.java.AstDeclarationsRTTI.*
+static org.clang.ast.java.AstStatementsRTTI.*
+static org.clang.codegen.CodeGen.swiftcall.SwiftcallGlobals.*
+static org.clang.codegen.java.CodegenRTTI.*
+static org.llvm.ir.java.IrRTTI.*
+static org.clang.ast.java.AstJavaDifferentiators.*
+static org.clang.codegen.CodeGen.impl.CodeGenStatics.*
+static org.llvm.pass.IrLlvmGlobals.*
+org.clang.ast.java.AstStatementsRTTI.*

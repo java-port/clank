@@ -1,0 +1,13 @@
+[IMPORTS]
+org.clang.basic.*
+org.clang.lex.*
+org.llvm.cl.*
+org.clank.java.stdimpl.aliases.*
+org.clang.basic.target.*;
+static org.clang.basic.BasicClangGlobals.*
+org.clank.java.stdimpl.aliases.*
+org.clang.clangc.api.*
+org.clang.clangc.api.buildsystem.*
+org.clang.clangc.java.ClangCFunctionPointers.*
+org.clang.clangc.CXStringGlobals.*
+org.clang.clangc.IndexGlobals.*

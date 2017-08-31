@@ -1,0 +1,23 @@
+#define DEFINE_STRUCT(index) \
+struct Num##index { \
+  int foo##index();  \
+};\
+
+
+#define GEN_STRUCT_0(index) DEFINE_STRUCT(index##1)
+#define GEN_STRUCT_1(index) GEN_STRUCT_0(index##1) GEN_STRUCT_0(index##2) GEN_STRUCT_0(index##3) GEN_STRUCT_0(index##4)
+#define GEN_STRUCT_2(index) GEN_STRUCT_1(index##1) GEN_STRUCT_1(index##2) GEN_STRUCT_1(index##3) GEN_STRUCT_1(index##4)
+#define GEN_STRUCT_3(index) GEN_STRUCT_2(index##1) GEN_STRUCT_2(index##2) GEN_STRUCT_2(index##3) GEN_STRUCT_2(index##4)
+#define GEN_STRUCT_4(index) GEN_STRUCT_3(index##1) GEN_STRUCT_3(index##2) GEN_STRUCT_3(index##3) GEN_STRUCT_3(index##4)
+#define GEN_STRUCT_5(index) GEN_STRUCT_4(index##1) GEN_STRUCT_4(index##2) GEN_STRUCT_4(index##3) GEN_STRUCT_4(index##4)
+#define GEN_STRUCT_6(index) GEN_STRUCT_5(index##1) GEN_STRUCT_5(index##2) GEN_STRUCT_5(index##3) GEN_STRUCT_5(index##4)
+#define GEN_STRUCT_7(index) GEN_STRUCT_6(index##1) GEN_STRUCT_6(index##2) GEN_STRUCT_6(index##3) GEN_STRUCT_6(index##4)
+#define GEN_STRUCT_8(index) GEN_STRUCT_7(index##1) GEN_STRUCT_7(index##2) GEN_STRUCT_7(index##3) GEN_STRUCT_7(index##4)
+#define GEN_STRUCT_9(index) GEN_STRUCT_8(index##1) GEN_STRUCT_8(index##2) GEN_STRUCT_8(index##3) GEN_STRUCT_8(index##4)
+#define GEN_STRUCT_10(index) GEN_STRUCT_9(index##1) GEN_STRUCT_9(index##2) GEN_STRUCT_9(index##3) GEN_STRUCT_9(index##4)
+#define GEN_STRUCT_11(index) GEN_STRUCT_10(index##1) GEN_STRUCT_10(index##2) GEN_STRUCT_10(index##3) GEN_STRUCT_10(index##4)
+#define GEN_STRUCT_12(index) GEN_STRUCT_11(index##1) GEN_STRUCT_11(index##2) GEN_STRUCT_11(index##3) GEN_STRUCT_11(index##4)
+
+GEN_STRUCT_11(0)
+//GEN_STRUCT_12(0)
+

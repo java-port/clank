@@ -1,0 +1,26 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[TYPES_MAP]
+const char * (* )(void * , uint64_t, uint64_t * , uint64_t, const char * * ) = VoidUIntUIntUIntChar2Char
+int (* )(void * , uint64_t, uint64_t, uint64_t, int, void * ) = VoidUIntUintUIntIntVoid2Int
+
+void (StringRef, BasicSymbolRef::Flags) = StringRefFlags2Void
+
+[EXTRA_MEMBERS]
+llvm::DIInliningInfo = FILE#./extra_members/DIInliningInfoExtraMembers.java
+llvm::DWARFDebugInfoEntryInlinedChain = FILE#./extra_members/DWARFDebugInfoEntryInlinedChainExtraMembers.java
+llvm::DWARFUnitSection = FILE#./extra_members/DWARFUnitSectionExtraMembers.java
+llvm::object::ExportEntry = FILE#./extra_members/ExportEntryExtraMembers.java
+llvm::object::OwningBinary = FILE#./extra_members/OwningBinaryExtraMembers.java
+llvm::object::SymbolicFile = TEXT#public SymbolicFile() { }
+llvm::object::content_iterator = FILE#./extra_members/content_iteratorExtraMembers.java
+
+[MEMBER_ACCESS]
+llvm::DWARFUnitSection::parseImpl = public

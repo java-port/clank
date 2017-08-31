@@ -1,0 +1,15 @@
+FILE_NAME = StdMapPtrInt
+CLASS_SUFFIX = <KeyT>
+DUAL_CLASS = std.mapPtrInt<KeyT>
+PAIR_TYPE = std.pairPtrInt<KeyT>
+ITERATOR = iterator<KeyT>
+GENERIC_ITERATOR = type$iterator<?, std.pairPtrInt<KeyT>>
+KEY_TYPE = KeyT
+VALUE_TYPE = int
+VALUE_REF = int$ref
+VALUE_PTR = int$ptr
+IS_KEY_POINTER_LIKE = true
+IS_DATA_POINTER_LIKE = false
+PAIR_FACTORY_METHOD = std.make_pair_Ptr_int
+DEFAULT_KEYS_COMPARATOR = Native::$compare_ptr
+ASSERT_DEFAULT_VALUE=true

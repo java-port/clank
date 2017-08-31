@@ -1,0 +1,11 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.llvm.codegen_delegates.properties"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.llvm.codegen.properties"
+
+[IMPORTS]
+<include> "./JavaImports"

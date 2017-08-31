@@ -1,0 +1,7 @@
+FILE_NAME = StringMapConstIteratorIdentifierInfo
+CLASS_SUFFIX =
+DUAL_CLASS = StringMapIteratorIdentifierInfo
+ENTRY = IdentifierInfoStringMapEntry
+VALUE_TYPE = IdentifierInfo
+VALUE_REFERENCE = type$ref
+VALUE_POINTER = type$ptr

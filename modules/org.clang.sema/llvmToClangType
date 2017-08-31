@@ -1,0 +1,76 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+# temporary mapping for class UnqualUsingEntry
+#const DeclContext * = type$ptr<DeclContext>
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.clang.sema_delegates.properties"
+[DELEGATE_BODY=LLVM38]
+<include> "./commands_org.clang.sema_delegates.properties"
+[DELEGATE_BODY=LLVM36]
+<include> "./commands_prev_org.clang.sema_delegates.properties"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.clang.sema.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[TYPES_MAP]
+# ListTy is a typedef in SemaLookup.cpp:195 - typedef SmallVector<UnqualUsingEntry, 8> ListTy;
+# But it is not expanded. Fortunately there is no other ListTy in Sema, so this should work:
+#ListTy::const_iterator = SmallVector.iterator<UnqualUsingEntry>
+#OverloadCandidateSet::iterator * = SmallVectorImpl.iterator<OverloadCandidate>
+#OverloadCandidateSet::iterator & = type$ptr<SmallVectorImpl.iterator<OverloadCandidate>>/*&*/
+SetVector<QualType, SmallVector<QualType>, SmallPtrSet<QualType, 8> > = SetVector<QualType>
+const DenseMapIterator<VarDecl /*P*/ , /*uint*/int, DenseMapInfo<VarDecl /*P*/ >, DenseMapPair<VarDecl /*P*/ , /*uint*/int>, true> = DenseMapIteratorTypeUInt<VarDecl>
+DenseMapIterator<VarDecl /*P*/ , /*uint*/int, DenseMapInfo<VarDecl /*P*/ >, DenseMapPair<VarDecl /*P*/ , /*uint*/int>, true> = DenseMapIteratorTypeUInt<VarDecl>
+ValueDecl * * = type$ptr</*const*/ ValueDecl /*P*/ >
+bool (const std::pair<DeclAccessPair, FunctionDecl /*P*/ > & ) = BoolPredicate<std.pair<DeclAccessPair, FunctionDecl /*P*/ >>
+TentativeDefinitionsType::iterator = LazyVector.iterator<VarDecl /*P*/ , ExternalSemaSource>
+UnusedFileScopedDeclsType::iterator = LazyVector.iterator<DeclaratorDecl, ?>
+
+DiagList = PartialDiagList
+OptionalNotes = OptionalNotes
+
+
+[MEMBER_ACCESS]
+(anonymous namespace)::CatchHandlerType::CatchHandlerType=/*friend*/public
+(anonymous namespace)::CatchHandlerType::Unique=/*friend*/public
+(anonymous namespace)::VisibleDeclsRecord::ShadowMaps=/*friend*/
+#clang::InitializedEntity::InitializedEntity
+_ZN5clang17InitializedEntityC1Ev=public
+__ZN5clang17InitializedEntityC1ERKS0_=public
+___ZN5clang17InitializedEntityC1EOS0_=public
+clang::AttributeFactory::allocate=/*friend*/
+clang::AttributeFactory::reclaimPool=/*friend*/
+clang::AttributeList::AttributeList=/*friend*/
+clang::AttributeList::NextInPool=/*friend*/
+clang::AttributeList::allocated_size=/*friend*/
+clang::CodeCompletionString::Availability=/*friend*/
+clang::CodeCompletionString::BriefComment=/*friend*/
+clang::CodeCompletionString::CodeCompletionString=/*friend*/
+clang::CodeCompletionString::ParentName=/*friend*/
+clang::CodeCompletionString::Priority=/*friend*/
+clang::Declarator::InlineParams=/*friend*/
+clang::Declarator::InlineParamsUsed=/*friend*/
+clang::Sema::CheckBitFieldInitialization=/*friend*/
+clang::Sema::Consumer=public/*friend*/
+clang::Sema::Context=/*friend*/public
+clang::Sema::CurContext=public/*friend*/
+clang::Sema::CurContext=public/*friend*/
+clang::Sema::CurScope=public
+clang::Sema::Diags=public/*friend*/
+clang::Sema::KnownNamespaces = /*friend*/public
+clang::Sema::LangOpts=public/*friend*/
+clang::Sema::OffsetOfComponent::U = public final
+clang::Sema::PP=public
+clang::Sema::SourceMgr=public
+clang::Sema::TypoExprState::RecoveryHandler=public
+
+[EXTRA_MEMBERS]
+<include> "./SemaExtraMembers.txt"

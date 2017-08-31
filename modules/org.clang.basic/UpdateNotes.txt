@@ -1,0 +1,132 @@
+DONE ${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/ABI.h
+SAME ${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/AddressSpaces.h
+SAME ${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/AllDiagnostics.h
+DONE ${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Attr.td
+USED BY Attr.d? ${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/AttrDocs.td
+DONE ${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/AttrKinds.h
+DONE ${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Attributes.h
+DONE ${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Builtins.def
+DONE ${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Builtins.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/BuiltinsAArch64.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/BuiltinsARM.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/BuiltinsHexagon.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/BuiltinsMips.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/BuiltinsNEON.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/BuiltinsNVPTX.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/BuiltinsPPC.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/BuiltinsR600.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/BuiltinsX86.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/BuiltinsXCore.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/CMakeLists.txt
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/CapturedStmt.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/CharInfo.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/CommentNodes.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/CommentOptions.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DeclNodes.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Diagnostic.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Diagnostic.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticASTKinds.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticAnalysisKinds.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticCategories.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticCategories.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticCommentKinds.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticCommonKinds.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticDriverKinds.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticFrontendKinds.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticGroups.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticIDs.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticLexKinds.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticOptions.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticOptions.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticParseKinds.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticSemaKinds.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/DiagnosticSerializationKinds.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/ExceptionSpecificationType.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/ExpressionTraits.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/FileManager.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/FileSystemOptions.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/FileSystemStatCache.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/IdentifierTable.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/LLVM.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Lambda.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/LangOptions.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/LangOptions.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Linkage.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/MacroBuilder.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Makefile
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Module.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/ObjCRuntime.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/OpenCLExtensions.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/OpenMPKinds.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/OpenMPKinds.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/OperatorKinds.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/OperatorKinds.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/OperatorPrecedence.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/PartialDiagnostic.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/PlistSupport.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/PrettyStackTrace.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Sanitizers.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/SourceLocation.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/SourceManager.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/SourceManagerInternals.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Specifiers.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/StmtNodes.td
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/TargetBuiltins.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/TargetCXXABI.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/TargetInfo.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/TargetOptions.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/TemplateKinds.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/TokenKinds.def
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/TokenKinds.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/TypeTraits.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Version.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Version.inc.in
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/VersionTuple.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/VirtualFileSystem.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Visibility.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/arm_neon.td
+================================================================================
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Builtins.def:
+used by:
+/net/volvo/export/devarea/sputnik-model/modules/org.clang.basic/src/org/clang/basic/impl/BuiltinsStatics.java
+BuiltinsStatics.BuiltinInfo - convert to Output
+-- ${LLVM_SRC}/llvm/tools/clang/lib/Basic/Builtins.cpp
+
+/net/volvo/export/devarea/sputnik-model/modules/org.clang.basic/src/org/clang/basic/Builtin.java
+- regenerate class
+/net/volvo/export/devarea/sputnik-model/contrib/JConvert/jclank.sh \
+-java-imports=/net/volvo/export/devarea/sputnik-model/modules/org.clang.basic/JavaImports \
+-java-imports=${SPUTNIK}/contrib/JConvert/llvmToClankImports \
+${LLVM_SRC}/llvm/tools/clang/lib/Basic/Builtins.cpp \
+-namespace=clang::Builtin > /net/volvo/export/devarea/sputnik-model/modules/org.clang.basic/src/org/clang/basic/Builtin.java
+================================================================================
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/Attr.td
+TablGened into (grep ${LLVM_SRC}/build/tools/clang)
+$(ObjDir)/AttrList.inc.tmp : Attr.td $(CLANG_TBLGEN) $(ObjDir)/.dir      [position 47:30]	
+$(ObjDir)/AttrHasAttributeImpl.inc.tmp : Attr.td $(CLANG_TBLGEN) \      [position 52:42]	
+
+Created Java:
+/net/volvo/export/devarea/sputnik-model/modules/org.clang.basic/src/org/clang/basic/AttrSyntax.java
+Updated 
+/net/volvo/export/devarea/sputnik-model/modules/org.clang.basic/src/org/clang/basic/ClangGlobals.java
+and added hasAttribute method based on
+clang/Basic/AttrHasAttributeImpl.inc
+Updated 
+/net/volvo/export/devarea/sputnik-model/modules/org.clang.basic/src/org/clang/basic/attr.java
+enum attr::Kind
+based on
+clang/Basic/AttrList.inc
+================================================================================
+${LLVM_SRC}/llvm/tools/clang/lib/Basic/SourceManager.cpp
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/SourceManager.h
+${LLVM_SRC}/llvm/tools/clang/include/clang/Basic/SourceManagerInternals.h - same
+used to update
+/net/volvo/export/devarea/sputnik-model/modules/org.clang.basic/src/org/clang/basic/SourceManager.java
+/net/volvo/export/devarea/sputnik-model/modules/org.clang.basic/src/org/clang/basic/SrcMgr.java 
+================================================================================
+using /net/volvo/export/devarea/LLVM35/llvm/tools/clang/include/clang/Basic/TargetBuiltins.h
+regenerated all TargetBuiltins namespaces (AArch64, ARM, Hexagon, Mips, NVPTX, PPC, X86 +added NEON, R600)
+and NeonTypeFlags
+to fix tests it was required to update global BuiltinInfo static and ArmTargetInfo.BuiltinInfo in
+/net/volvo/export/devarea/sputnik-model/modules/org.clang.basic/src/org/clang/basic/impl/TargetsStatics.java
+

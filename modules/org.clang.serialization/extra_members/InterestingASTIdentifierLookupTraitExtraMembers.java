@@ -1,0 +1,2 @@
+public InterestingASTIdentifierLookupTrait() {
+}

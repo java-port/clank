@@ -1,0 +1,100 @@
+[IMPORTS]
+java.util.Iterator
+org.clang.ast.*
+org.clang.ast.aliases.*
+org.clang.ast.java.*
+org.clang.ast.java.AstMemberPointers.*
+org.clang.ast.llvm.*
+org.clang.ast.OMPClauseMappableExprCommon.*
+org.clang.ast.FunctionProtoType.*
+org.clang.ast.OMPExecutableDirective.*
+static org.clang.ast.Qualifiers.*
+org.clang.edit.Commit
+org.clang.edit.EditGlobals
+org.clang.basic.*
+org.clang.basic.Builtin.*
+org.clang.lex.*
+org.clang.lex.Preprocessor.*
+org.clang.lex.llvm.*
+org.clang.sema.*
+org.clang.sema.impl.*
+org.llvm.cl.*
+org.clank.java.stdimpl.aliases.*
+org.clang.basic.target.*
+org.clang.basic.java.BasicFunctionPointers.*
+org.clang.basic.impl.*
+org.clang.analysis.*
+org.clang.analysis.analyses.analyze_format_string.*
+static org.clang.analysis.analyses.analyze_format_string.Analyze_format_stringGlobals.*
+static org.clang.analysis.CFGBlock.*
+org.clang.analysis.analyses.analyze_scanf.*
+org.clang.analysis.analyses.analyze_printf.*
+org.clang.analysis.analyses.threadSafety.*
+org.clang.analysis.analyses.reachable_code.*
+org.clang.analysis.domainspecific.ento.coreFoundation
+org.clang.analysis.analyses.*
+org.clang.clangc.*
+static org.clang.basic.BasicClangGlobals.*
+static org.clang.basic.PartialDiagnostic.*
+static org.clang.sema.Sema.*
+static org.clang.sema.Sema_NestedClasses.SemaDiagnosticBuilder.*
+static org.clang.sema.SemaClangGlobals.*
+static org.clang.sema.java.SemaFunctionPointers.*
+static org.clang.sema.java.SemaMemberPointers.*
+static org.clang.sema.impl.CodeCompleteConsumerStatics.*
+static org.clang.sema.impl.AttributeLangSupportStatics.*
+static org.clang.sema.impl.AttributeListStatics.*
+static org.clang.sema.impl.ScopeInfoStatics.*
+static org.clang.sema.java.SemaRTTI.*
+static org.clang.sema.java.SemaSizeofAndAlignment.*
+static org.clang.ast.java.AstFunctionPointers.*
+org.clang.ast.java.AstJavaDifferentiators.*
+static org.clang.ast.DeclContext.*
+static org.clang.ast.DeclContext.specific_decl_iterator.*
+static org.clang.ast.DeclContext.decl_iterator.*
+static org.clang.ast.QualType.*
+static org.clang.ast.java.AstRTTI.*
+static org.clang.ast.AstClangGlobals.*
+static org.clang.ast.DeclarationName.*
+org.clang.ast.DependentDiagnostic.*
+static org.clang.ast.specific_attr_iterator.*
+static org.clang.ast.Stmt.*
+static org.clang.sema.CapturingScopeInfo.*
+static org.clang.sema.impl.SemaDeclStatics.*
+static org.clang.sema.impl.JumpDiagnosticsStatics.*
+static org.clang.sema.impl.SemaLookupStatics.*
+static org.clang.sema.impl.SemaDeclCXXStatics.*
+static org.clang.sema.impl.SemaCastStatics.*
+static org.clang.sema.impl.SemaExprCXXStatics.*
+static org.clang.sema.impl.SemaExprObjCStatics.*
+static org.clang.sema.impl.SemaCodeCompleteStatics.*
+static org.clang.sema.impl.SemaOverloadStatics.*
+static org.clang.sema.impl.SemaCheckingStatics.*
+static org.clang.sema.impl.SemaOpenMPStatics.*
+static org.clang.sema.impl.SemaPseudoObjectStatics.*
+static org.clang.sema.impl.SemaTemplateDeductionStatics.*
+static org.clang.sema.impl.SemaInitStatics.*
+static org.clang.sema.impl.SemaTypeStatics.*
+static org.clang.sema.impl.SemaAccessStatics.*
+static org.clang.sema.impl.SemaTemplateInstantiateStatics.*
+static org.clang.sema.impl.SemaTemplateInstantiateDeclStatics.*
+static org.clang.sema.impl.SemaLambdaStatics.*
+static org.clang.sema.impl.AnalysisBasedWarningsStatics.*
+static org.clang.sema.impl.SemaStmtAttrStatics.*
+org.clang.sema.impl.DSAStackTy.*
+org.clang.sema.java.SemaJavaDifferentiators.*
+static org.clang.sema.impl.NsSemaStatics.*
+static org.clang.sema.impl.SemaStmtAsmStatics.*
+static org.clang.sema.impl.SemaStmtStatics.*
+static org.clang.sema.impl.SemaTemplateStatics.*
+static org.clang.sema.impl.SemaTemplateVariadicStatics.*
+static org.clang.sema.impl.SemaObjCPropertyStatics.*
+static org.clang.sema.impl.SemaFixItUtilsStatics.*
+static org.clang.sema.impl.SemaExprObjCStatics.*
+static org.clang.sema.impl.SemaExprMemberStatics.*
+static org.clang.sema.impl.SemaExprCXXStatics.*
+static org.clang.sema.impl.SemaExprStatics.*
+static org.clang.sema.impl.SemaExceptionSpecClangStatics.*
+static org.clang.sema.impl.SemaDeclObjCStatics.*
+static org.clang.ast.java.AstDeclarationsRTTI.*
+org.llvm.mc.mcparser.*

@@ -1,0 +1,13 @@
+FILE_NAME = ImmutableMapRefPtrType
+CLASS_SUFFIX = <KeyT, DataT>
+CLASS_TYPE = ImmutableMapRefPtrType<KeyT, DataT>
+IMMUTABLE_MAP_TYPE = ImmutableMapPtrType<KeyT, DataT>
+IMMUTABLE_MAP_FACTORY_TYPE = ImmutableMapPtrType.Factory<KeyT, DataT>
+PAIR_TYPE = std.pairPtrType<KeyT, DataT>
+AVL_TREE_TYPE = ImutAVLTreePtrTypeType<KeyT, DataT, std.pairPtrType<KeyT, DataT>>
+AVL_FACTORY_TYPE = ImutAVLFactoryPtrTypeType<KeyT, DataT, std.pairPtrType<KeyT, DataT>>
+AVL_VALUE_ITER_TYPE = ImutAVLValueIteratorPtrTypeType<std.pairPtrType<KeyT, DataT>>
+KEY_TYPE = KeyT
+DATA_TYPE = DataT
+LOOKUP_TYPE = type$ptr<DataT> /*P*/
+LOOKUP_RETURN_IMPL = type$ptr$inout<DataT>

@@ -1,0 +1,24 @@
+[IMPORTS]
+org.clang.ast.*
+static org.clang.basic.BasicClangGlobals.*
+org.clang.basic.*
+org.clang.basic.target.TargetInfo
+org.clang.basic.target.TargetOptions
+org.clang.lex.*
+org.clang.lex.llvm.*
+org.clang.sema.*
+org.clang.sema.Sema.*
+org.clang.parse.*
+org.clang.parse.impl.*
+org.clang.parse.java.ParseMemberPointers.*
+org.clang.parse.java.ParseFunctionPointers.*
+org.clang.sema.java.SemaFunctionPointers.*
+org.clang.sema.java.SemaMemberPointers.*
+org.clang.sema.java.SemaJavaDifferentiators.*
+org.clang.ast.java.AstFunctionPointers.*
+org.clang.ast.java.AstMemberPointers.*
+org.clang.ast.java.AstJavaDifferentiators.*
+static org.clang.basic.tok.TokenKind.*
+static org.clang.basic.tok.PPKeywordKind.*
+static org.clang.basic.tok.ObjCKeywordKind.*
+static org.clang.parse.Parser.*

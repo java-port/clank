@@ -1,0 +1,9 @@
+FILE_NAME = StdReverseIteratorULong
+CLASS_SUFFIX =
+INTERFACE_ITERATOR = ulong$iterator<std.reverse_iteratorULong>
+STD_DUAL_ITERATOR = std.reverse_iteratorULong
+VALUE_TYPE = long
+VALUE_ITERATOR = ulong$iterator<?>
+VALUE_ITERATOR_GENERIC = ulong$iterator
+VALUE_REFERENCE = ulong$ref
+VALUE_POINTER = ulong$ptr

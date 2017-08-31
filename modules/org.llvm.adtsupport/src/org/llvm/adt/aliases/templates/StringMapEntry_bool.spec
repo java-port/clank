@@ -1,0 +1,16 @@
+FILE_NAME = StringMapEntryBool
+CLASS_SUFFIX =
+INIT_1_PREFIX = <AllocatorTy extends NativeMemory.Allocator>
+INIT_1_TYPE = boolean
+INIT_1_RET_TYPE = StringMapEntryBool
+INIT_1_ALLOCATOR = AllocatorTy
+INIT_2_PREFIX =
+INIT_2_TYPE = boolean
+INIT_2_RET_TYPE = StringMapEntryBool
+INITIALIZE_STRING = StringMapEntryInitializerBool.Initialize
+VALUE_TYPE = boolean
+VALUE_REFERENCE = bool$ref
+VALUE_POINTER = bool$ptr
+VALUE_POINTER_INOUT = bool$ptr$inout
+DEFAULT_VALUE = false
+SIZEOF_VALUE  = false

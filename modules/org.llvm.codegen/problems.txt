@@ -1,0 +1,20 @@
+# While processing declarations:
+
+Class, union or enum with multiple definitions:[
+    [ClassTemplate,llvm::MachineRegisterInfo::defusechain_iterator,${LLVM_SRC}/llvm/include/llvm/CodeGen/MachineRegisterInfo.h:228,_ZN4llvm19MachineRegisterInfo20defusechain_iteratorE], 
+    [ClassTemplate,llvm::MachineRegisterInfo::defusechain_iterator,${LLVM_SRC}/llvm/include/llvm/CodeGen/MachineRegisterInfo.h:236,_ZN4llvm19MachineRegisterInfo20defusechain_iteratorE], 
+    [ClassTemplate,llvm::MachineRegisterInfo::defusechain_iterator,${LLVM_SRC}/llvm/include/llvm/CodeGen/MachineRegisterInfo.h:830,_ZN4llvm19MachineRegisterInfo20defusechain_iteratorE]
+]
+Class, union or enum with multiple definitions:[
+    [ClassTemplate,llvm::MachineRegisterInfo::defusechain_instr_iterator,${LLVM_SRC}/llvm/include/llvm/CodeGen/MachineRegisterInfo.h:231,_ZN4llvm19MachineRegisterInfo26defusechain_instr_iteratorE], 
+    [ClassTemplate,llvm::MachineRegisterInfo::defusechain_instr_iterator,${LLVM_SRC}/llvm/include/llvm/CodeGen/MachineRegisterInfo.h:238,_ZN4llvm19MachineRegisterInfo26defusechain_instr_iteratorE], 
+    [ClassTemplate,llvm::MachineRegisterInfo::defusechain_instr_iterator,${LLVM_SRC}/llvm/include/llvm/CodeGen/MachineRegisterInfo.h:932,_ZN4llvm19MachineRegisterInfo26defusechain_instr_iteratorE]
+]
+
+Declaration "StaticLikelyProb" [Var] at (${LLVM_SRC}/llvm/lib/CodeGen/MachineBlockPlacement.cpp:127) was skipped!
+Declaration "ProfileLikelyProb" [Var] at (${LLVM_SRC}/llvm/lib/CodeGen/MachineBlockPlacement.cpp:128) was skipped!
+Declaration "ViewBlockFreqFuncName" [Var] at (${LLVM_SRC}/llvm/lib/CodeGen/MachineBlockFrequencyInfo.cpp:49) was skipped!
+Declaration "ViewHotFreqPercent" [Var] at (${LLVM_SRC}/llvm/lib/CodeGen/MachineBlockFrequencyInfo.cpp:50) was skipped!
+
+
+# Analisys:

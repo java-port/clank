@@ -1,0 +1,7 @@
+  @Test
+  public void test_direct_ivar_assignment_in_annotated_functions_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/objc/direct-ivar-assignment-in-annotated-functions.m");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=alpha.osx.cocoa.DirectIvarAssignmentForAnnotatedFunctions' -verify -fblocks ${LLVM_SRC}/llvm/tools/clang/test/Analysis/objc/direct-ivar-assignment-in-annotated-functions.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=alpha.osx.cocoa.DirectIvarAssignmentForAnnotatedFunctions -verify -fblocks %s");
+  }
+

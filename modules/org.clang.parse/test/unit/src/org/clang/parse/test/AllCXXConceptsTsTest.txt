@@ -1,0 +1,35 @@
+  @Test
+  public void test_dcl_spec_concept_p1_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/concepts-ts/dcl.dcl/dcl.spec/dcl.spec.concept/p1.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++14 -fconcepts-ts -fcxx-exceptions -x c++ -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/concepts-ts/dcl.dcl/dcl.spec/dcl.spec.concept/p1.cpp
+    RUN("%clang_cc1 -std=c++14 -fconcepts-ts -fcxx-exceptions -x c++ -verify %s");
+  }
+
+  @Test
+  public void test_dcl_spec_concept_p2_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/concepts-ts/dcl.dcl/dcl.spec/dcl.spec.concept/p2.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++14 -fconcepts-ts -x c++ -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/concepts-ts/dcl.dcl/dcl.spec/dcl.spec.concept/p2.cpp
+    RUN("%clang_cc1 -std=c++14 -fconcepts-ts -x c++ -verify %s");
+  }
+
+  @Test
+  public void test_dcl_spec_concept_p5_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/concepts-ts/dcl.dcl/dcl.spec/dcl.spec.concept/p5.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++14 -fconcepts-ts -x c++ -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/concepts-ts/dcl.dcl/dcl.spec/dcl.spec.concept/p5.cpp
+    RUN("%clang_cc1 -std=c++14 -fconcepts-ts -x c++ -verify %s");
+  }
+
+  @Test
+  public void test_dcl_spec_concept_p6_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/concepts-ts/dcl.dcl/dcl.spec/dcl.spec.concept/p6.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++14 -fconcepts-ts -x c++ -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/concepts-ts/dcl.dcl/dcl.spec/dcl.spec.concept/p6.cpp
+    RUN("%clang_cc1 -std=c++14 -fconcepts-ts -x c++ -verify %s");
+  }
+
+  @Test
+  public void test_dcl_spec_concept_p7_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/concepts-ts/dcl.dcl/dcl.spec/dcl.spec.concept/p7.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -std=c++14 -fconcepts-ts -x c++ -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/concepts-ts/dcl.dcl/dcl.spec/dcl.spec.concept/p7.cpp
+    RUN("%clang_cc1 -std=c++14 -fconcepts-ts -x c++ -verify %s");
+  }
+

@@ -1,0 +1,24 @@
+org.llvm.llvm_c
+    AnalysisGlobals.java
+    BitReaderGlobals.java
+    BitWriterGlobals.java
+    CoreGlobals.java
+    DisassemblerGlobals.java
+    ErrorHandlingGlobals.java
+    IRReaderGlobals.java
+    InitializationGlobals.java
+    LLVMOpInfo1.java
+    LLVMOpInfoSymbol1.java
+    LinkerGlobals.java
+    SupportGlobals.java
+    llvm_lto_status.java
+    ltoGlobals.java
+org.llvm.llvm_c.target
+    LLVMByteOrdering.java
+    TargetGlobals.java
+    TargetMachineGlobals.java
+org.llvm.llvm_c.transforms
+    IPOGlobals.java
+    PassManagerBuilderGlobals.java
+    ScalarGlobals.java
+    VectorizeGlobals.java

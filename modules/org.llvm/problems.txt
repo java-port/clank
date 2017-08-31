@@ -1,0 +1,23 @@
+/////////////////////////////////////////////
+/// MODULE org.llvm
+
+/// Non virtual functions with the same name
+BasicSymbolRef.getObject()->SymbolRef.getObject() [1]
+DWARFContext.$assign()->DWARFContextInMemory.$assign() [1]
+content_iterator.$arrow()->symbol_iterator.$arrow() [1]
+content_iterator.$star()->symbol_iterator.$star() [1]
+
+/// Ambiguous points
+Class DWARFUnitSection inherits function $assign via multiple branches:
+[SmallVector::$assign, SmallVector::$assign, SmallVector::$assign, SmallVectorImpl::$assign]
+[DWARFUnitSectionBase::$assign]
+
+CHECKS FROM DiagCommonHeaderInUnionsChecker
+UNION llvm::object::MachOObjectFile::(anonymous) [${LLVM_SRC}/llvm/include/llvm/Object/MachO.h:450]:
+  /*uint*/int magic
+  /*uint*/int cputype
+  /*uint*/int cpusubtype
+  /*uint*/int filetype
+  /*uint*/int ncmds
+  /*uint*/int sizeofcmds
+  /*uint*/int flags

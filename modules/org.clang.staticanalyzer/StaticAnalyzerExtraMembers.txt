@@ -1,0 +1,672 @@
+[EXTRA_MEMBERS]
+"(anonymous namespace)::PaddingChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<TranslationUnitDecl>
+(anonymous namespace)::AllocKind = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::AllocKind = FILE#./extra_members/AllocKindExtraMembers.java
+(anonymous namespace)::AnalysisConsumer = FILE#./extra_members/AnalysisConsumerExtraMembers.java
+
+(anonymous namespace)::AnalyzerStatsChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EndAnalysisChecker
+(anonymous namespace)::ArrayBoundChecker = IMPLEMENTS#org.clang.staticanalyzer.java.LocationChecker
+(anonymous namespace)::ArrayBoundCheckerV2 = IMPLEMENTS#org.clang.staticanalyzer.java.LocationChecker
+
+(anonymous namespace)::BindingKey = IMPLEMENTS#FoldingSetTrait.Profilable
+
+(anonymous namespace)::BindingKey = IMPLEMENTS#Native.ComparableLower
+(anonymous namespace)::BindingKey = IMPLEMENTS#NativePOD<BindingKey>
+(anonymous namespace)::BindingKey = FILE#./extra_members/BindingKeyExtraMembers.java
+(anonymous namespace)::BoolAssignmentChecker = IMPLEMENTS#org.clang.staticanalyzer.java.BindChecker
+(anonymous namespace)::BoolAssignmentChecker = FILE#./extra_members/BoolAssignmentCheckerExtraMembers.java
+(anonymous namespace)::BugHashDumper = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::BugHashDumper = TEXT#@Override public void $checkPostStmt(Stmt stmt, CheckerContext C) { checkPostStmt(stmt, C); }
+(anonymous namespace)::BuiltinFunctionChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EvalCallChecker
+(anonymous namespace)::BuiltinFunctionChecker = FILE#./extra_members/BuiltinFunctionCheckerExtraMembers.java
+(anonymous namespace)::CFErrorFunctionChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<FunctionDecl>
+
+(anonymous namespace)::CFGDumper = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::CFGViewer = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::CFNumberCreateChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::CFNumberCreateChecker = FILE#./extra_members/CFNumberCreateCheckerExtraMembers.java
+(anonymous namespace)::CFRefLeakReportVisitor = FILE#./extra_members/CFRefLeakReportVisitorExtraMembers.java
+(anonymous namespace)::CFRefReportVisitor = FILE#./extra_members/CFRefReportVisitorExtraMembers.java
+(anonymous namespace)::CFRetainReleaseChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::CFRetainReleaseChecker = FILE#./extra_members/CFRetainReleaseCheckerExtraMembers.java
+
+(anonymous namespace)::CStringChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EvalCallChecker
+(anonymous namespace)::CStringChecker = IMPLEMENTS#org.clang.staticanalyzer.java.RegionChangesChecker
+(anonymous namespace)::CStringChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::CStringChecker = IMPLEMENTS#org.clang.staticanalyzer.java.LiveSymbolsChecker
+(anonymous namespace)::CStringChecker = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+(anonymous namespace)::CStringChecker = FILE#./extra_members/CStringCheckerExtraMembers.java
+
+(anonymous namespace)::CStringSyntaxChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::CallAndMessageChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreObjCMessageChecker
+(anonymous namespace)::CallAndMessageChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+(anonymous namespace)::CallAndMessageChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ObjCMessageNilChecker
+(anonymous namespace)::CallAndMessageChecker = FILE#./extra_members/CallAndMessageCheckerExtraMembers.java
+(anonymous namespace)::CallDumper = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+(anonymous namespace)::CallDumper = IMPLEMENTS#org.clang.staticanalyzer.java.PostCallChecker
+(anonymous namespace)::CallGraphDumper = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<TranslationUnitDecl>
+(anonymous namespace)::CallGraphViewer = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<TranslationUnitDecl>
+(anonymous namespace)::CastSizeChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::CastSizeChecker = FILE#./extra_members/CastSizeCheckerExtraMembers.java
+(anonymous namespace)::CastToStructChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::CastToStructChecker = TEXT#@Override public void $checkPreStmt(Stmt stmt, CheckerContext C) { if (stmt instanceof CastExpr) { checkPreStmt((CastExpr) stmt, C); } }
+(anonymous namespace)::CastedAllocFinder::CallRecord = IMPLEMENTS#NativeCloneable<CallRecord>
+(anonymous namespace)::CastedAllocFinder::CallRecord = FILE#./extra_members/CallRecordExtraMembers.java
+(anonymous namespace)::ChrootChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EvalCallChecker
+(anonymous namespace)::ChrootChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::ChrootChecker = FILE#./extra_members/ChrootCheckerExtraMembers.java
+(anonymous namespace)::ClassReleaseChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreObjCMessageChecker
+(anonymous namespace)::ClusterAnalysis = FILE#./extra_members/ClusterAnalysisExtraMembers.java
+
+(anonymous namespace)::ConfigDumper = IMPLEMENTS#org.clang.staticanalyzer.java.EndOfTranslationUnitChecker
+(anonymous namespace)::ContextLocation = FILE#./extra_members/ContextLocationExtraMembers.java
+
+(anonymous namespace)::CountKey = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::CountKey = IMPLEMENTS#Native.ComparableLower
+(anonymous namespace)::CountKey = TEXT#@Override public boolean $less(Object obj) { return $less((CountKey)obj); }
+(anonymous namespace)::DeadStoresChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::DereferenceChecker = IMPLEMENTS#org.clang.staticanalyzer.java.LocationChecker
+(anonymous namespace)::DereferenceChecker = IMPLEMENTS#org.clang.staticanalyzer.java.BindChecker
+(anonymous namespace)::DereferenceChecker = FILE#./extra_members/DereferenceCheckerExtraMembers.java
+(anonymous namespace)::DirectIvarAssignment = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<ObjCImplementationDecl>
+(anonymous namespace)::DivZeroChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::DivZeroChecker = FILE#./extra_members/DivZeroCheckerExtraMembers.java
+(anonymous namespace)::DivisionBRVisitor = FILE#./extra_members/DivisionBRVisitorExtraMembers.java
+(anonymous namespace)::DominatorsTreeDumper = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::DynamicTypeChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::DynamicTypeChecker = FILE#./extra_members/DynamicTypeCheckerExtraMembers.java
+(anonymous namespace)::DynamicTypeChecker::DynamicTypeBugVisitor = FILE#./extra_members/DynamicTypeBugVisitorExtraMembers.java
+
+(anonymous namespace)::DynamicTypePropagation = IMPLEMENTS#org.clang.staticanalyzer.java.PreObjCMessageChecker
+(anonymous namespace)::DynamicTypePropagation = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+(anonymous namespace)::DynamicTypePropagation = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::DynamicTypePropagation = IMPLEMENTS#org.clang.staticanalyzer.java.PostObjCMessageChecker
+(anonymous namespace)::DynamicTypePropagation = IMPLEMENTS#org.clang.staticanalyzer.java.PostCallChecker
+(anonymous namespace)::DynamicTypePropagation = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+(anonymous namespace)::DynamicTypePropagation = FILE#./extra_members/DynamicTypePropagationExtraMembers.java
+
+(anonymous namespace)::DynamicTypePropagation::GenericsBugVisitor = FILE#./extra_members/GenericsBugVisitorExtraMembers.java
+
+(anonymous namespace)::EHCodeVisitor = FILE#./extra_members/EHCodeVisitorExtraMembers.java
+(anonymous namespace)::EmptyLocalizationContextChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<ObjCImplementationDecl>
+(anonymous namespace)::ExplodedGraphViewer = IMPLEMENTS#org.clang.staticanalyzer.java.EndAnalysisChecker
+(anonymous namespace)::ExprInspectionChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EvalCallChecker
+(anonymous namespace)::ExprInspectionChecker = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+(anonymous namespace)::ExprInspectionChecker = FILE#./extra_members/ExprInspectionCheckerExtraMembers.java
+(anonymous namespace)::FRIEC_WLItem = FILE#./extra_members/FRIEC_WLItemExtraMembers.java
+(anonymous namespace)::FRIEC_WLItem = IMPLEMENTS#NativeCloneable<FRIEC_WLItem>
+#_ZN12_GLOBAL__N_116CheckStmtContextE::Eng = PULLUP
+
+(anonymous namespace)::FindIdenticalExprChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::FindIdenticalExprVisitor = FILE#./extra_members/FindIdenticalExprVisitorExtraMembers.java
+(anonymous namespace)::FindSuperCallVisitor = FILE#./extra_members/FindSuperCallVisitorExtraMembers.java
+(anonymous namespace)::FixedAddressChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::FixedAddressChecker = FILE#./extra_members/FixedAddressCheckerExtraMembers.java
+(anonymous namespace)::GenericTaintChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::GenericTaintChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::GenericTaintChecker = FILE#./extra_members/GenericTaintCheckerExtraMembers.java
+(anonymous namespace)::IvarInvalidationChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<ObjCImplementationDecl>
+(anonymous namespace)::IvarInvalidationCheckerImpl::InvalidationInfo = IMPLEMENTS#NativeCloneable<InvalidationInfo>
+(anonymous namespace)::IvarInvalidationCheckerImpl::InvalidationInfo = IMPLEMENTS#NativeMoveable<InvalidationInfo>
+(anonymous namespace)::IvarInvalidationCheckerImpl::InvalidationInfo = IMPLEMENTS#Native.assignable<InvalidationInfo>
+(anonymous namespace)::IvarInvalidationCheckerImpl::InvalidationInfo = FILE#./extra_members/InvalidationInfoExtraMembers.java
+(anonymous namespace)::LLVMConventionsChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<CXXRecordDecl>
+(anonymous namespace)::LLVMConventionsChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::LiveVariablesDumper = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::LocalizedState = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::LocalizedState = IMPLEMENTS#NativeCloneable<LocalizedState>
+(anonymous namespace)::LocalizedState = TEXT#@Override public LocalizedState clone() { return new LocalizedState(this); }
+(anonymous namespace)::LockState = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::LockState = IMPLEMENTS#NativeCloneable<LockState>
+(anonymous namespace)::LockState = TEXT#@Override public LockState clone() { return new LockState(this); }
+
+(anonymous namespace)::MacOSKeychainAPIChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::MacOSKeychainAPIChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::MacOSKeychainAPIChecker = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+(anonymous namespace)::MacOSKeychainAPIChecker = FILE#./extra_members/MacOSKeychainAPICheckerExtraMembers.java
+
+(anonymous namespace)::MacOSKeychainAPIChecker::ADFunctionInfo=FILE#./extra_members/ADFunctionInfoExtraMembers.java
+(anonymous namespace)::MacOSKeychainAPIChecker::AllocationState = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::MacOSKeychainAPIChecker::AllocationState = IMPLEMENTS#NativeCloneable<AllocationState>
+(anonymous namespace)::MacOSKeychainAPIChecker::AllocationState = TEXT#@Override public AllocationState clone() { return new AllocationState(this); }
+(anonymous namespace)::MacOSKeychainAPIChecker::SecKeychainBugVisitor = FILE#./extra_members/SecKeychainBugVisitorExtraMembers.java
+(anonymous namespace)::MacOSXAPIChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::MacOSXAPIChecker = FILE#./extra_members/MacOSXAPICheckerExtraMembers.java
+
+(anonymous namespace)::MallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EvalAssumeChecker
+(anonymous namespace)::MallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::MallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+(anonymous namespace)::MallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::MallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostObjCMessageChecker
+(anonymous namespace)::MallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PointerEscapeChecker
+(anonymous namespace)::MallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+(anonymous namespace)::MallocChecker = FILE#./extra_members/MallocCheckerExtraMembers.java
+
+(anonymous namespace)::MallocChecker::MallocBugVisitor = FILE#./extra_members/MallocBugVisitorExtraMembers.java
+(anonymous namespace)::MallocOverflowCheck = IMPLEMENTS#NativePOD<MallocOverflowCheck>
+(anonymous namespace)::MallocOverflowCheck = FILE#./extra_members/MallocOverflowCheckExtraMembers.java
+
+(anonymous namespace)::MallocOverflowSecurityChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::MallocSizeofChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::NSAutoreleasePoolChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreObjCMessageChecker
+(anonymous namespace)::NSErrorMethodChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<ObjCMethodDecl>
+(anonymous namespace)::NSOrCFErrorDerefChecker = IMPLEMENTS#org.clang.staticanalyzer.java.LocationChecker
+(anonymous namespace)::NSOrCFErrorDerefChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EventChecker
+(anonymous namespace)::NSOrCFErrorDerefChecker = FILE#./extra_members/NSOrCFErrorDerefCheckerExtraMembers.java
+(anonymous namespace)::NilArgChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreObjCMessageChecker
+(anonymous namespace)::NilArgChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::NilArgChecker = FILE#./extra_members/NilArgCheckerExtraMembers.java
+(anonymous namespace)::NoReturnFunctionChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostObjCMessageChecker
+(anonymous namespace)::NoReturnFunctionChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostCallChecker
+(anonymous namespace)::NoReturnFunctionChecker = FILE#./extra_members/NoReturnFunctionCheckerExtraMembers.java
+(anonymous namespace)::NonLocalizedStringBRVisitor = FILE#./extra_members/NonLocalizedStringBRVisitorExtraMembers.java
+
+(anonymous namespace)::NonLocalizedStringChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreObjCMessageChecker
+(anonymous namespace)::NonLocalizedStringChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::NonLocalizedStringChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostObjCMessageChecker
+(anonymous namespace)::NonLocalizedStringChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostCallChecker
+(anonymous namespace)::NonLocalizedStringChecker = FILE#./extra_members/NonLocalizedStringCheckerExtraMembers.java
+
+(anonymous namespace)::NonNullParamChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+(anonymous namespace)::NonNullParamChecker = FILE#./extra_members/NonNullParamCheckerExtraMembers.java
+
+(anonymous namespace)::NullabilityChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::NullabilityChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+(anonymous namespace)::NullabilityChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::NullabilityChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostObjCMessageChecker
+(anonymous namespace)::NullabilityChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostCallChecker
+(anonymous namespace)::NullabilityChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EventChecker
+(anonymous namespace)::NullabilityChecker = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+(anonymous namespace)::NullabilityChecker = IMPLEMENTS#org.clang.staticanalyzer.java.BindChecker
+(anonymous namespace)::NullabilityChecker = FILE#./extra_members/NullabilityCheckerExtraMembers.java
+
+(anonymous namespace)::NullabilityChecker::NullabilityBugVisitor = FILE#./extra_members/NullabilityBugVisitorExtraMembers.java
+
+(anonymous namespace)::NullabilityState = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::NullabilityState = IMPLEMENTS#NativeCloneable<NullabilityState>
+(anonymous namespace)::NullabilityState = TEXT#@Override public NullabilityState clone() { return new NullabilityState(this); }
+
+(anonymous namespace)::ObjCAtSyncChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::ObjCAtSyncChecker = FILE#./extra_members/ObjCAtSyncCheckerExtraMembers.java
+(anonymous namespace)::ObjCContainersASTChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+
+(anonymous namespace)::ObjCContainersChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::ObjCContainersChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::ObjCContainersChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PointerEscapeChecker
+(anonymous namespace)::ObjCContainersChecker = FILE#./extra_members/ObjCContainersCheckerExtraMembers.java
+
+(anonymous namespace)::ObjCDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EvalAssumeChecker
+(anonymous namespace)::ObjCDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+(anonymous namespace)::ObjCDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::ObjCDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreObjCMessageChecker
+(anonymous namespace)::ObjCDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+(anonymous namespace)::ObjCDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostObjCMessageChecker
+(anonymous namespace)::ObjCDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PointerEscapeChecker
+(anonymous namespace)::ObjCDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.BeginFunctionChecker
+(anonymous namespace)::ObjCDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EndFunctionChecker
+(anonymous namespace)::ObjCDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<ObjCImplementationDecl>
+(anonymous namespace)::ObjCDeallocChecker = FILE#./extra_members/ObjCDeallocCheckerExtraMembers.java
+
+(anonymous namespace)::ObjCLoopChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::ObjCLoopChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostObjCMessageChecker
+(anonymous namespace)::ObjCLoopChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PointerEscapeChecker
+(anonymous namespace)::ObjCLoopChecker = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+(anonymous namespace)::ObjCLoopChecker = FILE#./extra_members/ObjCLoopCheckerExtraMembers.java
+
+(anonymous namespace)::ObjCMethSigsChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<ObjCImplementationDecl>
+(anonymous namespace)::ObjCNonNilReturnValueChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::ObjCNonNilReturnValueChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostObjCMessageChecker
+(anonymous namespace)::ObjCNonNilReturnValueChecker = FILE#./extra_members/ObjCNonNilReturnValueCheckerExtraMembers.java
+
+(anonymous namespace)::ObjCSelfInitChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::ObjCSelfInitChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+(anonymous namespace)::ObjCSelfInitChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::ObjCSelfInitChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostObjCMessageChecker
+(anonymous namespace)::ObjCSelfInitChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostCallChecker
+(anonymous namespace)::ObjCSelfInitChecker = IMPLEMENTS#org.clang.staticanalyzer.java.LocationChecker
+(anonymous namespace)::ObjCSelfInitChecker = IMPLEMENTS#org.clang.staticanalyzer.java.BindChecker
+(anonymous namespace)::ObjCSelfInitChecker = FILE#./extra_members/ObjCSelfInitCheckerExtraMembers.java
+
+(anonymous namespace)::ObjCSummaryCache = FILE#./extra_members/ObjCSummaryCacheExtraMembers.java
+
+(anonymous namespace)::ObjCSummaryKey = FILE#./extra_members/ObjCSummaryKeyExtraMembers.java
+
+(anonymous namespace)::ObjCSuperCallChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<ObjCImplementationDecl>
+
+(anonymous namespace)::ObjCSuperDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreObjCMessageChecker
+(anonymous namespace)::ObjCSuperDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+(anonymous namespace)::ObjCSuperDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostObjCMessageChecker
+(anonymous namespace)::ObjCSuperDeallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.LocationChecker
+(anonymous namespace)::ObjCSuperDeallocChecker = FILE#./extra_members/ObjCSuperDeallocCheckerExtraMembers.java
+
+(anonymous namespace)::ObjCUnusedIvarsChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<ObjCImplementationDecl>
+
+(anonymous namespace)::PaddingChecker = TEXT#private CheckBase $CHECKS[] $EQ { new ASTDecl<TranslationUnitDecl>(TranslationUnitDecl.class)  };
+(anonymous namespace)::PaddingChecker = TEXT#@Override protected CheckBase[] $getChecks() { return $CHECKS; }
+(anonymous namespace)::PluralMisuseChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::PluralMisuseChecker::MethodCrawler = FILE#./extra_members/MethodCrawlerExtraMembers.java
+
+(anonymous namespace)::PointerArithChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::PointerArithChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::PointerArithChecker = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+(anonymous namespace)::PointerArithChecker = FILE#./extra_members/PointerArithCheckerExtraMembers.java
+
+(anonymous namespace)::PointerSubChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::PointerSubChecker = FILE#./extra_members/PointerSubCheckerExtraMembers.java
+(anonymous namespace)::PthreadLockChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::PthreadLockChecker = FILE#./extra_members/PthreadLockCheckerExtraMembers.java
+(anonymous namespace)::Range = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::Range = FILE#./extra_members/RangeExtraMembers.java
+(anonymous namespace)::RangeSet = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::RangeSet = IMPLEMENTS#NativeCloneable<RangeSet>
+(anonymous namespace)::RangeSet = TEXT#@Override public RangeSet clone() { return new RangeSet(this); }
+(anonymous namespace)::RangeTrait = FILE#./extra_members/RangeTraitExtraMembers.java
+(anonymous namespace)::ReallocPair = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::ReallocPair = IMPLEMENTS#NativeCloneable<ReallocPair>
+(anonymous namespace)::ReallocPair = TEXT#@Override public ReallocPair clone() { return new ReallocPair(this); }
+(anonymous namespace)::RefState = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::RefState = IMPLEMENTS#NativeCloneable<RefState>
+(anonymous namespace)::RefState = TEXT#@Override public RefState clone() { return new RefState(this); }
+(anonymous namespace)::RefVal = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::RefVal = IMPLEMENTS#NativeCloneable<RefVal>
+(anonymous namespace)::RefVal = TEXT#@Override public RefVal clone() { return new RefVal(this); }
+(anonymous namespace)::RegionBindingsRef = FILE#./extra_members/RegionBindingsRefExtraMembers.java
+(anonymous namespace)::RegionBindingsRef = IMPLEMENTS#NativeMoveable<RegionBindingsRef>
+
+(anonymous namespace)::RetainCountChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EvalAssumeChecker
+(anonymous namespace)::RetainCountChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EvalCallChecker
+(anonymous namespace)::RetainCountChecker = IMPLEMENTS#org.clang.staticanalyzer.java.RegionChangesChecker
+(anonymous namespace)::RetainCountChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::RetainCountChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::RetainCountChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostCallChecker
+(anonymous namespace)::RetainCountChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EndFunctionChecker
+(anonymous namespace)::RetainCountChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EndAnalysisChecker
+(anonymous namespace)::RetainCountChecker = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+(anonymous namespace)::RetainCountChecker = IMPLEMENTS#org.clang.staticanalyzer.java.BindChecker
+(anonymous namespace)::RetainCountChecker = FILE#./extra_members/RetainCountCheckerExtraMembers.java
+
+(anonymous namespace)::RetainSummary = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::RetainSummary = IMPLEMENTS#NativeCloneable<RetainSummary>
+(anonymous namespace)::RetainSummary = FILE#./extra_members/RetainSummaryExtraMembers.java
+(anonymous namespace)::ReturnPointerRangeChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::ReturnPointerRangeChecker = FILE#./extra_members/ReturnPointerRangeCheckerExtraMembers.java
+(anonymous namespace)::ReturnUndefChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::ReturnUndefChecker = TEXT#@Override public void $checkPreStmt(Stmt stmt, CheckerContext C) { if (stmt instanceof ReturnStmt) { checkPreStmt((ReturnStmt) stmt, C); } }
+(anonymous namespace)::ReturnVisitor = FILE#./extra_members/ReturnVisitorExtraMembers.java
+(anonymous namespace)::SecuritySyntaxChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::SelectorDescriptor = TEXT#public SelectorDescriptor(char$ptr SelectorName, int ArgumentCount) { this.SelectorName $EQ SelectorName; this.ArgumentCount $EQ ArgumentCount; }
+
+(anonymous namespace)::SimpleStreamChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+(anonymous namespace)::SimpleStreamChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostCallChecker
+(anonymous namespace)::SimpleStreamChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PointerEscapeChecker
+(anonymous namespace)::SimpleStreamChecker = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+(anonymous namespace)::SimpleStreamChecker = FILE#./extra_members/SimpleStreamCheckerExtraMembers.java
+
+(anonymous namespace)::SizeofPointerChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTCodeBodyChecker
+(anonymous namespace)::StackAddrEscapeChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::StackAddrEscapeChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EndFunctionChecker
+(anonymous namespace)::StackAddrEscapeChecker = FILE#./extra_members/StackAddrEscapeCheckerExtraMembers.java
+(anonymous namespace)::StreamChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EvalCallChecker
+(anonymous namespace)::StreamChecker = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+(anonymous namespace)::StreamChecker = FILE#./extra_members/StreamCheckerExtraMembers.java
+(anonymous namespace)::StreamState = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::StreamState = IMPLEMENTS#NativeCloneable<StreamState>
+(anonymous namespace)::StreamState = TEXT#@Override public StreamState clone() { return new StreamState(this); }
+(anonymous namespace)::SuperDeallocBRVisitor = FILE#./extra_members/SuperDeallocBRVisitorExtraMembers.java
+(anonymous namespace)::TaintTesterChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::TaintTesterChecker = FILE#./extra_members/TaintTesterCheckerExtraMembers.java
+(anonymous namespace)::TestAfterDivZeroChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::TestAfterDivZeroChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EndFunctionChecker
+(anonymous namespace)::TestAfterDivZeroChecker = IMPLEMENTS#org.clang.staticanalyzer.java.BranchConditionChecker
+(anonymous namespace)::TestAfterDivZeroChecker = FILE#./extra_members/TestAfterDivZeroCheckerExtraMembers.java
+(anonymous namespace)::TraversalDumper = IMPLEMENTS#org.clang.staticanalyzer.java.BeginFunctionChecker
+(anonymous namespace)::TraversalDumper = IMPLEMENTS#org.clang.staticanalyzer.java.EndFunctionChecker
+(anonymous namespace)::TraversalDumper = IMPLEMENTS#org.clang.staticanalyzer.java.BranchConditionChecker
+(anonymous namespace)::TrimmedGraph::PriorityCompare = IMPLEMENTS#Compare<std.pairPtrUInt</*const*/ ExplodedNode /*P*/ >>
+(anonymous namespace)::TrimmedGraph::PriorityCompare = FILE#./extra_members/PriorityCompareExtraMembers.java
+(anonymous namespace)::UndefBranchChecker = IMPLEMENTS#org.clang.staticanalyzer.java.BranchConditionChecker
+(anonymous namespace)::UndefBranchChecker = FILE#./extra_members/UndefBranchCheckerExtraMembers.java
+(anonymous namespace)::UndefCapturedBlockVarChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::UndefCapturedBlockVarChecker = FILE#./extra_members/UndefCapturedBlockVarCheckerExtraMembers.java
+(anonymous namespace)::UndefResultChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+(anonymous namespace)::UndefResultChecker = FILE#./extra_members/UndefResultCheckerExtraMembers.java
+(anonymous namespace)::UndefinedArraySubscriptChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::UndefinedArraySubscriptChecker = TEXT#@Override public void $checkPreStmt(Stmt stmt, CheckerContext C) { if (stmt instanceof ArraySubscriptExpr) { checkPreStmt((ArraySubscriptExpr) stmt, C); } }
+(anonymous namespace)::UndefinedAssignmentChecker = IMPLEMENTS#org.clang.staticanalyzer.java.BindChecker
+(anonymous namespace)::UndefinedAssignmentChecker = FILE#./extra_members/UndefinedAssignmentCheckerExtraMembers.java
+(anonymous namespace)::UnixAPIChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::UnixAPIChecker = FILE#./extra_members/UnixAPICheckerExtraMembers.java
+(anonymous namespace)::UnreachableCodeChecker = IMPLEMENTS#org.clang.staticanalyzer.java.EndAnalysisChecker
+(anonymous namespace)::VLASizeChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::VLASizeChecker = TEXT#@Override public void $checkPreStmt(Stmt stmt, CheckerContext C) { if (stmt instanceof DeclStmt) { checkPreStmt((DeclStmt) stmt, C); } }
+(anonymous namespace)::VariadicMethodTypeChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreObjCMessageChecker
+
+(anonymous namespace)::VforkChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+(anonymous namespace)::VforkChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+(anonymous namespace)::VforkChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PostCallChecker
+(anonymous namespace)::VforkChecker = IMPLEMENTS#org.clang.staticanalyzer.java.BindChecker
+(anonymous namespace)::VforkChecker = FILE#./extra_members/VforkCheckerExtraMembers.java
+
+(anonymous namespace)::VirtualCallChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<CXXRecordDecl>
+(anonymous namespace)::WalkAST=FILE#./extra_members/VirtualCallCheckerStaticsExtraMembers.java
+(anonymous namespace)::ZeroState = IMPLEMENTS#FoldingSetTrait.Profilable
+(anonymous namespace)::ZeroState = IMPLEMENTS#NativeCloneable<ZeroState>
+(anonymous namespace)::ZeroState = IMPLEMENTS#Native.ComparableLower
+(anonymous namespace)::ZeroState = FILE#./extra_members/ZeroStateExtraMembers.java
+(anonymous namespace)::maximal_features_tag = TEXT#public maximal_features_tag() {}
+
+(anonymous namespace)::minimal_features_tag = TEXT#public minimal_features_tag() {}
+
+CharUnitPair = TEXT#public CharUnitPair(CharUnits Align, CharUnits Size) { this.Align $EQ Align; this.Size $EQ Size; }
+CharUnitPair = TEXT#public @Override boolean $less(Object obj) { return $less((CharUnitPair) obj); }
+#_ZN12_GLOBAL__N_125CheckBeginFunctionContextE::Eng = PULLUP
+
+_ZN12_GLOBAL__N_116CheckBindContextE = EXTENDS#BaseContext<Check$CheckBindFunc>
+#_ZN12_GLOBAL__N_127CheckBranchConditionContextE::Eng = PULLUP
+
+_ZN12_GLOBAL__N_116CheckCallContextE = EXTENDS#BaseContext<Check$CheckCallFunc>
+#_ZN12_GLOBAL__N_123CheckObjCMessageContextE::Eng = PULLUP
+
+_ZN12_GLOBAL__N_116CheckStmtContextE = EXTENDS#BaseContext<Check$CheckStmtFunc>
+#_ZN12_GLOBAL__N_123CheckDeadSymbolsContextE::Eng = PULLUP
+
+_ZN12_GLOBAL__N_120CheckLocationContextE = EXTENDS#BaseContext<Check$CheckLocationFunc>
+#_ZN12_GLOBAL__N_116CheckCallContextE::Eng = PULLUP
+
+_ZN12_GLOBAL__N_123CheckDeadSymbolsContextE = EXTENDS#BaseContext<Check$CheckDeadSymbolsFunc>
+#_ZN12_GLOBAL__N_120CheckLocationContextE::Eng = PULLUP
+
+_ZN12_GLOBAL__N_123CheckObjCMessageContextE = EXTENDS#BaseContext<Check$CheckObjCMessageFunc>
+
+### Please ucomment 8 lines with PULLUP below as soon PULLUP is implemented in jconvert !!!
+
+# does not work for(anonymous namespace)::CheckBindContext
+_ZN12_GLOBAL__N_125CheckBeginFunctionContextE = EXTENDS#BaseContext<Check$CheckBeginEndFunctionFunc>
+#_ZN12_GLOBAL__N_116CheckBindContextE::Eng = PULLUP
+
+_ZN12_GLOBAL__N_127CheckBranchConditionContextE = EXTENDS#BaseContext<Check$CheckBranchConditionFunc>
+anonymous namespace)::MallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.LocationChecker
+anonymous namespace)::MallocChecker = IMPLEMENTS#org.clang.staticanalyzer.java.ConstPointerEscapeChecker
+
+clang::ento::APSIntType = IMPLEMENTS#ComparableLowerGreater
+clang::ento::APSIntType = TEXT#@Override public boolean $greater(Object o) {APSIntType /*&*/ Other $EQ (APSIntType) o; return Other.$less(this); }
+clang::ento::APSIntType = TEXT#@Override public boolean $less(Object o) {APSIntType /*&*/ Other $EQ (APSIntType) o; return this.$less(Other); }
+clang::ento::AnyFunctionCall = FILE#./extra_members/AnyFunctionCallExtraMembers.java
+clang::ento::BlockCall=TEXT#@Override public BlockCall clone() { return new BlockCall(this); }
+clang::ento::BugReport = FILE#./extra_members/BugReportExtraMembers.java
+
+
+clang::ento::BugReportEquivClass = TEXT#private static final FoldingSetTrait<BugReportEquivClass> $Trait $EQ new DefaultFoldingSetTrait<BugReportEquivClass>();
+clang::ento::BugReportEquivClass = TEXT#public static FoldingSetTrait<BugReportEquivClass> $Trait() { return $Trait;  }
+clang::ento::BugReportEquivClass = EXTENDS#FoldingSetImpl.NodeImpl
+clang::ento::BugReporterVisitor  = TEXT#private static final FoldingSetTrait<BugReporterVisitor> $Trait $EQ new DefaultFoldingSetTrait<BugReporterVisitor>();
+clang::ento::BugReporterVisitor  = TEXT#public static FoldingSetTrait<BugReporterVisitor> $Trait() { return $Trait;  }
+
+clang::ento::BugReporterVisitor = EXTENDS#FoldingSetImpl.NodeImpl$Tracker
+clang::ento::BugReporterVisitorImpl = FILE#./extra_members/BugReporterVisitorImplExtraMembers.java
+clang::ento::BugReporterVisitorImpl = IMPLEMENTS#NativeCloneable<DERIVED>
+
+clang::ento::BugType = TEXT#public BugType(CheckName check, char$ptr name, char$ptr cat) { this(check, new StringRef(name), new StringRef(cat)); }
+clang::ento::BugType = TEXT#public BugType(/*const*/ CheckerBase /*P*/ checker, char$ptr name, char$ptr cat) { this(checker, new StringRef(name), new StringRef(cat)); }
+clang::ento::CXXAllocatorCall=TEXT#@Override public CXXAllocatorCall clone() { return new CXXAllocatorCall(this); }
+clang::ento::CXXConstructorCall=TEXT#@Override public CXXConstructorCall clone() { return new CXXConstructorCall(this); }
+clang::ento::CXXDestructorCall=TEXT#@Override public CXXDestructorCall clone() { return new CXXDestructorCall(this); }
+clang::ento::CXXInstanceCall = FILE#./extra_members/CXXInstanceCallExtraMembers.java
+clang::ento::CXXMemberCall=TEXT#@Override public CXXMemberCall clone() { return new CXXMemberCall(this); }
+clang::ento::CXXMemberOperatorCall=TEXT#@Override public CXXMemberOperatorCall clone() { return new CXXMemberOperatorCall(this); }
+
+clang::ento::CallEvent=IMPLEMENTS#RefCountedBaseImplementation
+clang::ento::CallEvent = FILE#./extra_members/CallEventExtraMembers.java
+clang::ento::CallEventManager = FILE#./extra_members/CallEventManagerExtraMembers.java
+
+clang::ento::CheckerBase = IMPLEMENTS#CheckerBaseImplementation
+clang::ento::CheckerBase = TEXT#protected abstract CheckBase[] $getChecks();
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.EvalAssumeChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.EvalCallChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.RegionChangesChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.PreStmtChecker
+clang::ento::CheckerDocumentation = TEXT#@Override public void $checkPreStmt(Stmt stmt, CheckerContext C) { if (stmt instanceof ReturnStmt) { checkPreStmt((ReturnStmt) stmt, C); } }
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.PreObjCMessageChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.PostStmtChecker
+clang::ento::CheckerDocumentation = TEXT#@Override public void $checkPostStmt(Stmt stmt, CheckerContext C) { if (stmt instanceof DeclStmt) { checkPostStmt((DeclStmt) stmt, C); } }
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.PostObjCMessageChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.PostCallChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.PointerEscapeChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.ObjCMessageNilChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.LocationChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.LiveSymbolsChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.EventChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.EndOfTranslationUnitChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.BeginFunctionChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.EndFunctionChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.EndAnalysisChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.ConstPointerEscapeChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.BranchConditionChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.BindChecker
+
+clang::ento::CheckerDocumentation = IMPLEMENTS#org.clang.staticanalyzer.java.ASTDeclChecker<FunctionDecl>
+
+clang::ento::CheckerManager::DeclCheckerInfo = IMPLEMENTS#NativeCloneable<DeclCheckerInfo>
+clang::ento::CheckerManager::DeclCheckerInfo = TEXT#public DeclCheckerInfo(Check$CheckDeclFunc CheckFn, Decl2Bool IsForDeclFn) { this.CheckFn $EQ CheckFn; this.IsForDeclFn $EQ IsForDeclFn; }
+clang::ento::CheckerManager::DeclCheckerInfo = TEXT#public DeclCheckerInfo() { }
+clang::ento::CheckerManager::DeclCheckerInfo = TEXT#@Override public DeclCheckerInfo clone() { return new DeclCheckerInfo(this.CheckFn, this.IsForDeclFn); }
+clang::ento::CheckerManager::EventInfo = IMPLEMENTS#NativeCloneable<EventInfo>
+clang::ento::CheckerManager::EventInfo = FILE#./extra_members/EventInfoExtraMembers.java
+
+clang::ento::CheckerManager::RegionChangesCheckerInfo = IMPLEMENTS#NativeCloneable<RegionChangesCheckerInfo>
+clang::ento::CheckerManager::RegionChangesCheckerInfo = TEXT#public RegionChangesCheckerInfo(Check$CheckRegionChangesFunc CheckFn, Check$WantsRegionChangeUpdateFunc WantUpdateFn) {this.CheckFn $EQ CheckFn; this.WantUpdateFn $EQ WantUpdateFn; }
+clang::ento::CheckerManager::RegionChangesCheckerInfo = TEXT#public RegionChangesCheckerInfo() { }
+clang::ento::CheckerManager::RegionChangesCheckerInfo = TEXT#@Override public RegionChangesCheckerInfo clone() { return new RegionChangesCheckerInfo(this.CheckFn, this.WantUpdateFn); }
+clang::ento::CheckerManager::StmtCheckerInfo = IMPLEMENTS#NativeCloneable<StmtCheckerInfo>
+clang::ento::CheckerManager::StmtCheckerInfo = TEXT#public StmtCheckerInfo(Check$CheckStmtFunc CheckFn, Stmt2Bool IsForStmtFn, boolean IsPreVisit) { this.CheckFn $EQ CheckFn; this.IsForStmtFn $EQ IsForStmtFn; this.IsPreVisit $EQ IsPreVisit; }
+clang::ento::CheckerManager::StmtCheckerInfo = TEXT#public StmtCheckerInfo() { }
+clang::ento::CheckerManager::StmtCheckerInfo = TEXT#@Override public StmtCheckerInfo clone() { return new StmtCheckerInfo(this.CheckFn, this.IsForStmtFn, this.IsPreVisit); }
+
+clang::ento::CheckerOptInfo = IMPLEMENTS#NativeCloneable<CheckerOptInfo>
+clang::ento::CheckerOptInfo = TEXT#public CheckerOptInfo(){ this(StringRef.R$EMPTY, false); }
+clang::ento::CheckerOptInfo = TEXT#@Override public CheckerOptInfo clone() { assert !this.Claimed : "need real copy ctr?"; return new CheckerOptInfo(this.Name, this.Enable); }
+
+#Please uncomment 3 lines with TO below as soon TO is implemented in jconvert !!!
+#(anonymous namespace)::ClusterAnalysis = T0#EXTENDS#ClusterAnalysis
+#clang::ento::CheckerRegistry::addChecker = T0#EXTENDS#CheckerBase
+#clang::ento::CheckerRegistry::initializeManager = T0#EXTENDS#CheckerBase
+
+clang::ento::CheckerRegistry::CheckerInfo = IMPLEMENTS#NativeCloneable<CheckerInfo>
+clang::ento::CheckerRegistry::CheckerInfo = TEXT#public CheckerInfo(){ this(null, StringRef.R$EMPTY, StringRef.R$EMPTY); }
+clang::ento::CheckerRegistry::CheckerInfo = TEXT#@Override public CheckerInfo clone() { return new CheckerInfo(this.Initialize, this.FullName, this.Desc); }
+clang::ento::CompoundValData = EXTENDS#FoldingSetImpl.NodeImpl
+clang::ento::ConditionBRVisitor = FILE#./extra_members/ConditionBRVisitorExtraMembers.java
+clang::ento::ConstraintManager = FILE#./extra_members/ConstraintManagerExtraMembers.java
+clang::ento::DefinedOrUnknownSVal = FILE#./extra_members/DefinedOrUnknownSValExtraMembers.java
+clang::ento::DefinedSVal = FILE#./extra_members/DefinedSValExtraMembers.java
+clang::ento::DynamicTypeInfo = IMPLEMENTS#FoldingSetTrait.Profilable
+clang::ento::DynamicTypeInfo = IMPLEMENTS#NativeCloneable<DynamicTypeInfo>
+clang::ento::DynamicTypeInfo = TEXT#@Override public DynamicTypeInfo clone() { return new DynamicTypeInfo(this); }
+clang::ento::Environment = IMPLEMENTS#FoldingSetTrait.Profilable
+
+clang::ento::EnvironmentEntry=IMPLEMENTS#FoldingSetTrait.Profilable
+clang::ento::EnvironmentEntry = FILE#./extra_members/EnvironmentEntryExtraMembers.java
+
+clang::ento::EventDispatcher = TEXT#private final Class<EVENT> $EventClass;
+
+clang::ento::ExplodedNode = EXTENDS#FoldingSetImpl.NodeImpl$Tracker
+
+clang::ento::ExplodedNodeSet = IMPLEMENTS#Iterable<ExplodedNode>
+clang::ento::ExplodedNodeSet = TEXT#@Override public java.util.Iterator<ExplodedNode> iterator() {return new JavaIterator(begin(), end());}
+clang::ento::ExprEngine = FILE#./extra_members/ExprEngineExtraMembers.java
+clang::ento::FindLastStoreBRVisitor = FILE#./extra_members/FindLastStoreBRVisitorExtraMembers.java
+
+clang::ento::FullSValVisitor = TEXT#public default/*interface*/ /*inline*/ void $FullSValVisitor() { /*for derived classes*/ }
+
+clang::ento::FunctionSummariesTy::FunctionSummary=IMPLEMENTS#NativeCloneable<FunctionSummary>
+clang::ento::FunctionSummariesTy::FunctionSummary=TEXT#public /*inline*/ FunctionSummary(final FunctionSummary /*&&*/$Prm0) {
+clang::ento::FunctionSummariesTy::FunctionSummary=TEXT#  this.VisitedBasicBlocks $EQ new SmallBitVector($Prm0.VisitedBasicBlocks);
+clang::ento::FunctionSummariesTy::FunctionSummary=TEXT#  this.TotalBasicBlocks $EQ $Prm0.TotalBasicBlocks;
+clang::ento::FunctionSummariesTy::FunctionSummary=TEXT#  this.InlineChecked $EQ $Prm0.InlineChecked;
+clang::ento::FunctionSummariesTy::FunctionSummary=TEXT#  this.MayInline $EQ $Prm0.MayInline;
+clang::ento::FunctionSummariesTy::FunctionSummary=TEXT#  this.TimesInlined $EQ $Prm0.TimesInlined;
+clang::ento::FunctionSummariesTy::FunctionSummary=TEXT#}
+clang::ento::FunctionSummariesTy::FunctionSummary=TEXT#@Override public FunctionSummary clone() { return new FunctionSummary(this); }
+
+clang::ento::ImplicitNullDerefEvent = FILE#./extra_members/ImplicitNullDerefEventExtraMembers.java
+clang::ento::KnownSVal = FILE#./extra_members/KnownSValExtraMembers.java
+
+clang::ento::LazyCompoundValData = EXTENDS#FoldingSetImpl.NodeImpl
+clang::ento::LikelyFalsePositiveSuppressionBRVisitor = FILE#./extra_members/LikelyFalsePositiveSuppressionBRVisitorExtraMembers.java
+
+clang::ento::Loc=TEXT#@Override public Loc clone() { return new Loc(this); }
+clang::ento::MemRegion=FILE#./extra_members/MemRegionExtraMembers.java
+clang::ento::MemRegion = EXTENDS#FoldingSetImpl.NodeImpl$Tracker
+clang::ento::NilReceiverBRVisitor = FILE#./extra_members/NilReceiverBRVisitorExtraMembers.java
+
+clang::ento::NonLoc = FILE#./extra_members/NonLocExtraMembers.java
+
+clang::ento::ObjCMethodCall=TEXT#@Override public ObjCMethodCall clone() { return new ObjCMethodCall(this); }
+clang::ento::PathDiagnostic = EXTENDS#FoldingSetImpl.NodeImpl
+
+clang::ento::PathDiagnosticConsumer::PDFileEntry = EXTENDS#FoldingSetImpl.NodeImpl
+clang::ento::PathDiagnosticLocation = IMPLEMENTS#FoldingSetTrait.Profilable
+clang::ento::PathDiagnosticLocation = IMPLEMENTS#NativePOD<PathDiagnosticLocation>
+clang::ento::PathDiagnosticLocation = FILE#./extra_members/PathDiagnosticLocationExtraMembers.java
+clang::ento::PathDiagnosticLocationPair = FILE#./extra_members/PathDiagnosticLocationPairExtraMembers.java
+clang::ento::PathDiagnosticLocationPair = IMPLEMENTS#NativeCloneable<PathDiagnosticLocationPair>
+clang::ento::PathDiagnosticLocationPair = IMPLEMENTS#FoldingSetTrait.Profilable
+clang::ento::PathDiagnosticPiece = IMPLEMENTS#FoldingSetTrait.Profilable
+clang::ento::PathPieces = FILE#./extra_members/PathPiecesExtraMembers.java
+
+clang::ento::ProgramState = EXTENDS#FoldingSetImpl.NodeImpl$Tracker
+clang::ento::ProgramState = IMPLEMENTS#RefCountedBaseImplementation
+clang::ento::ProgramState = FILE#./extra_members/ProgramStateExtraMembers.java
+
+clang::ento::ProgramStatePartialTrait<bool> = FILE#./extra_members/ProgramStatePartialTraitBoolExtraMembers.java
+clang::ento::ProgramStatePartialTrait<ImmutableList<type-parameter-0-0> > = FILE#./extra_members/ProgramStatePartialTraitImmutableList$TExtraMembers.java
+clang::ento::ProgramStatePartialTrait<ImmutableMap<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2> > = FILE#./extra_members/ProgramStatePartialTraitImmutableMapPtrBoolExtraMembers.java
+clang::ento::ProgramStatePartialTrait<ImmutableMapPtrPtr<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2> > = FILE#./extra_members/ProgramStatePartialTraitImmutableMapPtrPtrExtraMembers.java
+clang::ento::ProgramStatePartialTrait<ImmutableSet<type-parameter-0-0, type-parameter-0-1> > = FILE#./extra_members/ProgramStatePartialTraitImmutableSet$TExtraMembers.java
+clang::ento::ProgramStatePartialTrait<unsigned int> = FILE#./extra_members/ProgramStatePartialTraitUIntExtraMembers.java
+clang::ento::ProgramStatePartialTrait<const void * > = FILE#./extra_members/ProgramStatePartialTraitConstVoidPtrExtraMembers.java
+
+clang::ento::ProgramStateTrait<clang::ento::DynamicTypeMap> = IMPLEMENTS#ProgramStateTrait<DynamicTypeMap>
+clang::ento::ProgramStateTrait<clang::ento::DynamicTypeMap> = FILE#./extra_members/ProgramStateTraitDynamicTypeMapExtraMembers.java
+
+clang::ento::ProgramStateTrait<(anonymous)::CalledSuperDealloc> = IMPLEMENTS#ProgramStateTrait<CalledSuperDealloc>
+clang::ento::ProgramStateTrait<(anonymous)::CalledSuperDealloc> = TEXT#public static ProgramStateTraitCalledSuperDealloc $Instance $EQ new ProgramStateTraitCalledSuperDealloc();
+
+clang::ento::ProgramStateTrait<(anonymous)::CFErrorOut> = IMPLEMENTS#ProgramStateTrait<CFErrorOut>
+clang::ento::ProgramStateTrait<(anonymous)::CFErrorOut> = TEXT#public static ProgramStateTraitCFErrorOut $Instance $EQ new ProgramStateTraitCFErrorOut();
+
+clang::ento::ProgramStateTrait<llvm::ImmutableSet<const clang::ento::SymExpr * , llvm::ImutContainerInfoT$P<const clang::ento::SymExpr> > > = IMPLEMENTS#ProgramStateTrait<ImmutableSet<SymExpr/*P*/>>
+clang::ento::ProgramStateTrait<llvm::ImmutableSet<const clang::ento::SymExpr * , llvm::ImutContainerInfoT$P<const clang::ento::SymExpr> > > = TEXT#public static ProgramStateTraitImmutableSet$SymExpr$C$P $Instance $EQ new ProgramStateTraitImmutableSet$SymExpr$C$P();
+
+clang::ento::ProgramStateTrait<(anonymous)::ContainerNonEmptyMap> = IMPLEMENTS#ProgramStateTrait<ContainerNonEmptyMap>
+clang::ento::ProgramStateTrait<(anonymous)::ContainerNonEmptyMap> = TEXT#public static ProgramStateTraitContainerNonEmptyMap $Instance $EQ new ProgramStateTraitContainerNonEmptyMap();
+
+clang::ento::ProgramStateTrait<(anonymous)::TaintArgsOnPostVisit> = IMPLEMENTS#ProgramStateTrait<TaintArgsOnPostVisit>
+clang::ento::ProgramStateTrait<(anonymous)::TaintArgsOnPostVisit> = FILE#./extra_members/ProgramStateTraitTaintArgsOnPostVisitExtraMembers.java
+
+clang::ento::ProgramStateTrait<(anonymous)::SelfFlag> = IMPLEMENTS#ProgramStateTrait<SelfFlag>
+clang::ento::ProgramStateTrait<(anonymous)::SelfFlag> = TEXT#public static ProgramStateTraitSelfFlag $Instance $EQ new ProgramStateTraitSelfFlag();
+
+clang::ento::ProgramStateTrait<(anonymous)::ReallocSizeZeroSymbols> = IMPLEMENTS#ProgramStateTrait<ReallocSizeZeroSymbols>
+clang::ento::ProgramStateTrait<(anonymous)::ReallocSizeZeroSymbols> = TEXT#public static ProgramStateTraitReallocSizeZeroSymbols $Instance $EQ new ProgramStateTraitReallocSizeZeroSymbols();
+
+clang::ento::ProgramStateTrait<(anonymous)::NSErrorOut> = IMPLEMENTS#ProgramStateTrait<NSErrorOut>
+clang::ento::ProgramStateTrait<(anonymous)::NSErrorOut> = TEXT#public static ProgramStateTraitNSErrorOut $Instance $EQ new ProgramStateTraitNSErrorOut();
+
+clang::ento::ProgramStateTrait<(anonymous)::MarkedSymbols> = IMPLEMENTS#ProgramStateTrait<MarkedSymbols>
+clang::ento::ProgramStateTrait<(anonymous)::MarkedSymbols> = TEXT#public static ProgramStateTraitMarkedSymbols $Instance $EQ new ProgramStateTraitMarkedSymbols();
+
+clang::ento::ProgramStateTrait<(anonymous)::StreamMap> = IMPLEMENTS#ProgramStateTrait<StreamMap>
+clang::ento::ProgramStateTrait<(anonymous)::StreamMap> = FILE#./extra_members/ProgramStateTraitStreamMapExtraMembers.java
+
+clang::ento::ProgramStateTrait<clang::ento::ReplayWithoutInlining> = IMPLEMENTS#ProgramStateTrait<ReplayWithoutInlining>
+clang::ento::ProgramStateTrait<clang::ento::ReplayWithoutInlining> = TEXT#public static ProgramStateTraitReplayWithoutInlining $Instance $EQ new ProgramStateTraitReplayWithoutInlining();
+clang::ento::ProgramStateTrait<(anonymous)::AllocatedData> = FILE#./extra_members/ProgramStateTraitAllocatedDataExtraMembers.java
+clang::ento::ProgramStateTrait<(anonymous)::ArraySizeMap> = FILE#./extra_members/ProgramStateTraitArraySizeMapExtraMembers.java
+clang::ento::ProgramStateTrait<(anonymous)::CStringLength> = FILE#./extra_members/ProgramStateTraitCStringLengthExtraMembers.java
+clang::ento::ProgramStateTrait<(anonymous)::LocalizedMemMap> = FILE#./extra_members/ProgramStateTraitLocalizedMemMapExtraMembers.java
+clang::ento::ProgramStateTrait<(anonymous)::LockMap> = FILE#./extra_members/ProgramStateTraitLockMapExtraMembers.java
+clang::ento::ProgramStateTrait<(anonymous)::NullabilityMap> = FILE#./extra_members/ProgramStateTraitNullabilityMapExtraMembers.java
+clang::ento::ProgramStateTrait<(anonymous)::ReallocPairs> = FILE#./extra_members/ProgramStateTraitReallocPairsExtraMembers.java
+clang::ento::ProgramStateTrait<(anonymous)::RefBindings> = FILE#./extra_members/ProgramStateTraitRefBindingsExtraMembers.java
+clang::ento::ProgramStateTrait<(anonymous)::RegionState> = FILE#./extra_members/ProgramStateTraitRegionStateExtraMembers.java
+clang::ento::ProgramStateTrait<clang::ento::mpi::RequestMap> = FILE#./extra_members/ProgramStateTraitRequestMapExtraMembers.java
+clang::ento::ProgramStateTrait<(anonymous)::UnreleasedIvarMap> = FILE#./extra_members/ProgramStateTraitUnreleasedIvarMapExtraMembers.java
+clang::ento::ProgramStateTrait<(anonymous)::DivZeroMap> = FILE#./extra_members/ProgramStateTraitDivZeroMapExtraMembers.java
+clang::ento::ProgramStateTrait<(anonymous)::ConstraintRange> = FILE#./extra_members/ProgramStateTraitConstraintRangeExtraMembers.java
+clang::ento::ProgramStateTrait<(anonymous)::InitializedTemporariesSet> = FILE#./extra_members/ProgramStateTraitInitializedTemporariesSetExtraMembers.java
+
+clang::ento::SVal = FILE#./extra_members/SValExtraMembers.java
+clang::ento::SVal = IMPLEMENTS#FoldingSetTrait.Profilable
+clang::ento::SVal = IMPLEMENTS#NativePOD<SVal>
+clang::ento::SVal = IMPLEMENTS#NativeMoveable<SVal>
+clang::ento::SVal = IMPLEMENTS#NativeSwappable
+
+clang::ento::SimpleFunctionCall=TEXT#@Override public SimpleFunctionCall clone() { return new SimpleFunctionCall(this); }
+
+clang::ento::StoreManager = IMPLEMENTS#Native.Native$Bool
+clang::ento::StoreManager = TEXT#public final /*virtual*/ SVal getBinding(/*const*/Object/*void P*/ store, Loc loc)/* $EQ 0*/ { return getBinding(store, loc, new QualType()); }
+clang::ento::SuppressInlineDefensiveChecksVisitor = FILE#./extra_members/SuppressInlineDefensiveChecksVisitorExtraMembers.java
+
+clang::ento::SymExpr = EXTENDS#FoldingSetImpl.NodeImpl$Tracker
+
+clang::ento::SymExprVisitor = TEXT#public default/*interface*/ RetTy $SymExprVisitor$RetTy() { throw new UnsupportedOperationException("Why not overridden new RetTy()? " + this.getClass()); }
+clang::ento::SymExprVisitor = TEXT#public default/*interface*/ void $SymExprVisitor() { /*for derived classes*/ }
+clang::ento::TrackConstraintBRVisitor = FILE#./extra_members/TrackConstraintBRVisitorExtraMembers.java
+clang::ento::UndefOrNullArgVisitor = FILE#./extra_members/UndefOrNullArgVisitorExtraMembers.java
+clang::ento::UndefinedVal = FILE#./extra_members/UndefinedValExtraMembers.java
+clang::ento::UnknownVal = FILE#./extra_members/UnknownValExtraMembers.java
+clang::ento::WorkListUnit = IMPLEMENTS#NativeCloneable<WorkListUnit>
+clang::ento::WorkListUnit = TEXT#public WorkListUnit() { this.counter $EQ new BlockCounter(); }
+clang::ento::WorkListUnit = TEXT#@Override public WorkListUnit clone() { return new WorkListUnit(this); }
+clang::ento::check::ASTDecl = FILE#./extra_members/ASTDeclExtraMembers.java
+clang::ento::check::LiveSymbols = IMPLEMENTS#CheckBase
+clang::ento::check::PointerEscape = IMPLEMENTS#CheckBase
+clang::ento::eval::Assume = IMPLEMENTS#CheckBase
+clang::ento::eval::Call = IMPLEMENTS#CheckBase
+clang::ento::loc::ConcreteInt = FILE#./extra_members/ConcreteIntExtraMembers.java
+clang::ento::loc::GotoLabel = FILE#./extra_members/GotoLabelExtraMembers.java
+clang::ento::loc::MemRegionVal = FILE#./extra_members/MemRegionValExtraMembers.java
+clang::ento::mpi::MPIBugReporter::RequestNodeVisitor = FILE#./extra_members/RequestNodeVisitorExtraMembers.java
+clang::ento::mpi::MPIChecker = IMPLEMENTS#org.clang.staticanalyzer.java.PreCallChecker
+clang::ento::mpi::MPIChecker = IMPLEMENTS#org.clang.staticanalyzer.java.DeadSymbolsChecker
+clang::ento::mpi::MPIChecker = FILE#./extra_members/MPICheckerExtraMembers.java
+clang::ento::mpi::Request = IMPLEMENTS#FoldingSetTrait.Profilable
+clang::ento::mpi::Request = IMPLEMENTS#NativeCloneable<Request>
+clang::ento::mpi::Request = TEXT#@Override public Request clone() { return new Request(this); }
+clang::ento::nonloc::CompoundVal = FILE#./extra_members/CompoundValExtraMembers.java
+clang::ento::nonloc::ConcreteInt = FILE#./extra_members/ConcreteIntExtraMembers.java
+clang::ento::nonloc::LazyCompoundVal = FILE#./extra_members/LazyCompoundValExtraMembers.java
+clang::ento::nonloc::LocAsInteger = FILE#./extra_members/LocAsIntegerExtraMembers.java
+clang::ento::nonloc::SymbolVal = FILE#./extra_members/SymbolValExtraMembers.java
+clang::ento::objc_retain::ArgEffect = IMPLEMENTS#FoldingSetTrait.Profilable
+clang::ento::objc_retain::ArgEffect = FILE#./extra_members/ArgEffectExtraMembers.java
+clang::ento::objc_retain::RetEffect = IMPLEMENTS#FoldingSetTrait.Profilable
+clang::ento::objc_retain::RetEffect = FILE#./extra_members/RetEffectExtraMembers.java
+
+llvm::DenseMapInfo<(anonymous)::ObjCSummaryKey> = FILE#./extra_members/DenseMapInfoObjCSummaryKeyExtraMembers.java
+llvm::ilist_traits<clang::ento::BugReport> = FILE#./extra_members/ilist_traitsBugReportExtraMembers.java

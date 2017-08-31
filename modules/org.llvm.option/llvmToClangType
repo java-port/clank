@@ -1,0 +1,33 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.llvm.option.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[TYPES_MAP]
+#help ArgList rbegin/rend
+std::reverse_iterator<iterator> = std.reverse_iterator<Arg /*P*/>
+std::reverse_iterator<const_iterator> = std.reverse_iterator<Arg /*P*/>
+
+[MEMBER_ACCESS]
+#llvm::opt::OptTable::Info
+llvm::opt::OptTable::Info::Prefixes=public final
+llvm::opt::OptTable::Info::Name=public final
+llvm::opt::OptTable::Info::HelpText=public final
+llvm::opt::OptTable::Info::MetaVar=public final
+llvm::opt::OptTable::Info::ID=public final
+llvm::opt::OptTable::Info::Kind=public final
+llvm::opt::OptTable::Info::Param=public final
+llvm::opt::OptTable::Info::Flags=public final
+llvm::opt::OptTable::Info::GroupID=public final
+llvm::opt::OptTable::Info::AliasID=public final
+llvm::opt::OptTable::Info::AliasArgs=public final
+
+[EXTRA_MEMBERS]
+llvm::opt::OptTable::Info = FILE#./extra_members/InfoExtraMembers.java

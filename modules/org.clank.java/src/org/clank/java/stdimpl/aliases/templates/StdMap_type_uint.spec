@@ -1,0 +1,15 @@
+FILE_NAME = StdMapTypeUInt
+CLASS_SUFFIX = <KeyT>
+DUAL_CLASS = std.mapTypeUInt<KeyT>
+PAIR_TYPE = std.pairTypeUInt<KeyT>
+ITERATOR = iterator<KeyT>
+GENERIC_ITERATOR = type$iterator<?, std.pairTypeUInt<KeyT>>
+KEY_TYPE = KeyT
+VALUE_TYPE = int
+VALUE_REF = uint$ref
+VALUE_PTR = uint$ptr
+IS_KEY_POINTER_LIKE = false
+IS_DATA_POINTER_LIKE = false
+PAIR_FACTORY_METHOD = std.make_pair_T_uint
+DEFAULT_KEYS_COMPARATOR = Native::$compare_type
+ASSERT_DEFAULT_VALUE=true

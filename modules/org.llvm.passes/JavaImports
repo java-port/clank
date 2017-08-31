@@ -1,0 +1,17 @@
+[IMPORTS]
+org.clang.ast.*
+org.clang.ast.java.*
+org.clang.basic.*
+org.clang.lex.*
+org.clang.lex.llvm.*
+org.clang.sema.*
+org.llvm.cl.*
+org.clank.java.stdimpl.aliases.*
+org.clang.basic.target.*;
+static org.clang.basic.BasicClangGlobals.*
+static org.clang.sema.java.SemaFunctionPointers.*
+static org.clang.sema.Sema.*
+static org.clang.sema.java.SemaFunctionPointers.*
+static org.clang.sema.java.SemaMemberPointers.*
+static org.clang.ast.java.AstFunctionPointers.*
+static org.clang.ast.DeclContext.*

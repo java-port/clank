@@ -1,0 +1,7 @@
+FILE_NAME = ImutAVLValueIteratorIntBoolInt
+CLASS_SUFFIX = 
+ADAPTOR_BASE = iterator_adaptor_base$Int_type<ImutAVLValueIteratorIntBoolInt, ImutAVLTreeInOrderIteratorIntBoolInt, std.bidirectional_iterator_tag>
+CLASS_TYPE = ImutAVLValueIteratorIntBoolInt
+AVL_TREE_TYPE = ImutAVLTreeIntBoolInt
+AVL_ORDERED_ITER_NAME = ImutAVLTreeInOrderIteratorIntBoolInt
+VALUE_TYPE = int

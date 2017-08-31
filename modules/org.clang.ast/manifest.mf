@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.clang.ast
+OpenIDE-Module-Localizing-Bundle: org/clang/ast/resources/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.1
+

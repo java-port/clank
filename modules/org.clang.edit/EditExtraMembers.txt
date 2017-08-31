@@ -1,0 +1,4 @@
+[EXTRA_MEMBERS]
+clang::edit::EditedSource::FileEdit=IMPLEMENTS#NativePOD<FileEdit>
+clang::edit::EditedSource::FileEdit=TEXT#@Override public FileEdit clone() { return new FileEdit(this); }
+

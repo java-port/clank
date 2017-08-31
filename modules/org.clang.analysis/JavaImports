@@ -1,0 +1,76 @@
+[IMPORTS]
+org.clank.java.*
+org.clank.support.*
+org.clank.support.aliases.*
+org.clank.support.JavaDifferentiators.*
+org.clank.support.NativeCallback.*
+org.llvm.support.*
+org.llvm.adt.*
+org.llvm.adt.aliases.*
+org.clang.ast.*
+org.clang.ast.java.ArgsAttrBase
+static org.clang.ast.java.AstExpressionsRTTI.*
+org.clang.basic.*
+org.clang.analysis.*
+org.clang.analysis.analyses.*
+org.clang.analysis.analyses.analyze_format_string.*
+org.clang.analysis.support.*
+org.clang.analysis.impl.*
+org.clang.analysis.threadSafety.impl.*
+org.clang.analysis.analyses.consumed.*
+static org.clang.analysis.impl.AnalysisDeclContextStatics.*
+static org.clang.analysis.impl.ReachableCodeStatics.*
+static org.clang.analysis.impl.CFGStatics.*
+org.clang.lex.Preprocessor
+static org.clang.analysis.java.AnalysisFunctionPointers.*
+static org.clang.analysis.java.AnalysisMemberPointers.*
+static org.clang.analysis.CFGBlock.*
+static org.clank.java.built_in.*
+static org.clank.support.Casts.*
+static org.clank.java.io.*
+static org.clank.java.std.*
+static org.clank.java.std_pair.*
+static org.llvm.adt.ADTAliases.*
+static org.llvm.support.llvm.*
+static org.clank.support.NativePointer.*
+static org.clank.support.NativeType.*
+static org.clank.support.Native.*
+static org.clank.support.Unsigned.*
+static org.clang.ast.java.AstFunctionPointers.*
+static org.clang.ast.java.AstStatementsRTTI.*
+static org.clang.ast.java.AstRTTI.*
+static org.clang.analysis.java.AnalysisRTTI.*
+static org.clang.analysis.impl.LiveVariablesStatics.*
+static org.clang.analysis.impl.ThreadSafetyStatics.*
+static org.clang.analysis.impl.ThreadSafetyTILStatics.*
+static org.clang.analysis.impl.ThreadSafetyStatics.*
+static org.clang.analysis.impl.ConsumedStatics.*
+static org.clang.analysis.analyses.ThreadSafetyUtilGlobals.*
+static org.clang.analysis.analyses.threadSafety.ThreadSafetyGlobals.*
+org.clang.analysis.analyses.threadSafety.til.*
+org.clang.analysis.analyses.threadSafety.*
+org.clang.analysis.analyses.analyze_scanf.*
+org.clang.analysis.analyze_format_string.impl.*
+static org.clang.analysis.impl.PrintfFormatStringStatics.*
+org.clang.basic.target.TargetInfo
+static org.clang.analysis.analyze_format_string.impl.Analyze_format_stringStatics.*
+static org.clang.basic.BasicClangGlobals.*
+org.clang.analysis.analyses.analyze_printf.*
+org.llvm.adt.java.GraphTraits
+org.clang.analysis.analyses.threadSafety.sx.SxGlobals
+static org.clang.analysis.impl.UninitializedValuesStatics.*
+static org.clang.analysis.impl.ReachableCodeStatics.*
+org.clang.analysis.analyses.reachable_code.*
+org.clang.ast.java.AstFunctionPointers
+static org.clang.analysis.impl.CallGraphStatics.*
+static org.clang.ast.AstClangGlobals.*
+static org.clang.analysis.impl.BodyFarmStatics.*
+static org.clang.analysis.impl.ObjCNoReturnStatics.*
+static org.clang.analysis.consumed.impl.ConsumedStatics.*
+static org.clang.analysis.analyses.threadSafety.til.TilGlobals.*
+static org.clang.analysis.impl.ThreadSafetyCommonStatics.*
+static org.clang.analysis.analyses.threadSafety.til.ThreadSafetyTIL.ThreadSafetyTILGlobals.*
+org.clang.analysis.java.AnalysisJavaDifferentiators.*
+org.clang.analysis.java.BaseVisitor
+org.clang.analysis.consumed.impl.*
+org.llvm.adt.java.GraphTraits

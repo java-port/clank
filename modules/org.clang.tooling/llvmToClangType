@@ -1,0 +1,22 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.clang.tooling.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[TYPES_MAP]
+
+bool (const Replacement & , const Replacement & ) const = ReplacementReplacement2Bool
+std::function<CommandLineArguments (/*const*/std.vectorString/*&*/ , StringRef)> = std.function<ArgumentsAdjuster>
+
+[EXTRA_MEMBERS]
+clang::tooling::Range = IMPLEMENTS#Native.NativePOD<Range>
+clang::tooling::Range = FILE#./extra_members/RangeExtraMembers.java
+clang::tooling::Replacement = IMPLEMENTS#Native.ComparableLower
+clang::tooling::Replacement = FILE#./extra_members/ReplacementExtraMembers.java

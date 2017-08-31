@@ -1,0 +1,20 @@
+FILE_NAME = type$ptr$single
+CLASS_SUFFIX=<T>
+POINTER_NAME = type$ptr<T>
+REFERENCE_NAME = type$ref<T>
+TYPE = T
+DEFAULT_VALUE = null
+BUILTIN_TYPE_MODIFY_VALUE_SECTION_START=/*
+BUILTIN_TYPE_MODIFY_VALUE_SECTION_END=*/
+ADDITIONAL_MODIFY_VALUE_SECTION_START = /*
+ADDITIONAL_MODIFY_VALUE_SECTION_END = */
+STRING_VAL=val
+SET_IMPL=\
+        if (val == null || value == null) {\n\
+\t\t\t\t\tval = value;\n\
+\t\t\t\t} else if (val instanceof Native.assignable && val.getClass() == value.getClass()) {\n\
+\t\t\t\t\t((Native.assignable<T>) val).$assign(value);\n\
+\t\t\t\t} else {\n\
+\t\t\t\t\tval = value;\n\
+\t\t\t\t}
+IS_NULL_CHECK = val == null

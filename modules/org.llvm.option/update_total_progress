@@ -1,0 +1,7 @@
+getOptionHelpName[F][_ZL17getOptionHelpNameRKN4llvm3opt8OptTableENS0_12OptSpecifierE][org.llvm.option.impl:OptTable.cpp]
+llvm::opt::Option::OptionClass[E][_ZN4llvm3opt6Option11OptionClassE]
+llvm::opt::Option::accept[M][_ZNK4llvm3opt6Option6acceptERKNS0_7ArgListERjj]
+llvm::opt::Option::dump[M][_ZNK4llvm3opt6Option4dumpEv]
+llvm::opt::Option::getRenderStyle[M][_ZNK4llvm3opt6Option14getRenderStyleEv]
+llvm::opt::Option::print[M][_ZNK4llvm3opt6Option5printERNS_11raw_ostreamE]
+llvm::opt::arg_iterator::arg_iterator[C][_ZN4llvm3opt12arg_iteratorC1EOS1_]

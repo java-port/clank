@@ -1,0 +1,5 @@
+/////////////////////////////////////////////
+/// MODULE org.clang.driver
+
+/// Non virtual functions with the same name
+MachO.isTargetIOSBased()->Darwin.isTargetIOSBased() [1]

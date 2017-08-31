@@ -1,0 +1,9 @@
+FILE_NAME = StdReverseIteratorShort
+CLASS_SUFFIX =
+INTERFACE_ITERATOR = short$iterator<std.reverse_iteratorShort>
+STD_DUAL_ITERATOR = std.reverse_iteratorShort
+VALUE_TYPE = short
+VALUE_ITERATOR = short$iterator<?>
+VALUE_ITERATOR_GENERIC = short$iterator
+VALUE_REFERENCE = short$ref
+VALUE_POINTER = short$ptr

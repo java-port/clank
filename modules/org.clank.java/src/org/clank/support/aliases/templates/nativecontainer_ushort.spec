@@ -1,0 +1,3 @@
+FILE_NAME = NativeContainerUShort
+TEMPLATE_PARAMS =
+VALUE_TYPE = char

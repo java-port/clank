@@ -1,0 +1,9 @@
+FILE_NAME = StdReverseIteratorDouble
+CLASS_SUFFIX =
+INTERFACE_ITERATOR = double$iterator<std.reverse_iteratorDouble>
+STD_DUAL_ITERATOR = std.reverse_iteratorDouble
+VALUE_TYPE = double
+VALUE_ITERATOR = double$iterator<?>
+VALUE_ITERATOR_GENERIC = double$iterator
+VALUE_REFERENCE = double$ref
+VALUE_POINTER = double$ptr

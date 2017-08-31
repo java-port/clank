@@ -1,0 +1,106 @@
+  @Test
+  public void test_class_access_base_p1_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.access.base/p1.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.access.base/p1.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_class_access_dcl_p1_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.access.dcl/p1.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.access.dcl/p1.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify -std=c++98 ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.access.dcl/p1.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify -std=c++98 %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify -std=c++11 ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.access.dcl/p1.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify -std=c++11 %s");
+  }
+
+  @Test
+  public void test_class_access_nest_p1_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.access.nest/p1.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.access.nest/p1.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_class_friend_p1_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p1.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p1.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_class_protected_p1_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.protected/p1.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.protected/p1.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_class_protected_p1_cxx11_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.protected/p1-cxx11.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.protected/p1-cxx11.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_class_friend_p11_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p11.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p11.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_class_friend_p2_cxx03_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p2-cxx03.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p2-cxx03.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify -std=c++98 ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p2-cxx03.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify -std=c++98 %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify -std=c++11 ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p2-cxx03.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify -std=c++11 %s");
+  }
+
+  @Test
+  public void test_class_friend_p3_cxx0x_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p3-cxx0x.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -std=c++11 -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p3-cxx0x.cpp
+    RUN("%clang_cc1 -fsyntax-only -std=c++11 -verify %s");
+  }
+
+  @Test
+  public void test_class_access_p4_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/p4.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fcxx-exceptions -fexceptions -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/p4.cpp
+    RUN("%clang_cc1 -fcxx-exceptions -fexceptions -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_class_access_base_p5_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.access.base/p5.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.access.base/p5.cpp
+    RUN("%clang_cc1 -verify %s");
+  }
+
+  @Test
+  public void test_class_friend_p6_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p6.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p6.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_class_access_p6_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/p6.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/p6.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+
+  @Test
+  public void test_class_friend_p9_cxx0x_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p9-cxx0x.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${LLVM_SRC}/llvm/tools/clang/test/CXX/class.access/class.friend/p9-cxx0x.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s");
+  }
+

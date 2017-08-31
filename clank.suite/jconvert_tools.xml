@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*** REQUIRED property template_aliases_paths  ***
+-->
+<project name="jconvert_tools" basedir=".">
+    <description>Tools for generating java code.</description>
+    
+    <!-- In spec file: -->
+    <!-- Mandatory property - FILE_NAME -->
+    <!-- Optional property  - FILE_PATH -->
+
+    <target name="init-ant-contrib">
+        <taskdef resource="net/sf/antcontrib/antlib.xml">
+            <classpath>
+                <pathelement location="${suite.dir}/tools/ant-contrib-1.0b3.jar"/>
+            </classpath>
+        </taskdef>
+    </target>    
+
+    <target name="generate_specializations" depends="init-ant-contrib" description="Generate Specializations">
+        <for list="${template_aliases_paths}" param="TemplateAliasesPath" delimiter=";">
+            <sequential>
+                <foreach target="process_template" param="template">
+                    <fileset dir="@{TemplateAliasesPath}" casesensitive="yes">
+                        <include name="**/*.tpl"/>
+                    </fileset>
+                </foreach>
+            </sequential>
+        </for>        
+    </target>
+
+    <target name="process_template">
+        <!--<echo message="Processing ${template}" />-->
+        
+        <propertyregex property="template_directory"
+                       input="${template}"
+                       regexp="(.*)/[^/]*$"
+                       select="\1"
+                       casesensitive="false" />              
+
+        <propertyregex property="template_name"
+                       input="${template}"
+                       regexp=".*/([a-zA-Z0-9_]+).*\.tpl"
+                       select="\1"
+                       casesensitive="false" />        
+
+        <foreach target="process_specialization" param="specialization">
+            <fileset dir="${template_directory}" casesensitive="yes">
+                <!--<filename regex="${template_name}[^a-zA-Z0-9].*spec"/>-->
+                <include name="**/${template_name}_*.spec"/>
+            </fileset>
+        </foreach>
+    </target>
+
+    <target name="process_specialization">
+        <echo message="Generate ${specialization} using ${template}"/>       
+
+        <property file="${specialization}" prefix="spec_params."/>
+        <propertyselector property="spec_params" match="spec_params\.(.*)" select="\1"/>    
+
+        <!--        
+        <propertyregex property="target_file_name"
+                       input="${template}"
+                       regexp=".*/([^/]*)\.tpl"
+                       select="\1"
+                       casesensitive="false" />
+
+        <for list="${spec_params}" param="specProperty">
+            <sequential>
+                <propertyregex property="target_file_name"
+                               input="${target_file_name}"
+                               regexp="(.*)\$\{@{specProperty}\}(.*)"
+                               select="\1${spec_params.@{specProperty}}\2"
+                               casesensitive="false"
+                               override="true"/>
+            </sequential>
+        </for>        
+        -->
+        
+        <!--<echo message="${spec_params.FILE_NAME}" />-->      
+        
+        <propertyregex property="aliases_directory"
+                       input="${template}"
+                       regexp="(.*)/[^/]*/[^/]*$"
+                       select="\1"
+                       casesensitive="false" />        
+         
+        <condition property="target_file_path" value="${spec_params.FILE_PATH}" else="${aliases_directory}/${spec_params.FILE_NAME}.java">
+            <isset property="spec_params.FILE_PATH"/>
+        </condition>   
+                  
+        <!--<echo message="Target file path = ${target_file_path}" />-->      
+
+        <copy file="${template}"
+              tofile="${target_file_path}"
+              overwrite="true"/>
+
+        <for list="${spec_params}" param="specProperty">
+            <sequential>
+                <replaceregexp file="${target_file_path}"
+                               match='\$\{@{specProperty}\}'
+                               replace="${spec_params.@{specProperty}}" 
+                               flags="g"/>
+            </sequential>
+        </for>
+    </target>
+</project>

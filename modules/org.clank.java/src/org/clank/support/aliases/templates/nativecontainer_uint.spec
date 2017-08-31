@@ -1,0 +1,3 @@
+FILE_NAME = NativeContainerUInt
+TEMPLATE_PARAMS =
+VALUE_TYPE = int

@@ -1,0 +1,15 @@
+FILE_NAME = StdMapTypeBool
+CLASS_SUFFIX = <KeyT>
+DUAL_CLASS = std.mapTypeBool<KeyT>
+PAIR_TYPE = std.pairTypeBool<KeyT>
+ITERATOR = iterator<KeyT>
+GENERIC_ITERATOR = type$iterator<?, std.pairTypeBool<KeyT>>
+KEY_TYPE = KeyT
+VALUE_TYPE = boolean
+VALUE_REF = bool$ref
+VALUE_PTR = bool$ptr
+IS_KEY_POINTER_LIKE = false
+IS_DATA_POINTER_LIKE = false
+PAIR_FACTORY_METHOD = std.make_pair_T_bool
+DEFAULT_KEYS_COMPARATOR = Native::$compare_type
+ASSERT_DEFAULT_VALUE=true

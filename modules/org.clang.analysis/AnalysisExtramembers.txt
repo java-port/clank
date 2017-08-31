@@ -1,0 +1,190 @@
+[EXTRA_MEMBERS]
+
+(anonymous namespace)::BlockScopePosPair=IMPLEMENTS#NativePOD<BlockScopePosPair>
+(anonymous namespace)::BlockScopePosPair=TEXT#@Override public BlockScopePosPair clone() { return new BlockScopePosPair(this); }
+(anonymous namespace)::CFGBlockInfo = FILE#./extra_members/CFGBlockInfoExtraMembers.java
+(anonymous namespace)::CFGBlockInfo = IMPLEMENTS#Native.NativePOD<CFGBlockInfo>
+
+(anonymous namespace)::CFGBuilder=FILE#./extra_members/CFGBuilderExtraMembers.java
+
+(anonymous namespace)::ClassifyRefs=IMPLEMENTS#AstFunctionPointers.Stmt2Void
+(anonymous namespace)::FactEntry = FILE#./extra_members/FactEntryExtraMembers.java
+
+(anonymous namespace)::FactSet=IMPLEMENTS#Iterable<Character>
+(anonymous namespace)::FactSet=TEXT#@Override public JavaIteratorUShort iterator() { return new JavaIteratorUShort(begin(), end()); }
+
+(anonymous namespace)::LocalVariableMap::VarDefinition = IMPLEMENTS#Native.NativePOD<VarDefinition>
+(anonymous namespace)::LocalVariableMap::VarDefinition = FILE#./extra_members/VarDefinitionExtraMembers.java
+(anonymous namespace)::LockableFactEntry = FILE#./extra_members/LockableFactEntryExtraMembers.java
+(anonymous namespace)::ScopedLockableFactEntry = FILE#./extra_members/ScopedLockableFactEntryExtraMembers.java
+(anonymous namespace)::TryResult=IMPLEMENTS#NativePOD<TryResult>
+(anonymous namespace)::TryResult=TEXT#@Override public TryResult clone() { return new TryResult(this); }
+clang::AnalysisDeclContextManager = FILE#./extra_members/AnalysisDeclContextManagerExtraMembers.java
+clang::BlockEdge = FILE#./extra_members/BlockEdgeExtraMembers.java
+clang::BlockEntrance = FILE#./extra_members/BlockEntranceExtraMembers.java
+clang::BlockExit = FILE#./extra_members/BlockExitExtraMembers.java
+clang::BodyFarm = FILE#./extra_members/BodyFarmExtraMembers.java
+clang::BodyFarm = EXTENDS#NativeTrace.CreateDestroy$Tracker
+
+clang::BumpVector=FILE#./extra_members/BumpVectorExtraMembers.java
+
+clang::CFG=IMPLEMENTS#Iterable<CFGBlock /*P*/>
+clang::CFG=IMPLEMENTS#NativeReverseIterable<std.reverse_iterator<CFGBlock /*P*/>>
+clang::CFG=TEXT#@Override public java.util.Iterator<CFGBlock /*P*/> iterator() { return new JavaIterator<>(begin(), end()); }
+
+clang::CFG::const_graph_iterator = IMPLEMENTS#type$iterator<const_graph_iterator, CFGBlock>
+clang::CFG::const_graph_iterator = TEXT#public @Override const_graph_iterator clone() { return new const_graph_iterator($tryClone(I)); }
+clang::CFG::graph_iterator = IMPLEMENTS#type$iterator<graph_iterator, CFGBlock>
+clang::CFG::graph_iterator = TEXT#public @Override graph_iterator clone() { return new graph_iterator($tryClone(I)); }
+clang::CFGAutomaticObjDtor = FILE#./extra_members/CFGAutomaticObjDtorExtraMembers.java
+clang::CFGBaseDtor = FILE#./extra_members/CFGBaseDtorExtraMembers.java
+clang::CFGBlock=IMPLEMENTS#Iterable<CFGElement /*P*/>
+clang::CFGBlock=TEXT#@Override public java.util.Iterator<CFGElement /*P*/> iterator() { return new JavaIterator<>(begin(), end()); }
+clang::CFGDeleteDtor = FILE#./extra_members/CFGDeleteDtorExtraMembers.java
+
+clang::CFGElement = IMPLEMENTS#Destructors.ClassWithDestructor
+clang::CFGElement = IMPLEMENTS#NativePOD<CFGElement>
+clang::CFGElement = IMPLEMENTS#NativeMoveable<CFGElement>
+clang::CFGElement = FILE#./extra_members/CFGElementExtraMembers.java
+clang::CFGImplicitDtor = FILE#./extra_members/CFGImplicitDtorExtraMembers.java
+clang::CFGInitializer = FILE#./extra_members/CFGInitializerExtraMembers.java
+clang::CFGMemberDtor = FILE#./extra_members/CFGMemberDtorExtraMembers.java
+clang::CFGNewAllocator = FILE#./extra_members/CFGNewAllocatorExtraMembers.java
+clang::CFGStmt = FILE#./extra_members/CFGStmtExtraMembers.java
+clang::CFGTemporaryDtor = FILE#./extra_members/CFGTemporaryDtorExtraMembers.java
+clang::CallEnter = FILE#./extra_members/CallEnterExtraMembers.java
+clang::CallExitBegin = FILE#./extra_members/CallExitBeginExtraMembers.java
+clang::CallExitEnd = FILE#./extra_members/CallExitEndExtraMembers.java
+clang::EpsilonPoint = FILE#./extra_members/EpsilonPointExtraMembers.java
+clang::ImplicitCallPoint = FILE#./extra_members/ImplicitCallPointExtraMembers.java
+
+clang::LiveVariables::LivenessValues=IMPLEMENTS#NativeCloneable<LivenessValues>
+clang::LiveVariables::LivenessValues=TEXT#@Override public LivenessValues clone() { return new LivenessValues(this); }
+clang::LocationCheck = FILE#./extra_members/LocationCheckExtraMembers.java
+
+clang::LocationContext=EXTENDS#FoldingSetImpl.NodeImpl
+clang::PostCondition = FILE#./extra_members/PostConditionExtraMembers.java
+clang::PostImplicitCall = FILE#./extra_members/PostImplicitCallExtraMembers.java
+clang::PostInitializer = FILE#./extra_members/PostInitializerExtraMembers.java
+clang::PostLValue = FILE#./extra_members/PostLValueExtraMembers.java
+clang::PostLoad = FILE#./extra_members/PostLoadExtraMembers.java
+
+clang::PostOrderCFGView=IMPLEMENTS#Iterable<CFGBlock>
+clang::PostOrderCFGView=TEXT#@Override public java.util.Iterator<CFGBlock /*P*/> iterator() { return new JavaIterator<>(begin(), end()); }
+
+clang::PostOrderCFGView::BlockOrderCompare=IMPLEMENTS#Compare<CFGBlock>
+clang::PostOrderCFGView::BlockOrderCompare=TEXT#@Override public boolean compare(CFGBlock a, CFGBlock b) { return $call(a, b); }
+
+clang::PostOrderCFGView::CFGBlockSet = IMPLEMENTS#Insertable<NoneType, CFGBlock>
+clang::PostStmt = FILE#./extra_members/PostStmtExtraMembers.java
+clang::PostStmtPurgeDeadSymbols = FILE#./extra_members/PostStmtPurgeDeadSymbolsExtraMembers.java
+clang::PostStore = FILE#./extra_members/PostStoreExtraMembers.java
+clang::PreImplicitCall = FILE#./extra_members/PreImplicitCallExtraMembers.java
+clang::PreLoad = FILE#./extra_members/PreLoadExtraMembers.java
+clang::PreStmt = FILE#./extra_members/PreStmtExtraMembers.java
+clang::PreStmtPurgeDeadSymbols = FILE#./extra_members/PreStmtPurgeDeadSymbolsExtraMembers.java
+clang::PreStore = FILE#./extra_members/PreStoreExtraMembers.java
+
+clang::ProgramPoint = IMPLEMENTS#FoldingSetTrait.Profilable
+clang::ProgramPoint = IMPLEMENTS#NativePOD<ProgramPoint>
+clang::ProgramPoint = FILE#./extra_members/ProgramPointExtraMembers.java
+clang::RelaxedLiveVariables=TEXT#protected RelaxedLiveVariables(Object/*void P*/ im) { super(im); }
+clang::StmtPoint = FILE#./extra_members/StmtPointExtraMembers.java
+clang::UninitUse=TEXT#public UninitUse(){}
+clang::analyze_printf::PrintfConversionSpecifier = FILE#./extra_members/PrintfConversionSpecifierExtraMembers.java
+clang::analyze_scanf::ScanfConversionSpecifier = FILE#./extra_members/ScanfConversionSpecifierExtraMembers.java
+clang::consumed::PropagationInfo = IMPLEMENTS#NativeCloneable<PropagationInfo>
+clang::consumed::PropagationInfo = FILE#./extra_members/PropagationInfoExtraMembers.java
+
+clang::threadSafety::CFGVisitor=IMPLEMENTS#BaseVisitor
+
+clang::threadSafety::CapabilityExpr = IMPLEMENTS#NativeCloneable<CapabilityExpr>
+clang::threadSafety::CapabilityExpr = FILE#./extra_members/CapabilityExprExtraMembers.java
+clang::threadSafety::SExprBuilder=IMPLEMENTS#BaseVisitor
+
+clang::threadSafety::SExprBuilder::CallingContext=TEXT#private CallingContext(JD$CallingContext$P_NamedDecl$C$P INSTANCE, CallingContext callingContext, NamedDecl D) { this(callingContext, D); }
+clang::threadSafety::SExprBuilder::CallingContext=TEXT#private CallingContext(JD$CallingContext$P_NamedDecl$C$P INSTANCE, CallingContext Ctx) { this(Ctx); }
+
+clang::threadSafety::til::Comparator=TEXT#abstract public boolean compareVariableRefs(/*const*/ Variable /*P*/ V1, /*const*/ Variable /*P*/ V2);
+clang::threadSafety::til::Comparator=TEXT#abstract public boolean compare(/*const*/ SExpr /*P*/ E1, /*const*/ SExpr /*P*/ E2);
+clang::threadSafety::til::Comparator=TEXT#abstract public boolean compareIntegers(/*uint*/int i, /*uint*/int j);
+clang::threadSafety::til::Comparator=TEXT#abstract public boolean comparePointers(/*const*/Object/*void P*/ P, /*const*/Object/*void P*/ Q);
+clang::threadSafety::til::Comparator=TEXT#abstract public boolean compareStrings(StringRef s, StringRef r);
+clang::threadSafety::til::Comparator=TEXT#abstract public void enterScope(/*const*/ Variable /*P*/ V1, /*const*/ Variable /*P*/ V2);
+clang::threadSafety::til::Comparator=TEXT#abstract public boolean notTrue(boolean ct);
+clang::threadSafety::til::Comparator=TEXT#abstract public void leaveScope();
+clang::threadSafety::til::Comparator=TEXT#abstract public boolean trueResult();
+
+clang::threadSafety::til::PrettyPrinter=FILE#./extra_members/PrettyPrinterExtraMembers.java
+clang::threadSafety::til::SCFG=IMPLEMENTS#Iterable<BasicBlock>
+clang::threadSafety::til::SCFG=TEXT#@Override public java.util.Iterator<BasicBlock> iterator() { return new JavaIterator<>(begin(), end()); }
+clang::threadSafety::til::SimpleArray=IMPLEMENTS#Iterable<T>
+clang::threadSafety::til::SimpleArray=TEXT#@Override public java.util.Iterator<T> iterator() { return new JavaIterator<>(begin(), end()); }
+clang::threadSafety::til::SimpleArray=TEXT#public void $set(int index, T value) {setValues(index, value);}//Data.$set(index, value);}
+
+llvm::GraphTraits<const clang::CallGraph * > = IMPLEMENTS#GraphTraits<CallGraph, CallGraphNode, CallGraphNode>
+llvm::GraphTraits<const clang::CallGraph * > = TEXT#private static final GraphTraitsCallGraph$C$P INSTANCE $EQ new GraphTraitsCallGraph$C$P();
+llvm::GraphTraits<const clang::CallGraph * > = TEXT#private static GraphTraitsCallGraph$C$P $GTraits() { return INSTANCE; }
+
+llvm::GraphTraits<clang::CallGraph * > = IMPLEMENTS#GraphTraits<CallGraph, CallGraphNode, CallGraphNode>
+llvm::GraphTraits<clang::CallGraph * > = TEXT#private static final GraphTraitsCallGraph$P INSTANCE $EQ new GraphTraitsCallGraph$P();
+llvm::GraphTraits<clang::CallGraph * > = TEXT#private static GraphTraitsCallGraph$P $GTraits() { return INSTANCE; }
+
+llvm::GraphTraits<clang::CallGraphNode * > = IMPLEMENTS#GraphTraits<CallGraphNode, CallGraphNode, CallGraphNode>
+llvm::GraphTraits<clang::CallGraphNode * > = TEXT#private static final GraphTraitsCallGraphNode$P INSTANCE $EQ new GraphTraitsCallGraphNode$P();
+llvm::GraphTraits<clang::CallGraphNode * > = TEXT#private static GraphTraitsCallGraphNode$P $GTraits() { return INSTANCE; }
+llvm::GraphTraits<clang::CallGraphNode * > = TEXT#public @Override df_iterator<CallGraphNode, CallGraphNode, CallGraphNode> nodes_begin(CallGraphNode S) { return GraphTraits.df_begin(this, S); }
+llvm::GraphTraits<clang::CallGraphNode * > = TEXT#public @Override df_iterator<CallGraphNode, CallGraphNode, CallGraphNode> nodes_end(CallGraphNode S) { return GraphTraits.df_end(this, S); }
+
+llvm::GraphTraits<const clang::CallGraphNode * > = IMPLEMENTS#GraphTraits<CallGraphNode, CallGraphNode, CallGraphNode>
+llvm::GraphTraits<const clang::CallGraphNode * > = TEXT#private static final GraphTraitsCallGraphNode$C$P INSTANCE $EQ new GraphTraitsCallGraphNode$C$P();
+llvm::GraphTraits<const clang::CallGraphNode * > = TEXT#private static GraphTraitsCallGraphNode$C$P $GTraits() { return INSTANCE; }
+llvm::GraphTraits<const clang::CallGraphNode * > = TEXT#public @Override df_iterator<CallGraphNode, CallGraphNode, CallGraphNode> nodes_begin(CallGraphNode S) { return GraphTraits.df_begin(this, S); }
+llvm::GraphTraits<const clang::CallGraphNode * > = TEXT#public @Override df_iterator<CallGraphNode, CallGraphNode, CallGraphNode> nodes_end(CallGraphNode S) { return GraphTraits.df_end(this, S); }
+
+llvm::GraphTraits<clang::CFG * > = IMPLEMENTS#GraphTraits<CFG, CFGBlock, CFGBlock.AdjacentBlock>
+llvm::GraphTraits<clang::CFG * > = TEXT#private static final GraphTraitsCFG$P INSTANCE $EQ new GraphTraitsCFG$P();
+llvm::GraphTraits<clang::CFG * > = TEXT#public static GraphTraitsCFG$P $GTraits() { return INSTANCE; }
+llvm::GraphTraits<clang::CFG * > = TEXT#public @Override CFGBlock $ChildNodeTypeToNodeType(CFGBlock.AdjacentBlock p) { return p.$star(); }
+
+llvm::GraphTraits<const clang::CFG * > = IMPLEMENTS#GraphTraits<CFG, CFGBlock, CFGBlock.AdjacentBlock>
+llvm::GraphTraits<const clang::CFG * > = TEXT#private static final GraphTraitsCFG$C$P INSTANCE $EQ new GraphTraitsCFG$C$P();
+llvm::GraphTraits<const clang::CFG * > = TEXT#public static GraphTraitsCFG$C$P $GTraits() { return INSTANCE; }
+llvm::GraphTraits<const clang::CFG * > = TEXT#public @Override CFGBlock $ChildNodeTypeToNodeType(CFGBlock.AdjacentBlock p) { return p.$star(); }
+
+llvm::GraphTraits<llvm::Inverse<clang::CFG * > > = IMPLEMENTS#GraphTraits<CFG, CFGBlock, CFGBlock.AdjacentBlock>
+llvm::GraphTraits<llvm::Inverse<clang::CFG * > > = TEXT#private static final GraphTraitsInverse$CFG$P INSTANCE $EQ new GraphTraitsInverse$CFG$P();
+llvm::GraphTraits<llvm::Inverse<clang::CFG * > > = TEXT#public static GraphTraitsInverse$CFG$P $GTraits() { return INSTANCE; }
+llvm::GraphTraits<llvm::Inverse<clang::CFG * > > = TEXT#public @Override CFGBlock $ChildNodeTypeToNodeType(CFGBlock.AdjacentBlock p) { return p.$star(); }
+
+llvm::GraphTraits<llvm::Inverse<const clang::CFG * > > = IMPLEMENTS#GraphTraits<CFG, CFGBlock, CFGBlock.AdjacentBlock>
+llvm::GraphTraits<llvm::Inverse<const clang::CFG * > > = TEXT#private static final GraphTraitsInverse$CFG$C$P INSTANCE $EQ new GraphTraitsInverse$CFG$C$P();
+llvm::GraphTraits<llvm::Inverse<const clang::CFG * > > = TEXT#public static GraphTraitsInverse$CFG$C$P $GTraits() { return INSTANCE; }
+llvm::GraphTraits<llvm::Inverse<const clang::CFG * > > = TEXT#public @Override CFGBlock $ChildNodeTypeToNodeType(CFGBlock.AdjacentBlock p) { return p.$star(); }
+
+llvm::GraphTraits<clang::CFGBlock * > = IMPLEMENTS#GraphTraits<CFG, CFGBlock, CFGBlock.AdjacentBlock>
+llvm::GraphTraits<clang::CFGBlock * > = FILE#./extra_members/GraphTraitsCFGBlock$PExtraMembers.java
+
+llvm::GraphTraits<llvm::Inverse<clang::CFGBlock * > > = IMPLEMENTS#GraphTraits<Inverse<CFGBlock/*P*/>, CFGBlock, CFGBlock.AdjacentBlock>
+llvm::GraphTraits<llvm::Inverse<clang::CFGBlock * > > = TEXT#private static final GraphTraitsInverse$CFGBlock$P INSTANCE $EQ new GraphTraitsInverse$CFGBlock$P();
+llvm::GraphTraits<llvm::Inverse<clang::CFGBlock * > > = TEXT#public static GraphTraitsInverse$CFGBlock$P $GTraits() { return INSTANCE; }
+llvm::GraphTraits<llvm::Inverse<clang::CFGBlock * > > = TEXT#public @Override CFGBlock $ChildNodeTypeToNodeType(CFGBlock.AdjacentBlock p) { return p.$star(); }
+
+llvm::GraphTraits<llvm::Inverse<const clang::CFGBlock * > > = IMPLEMENTS#GraphTraits<Inverse</*const*/ CFGBlock /*P*/ >, CFGBlock, CFGBlock.AdjacentBlock>
+llvm::GraphTraits<llvm::Inverse<const clang::CFGBlock * > > = TEXT#private static final GraphTraitsInverse$CFGBlock$C$P INSTANCE $EQ new GraphTraitsInverse$CFGBlock$C$P();
+llvm::GraphTraits<llvm::Inverse<const clang::CFGBlock * > > = TEXT#public static GraphTraitsInverse$CFGBlock$C$P $GTraits() { return INSTANCE; }
+llvm::GraphTraits<llvm::Inverse<const clang::CFGBlock * > > = TEXT#public @Override CFGBlock $ChildNodeTypeToNodeType(CFGBlock.AdjacentBlock p) { return p.$star(); }
+
+llvm::GraphTraits<const clang::CFGBlock * > = IMPLEMENTS#GraphTraits<CFGBlock, CFGBlock, CFGBlock.AdjacentBlock>
+llvm::GraphTraits<const clang::CFGBlock * > = TEXT#private static final GraphTraitsCFGBlock$C$P INSTANCE $EQ new GraphTraitsCFGBlock$C$P();
+llvm::GraphTraits<const clang::CFGBlock * > = TEXT#public static GraphTraitsCFGBlock$C$P $GTraits() { return INSTANCE; }
+llvm::GraphTraits<const clang::CFGBlock * > = TEXT#public @Override CFGBlock $ChildNodeTypeToNodeType(CFGBlock.AdjacentBlock p) { return p.$star(); }
+
+llvm::GraphTraits<llvm::DomTreeNodeBase<clang::CFGBlock> * > = IMPLEMENTS#GraphTraits<DomTreeNodeBase<CFGBlock>, DomTreeNodeBase<CFGBlock>, DomTreeNodeBase<CFGBlock>>
+llvm::GraphTraits<llvm::DomTreeNodeBase<clang::CFGBlock> * > = TEXT#private static final GraphTraitsDomTreeNodeBase$CFGBlock$P INSTANCE $EQ new GraphTraitsDomTreeNodeBase$CFGBlock$P();
+llvm::GraphTraits<llvm::DomTreeNodeBase<clang::CFGBlock> * > = TEXT#public static GraphTraitsDomTreeNodeBase$CFGBlock$P $GTraits() { return INSTANCE; }
+
+llvm::GraphTraits<clang::DominatorTree * > = IMPLEMENTS#GraphTraits<DomTreeNodeBase<CFGBlock>, DomTreeNodeBase<CFGBlock>, DomTreeNodeBase<CFGBlock>>
+llvm::GraphTraits<clang::DominatorTree * > = TEXT#private static final GraphTraitsDominatorTree$P INSTANCE $EQ new GraphTraitsDominatorTree$P();
+llvm::GraphTraits<clang::DominatorTree * > = TEXT#public static GraphTraitsDominatorTree$P $GTraits() { return INSTANCE; }
+

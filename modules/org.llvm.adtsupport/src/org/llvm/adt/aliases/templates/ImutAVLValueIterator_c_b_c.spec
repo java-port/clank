@@ -1,0 +1,7 @@
+FILE_NAME = ImutAVLValueIteratorCharBoolChar
+CLASS_SUFFIX = 
+ADAPTOR_BASE = iterator_adaptor_base$Char_type<ImutAVLValueIteratorCharBoolChar, ImutAVLTreeInOrderIteratorCharBoolChar, std.bidirectional_iterator_tag>
+CLASS_TYPE = ImutAVLValueIteratorCharBoolChar
+AVL_TREE_TYPE = ImutAVLTreeCharBoolChar
+AVL_ORDERED_ITER_NAME = ImutAVLTreeInOrderIteratorCharBoolChar
+VALUE_TYPE = byte

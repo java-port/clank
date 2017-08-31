@@ -1,0 +1,29 @@
+[IMPORTS]
+org.clank.java.*
+org.clank.support.*
+org.clank.support.aliases.*
+static org.clank.java.built_in.*
+static org.clank.support.Casts.*
+static org.clank.java.io.*
+static org.clank.java.std.*
+static org.llvm.adt.ADTAliases.*
+static org.llvm.support.llvm.*
+static org.clank.support.NativePointer.*
+static org.clank.support.NativeType.*
+static org.clank.support.Native.*
+org.llvm.support.*
+org.llvm.ir.*
+org.llvm.pass.*
+static org.llvm.ir.PassManagerGlobals.*
+static org.llvm.analysis.java.AnalysisFunctionPointers.*
+org.llvm.analysis.*
+org.llvm.analysis.LibFunc.target.*
+org.llvm.analysis.target.*
+org.llvm.analysis.objcarc.*
+org.llvm.analysis.cflaa.impl.*
+org.llvm.analysis.bfi_detail.*
+org.llvm.analysis.impl.*
+static org.llvm.cl.ClGlobals.init
+org.llvm.cl.*
+static org.llvm.analysis.java.AnalysisRTTI.*
+static org.llvm.ir.java.IrRTTI.*

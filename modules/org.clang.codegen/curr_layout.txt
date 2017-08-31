@@ -1,0 +1,15 @@
+org.clang.codegen
+    CodeGenAction.java
+    EmitAssemblyAction.java
+    EmitBCAction.java
+    EmitCodeGenOnlyAction.java
+    EmitLLVMAction.java
+    EmitLLVMOnlyAction.java
+    EmitObjAction.java
+    ObjectFilePCHContainerReader.java
+    ObjectFilePCHContainerWriter.java
+org.clang.codegen.CodeGen.impl
+    CGDebugInfo.java
+    CodeGenModule.java
+org.clang.codegen.impl
+    PCHContainerGenerator.java

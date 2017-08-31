@@ -1,0 +1,18 @@
+org.llvm.bitcode
+    BitCodeAbbrev.java
+    BitCodeAbbrevOp.java
+    BitcodeDiagnosticInfo.java
+    BitcodeError.java
+    BitcodeWriterPass.java
+    BitstreamCursor.java
+    BitstreamEntry.java
+    BitstreamReader.java
+    BitstreamWriter.java
+    LlvmGlobals.java
+    isPodLikeBitCodeAbbrevOp.java
+    is_error_code_enumBitcodeError.java
+org.llvm.bitcode.bitc
+    BlockInfoCodes.java
+    FixedAbbrevIDs.java
+    StandardBlockIDs.java
+    StandardWidths.java

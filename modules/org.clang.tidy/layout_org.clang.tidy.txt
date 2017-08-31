@@ -1,0 +1,376 @@
+org.clang.tidy
+    AnalyzerDiagnosticConsumer.java
+    ClangTidyASTConsumer.java
+    ClangTidyASTConsumerFactory.java
+    ClangTidyCheck.java
+    ClangTidyCheckFactories.java
+    ClangTidyContext.java
+    ClangTidyDiagnosticConsumer.java
+    ClangTidyDiagnosticConsumerGlobals.java
+    ClangTidyDiagnosticRenderer.java
+    ClangTidyError.java
+    ClangTidyGlobalOptions.java
+    ClangTidyMessage.java
+    ClangTidyModule.java
+    ClangTidyOptions.java
+    ClangTidyOptionsProvider.java
+    ClangTidyStats.java
+    ConfigOptionsProvider.java
+    DefaultOptionsProvider.java
+    EqualClangTidyError.java
+    ErrorReporter.java
+    FileFilter.java
+    FileOptionsProvider.java
+    GlobList.java
+    LessClangTidyError.java
+    OptionsView.java
+    ProfileData.java
+    TidyGlobals.java
+org.clang.tidy.boost.tidy
+    BoostGlobals.java
+    BoostModule.java
+    UseToStringCheck.java
+org.clang.tidy.boost.tidy.internal
+    matcher_isStrictlyIntegerMatcher.java
+org.clang.tidy.cert.tidy
+    CERTModule.java
+    CertGlobals.java
+    CommandProcessorCheck.java
+    ConversionKind.java
+    FloatLoopCounter.java
+    SetJmpMacroCallbacks.java
+    SetLongJmpCheck.java
+    StaticObjectExceptionCheck.java
+    StrToNumCheck.java
+    ThrownExceptionTypeCheck.java
+    VariadicFunctionDefCheck.java
+org.clang.tidy.cppcoreguidelines.tidy
+    CppCoreGuidelinesModule.java
+    CppcoreguidelinesGlobals.java
+    InitializerPlacement.java
+    InterfacesGlobalInitCheck.java
+    IntializerInsertion.java
+    ProBoundsArrayToPointerDecayCheck.java
+    ProBoundsConstantArrayIndexCheck.java
+    ProBoundsPointerArithmeticCheck.java
+    ProTypeConstCastCheck.java
+    ProTypeCstyleCastCheck.java
+    ProTypeMemberInitCheck.java
+    ProTypeReinterpretCastCheck.java
+    ProTypeStaticCastDowncastCheck.java
+    ProTypeUnionAccessCheck.java
+    ProTypeVarargCheck.java
+org.clang.tidy.cppcoreguidelines.tidy.impl
+    ProBoundsArrayToPointerDecayCheckCppcoreguidelinesGlobals.java
+    ProTypeCstyleCastCheckCppcoreguidelinesGlobals.java
+    ProTypeMemberInitCheckCppcoreguidelinesGlobals.java
+    ProTypeVarargCheckCppcoreguidelinesGlobals.java
+org.clang.tidy.cppcoreguidelines.tidy.internal
+    matcher_hasParentIgnoringImpCasts0Matcher.java
+    matcher_hasRangeBeginEndStmt0Matcher.java
+    matcher_isInsideOfRangeBeginEndStmtMatcher.java
+org.clang.tidy.google
+    TidyClangGlobals.java
+org.clang.tidy.google.impl
+    ExplicitMakePairCheckClangGlobals.java
+    IntegerTypesCheckClangGlobals.java
+org.clang.tidy.google.internal
+    matcher_hasExplicitTemplateArgsMatcher.java
+org.clang.tidy.google.tidy
+    DefaultArgumentsCheck.java
+    ExplicitConstructorCheck.java
+    GoogleGlobals.java
+    GoogleModule.java
+org.clang.tidy.google.tidy.build
+    ExplicitMakePairCheck.java
+    UnnamedNamespaceInHeaderCheck.java
+    UsingNamespaceDirectiveCheck.java
+org.clang.tidy.google.tidy.readability
+    AvoidCStyleCastsCheck.java
+    GlobalNamesInHeadersCheck.java
+    ReadabilityGlobals.java
+    TodoCommentCheck.java
+org.clang.tidy.google.tidy.runtime
+    IntegerTypesCheck.java
+    MemsetZeroLengthCheck.java
+    NonConstReferences.java
+    OverloadedUnaryAndCheck.java
+    RuntimeGlobals.java
+    StringReferenceMemberCheck.java
+org.clang.tidy.impl
+    ClangTidyOptionsTidyGlobals.java
+    ClangTidyTidyGlobals.java
+org.clang.tidy.llvm
+    Registry.java
+org.clang.tidy.llvm.tidy
+    IncludeOrderCheck.java
+    IncludeOrderPPCallbacks.java
+    LLVMHeaderGuardCheck.java
+    LLVMModule.java
+    TidyLlvmGlobals.java
+    TwineLocalCheck.java
+org.clang.tidy.llvm.yaml
+    MappingTraitsClangTidyOptions.java
+    MappingTraitsFileFilter.java
+    MappingTraitsPair$string$string.java
+    NOptionMap.java
+    SequenceTraitsPairUIntUInt.java
+    SequenceTraitsVector$FileFilter.java
+    SequenceTraitsVector$pairUIntUInt.java
+    SequenceTraitsVector$string.java
+    SequenceTraitsVector.java
+org.clang.tidy.misc.tidy
+    ArgumentCommentCheck.java
+    AssertSideEffectCheck.java
+    BoolPointerImplicitConversionCheck.java
+    DanglingHandleCheck.java
+    DefinitionsInHeadersCheck.java
+    FoldInitTypeCheck.java
+    ForwardDeclarationNamespaceCheck.java
+    InaccurateEraseCheck.java
+    IncorrectRoundings.java
+    InefficientAlgorithmCheck.java
+    MacroParenthesesCheck.java
+    MacroParenthesesPPCallbacks.java
+    MacroRepeatedPPCallbacks.java
+    MacroRepeatedSideEffectsCheck.java
+    MiscGlobals.java
+    MiscModule.java
+    MisplacedConstCheck.java
+    MisplacedWideningCastCheck.java
+    MoveConstantArgumentCheck.java
+    MoveConstructorInitCheck.java
+    MultipleStatementMacroCheck.java
+    NewDeleteOverloadsCheck.java
+    NoexceptMoveConstructorCheck.java
+    NonCopyableObjectsCheck.java
+    PointerAndIntegralOperationCheck.java
+    RedundantExpressionCheck.java
+    SizeofContainerCheck.java
+    SizeofExpressionCheck.java
+    StaticAssertCheck.java
+    StringConstructorCheck.java
+    StringIntegerAssignmentCheck.java
+    StringLiteralWithEmbeddedNulCheck.java
+    SuspiciousMissingCommaCheck.java
+    SuspiciousSemicolonCheck.java
+    SuspiciousStringCompareCheck.java
+    SwappedArgumentsCheck.java
+    ThrowByValueCatchByReferenceCheck.java
+    UnconventionalAssignOperatorCheck.java
+    UndelegatedConstructorCheck.java
+    UniqueptrResetReleaseCheck.java
+    UnusedAliasDeclsCheck.java
+    UnusedParametersCheck.java
+    UnusedRAIICheck.java
+    UnusedUsingDeclsCheck.java
+    VirtualNearMissCheck.java
+org.clang.tidy.misc.tidy.impl
+    ArgumentCommentCheckMiscGlobals.java
+    AssertSideEffectCheckMiscGlobals.java
+    DanglingHandleCheckMiscGlobals.java
+    DefinitionsInHeadersCheckMiscGlobals.java
+    FoldInitTypeCheckMiscGlobals.java
+    ForwardDeclarationNamespaceCheckMiscGlobals.java
+    IncorrectRoundingsMiscGlobals.java
+    InefficientAlgorithmCheckMiscGlobals.java
+    MacroParenthesesCheckMiscGlobals.java
+    MisplacedConstCheckMiscGlobals.java
+    MisplacedWideningCastCheckMiscGlobals.java
+    MoveConstantArgumentCheckMiscGlobals.java
+    MoveConstructorInitCheckMiscGlobals.java
+    MultipleStatementMacroCheckMiscGlobals.java
+    NewDeleteOverloadsCheckMiscGlobals.java
+    NonCopyableObjectsMiscGlobals.java
+    RedundantExpressionCheckMiscGlobals.java
+    SizeofExpressionCheckMiscGlobals.java
+    StringConstructorCheckMiscGlobals.java
+    StringLiteralWithEmbeddedNulCheckMiscGlobals.java
+    SuspiciousMissingCommaCheckMiscGlobals.java
+    SwappedArgumentsCheckMiscGlobals.java
+    UndelegatedConstructorMiscGlobals.java
+    UniqueptrResetReleaseCheckMiscGlobals.java
+    UnusedParametersCheckMiscGlobals.java
+    UnusedRAIICheckMiscGlobals.java
+    UnusedUsingDeclsCheckMiscGlobals.java
+    VirtualNearMissCheckMiscGlobals.java
+org.clang.tidy.misc.tidy.internal
+    SizeofExpressionCheckGlobals.java
+    StringConstructorCheckGlobals.java
+    matcher_baseOfBoundNode0Matcher.java
+    matcher_binaryOperatorIsInMacroMatcher.java
+    matcher_conditionalOperatorIsInMacroMatcher.java
+    matcher_containsNulMatcher.java
+    matcher_expandedByMacro0Matcher.java
+    matcher_expressionsAreEquivalentMatcher.java
+    matcher_floatHalfMatcher.java
+    matcher_hasNonTrivialDestructorMatcher.java
+    matcher_hasSideEffect0Matcher.java
+    matcher_hasSizeOfDescendant0Matcher.java
+    matcher_ignoringTemporaryExpr0Matcher.java
+    matcher_isConcatenatedLiteral0Matcher.java
+    matcher_isFILETypeMatcher.java
+    matcher_isInMacroMatcher.java
+    matcher_isIntegerConstantExprMatcher.java
+    matcher_isMacroMatcher.java
+    matcher_isOverloadedOperatorMatcher.java
+    matcher_isPOSIXTypeMatcher.java
+    matcher_isPlacementOverloadMatcher.java
+    matcher_isStaticMatcher.java
+    matcher_operandsAreEquivalentMatcher.java
+    matcher_parametersAreEquivalentMatcher.java
+    matcher_usesHeaderFileExtension0Matcher.java
+org.clang.tidy.modernize.tidy
+    AvoidBindCheck.java
+    BindArgument.java
+    BindArgumentKind.java
+    CastSequenceVisitor.java
+    ComponentFinderASTVisitor.java
+    Confidence.java
+    DeclFinderASTVisitor.java
+    DependencyFinderASTVisitor.java
+    DeprecatedHeadersCheck.java
+    ForLoopIndexUseVisitor.java
+    IncludeModernizePPCallbacks.java
+    LoopConvertCheck.java
+    LoopFixerKind.java
+    MacroArgUsageVisitor.java
+    MakeSharedCheck.java
+    MakeSmartPtrCheck.java
+    MakeUniqueCheck.java
+    ModernizeGlobals.java
+    ModernizeModule.java
+    PassByValueCheck.java
+    RawStringLiteralCheck.java
+    RedundantVoidArgCheck.java
+    ReplaceAutoPtrCheck.java
+    ShrinkToFitCheck.java
+    StmtAncestorASTVisitor.java
+    TUTrackingInfo.java
+    Usage.java
+    UseAutoCheck.java
+    UseBoolLiteralsCheck.java
+    UseDefaultCheck.java
+    UseEmplaceCheck.java
+    UseNullptrCheck.java
+    UseOverrideCheck.java
+    UseUsingCheck.java
+    VariableNamer.java
+org.clang.tidy.modernize.tidy.impl
+    AvoidBindCheckModernizeGlobals.java
+    LoopConvertCheckModernizeGlobals.java
+    LoopConvertUtilsModernizeGlobals.java
+    PassByValueCheckModernizeGlobals.java
+    RawStringLiteralCheckModernizeGlobals.java
+    RedundantVoidArgCheckModernizeGlobals.java
+    ReplaceAutoPtrCheckModernizeGlobals.java
+    UseAutoCheckModernizeGlobals.java
+    UseDefaultCheckModernizeGlobals.java
+    UseNullptrCheckModernizeGlobals.java
+    UseOverrideCheckModernizeGlobals.java
+    UseUsingCheckModernizeGlobals.java
+org.clang.tidy.modernize.tidy.internal
+    ReplaceAutoPtrCheckGlobals.java
+    UseAutoCheckGlobals.java
+    matcher_hasStdContainerNameMatcher.java
+    matcher_hasStdIteratorNameMatcher.java
+    matcher_hasWrittenNonListInitializerMatcher.java
+    matcher_isLValueMatcher.java
+    matcher_isMoveConstructibleMatcher.java
+    matcher_isSugarFor0Matcher.java
+    matcher_sugaredNullptrTypeMatcher.java
+org.clang.tidy.performance.tidy
+    FasterStringFindCheck.java
+    ForRangeCopyCheck.java
+    ImplicitCastInLoopCheck.java
+    PerformanceGlobals.java
+    PerformanceModule.java
+    UnnecessaryCopyInitialization.java
+    UnnecessaryValueParamCheck.java
+org.clang.tidy.performance.tidy.impl
+    FasterStringFindCheckPerformanceGlobals.java
+    ImplicitCastInLoopCheckPerformanceGlobals.java
+    UnnecessaryCopyInitializationPerformanceGlobals.java
+    UnnecessaryValueParamCheckPerformanceGlobals.java
+org.clang.tidy.plugin
+    ClangTidyPluginGlobals.java
+org.clang.tidy.plugin.tidy
+    ClangTidyPluginAction.java
+org.clang.tidy.readability.llvm
+    DenseMapInfoPair$SourceLocation$string.java
+org.clang.tidy.readability.tidy
+    AvoidConstParamsInDecls.java
+    BracesAroundStatementsCheck.java
+    ContainerSizeEmptyCheck.java
+    DeletedDefaultCheck.java
+    DifferingParamInfo.java
+    ElseAfterReturnCheck.java
+    FunctionASTVisitor.java
+    FunctionSizeCheck.java
+    IdentifierNamingCheck.java
+    IdentifierNamingCheckPPCallbacks.java
+    ImplicitBoolCastCheck.java
+    InconsistentDeclarationInfo.java
+    InconsistentDeclarationParameterNameCheck.java
+    NamedParameterCheck.java
+    NamespaceCommentCheck.java
+    ReadabilityGlobals.java
+    ReadabilityModule.java
+    RedundantControlFlowCheck.java
+    RedundantSmartptrGetCheck.java
+    RedundantStringCStrCheck.java
+    RedundantStringInitCheck.java
+    SimplifyBooleanExprCheck.java
+    StaticDefinitionInAnonymousNamespaceCheck.java
+    StyleKind.java
+    UniqueptrDeleteReleaseCheck.java
+org.clang.tidy.readability.tidy.impl
+    AvoidConstParamsInDeclsReadabilityGlobals.java
+    BracesAroundStatementsCheckReadabilityGlobals.java
+    IdentifierNamingCheckReadabilityGlobals.java
+    ImplicitBoolCastCheckReadabilityGlobals.java
+    InconsistentDeclarationParameterNameCheckReadabilityGlobals.java
+    NamespaceCommentCheckReadabilityGlobals.java
+    RedundantControlFlowCheckReadabilityGlobals.java
+    RedundantSmartptrGetCheckReadabilityGlobals.java
+    RedundantStringCStrCheckReadabilityGlobals.java
+    SimplifyBooleanExprCheckReadabilityGlobals.java
+    StaticDefinitionInAnonymousNamespaceCheckReadabilityGlobals.java
+org.clang.tidy.readability.tidy.internal
+    matcher_hasOtherDeclarationsMatcher.java
+    matcher_isMacroExpansionMatcher.java
+    matcher_isNULLMacroExpansionMatcher.java
+    matcher_isStaticMatcher.java
+org.clang.tidy.tool
+    ClangTidyMainGlobals.java
+org.clang.tidy.tool.tidy.impl
+    ClangTidyMainTidyGlobals.java
+org.clang.tidy.utils.clang.tidy
+    HeaderGuardCheck.java
+    HeaderGuardPPCallbacks.java
+    IncludeInserter.java
+    IncludeInserterCallback.java
+    IncludeSorter.java
+    UtilsGlobals.java
+org.clang.tidy.utils.clang.tidy.decl_ref_expr
+    Decl_ref_exprGlobals.java
+org.clang.tidy.utils.clang.tidy.fixit
+    FixitGlobals.java
+org.clang.tidy.utils.clang.tidy.impl
+    HeaderFileExtensionsUtilsUtilsGlobals.java
+    HeaderGuardUtilsGlobals.java
+    IncludeSorterUtilsGlobals.java
+org.clang.tidy.utils.clang.tidy.lexer
+    LexerGlobals.java
+org.clang.tidy.utils.clang.tidy.matchers
+    MatchersGlobals.java
+org.clang.tidy.utils.clang.tidy.matchers.internal
+    matcher_isComparisonOperatorMatcher.java
+    matcher_isEqualityOperatorMatcher.java
+    matcher_isExpensiveToCopyMatcher.java
+    matcher_isRelationalOperatorMatcher.java
+    matcher_isTriviallyDefaultConstructibleMatcher.java
+org.clang.tidy.utils.clang.tidy.options
+    OptionsGlobals.java
+org.clang.tidy.utils.clang.tidy.type_traits
+    Type_traitsGlobals.java

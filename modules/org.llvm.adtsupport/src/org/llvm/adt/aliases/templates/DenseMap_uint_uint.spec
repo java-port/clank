@@ -1,0 +1,11 @@
+FILE_NAME = DenseMapUIntUInt
+CLASS_SUFFIX =
+PAIR_TYPE = std.pairUIntUInt
+PAIR_NAME = std.pairUIntUInt
+KEY_TYPE = /*uint*/int
+RAW_KEY_TYPE = /*uint*/int
+VALUE_TYPE = /*uint*/int
+VALUE_CLASS = Class<Integer>
+DENSE_MAP_INFO = DenseMapInfoUInt
+DENSE_MAP_BASE = DenseMapBaseUIntUInt<DenseMapUIntUInt>
+CREATE_NEW_BUCKET_PAIR = new std.pairUIntUInt()

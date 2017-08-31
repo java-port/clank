@@ -1,0 +1,29 @@
+org.llvm.asmparser
+    AsmparserLlvmGlobals.java
+    SlotMapping.java
+org.llvm.asmparser.impl
+    ColumnField.java
+    DIFlagField.java
+    DwarfAttEncodingField.java
+    DwarfCCField.java
+    DwarfLangField.java
+    DwarfMacinfoTypeField.java
+    DwarfTagField.java
+    DwarfVirtualityField.java
+    EmissionKindField.java
+    LLLexer.java
+    LLLexerStatics.java
+    LLParser.java
+    LLParserStatics.java
+    LineField.java
+    MDBoolField.java
+    MDConstant.java
+    MDField.java
+    MDFieldImpl.java
+    MDFieldList.java
+    MDSignedField.java
+    MDStringField.java
+    MDUnsignedField.java
+    ValID.java
+org.llvm.asmparser.lltok.impl
+    Kind.java

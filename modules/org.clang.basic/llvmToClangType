@@ -1,0 +1,352 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+#entries like NM=ClassToDelegeate
+#to have definition delegation like 
+#[Type nameDefition = Init;] => [Type nameDefition = ClassToDelegeate.NameDefinition;]
+#[int foo() {body}] => [int foo() { return ClassToDelegeate.foo(); }]
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.clang.basic_delegates.properties"
+[DELEGATE_BODY=LLVM38]
+<include> "./commands_org.clang.basic_delegates.properties"
+[DELEGATE_BODY=LLVM36]
+<include> "./commands_prev_org.clang.basic_delegates.properties"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.clang.basic.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[TYPES_MAP]
+DeclContex=DeclContexImplementation
+
+[EXTRA_MEMBERS]
+(anonymous namespace)::RedirectingFileSystemParser::KeyStatus = IMPLEMENTS#NativePOD<KeyStatus>
+(anonymous namespace)::RedirectingFileSystemParser::KeyStatus = FILE#./extra_members/KeyStatusExtraMembers.java
+clang::Builtin::Info = FILE#./extra_members/InfoExtraMembers.java
+clang::DiagnosticsEngine::DiagState = IMPLEMENTS#NativeCloneable<DiagState>, Iterable<std.pairUIntType<DiagnosticMapping>>
+clang::DiagnosticsEngine::DiagState = FILE#./extra_members/DiagStateExtraMembers.java
+clang::DiagnosticsEngine::DiagStatePoint=IMPLEMENTS#NativeCloneable<DiagStatePoint>
+clang::DiagnosticsEngine::DiagStatePoint=TEXT#@Override public DiagStatePoint clone() { return new DiagStatePoint(this.State, this.Loc); }
+clang::FileID = FILE#./extra_members/FileIDExtraMembers.java
+clang::FileID = IMPLEMENTS#Native.ComparableLower
+clang::FixItHint = FILE#./extra_members/FixItHintExtraMembers.java
+clang::FixItHint = IMPLEMENTS#Native.NativePOD<FixItHint>, NativeMoveable<FixItHint>
+clang::IdentifierInfo = IMPLEMENTS#Native.ComparableLower
+clang::IdentifierInfo = FILE#./extra_members/IdentifierInfoExtraMembers.java
+clang::IdentifierTable=IMPLEMENTS#java.lang.Iterable<IdentifierInfoStringMapEntry>
+clang::IdentifierTable=TEXT#@Override public Iterator<IdentifierInfoStringMapEntry> iterator() { return new JavaIterator<>(begin(), end()); }
+clang::InBeforeInTUCacheEntry = FILE#./extra_members/InBeforeInTUCacheEntryExtraMembers.java
+clang::LineEntry = IMPLEMENTS#Native.OpCapable
+clang::LineEntry = IMPLEMENTS#NativePOD<LineEntry>
+clang::LineEntry = FILE#./extra_members/LineEntryExtraMembers.java
+clang::LineTableInfo = IMPLEMENTS#Iterable<std.pairIntType</*const*//*FileID,*/std.vector<LineEntry/*,default_cls_allocator*/>>>
+clang::LineTableInfo = FILE#./extra_members/LineTableInfoExtraMembers.java
+clang::Module::Conflict=IMPLEMENTS#NativePOD<Conflict>
+clang::Module::Conflict=FILE#./extra_members/ConflictExtraMembers.java
+clang::Module::Header = IMPLEMENTS#Native.NativePOD<Header>
+clang::Module::Header = IMPLEMENTS#NativeMoveable<Header>
+clang::Module::Header = FILE#./extra_members/HeaderExtraMembers.java
+clang::Module::UnresolvedConflict=IMPLEMENTS#NativePOD<UnresolvedConflict>
+clang::Module::UnresolvedConflict=FILE#./extra_members/UnresolvedConflictExtraMembers.java
+clang::MultiKeywordSelector = IMPLEMENTS#ITrailingObjectsJavaBase<MultiKeywordSelector>
+clang::PartialDiagnostic = FILE#./extra_members/PartialDiagnosticExtraMembers.java
+clang::PartialDiagnostic = IMPLEMENTS#NativeMoveable<PartialDiagnostic>
+clang::PartialDiagnostic = IMPLEMENTS#NativeCloneable<PartialDiagnostic>
+clang::PartialDiagnostic::StorageAllocator = FILE#./extra_members/StorageAllocatorExtraMembers.java
+clang::Selector = FILE#./extra_members/SelectorExtraMembers.java
+clang::SourceLocation = FILE#./extra_members/SourceLocationExtraMembers.java
+clang::StoredDiagnostic = IMPLEMENTS#NativeCloneable<StoredDiagnostic>
+clang::StoredDiagnostic = IMPLEMENTS#NativeMoveable<StoredDiagnostic>
+clang::StoredDiagnostic = FILE#./extra_members/StoredDiagnosticExtraMembers.java
+clang::TargetInfo::ConstraintInfo = IMPLEMENTS#NativeCloneable<ConstraintInfo>
+clang::TargetInfo::ConstraintInfo = FILE#./extra_members/ConstraintInfoExtraMembers.java
+clang::VisibleModuleSet = IMPLEMENTS#NativeCloneable<VisibleModuleSet>
+clang::VisibleModuleSet = IMPLEMENTS#NativeMoveable<VisibleModuleSet>
+clang::VisibleModuleSet = FILE#./extra_members/VisibleModuleSetExtraMembers.java
+clang::vfs::Status = IMPLEMENTS#NativePOD<Status>
+clang::vfs::Status = TEXT#@Override public Status clone() { return new Status(this); }
+clang::vfs::YAMLVFSEntry = IMPLEMENTS#NativePOD<YAMLVFSEntry>
+clang::vfs::YAMLVFSEntry = IMPLEMENTS#NativeMoveable<YAMLVFSEntry>
+clang::vfs::YAMLVFSEntry = FILE#./extra_members/YAMLVFSEntryExtraMembers.java
+
+[CONSTRUCTORS_PARAMETERS_MAP]
+#Basic Targets
+
+DarwinTargetInfo<AArch64leTargetInfo> =new AArch64leTargetInfo(Triple, Opts)|
+DarwinTargetInfo<ARMleTargetInfo>     =new ARMleTargetInfo(Triple, Opts)|
+DarwinTargetInfo<PPC32TargetInfo>     =new PPC32TargetInfo(Triple, Opts)|
+DarwinTargetInfo<PPC64TargetInfo>     =new PPC64TargetInfo(Triple, Opts)|
+DarwinTargetInfo<X86_32TargetInfo>    =new X86_32TargetInfo(Triple, Opts)|
+DarwinTargetInfo<X86_64TargetInfo>    =new X86_64TargetInfo(Triple, Opts)|
+
+#LE
+CloudABITargetInfo<AArch64leTargetInfo>=new AArch64leTargetInfo(_Triple, Opts)|
+FreeBSDTargetInfo<AArch64leTargetInfo>=new AArch64leTargetInfo(_Triple, Opts)|
+LinuxTargetInfo<AArch64leTargetInfo>  =new AArch64leTargetInfo(_Triple, Opts)|
+NetBSDTargetInfo<AArch64leTargetInfo> =new AArch64leTargetInfo(_Triple, Opts)|
+#BE
+CloudABITargetInfo<AArch64beTargetInfo>=new AArch64beTargetInfo(_Triple, Opts)|
+FreeBSDTargetInfo<AArch64beTargetInfo>=new AArch64beTargetInfo(_Triple, Opts)|
+LinuxTargetInfo<AArch64beTargetInfo>  =new AArch64beTargetInfo(_Triple, Opts)|
+NetBSDTargetInfo<AArch64beTargetInfo> =new AArch64beTargetInfo(_Triple, Opts)|
+
+#LE
+LinuxTargetInfo<ARMleTargetInfo>      =new ARMleTargetInfo(_Triple, Opts)|
+FreeBSDTargetInfo<ARMleTargetInfo>    =new ARMleTargetInfo(_Triple, Opts)|
+NetBSDTargetInfo<ARMleTargetInfo>     =new ARMleTargetInfo(_Triple, Opts)|
+OpenBSDTargetInfo<ARMleTargetInfo>    =new ARMleTargetInfo(_Triple, Opts)|
+BitrigTargetInfo<ARMleTargetInfo>     =new ARMleTargetInfo(_Triple, Opts)|
+RTEMSTargetInfo<ARMleTargetInfo>      =new ARMleTargetInfo(_Triple, Opts)|
+NaClTargetInfo<ARMleTargetInfo>       =new ARMleTargetInfo(_Triple, Opts)|
+
+#BE
+LinuxTargetInfo<ARMbeTargetInfo>      =new ARMbeTargetInfo(_Triple, Opts)|
+FreeBSDTargetInfo<ARMbeTargetInfo>    =new ARMbeTargetInfo(_Triple, Opts)|
+NetBSDTargetInfo<ARMbeTargetInfo>     =new ARMbeTargetInfo(_Triple, Opts)|
+OpenBSDTargetInfo<ARMbeTargetInfo>    =new ARMbeTargetInfo(_Triple, Opts)|
+BitrigTargetInfo<ARMbeTargetInfo>     =new ARMbeTargetInfo(_Triple, Opts)|
+RTEMSTargetInfo<ARMbeTargetInfo>      =new ARMbeTargetInfo(_Triple, Opts)|
+NaClTargetInfo<ARMbeTargetInfo>       =new ARMbeTargetInfo(_Triple, Opts)|
+
+#Mips
+LinuxTargetInfo<MipsTargetInfo>      =new MipsTargetInfo(_Triple, Opts)|
+FreeBSDTargetInfo<MipsTargetInfo>    =new MipsTargetInfo(_Triple, Opts)|
+NetBSDTargetInfo<MipsTargetInfo>     =new MipsTargetInfo(_Triple, Opts)|
+OpenBSDTargetInfo<MipsTargetInfo>    =new MipsTargetInfo(_Triple, Opts)|
+BitrigTargetInfo<MipsTargetInfo>     =new MipsTargetInfo(_Triple, Opts)|
+RTEMSTargetInfo<MipsTargetInfo>      =new MipsTargetInfo(_Triple, Opts)|
+NaClTargetInfo<MipsTargetInfo>       =new MipsTargetInfo(_Triple, Opts)|
+
+#BE
+LinuxTargetInfo<MipsTargetInfo>      =new MipsTargetInfo(_Triple, Opts)|
+FreeBSDTargetInfo<MipsTargetInfo>    =new MipsTargetInfo(_Triple, Opts)|
+NetBSDTargetInfo<MipsTargetInfo>     =new MipsTargetInfo(_Triple, Opts)|
+OpenBSDTargetInfo<MipsTargetInfo>    =new MipsTargetInfo(_Triple, Opts)|
+BitrigTargetInfo<MipsTargetInfo>     =new MipsTargetInfo(_Triple, Opts)|
+RTEMSTargetInfo<MipsTargetInfo>      =new MipsTargetInfo(_Triple, Opts)|
+NaClTargetInfo<MipsTargetInfo>       =new MipsTargetInfo(_Triple, Opts)|
+
+#
+LinuxTargetInfo<SystemZTargetInfo>          = new SystemZTargetInfo(_Triple, Opts)|
+LinuxTargetInfo<RenderScript32TargetInfo>   = new RenderScript32TargetInfo(_Triple, Opts)|
+LinuxTargetInfo<RenderScript64TargetInfo>   = new RenderScript64TargetInfo(_Triple, Opts)|
+
+#PPC32
+CloudABITargetInfo<PPC32TargetInfo>      = new PPC32TargetInfo(_Triple, Opts)|
+LinuxTargetInfo<PPC32TargetInfo>         = new PPC32TargetInfo(_Triple, Opts)|
+PS3PPUTargetInfo<PPC32TargetInfo>        = new PPC32TargetInfo(_Triple, Opts)|
+DragonFlyBSDTargetInfo<PPC32TargetInfo>  = new PPC32TargetInfo(_Triple, Opts)| 
+NetBSDTargetInfo<PPC32TargetInfo>        = new PPC32TargetInfo(_Triple, Opts)| 
+FreeBSDTargetInfo<PPC32TargetInfo>       = new PPC32TargetInfo(_Triple, Opts)|
+OpenBSDTargetInfo<PPC32TargetInfo>       = new PPC32TargetInfo(_Triple, Opts)|
+KFreeBSDTargetInfo<PPC32TargetInfo>      = new PPC32TargetInfo(_Triple, Opts)|  
+MinixTargetInfo<PPC32TargetInfo>         = new PPC32TargetInfo(_Triple, Opts)|  
+SolarisTargetInfo<PPC32TargetInfo>       = new PPC32TargetInfo(_Triple, Opts)|    
+NaClTargetInfo<PPC32TargetInfo>          = new PPC32TargetInfo(_Triple, Opts)|
+RTEMSTargetInfo<PPC32TargetInfo>         = new PPC32TargetInfo(_Triple, Opts)|
+
+#PPC64
+CloudABITargetInfo<PPC64TargetInfo>      = new PPC64TargetInfo(_Triple, Opts)|
+LinuxTargetInfo<PPC64TargetInfo>         = new PPC64TargetInfo(_Triple, Opts)|
+PS3PPUTargetInfo<PPC64TargetInfo>        = new PPC64TargetInfo(_Triple, Opts)|
+DragonFlyBSDTargetInfo<PPC64TargetInfo>  = new PPC64TargetInfo(_Triple, Opts)| 
+NetBSDTargetInfo<PPC64TargetInfo>        = new PPC64TargetInfo(_Triple, Opts)| 
+FreeBSDTargetInfo<PPC64TargetInfo>       = new PPC64TargetInfo(_Triple, Opts)|
+OpenBSDTargetInfo<PPC64TargetInfo>       = new PPC64TargetInfo(_Triple, Opts)|
+KFreeBSDTargetInfo<PPC64TargetInfo>      = new PPC64TargetInfo(_Triple, Opts)|  
+MinixTargetInfo<PPC64TargetInfo>         = new PPC64TargetInfo(_Triple, Opts)|  
+SolarisTargetInfo<PPC64TargetInfo>       = new PPC64TargetInfo(_Triple, Opts)|    
+NaClTargetInfo<PPC64TargetInfo>          = new PPC64TargetInfo(_Triple, Opts)|
+RTEMSTargetInfo<PPC64TargetInfo>         = new PPC64TargetInfo(_Triple, Opts)|
+
+#SparcV8
+CloudABITargetInfo<SparcV8TargetInfo>      = new SparcV8TargetInfo(_Triple, Opts)|
+LinuxTargetInfo<SparcV8TargetInfo>         = new SparcV8TargetInfo(_Triple, Opts)|
+DragonFlyBSDTargetInfo<SparcV8TargetInfo>  = new SparcV8TargetInfo(_Triple, Opts)| 
+NetBSDTargetInfo<SparcV8TargetInfo>        = new SparcV8TargetInfo(_Triple, Opts)| 
+FreeBSDTargetInfo<SparcV8TargetInfo>       = new SparcV8TargetInfo(_Triple, Opts)|
+OpenBSDTargetInfo<SparcV8TargetInfo>       = new SparcV8TargetInfo(_Triple, Opts)|
+KFreeBSDTargetInfo<SparcV8TargetInfo>      = new SparcV8TargetInfo(_Triple, Opts)|  
+MinixTargetInfo<SparcV8TargetInfo>         = new SparcV8TargetInfo(_Triple, Opts)|  
+SolarisTargetInfo<SparcV8TargetInfo>       = new SparcV8TargetInfo(_Triple, Opts)|    
+NaClTargetInfo<SparcV8TargetInfo>          = new SparcV8TargetInfo(_Triple, Opts)|
+RTEMSTargetInfo<SparcV8TargetInfo>         = new SparcV8TargetInfo(_Triple, Opts)|
+
+#SparcV8el
+CloudABITargetInfo<SparcV8elTargetInfo>      = new SparcV8elTargetInfo(_Triple, Opts)|
+LinuxTargetInfo<SparcV8elTargetInfo>         = new SparcV8elTargetInfo(_Triple, Opts)|
+DragonFlyBSDTargetInfo<SparcV8elTargetInfo>  = new SparcV8elTargetInfo(_Triple, Opts)| 
+NetBSDTargetInfo<SparcV8elTargetInfo>        = new SparcV8elTargetInfo(_Triple, Opts)| 
+FreeBSDTargetInfo<SparcV8elTargetInfo>       = new SparcV8elTargetInfo(_Triple, Opts)|
+OpenBSDTargetInfo<SparcV8elTargetInfo>       = new SparcV8elTargetInfo(_Triple, Opts)|
+KFreeBSDTargetInfo<SparcV8elTargetInfo>      = new SparcV8elTargetInfo(_Triple, Opts)|  
+MinixTargetInfo<SparcV8elTargetInfo>         = new SparcV8elTargetInfo(_Triple, Opts)|  
+SolarisTargetInfo<SparcV8elTargetInfo>       = new SparcV8elTargetInfo(_Triple, Opts)|    
+NaClTargetInfo<SparcV8elTargetInfo>          = new SparcV8elTargetInfo(_Triple, Opts)|
+RTEMSTargetInfo<SparcV8elTargetInfo>         = new SparcV8elTargetInfo(_Triple, Opts)|
+
+#SparcV9
+CloudABITargetInfo<SparcV9TargetInfo>      = new SparcV9TargetInfo(_Triple, Opts)|
+LinuxTargetInfo<SparcV9TargetInfo>         = new SparcV9TargetInfo(_Triple, Opts)|
+DragonFlyBSDTargetInfo<SparcV9TargetInfo>  = new SparcV9TargetInfo(_Triple, Opts)| 
+NetBSDTargetInfo<SparcV9TargetInfo>        = new SparcV9TargetInfo(_Triple, Opts)| 
+FreeBSDTargetInfo<SparcV9TargetInfo>       = new SparcV9TargetInfo(_Triple, Opts)|
+OpenBSDTargetInfo<SparcV9TargetInfo>       = new SparcV9TargetInfo(_Triple, Opts)|
+KFreeBSDTargetInfo<SparcV9TargetInfo>      = new SparcV9TargetInfo(_Triple, Opts)|  
+MinixTargetInfo<SparcV9TargetInfo>         = new SparcV9TargetInfo(_Triple, Opts)|  
+SolarisTargetInfo<SparcV9TargetInfo>       = new SparcV9TargetInfo(_Triple, Opts)|    
+NaClTargetInfo<SparcV9TargetInfo>          = new SparcV9TargetInfo(_Triple, Opts)|
+RTEMSTargetInfo<SparcV9TargetInfo>         = new SparcV9TargetInfo(_Triple, Opts)|
+
+#32
+CloudABITargetInfo<X86_32TargetInfo>      = new X86_32TargetInfo(_Triple, Opts)|
+LinuxTargetInfo<X86_32TargetInfo>         = new X86_32TargetInfo(_Triple, Opts)|
+DragonFlyBSDTargetInfo<X86_32TargetInfo>  = new X86_32TargetInfo(_Triple, Opts)| 
+NetBSDTargetInfo<X86_32TargetInfo>        = new X86_32TargetInfo(_Triple, Opts)| 
+FreeBSDTargetInfo<X86_32TargetInfo>       = new X86_32TargetInfo(_Triple, Opts)|
+KFreeBSDTargetInfo<X86_32TargetInfo>      = new X86_32TargetInfo(_Triple, Opts)|  
+MinixTargetInfo<X86_32TargetInfo>         = new X86_32TargetInfo(_Triple, Opts)|  
+SolarisTargetInfo<X86_32TargetInfo>       = new X86_32TargetInfo(_Triple, Opts)|    
+NaClTargetInfo<X86_32TargetInfo>          = new X86_32TargetInfo(_Triple, Opts)|
+ 
+#64
+CloudABITargetInfo<X86_64TargetInfo>      = new X86_64TargetInfo(_Triple, Opts)|
+LinuxTargetInfo<X86_64TargetInfo>         = new X86_64TargetInfo(_Triple, Opts)|
+DragonFlyBSDTargetInfo<X86_64TargetInfo>  = new X86_64TargetInfo(_Triple, Opts)| 
+NetBSDTargetInfo<X86_64TargetInfo>        = new X86_64TargetInfo(_Triple, Opts)| 
+FreeBSDTargetInfo<X86_64TargetInfo>       = new X86_64TargetInfo(_Triple, Opts)|
+KFreeBSDTargetInfo<X86_64TargetInfo>      = new X86_64TargetInfo(_Triple, Opts)|  
+MinixTargetInfo<X86_64TargetInfo>         = new X86_64TargetInfo(_Triple, Opts)|  
+SolarisTargetInfo<X86_64TargetInfo>       = new X86_64TargetInfo(_Triple, Opts)|    
+NaClTargetInfo<X86_64TargetInfo>          = new X86_64TargetInfo(_Triple, Opts)|
+PS4OSTargetInfo<X86_64TargetInfo>         = new X86_64TargetInfo(_Triple, Opts)|
+HaikuTargetInfo<X86_64TargetInfo>         = new X86_64TargetInfo(_Triple, Opts)|
+
+#
+WebAssemblyOSTargetInfo<WebAssembly32TargetInfo>=new WebAssembly32TargetInfo(_Triple, Opts)|
+WebAssemblyOSTargetInfo<WebAssembly64TargetInfo>=new WebAssembly64TargetInfo(_Triple, Opts)|
+
+#
+NaClTargetInfo<PNaClTargetInfo>           = new PNaClTargetInfo(_Triple, Opts)|
+NaClTargetInfo<NaClMips32TargetInfo>      = new NaClMips32TargetInfo(_Triple, Opts)|
+
+#for derived classes
+WindowsTargetInfo<ARMleTargetInfo> = new ARMleTargetInfo(Triple, Opts)|
+WindowsTargetInfo<X86_32TargetInfo> = new X86_32TargetInfo(Triple, Opts)|
+WindowsTargetInfo<X86_64TargetInfo> = new X86_64TargetInfo(Triple, Opts)|
+BitrigTargetInfo<X86_32TargetInfo> = new X86_32TargetInfo(Triple, Opts)|
+BitrigTargetInfo<X86_64TargetInfo> = new X86_64TargetInfo(Triple, Opts)|
+NetBSDTargetInfo<X86_32TargetInfo> = new X86_32TargetInfo(Triple)|
+HaikuTargetInfo<X86_32TargetInfo> = new X86_32TargetInfo(Triple, Opts)|
+
+OpenBSDTargetInfo<X86_32TargetInfo> = new X86_32TargetInfo(Triple, Opts)|
+OpenBSDTargetInfo<X86_64TargetInfo> = new X86_64TargetInfo(Triple, Opts)|
+
+[MEMBER_ACCESS]
+
+(anonymous namespace)::RealFile::RealFile=/*friend*/
+(anonymous namespace)::RedirectingFileSystem::IsRelativeOverlay=/*friend*//*private*/final
+(anonymous namespace)::RedirectingFileSystem::Roots=/*friend*//*private*/final
+(anonymous namespace)::RedirectingFileSystem::UseCanonicalizedPaths=/*friend*//*private*/final
+#targets
+#clang::TargetInfo::getGCCRegNames = /*derived*/public
+#clang::TargetInfo::getGCCRegAliases = /*derived*/public
+<anonymous namespace>::Mips32EBTargetInfo::setDescriptionString=/*friend*/
+<anonymous namespace>::Mips32ELTargetInfo::setDescriptionString=/*friend*/
+<anonymous namespace>::Mips64EBTargetInfo::setDescriptionString=/*friend*/
+<anonymous namespace>::Mips64ELTargetInfo::setDescriptionString=/*friend*/
+<anonymous namespace>::MipsTargetInfoBase::setDescriptionString=/*friend*/
+<anonymous namespace>::PNaClTargetInfo::getDefaultFeatures=public
+_ZN5clang6SrcMgr9SLocEntryC1ERKS1_=public
+clang::Builtin::Info::Attributes=public final
+clang::Builtin::Info::Features=public final
+clang::Builtin::Info::HeaderName=public final
+clang::Builtin::Info::Langs=public final
+
+#namespace Builtin
+clang::Builtin::Info::Name=public final
+clang::Builtin::Info::Type=public final
+clang::DiagnosticIDs::EmitDiag=/*friend*/
+
+#clang::DiagnosticIDs
+clang::DiagnosticIDs::getDiagnosticLevel=/*friend*/
+clang::DiagnosticIDs::getDiagnosticSeverity=/*friend*/
+clang::DiagnosticsEngine::AllExtensionsSilenced=/*friend*/
+clang::DiagnosticsEngine::Client=/*friend*/
+
+#clang::DiagnosticsEngine
+clang::DiagnosticsEngine::CurDiagID=/*friend*/
+clang::DiagnosticsEngine::CurDiagLoc=/*friend*/
+clang::DiagnosticsEngine::DiagArgumentsKind=/*friend*/
+clang::DiagnosticsEngine::DiagArgumentsStr=/*friend*/
+clang::DiagnosticsEngine::DiagArgumentsVal=/*friend*/
+clang::DiagnosticsEngine::DiagFixItHints=/*friend*/
+clang::DiagnosticsEngine::DiagRanges=/*friend*/
+clang::DiagnosticsEngine::DiagState = /*friend*/ public
+clang::DiagnosticsEngine::DiagStatePoint = /*friend*/ public
+clang::DiagnosticsEngine::DiagStatePoints = /*friend*/public
+clang::DiagnosticsEngine::DiagStates = /*friend*/public
+clang::DiagnosticsEngine::ElideType=/*friend*/
+clang::DiagnosticsEngine::EmitCurrentDiagnostic = /*friend*/public
+clang::DiagnosticsEngine::EnableAllWarnings=/*friend*/
+clang::DiagnosticsEngine::ErrorLimit=/*friend*/
+clang::DiagnosticsEngine::ErrorOccurred = public /*friend*/
+clang::DiagnosticsEngine::ErrorsAsFatal=/*friend*/
+clang::DiagnosticsEngine::ExtBehavior=/*friend*/
+clang::DiagnosticsEngine::FatalErrorOccurred=/*friend*/
+clang::DiagnosticsEngine::FatalsAsError=/*friend*/
+clang::DiagnosticsEngine::FlagValue=/*friend*/
+clang::DiagnosticsEngine::GetCurDiagState = /*friend*/public
+clang::DiagnosticsEngine::GetDiagStatePointForLoc=/*friend*/
+clang::DiagnosticsEngine::IgnoreAllWarnings=/*friend*/
+clang::DiagnosticsEngine::LastDiagLevel=/*friend*/
+clang::DiagnosticsEngine::NumDiagArgs=/*friend*/
+clang::DiagnosticsEngine::NumDiagFixItHints=/*friend*/
+clang::DiagnosticsEngine::NumDiagRanges=/*friend*/
+clang::DiagnosticsEngine::NumErrors=/*friend*/
+clang::DiagnosticsEngine::NumErrorsSuppressed=/*friend*/
+clang::DiagnosticsEngine::NumWarnings=/*friend*/
+clang::DiagnosticsEngine::PrintTemplateTree=/*friend*/
+clang::DiagnosticsEngine::ShowColors=/*friend*/
+clang::DiagnosticsEngine::SuppressAllDiagnostics=/*friend*/
+clang::DiagnosticsEngine::SuppressSystemWarnings=/*friend*/
+clang::DiagnosticsEngine::TrapNumErrorsOccurred=/*friend*/
+clang::DiagnosticsEngine::TrapNumUnrecoverableErrorsOccurred=/*friend*/
+clang::DiagnosticsEngine::UncompilableErrorOccurred = public /*friend*/
+clang::DiagnosticsEngine::Unnamed_enum3=/*friend*/
+clang::DiagnosticsEngine::UnrecoverableErrorOccurred = public /*friend*/
+clang::DiagnosticsEngine::WarningsAsErrors=/*friend*/
+clang::DiagnosticsEngine::getCurrentDiagID = /*friend*/public
+clang::DiagnosticsEngine::getCurrentDiagLoc = /*friend*/public
+clang::DiagnosticsEngine::makeUserMapping = /*friend*/public
+clang::FileID::ID = /*friend*/public
+clang::FileID::get = /*friend*/public
+clang::FileID::getOpaqueValue = /*friend*/public
+
+#FullSourceLoc
+clang::FullSourceLoc::SrcMgr=/*friend*/final
+
+#clang::Selector
+clang::Selector::Selector=/*friend*/public
+clang::SourceLocation::getOffset = /*friend*/public
+clang::SourceManager::MaxLoadedOffset = /*friend*/public
+clang::SourceManager::getLoadedSLocEntryByID = /*friend*/public
+clang::SourceManager::getOrCreateContentCache = /*friend*/public
+
+#clang::SrcMgr
+clang::SrcMgr::FileInfo::NumCreatedFIDs = /*friend*/ public
+clang::TargetInfo::ConstraintInfo::ConstraintStr = public final
+clang::TargetInfo::ConstraintInfo::ImmRange = public final
+clang::TargetInfo::ConstraintInfo::ImmSet = public final
+clang::TargetInfo::ConstraintInfo::Name = public final
+clang::VersionTuple::Build = /*friend*/
+
+clang::VersionTuple::Major = /*friend*/
+clang::VersionTuple::Minor = /*friend*/
+clang::VersionTuple::Subminor = /*friend*/
+clang::charinfo::InfoTable=public final

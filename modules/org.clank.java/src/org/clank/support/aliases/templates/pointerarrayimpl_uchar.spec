@@ -1,0 +1,12 @@
+FILE_NAME = uchar$ptr$array
+CLASS_SUFFIX =
+POINTER_NAME = uchar$ptr
+REFERENCE_NAME = uchar$ref
+TYPE = byte
+SB_APPEND_ELEMENT_I=if (b==0) { sb.append("<EOF>"); break; } else { sb.append((char)b); }
+SET_IMPL=return array[(int)(this.index + index)] = value;
+ADDITIONAL_ASSIGNMENTS=
+ADDITIONAL_MODIFY_VALUE_SECTION_START =
+ADDITIONAL_MODIFY_VALUE_SECTION_END =
+BUILTIN_TYPE_MODIFY_VALUE_SECTION_START=
+BUILTIN_TYPE_MODIFY_VALUE_SECTION_END=

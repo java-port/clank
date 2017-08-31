@@ -1,0 +1,20 @@
+  @Test
+  public void test_deref_track_symbolic_region_java_c() throws Throwable {
+    setTestFile("${SPUTNIK}/modules/org.clang.staticanalyzer/test/unit/data/org/clang/staticanalyzer/test/deref-track-symbolic-region-java.c");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core.NullDereference' '-analyzer-output=text' ${SPUTNIK}/modules/org.clang.staticanalyzer/test/unit/data/org/clang/staticanalyzer/test/deref-track-symbolic-region-java.c -verify
+    RUN("%clang_cc1 -analyze -analyzer-checker=core.NullDereference -analyzer-output=text %s -verify");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' '-analyzer-output=text' ${SPUTNIK}/modules/org.clang.staticanalyzer/test/unit/data/org/clang/staticanalyzer/test/deref-track-symbolic-region-java.c -verify
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-output=text %s -verify");
+  }
+
+  @Test
+  public void test_noreturn_func_cpp() throws Throwable {
+    setTestFile("${SPUTNIK}/modules/org.clang.staticanalyzer/test/unit/data/org/clang/staticanalyzer/test/noreturn_func.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu -fsyntax-only -verify ${SPUTNIK}/modules/org.clang.staticanalyzer/test/unit/data/org/clang/staticanalyzer/test/noreturn_func.cpp
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -fsyntax-only -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu -analyze '-analyzer-checker=debug.DumpCFG' ${SPUTNIK}/modules/org.clang.staticanalyzer/test/unit/data/org/clang/staticanalyzer/test/noreturn_func.cpp 2>&1 > ${TEST_TEMP_DIR}/noreturn_func.cpp.cfg
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -analyze -analyzer-checker=debug.DumpCFG %s 2>&1 > %T/noreturn_func.cpp.cfg");
+    // diff ${TEST_TEMP_DIR}/noreturn_func.cpp.cfg ${SPUTNIK}/modules/org.clang.staticanalyzer/test/unit/data/org/clang/staticanalyzer/test/Input/noreturn_func.cpp.cfg > ${TEST_TEMP_DIR}/noreturn_func.cpp.cfg.diff
+    RUN("diff %T/noreturn_func.cpp.cfg %S/Input/noreturn_func.cpp.cfg > %T/noreturn_func.cpp.cfg.diff");
+  }
+

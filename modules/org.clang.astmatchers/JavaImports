@@ -1,0 +1,35 @@
+[IMPORTS]
+org.clank.java.*
+org.clank.support.*
+org.clank.support.aliases.*
+org.clank.support.JavaDifferentiators.*
+static org.clank.java.built_in.*
+static org.clank.support.Casts.*
+static org.clank.java.io.*
+static org.clank.java.std.*
+static org.clank.java.std_pair.*
+static org.llvm.adt.ADTAliases.*
+static org.llvm.support.llvm.*
+static org.clank.support.NativePointer.*
+static org.clank.support.NativeType.*
+static org.clank.support.Native.*
+static org.clank.support.Unsigned.*
+org.clank.support.NativeCallback.*
+org.llvm.support.*
+org.llvm.adt.*
+org.llvm.adt.aliases.*
+org.clang.ast.*
+org.clang.ast.ast_type_traits.*
+org.clang.ast.java.AstMemberPointers.*
+org.clang.astmatchers.ast_matchers.*
+org.clang.astmatchers.ast_matchers.java.AstMatchersFunctionPointers.*
+org.clang.astmatchers.ast_matchers.internal.*
+org.clang.astmatchers.ast_matchers.internal.impl.*
+org.clang.astmatchers.dynamic.ast_matchers.*
+org.clang.astmatchers.dynamic.ast_matchers.impl.*
+org.clang.astmatchers.dynamic.ast_matchers.internal.impl.*
+org.clang.basic.SourceManager
+org.clang.basic.attr
+org.clang.lex.*
+org.clang.lex.java.*
+org.clang.lex.llvm.*

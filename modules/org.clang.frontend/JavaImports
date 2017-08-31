@@ -1,0 +1,23 @@
+[IMPORTS]
+org.clang.ast.*
+static org.clang.basic.BasicClangGlobals.*
+static org.clang.frontend.FrontendClangGlobals.*
+org.clang.basic.*
+org.llvm.option.*
+org.clang.lex.*
+org.clang.sema.*
+org.clang.serialization.*
+org.clang.staticanalyzer.core.*
+static org.clang.driver.DriverGlobals.*
+static org.clang.frontend.impl.CompilerInvocationStatics.*
+org.clang.frontend.*
+org.clang.driver.options
+org.clang.driver.options.ID
+static org.llvm.option.arg_iterator.*
+org.clang.frontend.impl.*
+org.clang.parse.*
+org.llvm.support.sys.*
+org.llvm.support.endian.*
+org.clang.driver.frontend.*
+static org.clang.parse.ParseClangGlobals.*
+static org.llvm.support.llvm.support.endianness.*

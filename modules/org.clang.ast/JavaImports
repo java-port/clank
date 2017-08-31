@@ -1,0 +1,57 @@
+[IMPORTS]
+org.clang.basic.*
+org.clang.lex.Token
+org.clang.lex.*
+org.clang.lex.llvm.*
+org.clang.ast.*
+org.clang.ast.aliases.*
+org.clang.ast.java.*
+org.clang.ast.impl.*
+org.clang.ast.comments.*
+org.clang.ast.ast_type_traits.*
+org.clang.ast.llvm.*
+static org.clang.ast.ast_type_traits.ASTNodeKind.*
+static org.clang.ast.ast_type_traits.DynTypedNode.*
+static org.clang.ast.ASTContextGlobals.*
+static org.clang.ast.java.AstMemberPointers.*
+static org.clang.ast.java.AstFunctionPointers.*
+org.clang.ast.java.AstJavaDifferentiators.*
+static org.clang.ast.java.AstRTTI.*
+org.clang.ast.AstClangGlobals.*
+org.clang.ast.DeclContext.*
+static org.clang.ast.DeclContext.specific_decl_iterator.*
+static org.clang.ast.AstClangGlobals.*
+static org.clang.ast.BaseSubobject.*
+static org.clang.ast.CharUnitsGlobals.*
+static org.clang.ast.DeclarationName.*
+static org.clang.ast.QualType.*
+static org.clang.ast.QualType.StreamedQualTypeHelper.*
+static org.clang.ast.impl.ASTDiagnosticStatics.*
+static org.clang.ast.impl.DeclCXXStatics.*
+static org.clang.ast.impl.DeclTemplateStatics.*
+static org.clang.ast.impl.CXXInheritanceStatics.*
+static org.clang.ast.impl.MicrosoftCXXABIStatics.*
+static org.clang.ast.java.AstSizeofAndAlignment.*
+static org.clang.ast.specific_attr_iterator.*
+static org.clang.basic.BasicClangGlobals.*
+static org.clang.basic.VersionTuple.*
+static org.clang.basic.PartialDiagnostic.*
+static org.clang.basic.SourceLocation.*
+org.clank.java.StdFunctionPointers.*
+static org.llvm.support.AdtsupportLlvmGlobals.*
+org.clang.basic.target.*
+static org.clang.basic.target.TargetCXXABI.*
+static org.clang.ast.java.AstSizeofAndAlignment.*
+static org.clang.ast.impl.SelectorLocationsKindStatics.*
+org.llvm.support.sys.fs
+static org.clang.ast.AstClangGlobals.*
+static org.clang.ast.impl.DeclBaseStatics.*
+static org.clang.ast.impl.DeclStatics.*
+static org.clang.ast.impl.DeclObjCStatics.*
+static org.clang.ast.impl.ExprCXXStatics.*
+static org.clang.ast.impl.ExprConstantStatics.*
+static org.clang.ast.impl.ExprStatics.*
+org.clang.ast.java.AstJavaDifferentiators.*
+static org.clang.ast.impl.ExprClassificationStatics.*
+static org.clang.ast.impl.StmtStatics.*
+org.llvm.support.TrailingObjects.*

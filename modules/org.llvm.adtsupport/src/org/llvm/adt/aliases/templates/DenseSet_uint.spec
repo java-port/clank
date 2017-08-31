@@ -1,0 +1,14 @@
+FILE_NAME = DenseSetUInt
+CLASS_SUFFIX =
+DENSE_MAP_ITER = DenseMapIteratorUIntChar
+DENSE_MAP_ITSELF = DenseMapUIntChar
+DENSE_MAP_INFO = DenseMapInfoUInt
+ITERATOR_TYPE = iterator
+REFERENCE_TO_VALUE = uint$ref
+POINTER_TO_VALUE = uint$ptr
+ITERATOR_INTERFACE = uint$iterator<iterator>
+GENERIC_ITERATOR = uint$iterator<?>
+VALUE_TYPE = int
+MAKE_PAIR_VALUE_CHAR_FACTORY_MTD = std.make_pair_uint_char
+BOXED_TYPE = Integer
+JAVA_ITERATOR = JavaIteratorUInt

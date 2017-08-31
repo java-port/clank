@@ -1,0 +1,11 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[EXTRA_MEMBERS]
+llvm::TargetMachine = IMPLEMENTS#TargetMachineForward

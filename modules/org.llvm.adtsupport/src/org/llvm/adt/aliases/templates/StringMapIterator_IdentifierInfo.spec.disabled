@@ -1,0 +1,4 @@
+FILE_NAME = StringMapIteratorIdentifierInfo
+CLASS_SUFFIX =
+CONST_ITERATOR = StringMapConstIteratorIdentifierInfo
+ENTRY = IdentifierInfoStringMapEntry

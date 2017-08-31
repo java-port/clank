@@ -1,0 +1,11 @@
+FILE_NAME = ImmutableSetChar
+CLASS_SUFFIX =
+CLASS_TYPE = ImmutableSetChar
+AVL_TREE_TYPE = ImutAVLTreeCharBoolChar
+AVL_FACTORY_TYPE = ImutAVLFactoryCharBoolChar
+AVL_VALUE_ITER_TYPE = ImutAVLValueIteratorCharBoolChar
+CONTAINER_INFO = ImutContainerInfoChar
+KEY_TYPE = byte
+CALLBACK_FUNC_TYPE = Char2Void
+BOXED_KEY_TYPE = Byte
+JAVA_ITERATOR = JavaIteratorChar

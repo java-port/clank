@@ -1,0 +1,77 @@
+org.llvm.bitcode
+    BitCodeAbbrev.java
+    BitCodeAbbrevOp.java
+    BitcodeDiagnosticInfo.java
+    BitcodeError.java
+    BitcodeLlvmGlobals.java
+    BitcodeWriterPass.java
+    BitstreamCursor.java
+    BitstreamEntry.java
+    BitstreamReader.java
+    BitstreamWriter.java
+    SimpleBitstreamCursor.java
+    isPodLikeBitCodeAbbrevOp.java
+    is_error_code_enumBitcodeError.java
+org.llvm.bitcode.bitc
+    AtomicOrderingCodes.java
+    AtomicSynchScopeCodes.java
+    AttributeCodes.java
+    AttributeKindCodes.java
+    BinaryOpcodes.java
+    BitcGlobals.java
+    BlockIDs.java
+    BlockInfoCodes.java
+    CallMarkersFlags.java
+    CastOpcodes.java
+    ComdatSelectionKindCodes.java
+    ConstantsCodes.java
+    FixedAbbrevIDs.java
+    FunctionCodes.java
+    GlobalValueSummarySymtabCodes.java
+    IdentificationCodes.java
+    MetadataCodes.java
+    ModuleCodes.java
+    ModulePathSymtabCodes.java
+    OperandBundleTagCode.java
+    OverflowingBinaryOperatorOptionalFlags.java
+    PossiblyExactOperatorOptionalFlags.java
+    RMWOperations.java
+    StandardBlockIDs.java
+    StandardWidths.java
+    TypeCodes.java
+    TypeSymtabCodes.java
+    UseListCodes.java
+    ValueSymtabCodes.java
+org.llvm.bitcode.impl
+    BitcodeReaderLlvmGlobals.java
+    BitcodeWriterLlvmGlobals.java
+    BitcodeWriterPassLlvmGlobals.java
+    ReaderWriterLlvmGlobals.java
+org.llvm.bitcode.java
+    BitcodeFunctionPointers.java
+    BitcodeJavaDifferentiators.java
+org.llvm.bitcode.java.impl
+    BitcodeErrorCategoryTypeInfo.java
+org.llvm.bitcode.reader.impl
+    BitReaderStatics.java
+    BitcodeErrorCategoryType.java
+    BitcodeReader.java
+    BitcodeReaderMetadataList.java
+    BitcodeReaderStatics.java
+    BitcodeReaderValueList.java
+    BitstreamReaderStatics.java
+    ConstantPlaceHolder.java
+    ModuleSummaryIndexBitcodeReader.java
+    OperandTraitsConstantPlaceHolder.java
+    PlaceholderQueue.java
+org.llvm.bitcode.writer.impl
+    BitcodeWriter.java
+    BitcodeWriterPassStatics.java
+    BitcodeWriterStatics.java
+    IndexBitcodeWriter.java
+    ModuleBitcodeWriter.java
+    OrderMap.java
+    StringEncoding.java
+    ValueEnumerator.java
+    ValueEnumeratorStatics.java
+    WriteBitcodePass.java

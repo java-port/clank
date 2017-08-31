@@ -1,0 +1,9 @@
+FILE_NAME = ContinuousRangeMapUIntInt
+CLASS_SUFFIX = 
+KEY_TYPE = /*uint*/int
+COMPARE_LESS_KEY=Unsigned.$less_uint
+PAIR_TYPE = std.pairUIntInt
+RAW_PAIR_TYPE = std.pairUIntInt
+SMALL_VECTOR_TYPE=SmallVector<std.pairUIntInt>
+SMALL_VECTOR_INIT_WITH_CAPACITY = new SmallVector<std.pairUIntInt>(InitialCapacity, std.make_pair_uint_int(0, 0))
+NUMBER_TO_KEY=intValue

@@ -1,0 +1,9 @@
+FILE_NAME = DenseMapIteratorULongType
+CLASS_SUFFIX = <ValueT>
+PAIR_TYPE = std.pairULongType<ValueT>
+KEY_TYPE = long
+RAW_KEY_TYPE = long
+VALUE_TYPE = ValueT
+DENSE_MAP_INFO = DenseMapInfoULong
+IS_DATA_POINTER_LIKE=true
+DENSE_MAP = DenseMapULongType

@@ -1,0 +1,10 @@
+FILE_NAME = ImutAVLFactoryPtrBoolType
+CLASS_SUFFIX = </*typename ImutInfo*/ KeyT, ValT>
+AVL_TREE_TYPE = ImutAVLTreePtrBoolType<KeyT, ValT>
+AVL_FACTORY_TYPE = ImutAVLFactoryPtrBoolType<KeyT, ValT>
+AVL_GENERIC_ITER_TYPE = ImutAVLTreeGenericIteratorPtrBoolType<KeyT, ValT>
+AVL_ORDERED_ITER_TYPE = ImutAVLTreeInOrderIteratorPtrBoolType<KeyT, ValT>
+INFO_TYPE = ImutAVLTreeInfoPtrBoolType<KeyT, ValT>
+KEY_TYPE = KeyT
+DATA_TYPE = boolean
+VALUE_TYPE = ValT

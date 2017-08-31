@@ -1,0 +1,11 @@
+FILE_NAME = DenseMapULongType
+CLASS_SUFFIX = <ValueT>
+PAIR_TYPE = std.pairULongType<ValueT>
+PAIR_NAME = std.pairULongType
+KEY_TYPE = long
+RAW_KEY_TYPE = long
+VALUE_TYPE = ValueT
+VALUE_CLASS = Class<ValueT>
+DENSE_MAP_INFO = DenseMapInfoULong
+DENSE_MAP_BASE = DenseMapBaseULongType<DenseMapULongType<ValueT>, ValueT>
+CREATE_NEW_BUCKET_PAIR = isDataPointerLike() ? new std.pairULongPtr() : new std.pairULongType()

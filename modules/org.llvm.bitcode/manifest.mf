@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.llvm.bitcode
+OpenIDE-Module-Localizing-Bundle: org/llvm/bitcode/resources/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.1
+

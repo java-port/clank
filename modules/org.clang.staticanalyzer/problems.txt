@@ -1,0 +1,26 @@
+/////////////////////////////////////////////
+/// MODULE org.clang.staticanalyzer
+
+/// Non virtual functions with the same name
+CallEvent.getOriginExpr()->SimpleFunctionCall.getOriginExpr() [7]
+ClusterAnalysis.AddToWorkList()->invalidateRegionsWorker.AddToWorkList() [2]
+ClusterAnalysis.includeEntireMemorySpace()->invalidateRegionsWorker.includeEntireMemorySpace() [1]
+DeclRegion.ProfileRegion()->VarRegion.ProfileRegion() [3]
+DeclRegion.getDecl()->VarRegion.getDecl() [3]
+DefinedOrUnknownSVal.isKind()->UnknownVal.isKind() [9]
+NodeBuilder.generateNode()->NodeBuilderWithSinks.generateNode() [3]
+NodeBuilder.generateSink()->NodeBuilderWithSinks.generateSink() [2]
+SVal.$eq()->MemRegionVal.$eq() [1]
+SVal.$noteq()->MemRegionVal.$noteq() [1]
+SVal.dumpToStream()->NonLoc.dumpToStream() [2]
+SVal.isUndef()->DefinedOrUnknownSVal.isUndef() [1]
+SVal.isUnknown()->DefinedSVal.isUnknown() [1]
+SVal.isUnknownOrUndef()->DefinedSVal.isUnknownOrUndef() [1]
+SVal.isValid()->DefinedOrUnknownSVal.isValid()->DefinedSVal.isValid() [1]
+WorkList.enqueue()->DFS.enqueue() [3]
+
+/// Ambiguous points
+Class FullSValVisitor inherits function Visit via multiple branches:
+[SValVisitor::Visit]
+[SymExprVisitor::Visit]
+[MemRegionVisitor::Visit]

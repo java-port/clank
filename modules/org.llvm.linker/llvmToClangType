@@ -1,0 +1,11 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[TYPES_MAP]
+DenseMap<%CLASS_PTR, std.vector<GlobalValue /*P*/ >> = DenseMap<%0, std.vector<GlobalValue /*P*/ >>#DenseMapInfo$LikePtr.$Info() | new std.vector<GlobalValue /*P*/ >((GlobalValue /*P*/ )(null))

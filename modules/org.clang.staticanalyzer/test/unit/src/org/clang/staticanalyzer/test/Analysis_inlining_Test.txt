@@ -1,0 +1,210 @@
+  @Test
+  public void test_DynDispatchBifurcate_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/DynDispatchBifurcate.m");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,osx' -analyzer-config 'ipa=dynamic-bifurcate' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/DynDispatchBifurcate.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,osx -analyzer-config ipa=dynamic-bifurcate -verify %s");
+  }
+
+  @Test
+  public void test_InlineObjCClassMethod_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/InlineObjCClassMethod.m");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,debug.ExprInspection' -analyzer-config 'ipa=dynamic-bifurcate' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/InlineObjCClassMethod.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,debug.ExprInspection -analyzer-config ipa=dynamic-bifurcate -verify %s");
+  }
+
+  @Test
+  public void test_InlineObjCInstanceMethod_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/InlineObjCInstanceMethod.m");
+    // ${LLVM_SRC}/build/bin/clang --analyze -Xanalyzer '-analyzer-checker=osx.cocoa.IncompatibleMethodTypes,osx.coreFoundation.CFRetainRelease' -Xclang -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/InlineObjCInstanceMethod.m
+    RUN("%clang --analyze -Xanalyzer -analyzer-checker=osx.cocoa.IncompatibleMethodTypes,osx.coreFoundation.CFRetainRelease -Xclang -verify %s");
+  }
+
+  @Test
+  public void test_ObjCDynTypePopagation_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/ObjCDynTypePopagation.m");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,debug.ExprInspection' -analyzer-config 'ipa=dynamic-bifurcate' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/ObjCDynTypePopagation.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,debug.ExprInspection -analyzer-config ipa=dynamic-bifurcate -verify %s");
+  }
+
+  @Test
+  public void test_ObjCImproperDynamictallyDetectableCast_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/ObjCImproperDynamictallyDetectableCast.m");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,debug.ExprInspection' -analyzer-config 'ipa=dynamic-bifurcate' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/ObjCImproperDynamictallyDetectableCast.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,debug.ExprInspection -analyzer-config ipa=dynamic-bifurcate -verify %s");
+  }
+
+  @Test
+  public void test_RetainCountExamples_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/RetainCountExamples.m");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,osx.cocoa.RetainCount' -analyzer-config 'ipa=dynamic-bifurcate' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/RetainCountExamples.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,osx.cocoa.RetainCount -analyzer-config ipa=dynamic-bifurcate -verify %s");
+  }
+
+  @Test
+  public void test_analysis_order_c() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/analysis-order.c");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core.builtin.NoReturnFunctions' -analyzer-display-progress ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/analysis-order.c 2>&1 | ${LLVM_SRC}/build/bin/FileCheck ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/analysis-order.c
+    RUN("%clang_cc1 -analyze -analyzer-checker=core.builtin.NoReturnFunctions -analyzer-display-progress %s 2>&1")./*|*/
+      I("FileCheck %s");
+  }
+
+  @Test
+  public void test_assume_super_init_does_not_return_nil_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/assume-super-init-does-not-return-nil.m");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,osx' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/assume-super-init-does-not-return-nil.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,osx -verify %s");
+  }
+
+  @Test
+  public void test_containers_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/containers.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-std=c++11' '-analyzer-checker=core,unix.Malloc,debug.ExprInspection' -analyzer-config 'c++-inlining=destructors' -analyzer-config 'c++-container-inlining=false' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/containers.cpp
+    RUN("%clang_cc1 -analyze -std=c++11 -analyzer-checker=core,unix.Malloc,debug.ExprInspection -analyzer-config c++-inlining=destructors -analyzer-config c++-container-inlining=false -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-std=c++11' '-analyzer-checker=core,unix.Malloc,debug.ExprInspection' -analyzer-config 'c++-inlining=destructors' -analyzer-config 'c++-container-inlining=true' '-DINLINE=1' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/containers.cpp
+    RUN("%clang_cc1 -analyze -std=c++11 -analyzer-checker=core,unix.Malloc,debug.ExprInspection -analyzer-config c++-inlining=destructors -analyzer-config c++-container-inlining=true -DINLINE=1 -verify %s");
+  }
+
+  @Test
+  public void test_dyn_dispatch_bifurcate_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/dyn-dispatch-bifurcate.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,debug.ExprInspection' -analyzer-config 'ipa=dynamic-bifurcate' -verify -Wno-reinterpret-base-class ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/dyn-dispatch-bifurcate.cpp
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,debug.ExprInspection -analyzer-config ipa=dynamic-bifurcate -verify -Wno-reinterpret-base-class %s");
+  }
+
+  @Test
+  public void test_eager_reclamation_path_notes_c() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/eager-reclamation-path-notes.c");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' '-analyzer-output=text' -analyzer-config 'graph-trim-interval=5' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/eager-reclamation-path-notes.c
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-output=text -analyzer-config graph-trim-interval=5 -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' '-analyzer-output=plist-multi-file' -analyzer-config 'graph-trim-interval=5' -analyzer-config 'path-diagnostics-alternate=false' ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/eager-reclamation-path-notes.c -o ${TEST_TEMP_DIR}/eager-reclamation-path-notes.c.tmp.plist
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-output=plist-multi-file -analyzer-config graph-trim-interval=5 -analyzer-config path-diagnostics-alternate=false %s -o %t.plist");
+    // ${LLVM_SRC}/build/bin/FileCheck "--input-file=${TEST_TEMP_DIR}/eager-reclamation-path-notes.c.tmp.plist" ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/eager-reclamation-path-notes.c
+    RUN("FileCheck --input-file=%t.plist %s");
+  }
+
+  @Test
+  public void test_eager_reclamation_path_notes_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/eager-reclamation-path-notes.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' '-analyzer-output=text' -analyzer-config 'graph-trim-interval=5' -analyzer-config 'suppress-null-return-paths=false' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/eager-reclamation-path-notes.cpp
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-output=text -analyzer-config graph-trim-interval=5 -analyzer-config suppress-null-return-paths=false -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' '-analyzer-output=plist-multi-file' -analyzer-config 'graph-trim-interval=5' -analyzer-config 'suppress-null-return-paths=false' -analyzer-config 'path-diagnostics-alternate=false' ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/eager-reclamation-path-notes.cpp -o ${TEST_TEMP_DIR}/eager-reclamation-path-notes.cpp.tmp.plist
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-output=plist-multi-file -analyzer-config graph-trim-interval=5 -analyzer-config suppress-null-return-paths=false -analyzer-config path-diagnostics-alternate=false %s -o %t.plist");
+    // ${LLVM_SRC}/build/bin/FileCheck "--input-file=${TEST_TEMP_DIR}/eager-reclamation-path-notes.cpp.tmp.plist" ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/eager-reclamation-path-notes.cpp
+    RUN("FileCheck --input-file=%t.plist %s");
+  }
+
+  @Test
+  public void test_false_positive_suppression_c() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/false-positive-suppression.c");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze -analyzer-eagerly-assume '-analyzer-checker=core' -analyzer-config 'suppress-null-return-paths=false' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/false-positive-suppression.c
+    RUN("%clang_cc1 -analyze -analyzer-eagerly-assume -analyzer-checker=core -analyzer-config suppress-null-return-paths=false -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze -analyzer-eagerly-assume '-analyzer-checker=core' -verify '-DSUPPRESSED=1' ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/false-positive-suppression.c
+    RUN("%clang_cc1 -analyze -analyzer-eagerly-assume -analyzer-checker=core -verify -DSUPPRESSED=1 %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze -analyzer-eagerly-assume '-analyzer-checker=core' -analyzer-config 'avoid-suppressing-null-argument-paths=true' '-DSUPPRESSED=1' '-DNULL_ARGS=1' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/false-positive-suppression.c
+    RUN("%clang_cc1 -analyze -analyzer-eagerly-assume -analyzer-checker=core -analyzer-config avoid-suppressing-null-argument-paths=true -DSUPPRESSED=1 -DNULL_ARGS=1 -verify %s");
+  }
+
+  @Test
+  public void test_false_positive_suppression_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/false-positive-suppression.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' -analyzer-config 'suppress-null-return-paths=false' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/false-positive-suppression.cpp
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-config suppress-null-return-paths=false -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' -verify '-DSUPPRESSED=1' ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/false-positive-suppression.cpp
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -verify -DSUPPRESSED=1 %s");
+  }
+
+  @Test
+  public void test_false_positive_suppression_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/false-positive-suppression.m");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' -analyzer-config 'suppress-null-return-paths=false' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/false-positive-suppression.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-config suppress-null-return-paths=false -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' -verify '-DSUPPRESSED=1' ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/false-positive-suppression.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -verify -DSUPPRESSED=1 %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' -analyzer-config 'avoid-suppressing-null-argument-paths=true' '-DSUPPRESSED=1' '-DNULL_ARGS=1' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/false-positive-suppression.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-config avoid-suppressing-null-argument-paths=true -DSUPPRESSED=1 -DNULL_ARGS=1 -verify %s");
+  }
+
+  @Test
+  public void test_inline_defensive_checks_c() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/inline-defensive-checks.c");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' -analyzer-config 'suppress-inlined-defensive-checks=true' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/inline-defensive-checks.c
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-config suppress-inlined-defensive-checks=true -verify %s");
+  }
+
+  @Test
+  public void test_inline_defensive_checks_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/inline-defensive-checks.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/inline-defensive-checks.cpp
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -verify %s");
+  }
+
+  @Test
+  public void test_inline_defensive_checks_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/inline-defensive-checks.m");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' -analyzer-config 'suppress-inlined-defensive-checks=true' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/inline-defensive-checks.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-config suppress-inlined-defensive-checks=true -verify %s");
+  }
+
+  @Test
+  public void test_path_notes_c() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/path-notes.c");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' '-analyzer-output=text' -analyzer-config 'suppress-null-return-paths=false' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/path-notes.c
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-output=text -analyzer-config suppress-null-return-paths=false -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' '-analyzer-output=plist-multi-file' -analyzer-config 'suppress-null-return-paths=false' -analyzer-config 'path-diagnostics-alternate=false' ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/path-notes.c -o ${TEST_TEMP_DIR}/path-notes.c.tmp.plist
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-output=plist-multi-file -analyzer-config suppress-null-return-paths=false -analyzer-config path-diagnostics-alternate=false %s -o %t.plist");
+    // ${LLVM_SRC}/build/bin/FileCheck "--input-file=${TEST_TEMP_DIR}/path-notes.c.tmp.plist" ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/path-notes.c
+    RUN("FileCheck --input-file=%t.plist %s");
+  }
+
+  @Test
+  public void test_path_notes_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/path-notes.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' '-analyzer-output=text' -analyzer-config 'c++-inlining=destructors' '-std=c++11' -verify -Wno-tautological-undefined-compare ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/path-notes.cpp
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-output=text -analyzer-config c++-inlining=destructors -std=c++11 -verify -Wno-tautological-undefined-compare %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' '-analyzer-output=plist-multi-file' -analyzer-config 'c++-inlining=destructors' '-std=c++11' -analyzer-config 'path-diagnostics-alternate=false' ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/path-notes.cpp -o ${TEST_TEMP_DIR}/path-notes.cpp.tmp.plist -Wno-tautological-undefined-compare
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-output=plist-multi-file -analyzer-config c++-inlining=destructors -std=c++11 -analyzer-config path-diagnostics-alternate=false %s -o %t.plist -Wno-tautological-undefined-compare");
+    // ${LLVM_SRC}/build/bin/FileCheck "--input-file=${TEST_TEMP_DIR}/path-notes.cpp.tmp.plist" ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/path-notes.cpp
+    RUN("FileCheck --input-file=%t.plist %s");
+  }
+
+  @Test
+  public void test_path_notes_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/path-notes.m");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,osx.cocoa.NilArg,osx.cocoa.RetainCount' '-analyzer-output=text' -analyzer-config 'suppress-null-return-paths=false' -fblocks -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/path-notes.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,osx.cocoa.NilArg,osx.cocoa.RetainCount -analyzer-output=text -analyzer-config suppress-null-return-paths=false -fblocks -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,osx.cocoa.NilArg,osx.cocoa.RetainCount' '-analyzer-output=plist-multi-file' -analyzer-config 'suppress-null-return-paths=false' -analyzer-config 'path-diagnostics-alternate=false' -fblocks ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/path-notes.m -o ${TEST_TEMP_DIR}/path-notes.m.tmp.plist
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,osx.cocoa.NilArg,osx.cocoa.RetainCount -analyzer-output=plist-multi-file -analyzer-config suppress-null-return-paths=false -analyzer-config path-diagnostics-alternate=false -fblocks %s -o %t.plist");
+    // ${LLVM_SRC}/build/bin/FileCheck "--input-file=${TEST_TEMP_DIR}/path-notes.m.tmp.plist" ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/path-notes.m
+    RUN("FileCheck --input-file=%t.plist %s");
+  }
+
+  @Test
+  public void test_retain_count_self_init_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/retain-count-self-init.m");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,osx.cocoa.RetainCount,osx.cocoa.SelfInit' -analyzer-config 'ipa=dynamic-bifurcate' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/retain-count-self-init.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,osx.cocoa.RetainCount,osx.cocoa.SelfInit -analyzer-config ipa=dynamic-bifurcate -verify %s");
+  }
+
+  @Test
+  public void test_stl_cpp() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/stl.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,unix.Malloc,cplusplus.NewDelete,debug.ExprInspection' -analyzer-config 'c++-container-inlining=true' -analyzer-config 'c++-stdlib-inlining=false' '-std=c++11' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/stl.cpp
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,unix.Malloc,cplusplus.NewDelete,debug.ExprInspection -analyzer-config c++-container-inlining=true -analyzer-config c++-stdlib-inlining=false -std=c++11 -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,unix.Malloc,cplusplus.NewDelete,debug.ExprInspection' -analyzer-config 'c++-container-inlining=true' -analyzer-config 'c++-stdlib-inlining=true' '-std=c++11' '-DINLINE=1' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/stl.cpp
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,unix.Malloc,cplusplus.NewDelete,debug.ExprInspection -analyzer-config c++-container-inlining=true -analyzer-config c++-stdlib-inlining=true -std=c++11 -DINLINE=1 -verify %s");
+  }
+
+  @Test
+  public void test_test_always_inline_size_option_c() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/test-always-inline-size-option.c");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core,debug.ExprInspection' '-analyzer-inline-max-stack-depth=3' -analyzer-config 'ipa-always-inline-size=3' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/test-always-inline-size-option.c
+    RUN("%clang_cc1 -analyze -analyzer-checker=core,debug.ExprInspection -analyzer-inline-max-stack-depth=3 -analyzer-config ipa-always-inline-size=3 -verify %s");
+  }
+
+  @Test
+  public void test_test_objc_inlining_option_m() throws Throwable {
+    setTestFile("${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/test_objc_inlining_option.m");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -analyze '-analyzer-checker=core' -analyzer-config 'ipa=dynamic-bifurcate' -analyzer-config 'objc-inlining=false' -verify ${LLVM_SRC}/llvm/tools/clang/test/Analysis/inlining/test_objc_inlining_option.m
+    RUN("%clang_cc1 -analyze -analyzer-checker=core -analyzer-config ipa=dynamic-bifurcate -analyzer-config objc-inlining=false -verify %s");
+  }
+

@@ -1,0 +1,42 @@
+[IMPORTS]
+org.clank.java.*
+org.clank.support.*
+org.clank.support.aliases.*
+org.clank.support.JavaDifferentiators.*
+static org.clank.java.built_in.*
+static org.clank.support.Casts.*
+static org.clank.java.io.*
+static org.clank.java.std.*
+static org.clank.java.std_pair.*
+static org.llvm.adt.ADTAliases.*
+static org.llvm.adt.ADTFunctionPointers.*
+org.llvm.llvmc.*
+static org.llvm.support.llvm.*
+static org.clank.support.NativePointer.*
+static org.clank.support.NativeType.*
+static org.clank.support.Native.*
+static org.clank.support.Unsigned.*
+org.clank.support.NativeCallback.*
+org.llvm.support.*
+org.llvm.adt.*
+org.llvm.adt.aliases.*
+static org.llvm.adt.ADTFunctionPointers.*
+org.llvm.ir.*
+org.llvm.ir.impl.*
+org.llvm.ir.Metadata.*
+org.llvm.ir.intrinsic.*
+static org.llvm.ir.java.IRFunctionPointers.*
+static org.llvm.ir.java.IrRTTI.*
+static org.llvm.ir.java.IRJavaDifferentiators.*
+org.llvm.cl.*
+org.llvm.ir.java.IRJavaDifferentiators.*
+org.llvm.ir.java.IRMemberPointers.*
+org.llvm.ir.java.*
+org.llvm.pass.*
+org.llvm.support.dwarf.Tag
+org.llvm.support.sys.SmartRWMutex
+org.llvm.ir.java.cst_pred_ty_Predicate
+org.llvm.ir.legacy.PassManagerBase
+org.llvm.ir.PassManagerGlobals.*
+org.llvm.ir.java.MDNodeKeyImpl
+static org.llvm.adt.HashingGlobals.*

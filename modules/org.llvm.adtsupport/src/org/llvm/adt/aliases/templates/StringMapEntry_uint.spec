@@ -1,0 +1,16 @@
+FILE_NAME = StringMapEntryUInt
+CLASS_SUFFIX =
+INIT_1_PREFIX = <AllocatorTy extends NativeMemory.Allocator>
+INIT_1_TYPE = int
+INIT_1_RET_TYPE = StringMapEntryUInt
+INIT_1_ALLOCATOR = AllocatorTy
+INIT_2_PREFIX =
+INIT_2_TYPE = int
+INIT_2_RET_TYPE = StringMapEntryUInt
+INITIALIZE_STRING = StringMapEntryInitializerUInt.Initialize
+VALUE_TYPE = int
+VALUE_REFERENCE = uint$ref
+VALUE_POINTER = uint$ptr
+VALUE_POINTER_INOUT = uint$ptr$inout
+DEFAULT_VALUE = ((int)0)
+SIZEOF_VALUE = ((int)0)

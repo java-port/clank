@@ -1,0 +1,124 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.clang.codegen_delegates.properties"
+[DELEGATE_BODY=LLVM38]
+<include> "./commands_org.clang.codegen_delegates.properties"
+[DELEGATE_BODY=LLVM36]
+<include> "./commands_prev_org.clang.codegen_delegates.properties"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.clang.codegen.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[EXTRA_MEMBERS]
+<include> "./ClangCodeGenExtraMembers.txt"
+
+[TYPES_MAP]
+(lambda at /export1/home/alsimon/LLVM39/llvm/tools/clang/lib/CodeGen/CGBlocks.cpp:2163:27)=ValueCharUintTwine2Void
+(lambda at /export1/home/alsimon/LLVM39/llvm/tools/clang/lib/CodeGen/CGCall.cpp:3546:34)=Void2RValue
+
+Address (Value * ) const = Value2Address
+CallInst * (ID, unsigned int) const = IntUInt2CallInst
+CallInst * (unsigned int) const = UInt2CallInst
+CanQual<Type>=CanQual<org.clang.ast.Type>
+
+CanQualType=CanQual<org.clang.ast.Type>
+
+ConstantAsMetadata * (unsigned int) const = UInt2ConstantAsMetadata
+
+MDString * (StringRef) const = StringRef2MDString
+
+StringRef (unsigned int) const = UInt2StringRef
+Value * (CmpInst::Predicate) const = Predicate2Value
+Value * (const BinOpInfo & ) = BinOpInfo2Value
+auto (Address) const -> Value * = Address2Value
+
+auto (TargetCodeGenInfo * ) const -> const TargetCodeGenInfo & = TargetCodeGenInfo2TargetCodeGenInfo
+auto (unsigned int) const -> Address = UInt2Address
+auto (unsigned int, CharUnits, const Twine & ) const -> Address = UIntCharUintTwine2Address
+llvm::Type = org.llvm.ir.Type
+llvm::VectorType = org.llvm.ir.VectorType
+std::tuple< DominatingValue<As>::saved_type...> = DominatingValue.saved_type[]
+
+uint64_t (unsigned int) const = UInt2UInt64
+void (CodeGenFunction & , PrePostActionTy & ) const = CodeGenFunctionPrePostActionTy2Void
+void (Value * , CharUnits, const Twine & ) const = ValueCharUintTwine2Void
+void (Value * , unsigned int, CharUnits, const Twine & ) const = ValueUIntCharUintTwine2Void
+
+void (const ObjCPropertyDecl * ) const = ObjCPropertyDecl2Void
+void (unsigned int, const Expr * ) const = UIntExpr2Void
+
+void (unsigned int, unsigned int, StringRef, unsigned int, OffloadEntriesInfoManagerTy::OffloadEntryInfoTargetRegion & ) const = OffloadTargetRegionEntryInfoActTy
+
+void (unsigned int, unsigned int, StringRef, unsigned int, OffloadEntryInfoTargetRegion & ) = OffloadTargetRegionEntryInfoActTy
+
+[MEMBER_ACCESS]
+(anonymous namespace)::ItaniumCXXABI::getMangleContext = public
+(anonymous namespace)::MicrosoftCXXABI::getMangleContext = public
+(anonymous namespace)::SparcV8ABIInfo::classifyReturnType = public
+(anonymous namespace)::WebAssemblyABIInfo::classifyArgumentType = public
+(anonymous namespace)::WebAssemblyABIInfo::classifyReturnType = public
+clang::CodeGen::BlockFieldFlags::BlockFieldFlags = /*friend*/public
+clang::CodeGen::CGBuilderInserter::InsertHelper = public
+clang::CodeGen::CGCXXABI::CGM=/*friend*/public
+clang::CodeGen::CGDebugInfo::LexicalBlockStack = /*friend*/public
+clang::CodeGen::CGFunctionInfoArgInfo::info = public final
+clang::CodeGen::CGFunctionInfoArgInfo::type = public final
+clang::CodeGen::CGOpenMPRuntime::OffloadEntriesInfoManagerTy = /*friend*/public
+clang::CodeGen::CGRecordLayout::BitFields = /*friend*/
+clang::CodeGen::CGRecordLayout::CompleteObjectVirtualBases = /*friend*/
+clang::CodeGen::CGRecordLayout::FieldInfo = /*friend*/
+clang::CodeGen::CGRecordLayout::NonVirtualBases = /*friend*/
+clang::CodeGen::CodeGenFunction::BreakContinue::BreakBlock = public final
+clang::CodeGen::CodeGenFunction::BreakContinue::ContinueBlock = public final
+clang::CodeGen::EHScope::CatchBitFields::NumHandlers = /*friend*/public
+clang::CodeGen::EHScope::CleanupBitFields::CleanupSize = /*friend*/public
+clang::CodeGen::EHScope::CleanupBitFields::IsActive = /*friend*/public
+clang::CodeGen::EHScope::CleanupBitFields::IsEHCleanup = /*friend*/public
+clang::CodeGen::EHScope::CleanupBitFields::IsLifetimeMarker = /*friend*/public
+clang::CodeGen::EHScope::CleanupBitFields::IsNormalCleanup = /*friend*/public
+clang::CodeGen::EHScope::CleanupBitFields::TestFlagInEHCleanup = /*friend*/public
+clang::CodeGen::EHScope::CleanupBitFields::TestFlagInNormalCleanup = /*friend*/public
+clang::CodeGen::EHScope::FilterBitFields::NumFilters = /*friend*/public
+
+[ID_NAME_CONVERSION]
+#FQN="llvm::VectorType"
+_ZN4llvm10VectorTypeE=org.llvm.ir.VectorType
+#FQN="llvm::PointerType"
+_ZN4llvm11PointerTypeE=org.llvm.ir.PointerType
+#FQN="llvm::FunctionType"
+_ZN4llvm12FunctionTypeE=org.llvm.ir.FunctionType
+#FQN="llvm::Type"
+_ZN4llvm4TypeE=org.llvm.ir.Type
+#FQN="llvm::ArrayType"
+_ZN4llvm9ArrayTypeE=org.llvm.ir.ArrayType
+#FQN="llvm::CallingConv"
+_ZN4llvm11CallingConvE_CallingConv_h_Unnamed_enum=org.llvm.ir.CallingConv
+#FQN="llvm::BinaryOperator"
+_ZN4llvm14BinaryOperatorE=org.llvm.ir.BinaryOperator
+#FQN="llvm::Module"
+_ZN4llvm6ModuleE=org.llvm.ir.Module
+
+#FQN="clang::VectorType"
+_ZN5clang10VectorTypeE=org.clang.ast.VectorType
+#FQN="clang::PointerType"
+_ZN5clang11PointerTypeE=org.clang.ast.PointerType
+#FQN="clang::FunctionType"
+_ZN5clang12FunctionTypeE=org.clang.ast.FunctionType
+#FQN="clang::Type"
+_ZN5clang4TypeE=org.clang.ast.Type
+#FQN="clang::ArrayType"
+_ZN5clang9ArrayTypeE=org.clang.ast.ArrayType
+#FQN=clang::CallingConv
+_ZN5clang11CallingConvE=org.clang.basic.CallingConv
+#FQN=clang::BinaryOperator
+_ZN5clang14BinaryOperatorE=org.clang.ast.BinaryOperator
+#FQN="clang::Module"
+_ZN5clang6ModuleE=org.clang.basic.Module

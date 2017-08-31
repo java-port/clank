@@ -1,0 +1,14 @@
+FILE_NAME = ImmutableMapPtrBool
+CLASS_SUFFIX = <KeyT>
+CLASS_TYPE = ImmutableMapPtrBool<KeyT>
+PAIR_TYPE = std.pairTypeBool<KeyT>
+AVL_TREE_TYPE = ImutAVLTreePtrBoolType<KeyT, std.pairTypeBool<KeyT>>
+AVL_FACTORY_TYPE = ImutAVLFactoryPtrBoolType<KeyT, std.pairTypeBool<KeyT>>
+AVL_VALUE_ITER_TYPE = ImutAVLValueIteratorPtrBoolType<std.pairTypeBool<KeyT>>
+KEY_VALUE_INFO = ImutKeyValueInfo$PtrBool<KeyT>
+KEY_TYPE = KeyT
+DATA_TYPE = boolean
+LOOKUP_TYPE = bool$ptr
+LOOKUP_RETURN_IMPL = bool$ptr$inout
+CALLBACK_FUNC_TYPE = TypeBool2Void<KeyT>
+JAVA_ITERATOR = JavaIterator<std.pairTypeBool<KeyT>>

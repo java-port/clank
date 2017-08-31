@@ -1,0 +1,15 @@
+/////////////////////////////////////////////
+/// MODULE org.clang.codegen
+
+/// Non virtual functions with the same name
+Address.getPointer()->ConstantAddress.getPointer() [1]
+Address.invalid()->ConstantAddress.invalid() [1]
+CGCXXABI.getMangleContext()->ItaniumCXXABI.getMangleContext() [2]
+CodeGenerator.CGM()->CodeGeneratorImpl.CGM() [1]
+CodeGenerator.GetAddrOfGlobal()->CodeGeneratorImpl.GetAddrOfGlobal() [1]
+CodeGenerator.GetDeclForMangledName()->CodeGeneratorImpl.GetDeclForMangledName() [1]
+CodeGenerator.GetModule()->CodeGeneratorImpl.GetModule() [1]
+CodeGenerator.ReleaseModule()->CodeGeneratorImpl.ReleaseModule() [1]
+DefaultABIInfo.classifyArgumentType()->WebAssemblyABIInfo.classifyArgumentType() [2]
+DefaultABIInfo.classifyReturnType()->WebAssemblyABIInfo.classifyReturnType() [2]
+TargetCodeGenInfo.getABIInfo()->X86_64TargetCodeGenInfo.getABIInfo() [2]

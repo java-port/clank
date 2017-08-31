@@ -1,0 +1,14 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.llvm.asmparser_delegates.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[EXTRA_MEMBERS]
+<include> "./LlvmAsmParserExtraMembers.txt"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt

@@ -1,0 +1,77 @@
+  @Test
+  public void test_QuoteCpuCC98Test_cpp() throws Throwable {
+    setTestFile("${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteCpuCC98Test.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu -fsyntax-only '-std=c++98' -verify ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteCpuCC98Test.cpp
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -fsyntax-only -std=c++98 -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu '-std=c++98' -analyze '-analyzer-checker=debug.DumpCFG' ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteCpuCC98Test.cpp 2>&1 > ${TEST_TEMP_DIR}/QuoteCpuCC98Test.cpp.cfg
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -std=c++98 -analyze -analyzer-checker=debug.DumpCFG %s 2>&1 > %T/QuoteCpuCC98Test.cpp.cfg");
+    // diff ${TEST_TEMP_DIR}/QuoteCpuCC98Test.cpp.cfg ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/Input/QuoteCpuCC98Test.cpp.cfg > ${TEST_TEMP_DIR}/QuoteCpuCC98Test.cpp.cfg.diff
+    RUN("diff %T/QuoteCpuCC98Test.cpp.cfg %S/Input/QuoteCpuCC98Test.cpp.cfg > %T/QuoteCpuCC98Test.cpp.cfg.diff");
+  }
+
+  @Test
+  public void test_QuoteCustomerCC98Test_cpp() throws Throwable {
+    setTestFile("${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteCustomerCC98Test.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu -fsyntax-only '-std=c++98' -verify ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteCustomerCC98Test.cpp
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -fsyntax-only -std=c++98 -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu '-std=c++98' -analyze '-analyzer-checker=debug.DumpCFG' ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteCustomerCC98Test.cpp 2>&1 > ${TEST_TEMP_DIR}/QuoteCustomerCC98Test.cpp.cfg
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -std=c++98 -analyze -analyzer-checker=debug.DumpCFG %s 2>&1 > %T/QuoteCustomerCC98Test.cpp.cfg");
+    // diff ${TEST_TEMP_DIR}/QuoteCustomerCC98Test.cpp.cfg ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/Input/QuoteCustomerCC98Test.cpp.cfg > ${TEST_TEMP_DIR}/QuoteCustomerCC98Test.cpp.cfg.diff
+    RUN("diff %T/QuoteCustomerCC98Test.cpp.cfg %S/Input/QuoteCustomerCC98Test.cpp.cfg > %T/QuoteCustomerCC98Test.cpp.cfg.diff");
+  }
+
+  @Test
+  public void test_QuoteDiskCC98Test_cpp() throws Throwable {
+    setTestFile("${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteDiskCC98Test.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu -fsyntax-only '-std=c++98' -verify ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteDiskCC98Test.cpp
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -fsyntax-only -std=c++98 -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu '-std=c++98' -analyze '-analyzer-checker=debug.DumpCFG' ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteDiskCC98Test.cpp 2>&1 > ${TEST_TEMP_DIR}/QuoteDiskCC98Test.cpp.cfg
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -std=c++98 -analyze -analyzer-checker=debug.DumpCFG %s 2>&1 > %T/QuoteDiskCC98Test.cpp.cfg");
+    // diff ${TEST_TEMP_DIR}/QuoteDiskCC98Test.cpp.cfg ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/Input/QuoteDiskCC98Test.cpp.cfg > ${TEST_TEMP_DIR}/QuoteDiskCC98Test.cpp.cfg.diff
+    RUN("diff %T/QuoteDiskCC98Test.cpp.cfg %S/Input/QuoteDiskCC98Test.cpp.cfg > %T/QuoteDiskCC98Test.cpp.cfg.diff");
+  }
+
+  @Test
+  public void test_QuoteMemoryCC98Test_cpp() throws Throwable {
+    setTestFile("${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteMemoryCC98Test.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu -fsyntax-only '-std=c++98' -verify ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteMemoryCC98Test.cpp
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -fsyntax-only -std=c++98 -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu '-std=c++98' -analyze '-analyzer-checker=debug.DumpCFG' ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteMemoryCC98Test.cpp 2>&1 > ${TEST_TEMP_DIR}/QuoteMemoryCC98Test.cpp.cfg
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -std=c++98 -analyze -analyzer-checker=debug.DumpCFG %s 2>&1 > %T/QuoteMemoryCC98Test.cpp.cfg");
+    // diff ${TEST_TEMP_DIR}/QuoteMemoryCC98Test.cpp.cfg ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/Input/QuoteMemoryCC98Test.cpp.cfg > ${TEST_TEMP_DIR}/QuoteMemoryCC98Test.cpp.cfg.diff
+    RUN("diff %T/QuoteMemoryCC98Test.cpp.cfg %S/Input/QuoteMemoryCC98Test.cpp.cfg > %T/QuoteMemoryCC98Test.cpp.cfg.diff");
+  }
+
+  @Test
+  public void test_QuoteModuleCC98Test_cpp() throws Throwable {
+    setTestFile("${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteModuleCC98Test.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu -fsyntax-only '-std=c++98' -verify ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteModuleCC98Test.cpp
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -fsyntax-only -std=c++98 -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu '-std=c++98' -analyze '-analyzer-checker=debug.DumpCFG' ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteModuleCC98Test.cpp 2>&1 > ${TEST_TEMP_DIR}/QuoteModuleCC98Test.cpp.cfg
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -std=c++98 -analyze -analyzer-checker=debug.DumpCFG %s 2>&1 > %T/QuoteModuleCC98Test.cpp.cfg");
+    // diff ${TEST_TEMP_DIR}/QuoteModuleCC98Test.cpp.cfg ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/Input/QuoteModuleCC98Test.cpp.cfg > ${TEST_TEMP_DIR}/QuoteModuleCC98Test.cpp.cfg.diff
+    RUN("diff %T/QuoteModuleCC98Test.cpp.cfg %S/Input/QuoteModuleCC98Test.cpp.cfg > %T/QuoteModuleCC98Test.cpp.cfg.diff");
+  }
+
+  @Test
+  public void test_QuoteQuoteCC98Test_cpp() throws Throwable {
+    setTestFile("${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteQuoteCC98Test.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu -fsyntax-only '-std=c++98' -verify ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteQuoteCC98Test.cpp
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -fsyntax-only -std=c++98 -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu '-std=c++98' -analyze '-analyzer-checker=debug.DumpCFG' ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteQuoteCC98Test.cpp 2>&1 > ${TEST_TEMP_DIR}/QuoteQuoteCC98Test.cpp.cfg
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -std=c++98 -analyze -analyzer-checker=debug.DumpCFG %s 2>&1 > %T/QuoteQuoteCC98Test.cpp.cfg");
+    // diff ${TEST_TEMP_DIR}/QuoteQuoteCC98Test.cpp.cfg ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/Input/QuoteQuoteCC98Test.cpp.cfg > ${TEST_TEMP_DIR}/QuoteQuoteCC98Test.cpp.cfg.diff
+    RUN("diff %T/QuoteQuoteCC98Test.cpp.cfg %S/Input/QuoteQuoteCC98Test.cpp.cfg > %T/QuoteQuoteCC98Test.cpp.cfg.diff");
+  }
+
+  @Test
+  public void test_QuoteSystemCC98Test_cpp() throws Throwable {
+    setTestFile("${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteSystemCC98Test.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu -fsyntax-only '-std=c++98' -verify ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteSystemCC98Test.cpp
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -fsyntax-only -std=c++98 -verify %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -triple x86_64-unknown-linux-gnu '-std=c++98' -analyze '-analyzer-checker=debug.DumpCFG' ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/QuoteSystemCC98Test.cpp 2>&1 > ${TEST_TEMP_DIR}/QuoteSystemCC98Test.cpp.cfg
+    RUN("%clang_cc1 -triple x86_64-unknown-linux-gnu -std=c++98 -analyze -analyzer-checker=debug.DumpCFG %s 2>&1 > %T/QuoteSystemCC98Test.cpp.cfg");
+    // diff ${TEST_TEMP_DIR}/QuoteSystemCC98Test.cpp.cfg ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/QuoteCpp98/Input/QuoteSystemCC98Test.cpp.cfg > ${TEST_TEMP_DIR}/QuoteSystemCC98Test.cpp.cfg.diff
+    RUN("diff %T/QuoteSystemCC98Test.cpp.cfg %S/Input/QuoteSystemCC98Test.cpp.cfg > %T/QuoteSystemCC98Test.cpp.cfg.diff");
+  }
+

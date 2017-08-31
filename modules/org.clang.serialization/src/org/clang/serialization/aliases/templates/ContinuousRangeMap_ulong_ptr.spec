@@ -1,0 +1,9 @@
+FILE_NAME = ContinuousRangeMapULongPtr
+CLASS_SUFFIX = <ValuePtr>
+KEY_TYPE = /*ulong*/long
+COMPARE_LESS_KEY=Unsigned.$less_ulong
+PAIR_TYPE = std.pairULongPtr<ValuePtr>
+RAW_PAIR_TYPE = std.pairULongPtr
+SMALL_VECTOR_TYPE=SmallVector<std.pairULongPtr<ValuePtr>>
+SMALL_VECTOR_INIT_WITH_CAPACITY = new SmallVector<std.pairULongPtr<ValuePtr>>(InitialCapacity, std.make_pair_ulong_Ptr(0L, (ValuePtr/*P*/)null))
+NUMBER_TO_KEY=longValue

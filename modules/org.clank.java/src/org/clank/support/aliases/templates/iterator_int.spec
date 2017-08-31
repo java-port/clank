@@ -1,0 +1,5 @@
+FILE_NAME = int$iterator
+TEMPLATE_TYPE =
+SUFFIX_COMMA =
+TYPE = int
+REFERENCE = int$ref

@@ -1,0 +1,176 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[TYPES_MAP]
+# The mapping below is OK only because it is local for analysis (in IR it would be different)
+# It corresponds to a typedef at Analyses/Dominators.h:33
+# I thought jconvert itself will unfold the typedef, but it didn't
+DomTreeNode = DomTreeNodeBase<CFGBlock>
+CallRecord = CallGraphNode
+std::pointer_to_unary_function<CallRecordTy, CallGraphNode /*P*/ > = CallGraphNode2CallGraphNode
+std::pointer_to_unary_function<type$ptr<CallRecordTy>, CallGraphNode /*P*/ > = CallGraphNode2CallGraphNode
+CFGBlockListTy::iterator = type$ptr<CFGBlock>
+CFGBlockListTy::const_iterator = type$ptr<CFGBlock>
+__normal_iterator<const_pointer, vector</*const*/ CFGBlock /*P*/ > > = std.vector.iterator<CFGBlock /*P*/>
+__normal_iterator<type$ptr<pointer>, vector<DomTreeNodeBase<CFGBlock> /*P*/ > > = type$iterator<?, DomTreeNodeBase<CFGBlock>>
+::CFGBlock::succ_iterator = type$ptr<CFGBlock>
+mapped_iterator<CallGraph.const_iterator, DerefFun> = mapped_iterator<DenseMapIterator</*const*/ Decl /*P*/ , CallGraphNode /*P*/>, DerefFun>
+mapped_iterator<CallGraph.iterator, DerefFun> = mapped_iterator<DenseMapIterator</*const*/ Decl /*P*/ , CallGraphNode /*P*/>, DerefFun>
+DenseMapIterator</*const*/ Stmt /*P*/ , PropagationInfo, DenseMapInfo</*const*/ Stmt /*P*/ >, std.pair</*const*/ Stmt /*P*/ , PropagationInfo> > = DenseMapIterator</*const*/ Stmt /*P*/ , PropagationInfo>
+DenseMapIterator</*const*/ Stmt /*P*/ , PropagationInfo, DenseMapInfo</*const*/ Stmt /*P*/ >, std.pair</*const*/ Stmt /*P*/ , PropagationInfo>, true> = DenseMapIterator</*const*/ Stmt /*P*/ , PropagationInfo>
+FilteredCFGBlockIterator<IMPL, IsPred> & = FilteredCFGBlockIterator<IMPL> /*&*/
+bool (const BinOp * ) const = BinOp2Bool
+bool (const ValueDecl * ) = ValueDecl2Bool
+Stmt * (* )(ASTContext & , const FunctionDecl * ) = ASTContextFunctionDecl2Stmt
+Stmt * (* const)(ASTContext & , const FunctionDecl * ) = ASTContextFunctionDecl2Stmt
+
+# The below lines look suspiciously; but there are ~20 classes in org.clang.analysis.analyses.threadSafety.til 
+# that use this extensvely in the form like
+# template <class V> typename V::R_SExpr traverse(V &Vs, typename V::R_Ctx Ctx);
+# And there are no other usages of these names in the module
+V::R_SExpr = boolean/*V::R_SExpr*/
+R::R_SExpr = boolean/*R::R_SExpr*/
+V::R_Ctx = SimpleReducerBase.TraversalKind/*V::R_Ctx*/
+R::R_Ctx = SimpleReducerBase.TraversalKind/*R::R_Ctx*/
+C::CType = boolean/*C::CType*/
+V::R_BasicBlock = BasicBlock/*V::R_BasicBlock*/
+
+const LiteralT<byte/*uint8_t*/> * = /*const*/LiteralTByte
+LiteralT<byte/*uint8_t*/> * = LiteralTByte
+
+DiagList = PartialDiagList
+OptionalNotes = OptionalNotes
+
+[EXTRA_MEMBERS]
+<include> "./AnalysisExtramembers.txt"
+clang::CFGBlock=IMPLEMENTS#NativeReverseIterable<type$ptr<CFGElement>>
+
+[MEMBER_ACCESS]
+clang::LiveVariables::LiveVariables=protected
+
+clang::AnalysisDeclContextManager::Injector=/*friend*/public
+clang::AnalysisDeclContextManager::getLocationContextManager=/*friend*/public
+
+clang::CFGBaseDtor::isKind=/*friend*/protected
+_ZN5clang11CFGBaseDtorC1Ev=/*friend*/protected
+clang::CFGDeleteDtor::isKind=/*friend*/protected
+_ZN5clang13CFGDeleteDtorC1Ev=/*friend*/protected
+clang::CFGInitializer::isKind=/*friend*/protected
+_ZN5clang14CFGInitializerC1Ev=/*friend*/protected
+clang::CFGStmt::isKind=/*friend*/protected
+_ZN5clang7CFGStmtC1Ev=/*friend*/protected
+clang::CFGTemporaryDtor::isKind=/*friend*/protected
+_ZN5clang16CFGTemporaryDtorC1Ev=/*friend*/protected
+clang::CFGMemberDtor::isKind=/*friend*/protected
+_ZN5clang13CFGMemberDtorC1Ev=/*friend*/protected
+clang::CFGAutomaticObjDtor::isKind=/*friend*/protected
+_ZN5clang19CFGAutomaticObjDtorC1Ev=/*friend*/protected
+clang::CFGNewAllocator::isKind=/*friend*/protected
+_ZN5clang15CFGNewAllocatorC1Ev=/*friend*/protected
+clang::CFGImplicitDtor::isKind=/*friend*/protected
+
+clang::EpsilonPoint::isKind=/*friend*/protected
+_ZN5clang12EpsilonPointC1Ev=/*friend*/protected
+clang::PreImplicitCall::isKind=/*friend*/protected
+_ZN5clang15PreImplicitCallC1Ev=/*friend*/protected
+clang::PostStmtPurgeDeadSymbols::isKind=/*friend*/protected
+_ZN5clang24PostStmtPurgeDeadSymbolsC1Ev=/*friend*/protected
+clang::CallExitEnd::isKind=/*friend*/protected
+_ZN5clang11CallExitEndC1Ev=/*friend*/protected
+clang::PreLoad::isKind=/*friend*/protected
+_ZN5clang7PreLoadC1Ev=/*friend*/protected
+clang::PostCondition::isKind=/*friend*/protected
+_ZN5clang13PostConditionC1Ev=/*friend*/protected
+clang::PostStore::isKind=/*friend*/protected
+_ZN5clang9PostStoreC1Ev=/*friend*/protected
+clang::PostLoad::isKind=/*friend*/protected
+_ZN5clang8PostLoadC1Ev=/*friend*/protected
+clang::PreStore::isKind=/*friend*/protected
+_ZN5clang8PreStoreC1Ev=/*friend*/protected
+clang::CallEnter::isKind=/*friend*/protected
+_ZN5clang9CallEnterC1Ev=/*friend*/protected
+clang::BlockEntrance::isKind=/*friend*/protected
+_ZN5clang13BlockEntranceC1Ev=/*friend*/protected
+clang::BlockEdge::isKind=/*friend*/protected
+_ZN5clang9BlockEdgeC1Ev=/*friend*/protected
+clang::PreStmtPurgeDeadSymbols::isKind=/*friend*/protected
+_ZN5clang23PreStmtPurgeDeadSymbolsC1Ev=/*friend*/protected
+clang::PostImplicitCall::isKind=/*friend*/protected
+_ZN5clang16PostImplicitCallC1Ev=/*friend*/protected
+clang::PostInitializer::isKind=/*friend*/protected
+_ZN5clang15PostInitializerC1Ev=/*friend*/protected
+clang::BlockExit::isKind=/*friend*/protected
+_ZN5clang9BlockExitC1Ev=/*friend*/protected
+clang::CallExitBegin::isKind=/*friend*/protected
+_ZN5clang13CallExitBeginC1Ev=/*friend*/protected
+clang::PostLValue::isKind=/*friend*/protected
+_ZN5clang10PostLValueC1Ev=/*friend*/protected
+clang::PreStmt::isKind=/*friend*/protected
+_ZN5clang7PreStmtC1Ev=/*friend*/protected
+clang::ImplicitCallPoint::isKind=/*friend*/protected
+_ZN5clang17ImplicitCallPointC1Ev=/*friend*/protected
+clang::PostStmt::isKind=/*friend*/protected
+_ZN5clang8PostStmtC1Ev=/*friend*/protected
+clang::LocationCheck::isKind=/*friend*/protected
+_ZN5clang13LocationCheckC1Ev=/*friend*/protected
+clang::StmtPoint::isKind=/*friend*/protected
+_ZN5clang9StmtPointC1Ev=/*friend*/protected
+
+clang::ScopeContext::ScopeContext=/*friend*/protected
+clang::StackFrameContext::StackFrameContext=/*friend*/protected
+clang::BlockInvocationContext::BlockInvocationContext=/*friend*/protected
+clang::threadSafety::til::Variable::Definition=/*friend*/protected
+
+clang::threadSafety::til::BasicBlock::CFGPtr=/*friend*/protected
+clang::threadSafety::til::BasicBlock::BlockID=/*friend*/protected
+clang::threadSafety::til::BasicBlock::DominatorNode=/*friend*/protected
+clang::threadSafety::til::BasicBlock::PostDominatorNode=/*friend*/protected
+clang::threadSafety::til::BasicBlock::topologicalFinalSort=/*friend*/protected
+clang::threadSafety::til::BasicBlock::computeDominator=/*friend*/protected
+clang::threadSafety::til::BasicBlock::computePostDominator=/*friend*/protected
+clang::threadSafety::til::BasicBlock::renumberInstrs=/*friend*/protected
+clang::threadSafety::til::BasicBlock::topologicalSort=/*friend*/protected
+
+(anonymous namespace)::BuildLockset::handleCall=/*friend*/protected
+(anonymous namespace)::BuildLockset::FSet=/*friend*/protected
+
+(anonymous namespace)::ThreadSafetyAnalyzer::SxBuilder=/*friend*/public
+(anonymous namespace)::ThreadSafetyAnalyzer::Handler=/*friend*/public
+(anonymous namespace)::ThreadSafetyAnalyzer::FactMan=/*friend*/public
+(anonymous namespace)::ThreadSafetyAnalyzer::LocalVarMap=/*friend*/protected
+
+clang::threadSafety::CFGVisitor::enterCFG=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::enterCFGBlock=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::visitPredecessors=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::handlePredecessor=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::handlePredecessorBackEdge=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::enterCFGBlockBody=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::handleStatement=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::handleDestructorCall=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::exitCFGBlockBody=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::visitSuccessors=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::handleSuccessor=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::handleSuccessorBackEdge=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::exitCFGBlock=@Override public /*friend*/
+clang::threadSafety::CFGVisitor::exitCFG=@Override public /*friend*/
+
+clang::threadSafety::SExprBuilder::enterCFG=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::enterCFGBlock=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::visitPredecessors=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::handlePredecessor=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::handlePredecessorBackEdge=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::enterCFGBlockBody=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::handleStatement=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::handleDestructorCall=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::exitCFGBlockBody=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::visitSuccessors=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::handleSuccessor=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::handleSuccessorBackEdge=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::exitCFGBlock=@Override public /*friend*/
+clang::threadSafety::SExprBuilder::exitCFG=@Override public /*friend*/

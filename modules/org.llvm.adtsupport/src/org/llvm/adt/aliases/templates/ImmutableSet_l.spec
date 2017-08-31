@@ -1,0 +1,11 @@
+FILE_NAME = ImmutableSetLong
+CLASS_SUFFIX =
+CLASS_TYPE = ImmutableSetLong
+AVL_TREE_TYPE = ImutAVLTreeLongBoolLong
+AVL_FACTORY_TYPE = ImutAVLFactoryLongBoolLong
+AVL_VALUE_ITER_TYPE = ImutAVLValueIteratorLongBoolLong
+CONTAINER_INFO = ImutContainerInfoLong
+KEY_TYPE = long
+CALLBACK_FUNC_TYPE = Long2Void
+BOXED_KEY_TYPE = Long
+JAVA_ITERATOR = JavaIteratorLong

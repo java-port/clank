@@ -1,0 +1,66 @@
+#add common conversions of types
+<include> "../../contrib/JConvert/llvmToClankType"
+
+[DELEGATE_BODY=LLVM39]
+<include> "./commands_org.clang.frontend_delegates.properties"
+[DELEGATE_BODY=LLVM38]
+<include> "./commands_org.clang.frontend_delegates.properties"
+[DELEGATE_BODY=LLVM36]
+<include> "./commands_prev_org.clang.frontend_delegates.properties"
+
+[STATICS_AND_GLOBALS]
+<include> "./statics_and_globals_org.clang.frontend.properties"
+
+[IMPORTS]
+<include> "./JavaImports"
+
+[OLD_NEW_POSITIONS_MAP]
+path = ./updated_positions.txt
+
+[TYPES_MAP]
+#typedef uint32_t Offset; 
+Offset=/*Offset*/int
+unique_ptr<StatListener, default_delete<StatListener> > = unique_ptr<StatListener>
+std::pair</*Offset*/int, /*Offset*/int>=std.pairUIntUInt/*<Offset,Offset>*/
+std::pair<Offset, Offset>=std.pairUIntUInt/*<Offset,Offset>*/
+std::pair</*Offset*/int, /*uint*/int>=std.pairIntUInt/*Offset,uint*/#new std.pairIntUInt/*Offset,uint*/(0,0) |
+std::pair</*Offset*/int, /*uint*/int>=std.pairIntInt/*Offset,uint*/#new std.pairIntUInt/*Offset,uint*/(0,0) |
+__normal_iterator<pointer, vector<StringMapEntry<OffsetOpt> /*P*/ , allocator<StringMapEntry<OffsetOpt> /*P*/ > > >=std.vector.iterator<StringMapEntry<OffsetOpt>>
+CheckerBase * = CheckerBaseImplementation/*P*/
+
+[EXTRA_MEMBERS]
+(anonymous namespace)::ASTPrinter = FILE#./extra_members/ASTPrinterExtraMembers.java
+(anonymous namespace)::FileEntryPTHEntryInfo = IMPLEMENTS#OnDiskChainedHashTableGenerator.EmitInfoInterface<PTHEntryKeyVariant,PTHEntry, Void/*unused*/>
+(anonymous namespace)::PTHIdentifierTableTrait = IMPLEMENTS#OnDiskChainedHashTableGenerator.EmitInfoInterface<PTHIdKey, Integer, Void/*unused*/>
+clang::ASTUnit::CachedCodeCompletionResult = IMPLEMENTS#NativeCloneable<CachedCodeCompletionResult>
+clang::ASTUnit::CachedCodeCompletionResult = IMPLEMENTS#NativeMoveable<CachedCodeCompletionResult>
+clang::ASTUnit::CachedCodeCompletionResult = FILE#./extra_members/CachedCodeCompletionResultExtraMembers.java
+clang::ASTUnit::PreambleFileHash = FILE#./extra_members/PreambleFileHashExtraMembers.java
+clang::ASTUnit::PreambleFileHash = IMPLEMENTS#NativePOD<PreambleFileHash>
+clang::ASTUnit::PreambleFileHash = IMPLEMENTS#NativeMoveable<PreambleFileHash>
+clang::ASTUnit::StandaloneDiagnostic = FILE#./extra_members/StandaloneDiagnosticExtraMembers.java
+clang::ASTUnit::StandaloneDiagnostic = IMPLEMENTS#NativeCloneable<StandaloneDiagnostic>
+clang::ASTUnit::StandaloneDiagnostic = IMPLEMENTS#NativeMoveable<StandaloneDiagnostic>
+clang::ASTUnit::StandaloneFixIt = FILE#./extra_members/StandaloneFixItExtraMembers.java
+clang::ASTUnit::StandaloneFixIt = IMPLEMENTS#NativeCloneable<StandaloneFixIt>
+clang::ASTUnit::StandaloneFixIt = IMPLEMENTS#NativeMoveable<StandaloneFixIt>
+clang::FrontendInputFile=IMPLEMENTS#NativeCloneable<FrontendInputFile>
+clang::FrontendInputFile=TEXT#@Override public FrontendInputFile clone() { return new FrontendInputFile(this); }
+clang::PCHBuffer = EXTENDS#PCHBufferBase
+
+[CONSTRUCTORS_PARAMETERS_MAP]
+
+[ID_NAME_CONVERSION]
+
+[MEMBER_ACCESS]
+#(anonymous namespace)::PrintPPOutputPPCallbacks::MoveToLine
+_ZN12_GLOBAL__N_124PrintPPOutputPPCallbacks10MoveToLineEj=private/*renamed and hidden due to collision with above one*/
+(anonymous namespace)::SDiagsWriter::EmitDiagnosticMessage=/*friend*/
+(anonymous namespace)::SDiagsWriter::EnterDiagBlock=/*friend*/
+(anonymous namespace)::SDiagsWriter::ExitDiagBlock=/*friend*/
+(anonymous namespace)::SDiagsWriter::EmitCodeContext=/*friend*/
+(anonymous namespace)::SDiagsWriter::getEmitCategory=/*friend*/
+(anonymous namespace)::SDiagsWriter::getEmitDiagnosticFlag=/*friend*/
+(anonymous namespace)::SDiagsWriter::getEmitFile=/*friend*/
+(anonymous namespace)::SDiagsWriter::State=/*friend*/
+(anonymous namespace)::SDiagsWriter::SharedState=/*friend*/

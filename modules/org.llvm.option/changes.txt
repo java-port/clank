@@ -1,0 +1,34 @@
+=== Category (ADDED) ===
+[CXXMethod,llvm::opt::ArgList::getLastArgNoClaim,/net/volvo/export/devarea/LLVM/llvm/include/llvm/Option/ArgList.h:190,_ZNK4llvm3opt7ArgList17getLastArgNoClaimENS0_12OptSpecifierES2_]
+[CXXMethod,llvm::opt::ArgList::filtered,/net/volvo/export/devarea/LLVM/llvm/include/llvm/Option/ArgList.h:153,_ZNK4llvm3opt7ArgList8filteredENS0_12OptSpecifierES2_S2_]
+[CXXMethod,llvm::opt::arg_iterator::operator=,/net/volvo/export/devarea/LLVM/llvm/include/llvm/Option/ArgList.h:29,_ZN4llvm3opt12arg_iteratoraSERKS1_]
+[CXXMethod,llvm::opt::arg_iterator::operator=,/net/volvo/export/devarea/LLVM/llvm/include/llvm/Option/ArgList.h:29,_ZN4llvm3opt12arg_iteratoraSEOS1_]
+
+=== Category (CHANGED) ===
+[CXXMethod,llvm::opt::Option::accept,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/Option.h:197,_ZNK4llvm3opt6Option6acceptERKNS0_7ArgListERjj]
+[CXXDestructor,llvm::opt::DerivedArgList::~DerivedArgList,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:342,_ZN4llvm3opt14DerivedArgListD0Ev]
+[CXXMethod,llvm::opt::ArgList::MakeArgString,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:277,_ZNK4llvm3opt7ArgList13MakeArgStringERKNS_5TwineE]
+[CXXMethod,llvm::opt::DerivedArgList::MakeSeparateArg,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:409,_ZNK4llvm3opt14DerivedArgList15MakeSeparateArgEPKNS0_3ArgENS0_6OptionENS_9StringRefE]
+[CXXMethod,llvm::opt::ArgList::AddAllArgsTranslated,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:252,_ZNK4llvm3opt7ArgList20AddAllArgsTranslatedERNS_11SmallVectorIPKcLj16EEENS0_12OptSpecifierES4_b]
+[CXXMethod,llvm::opt::DerivedArgList::AddSynthesizedArg,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:361,_ZN4llvm3opt14DerivedArgList17AddSynthesizedArgEPNS0_3ArgE]
+[CXXMethod,llvm::opt::ArgList::eraseArg,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:153,_ZN4llvm3opt7ArgList8eraseArgENS0_12OptSpecifierE]
+[Function,getOptionHelpName,/net/volvo/export/devarea/LLVM34_199213/llvm/lib/Option/OptTable.cpp:293,_ZL17getOptionHelpNameRKN4llvm3opt8OptTableENS0_12OptSpecifierE]
+[CXXMethod,llvm::opt::ArgList::AddAllArgs,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:238,_ZNK4llvm3opt7ArgList10AddAllArgsERNS_11SmallVectorIPKcLj16EEENS0_12OptSpecifierES7_S7_]
+[CXXMethod,llvm::opt::ArgList::ClaimAllArgs,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:258,_ZNK4llvm3opt7ArgList12ClaimAllArgsENS0_12OptSpecifierE]
+[CXXMethod,llvm::opt::OptTable::ParseArgs,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/OptTable.h:154,_ZNK4llvm3opt8OptTable9ParseArgsEPKPKcS5_RjS6_jj]
+[CXXMethod,llvm::opt::DerivedArgList::MakePositionalArg,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:404,_ZNK4llvm3opt14DerivedArgList17MakePositionalArgEPKNS0_3ArgENS0_6OptionENS_9StringRefE]
+[CXXConstructor,llvm::opt::ArgList::ArgList,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:108,_ZN4llvm3opt7ArgListC1Ev]
+[CXXMethod,llvm::opt::Arg::getOption,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/Arg.h:73,_ZNK4llvm3opt3Arg9getOptionEv]
+[CXXMethod,llvm::opt::ArgList::getLastArgNoClaim,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:178,_ZNK4llvm3opt7ArgList17getLastArgNoClaimENS0_12OptSpecifierE]
+[CXXMethod,llvm::opt::DerivedArgList::MakeFlagArg,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:400,_ZNK4llvm3opt14DerivedArgList11MakeFlagArgEPKNS0_3ArgENS0_6OptionE]
+[Field,llvm::opt::DerivedArgList::SynthesizedArgs,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:337,_ZN4llvm3opt14DerivedArgList15SynthesizedArgsE]
+[CXXDestructor,llvm::opt::ArgList::~ArgList,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:111,_ZN4llvm3opt7ArgListD0Ev]
+[CXXMethod,llvm::opt::DerivedArgList::MakeJoinedArg,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:414,_ZNK4llvm3opt14DerivedArgList13MakeJoinedArgEPKNS0_3ArgENS0_6OptionENS_9StringRefE]
+[CXXMethod,llvm::opt::ArgList::AddAllArgValues,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/ArgList.h:243,_ZNK4llvm3opt7ArgList15AddAllArgValuesERNS_11SmallVectorIPKcLj16EEENS0_12OptSpecifierES7_S7_]
+
+=== Category (COMMENT) ===
+[CXXRecord,llvm::opt::Arg,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/Arg.h:34,_ZN4llvm3opt3ArgE]
+
+=== Category (REMOVED) ===
+[CXXMethod,llvm::opt::Option::operator=,/net/volvo/export/devarea/LLVM34_199213/llvm/include/llvm/Option/Option.h:44,_ZN4llvm3opt6OptionaSERKS1_]
+

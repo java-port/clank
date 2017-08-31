@@ -1,0 +1,184 @@
+[EXTRA_MEMBERS]
+(anonymous namespace)::ActOnFDArgs=FILE#./extra_members/ActOnFDArgsExtraMembers.java
+(anonymous namespace)::CaseCompareFunctor = IMPLEMENTS#Native.ComparatorLower<std.pair<APSInt, CaseStmt /*P*/ > , APSInt /*&*/>
+(anonymous namespace)::CaseCompareFunctor = FILE#./extra_members/CaseCompareFunctorExtraMembers.java
+(anonymous namespace)::CastOperation=FILE#./extra_members/CastOperationExtraMembers.java
+(anonymous namespace)::CatchTypePublicBases = IMPLEMENTS#BaseMatchesCallback
+(anonymous namespace)::CollectUnexpandedParameterPacksVisitor = FILE#./extra_members/CollectUnexpandedParameterPacksVisitorExtraMembers.java
+(anonymous namespace)::DSAStackTy::SharingMapTy = IMPLEMENTS#NativeCloneable<SharingMapTy>
+(anonymous namespace)::DSAStackTy::SharingMapTy = FILE#./extra_members/SharingMapTyExtraMembers.java
+(anonymous namespace)::DenseMapInfoDupKey = FILE#./extra_members/DenseMapInfoDupKeyExtraMembers.java
+(anonymous namespace)::DenseMapInfoDupKey = IMPLEMENTS#DenseMapInfo<DupKey>
+(anonymous namespace)::DenseMapInfoDupKey = EXTENDS#DenseMapInfoBase<DupKey>
+(anonymous namespace)::DependencyChecker = FILE#./extra_members/DependencyCheckerExtraMembers.java
+(anonymous namespace)::EvaluatedExprMarker = FILE#./extra_members/EvaluatedExprMarkerExtraMembers.java
+(anonymous namespace)::FallthroughMapper = FILE#./extra_members/FallthroughMapperExtraMembers.java
+(anonymous namespace)::FindCXXThisExpr = FILE#./extra_members/FindCXXThisExprExtraMembers.java
+(anonymous namespace)::FindHiddenVirtualMethod = IMPLEMENTS#BaseMatchesCallback
+(anonymous namespace)::FindOverriddenMethod = IMPLEMENTS#BaseMatchesCallback
+(anonymous namespace)::FindTypoExprs = FILE#./extra_members/FindTypoExprsExtraMembers.java
+(anonymous namespace)::GNUCompatibleParamWarning = FILE#./extra_members/GNUCompatibleParamWarningExtraMembers.java
+(anonymous namespace)::GNUCompatibleParamWarning = IMPLEMENTS#NativeCloneable<GNUCompatibleParamWarning>
+(anonymous namespace)::JumpScopeChecker::GotoScope=IMPLEMENTS#NativePOD<GotoScope>
+(anonymous namespace)::JumpScopeChecker::GotoScope=FILE#./extra_members/JumpScopeCheckerGotoScopeExtraMembers.java
+(anonymous namespace)::NestedNameSpecifierAnnotation = TEXT#public char$ptr $trailingObject; // see Sema::SaveNestedNameSpecifierAnnotation at SemaCXXScopeSpec.cpp:996
+(anonymous namespace)::PartialSpecMatchResult=FILE#./extra_members/PartialSpecMatchResultExtraMembers.java
+(anonymous namespace)::PartialSpecMatchResult = IMPLEMENTS#Native.NativePOD<PartialSpecMatchResult>
+
+(anonymous namespace)::ResultBuilder::ShadowMapEntry=IMPLEMENTS#NativeCloneable<ShadowMapEntry>
+(anonymous namespace)::ResultBuilder::ShadowMapEntry=TEXT#@Override public ShadowMapEntry clone() { return new ShadowMapEntry(this); }
+(anonymous namespace)::SequenceChecker::SequenceTree::Seq=IMPLEMENTS#NativePOD<Seq>
+(anonymous namespace)::SequenceChecker::SequenceTree::Seq=TEXT#@Override public Seq clone() { return new Seq(this); }
+
+(anonymous namespace)::SequenceChecker::SequenceTree::Value=IMPLEMENTS#NativeCloneable<Value>
+(anonymous namespace)::SequenceChecker::SequenceTree::Value=TEXT#@Override public Value clone() { return new Value(this); }
+(anonymous namespace)::SequenceChecker::SequenceTree::Value=TEXT#public Value(Value $Prm0) { this.Parent $EQ $Prm0.Parent; this.Merged $EQ $Prm0.Merged; }
+(anonymous namespace)::SequenceChecker::SequenceTree::Value=TEXT#public Value() { this(0); }
+
+(anonymous namespace)::SequenceChecker::Usage=IMPLEMENTS#NativeCloneable<Usage>
+(anonymous namespace)::SequenceChecker::Usage=TEXT#@Override public Usage clone() { return new Usage(this); }
+
+(anonymous namespace)::SequenceChecker::UsageInfo=IMPLEMENTS#NativeCloneable<UsageInfo>
+(anonymous namespace)::SequenceChecker::UsageInfo=TEXT#@Override public UsageInfo clone() { return new UsageInfo(this); }
+(anonymous namespace)::UnqualUsingEntry = IMPLEMENTS#NativePOD<UnqualUsingEntry>
+(anonymous namespace)::UnqualUsingEntry = TEXT#public UnqualUsingEntry(final UnqualUsingEntry $Prm0) { this($Prm0.Nominated, $Prm0.CommonAncestor); }
+(anonymous namespace)::UnqualUsingEntry = TEXT#@Override public UnqualUsingEntry clone() { return new UnqualUsingEntry(this); }
+(anonymous namespace)::UnqualUsingEntry::Comparator = FILE#./extra_members/ComparatorExtraMembers.java
+(anonymous namespace)::UnusedBackingIvarChecker = FILE#./extra_members/UnusedBackingIvarCheckerExtraMembers.java
+ReadySuspendResumeResult=TEXT#public ReadySuspendResumeResult(boolean b) {IsInvalid $EQ b;}
+#clang::InitializedEntity::(anonymous)
+_ZN5clang17InitializedEntityE_Unnamed_union3 = TEXT#/**/ char $lower$bits; // the lowest bit corresponds to base lower bit, the 2-nd - to Param lower bit
+_ZN5clang17InitializedEntityE_Unnamed_union3 = TEXT#protected Unnamed_union3() {}
+_ZN5clang20DeductionFailureInfoE_Unnamed_union1=TEXT#@Converted(kind $EQ Converted.Kind.MANUAL_ADDED) public Unnamed_union1() {}
+_ZN5clang20DeductionFailureInfoE_Unnamed_union1=TEXT#@Converted(kind $EQ Converted.Kind.MANUAL_ADDED) public Unnamed_union1(final Unnamed_union1 $Prm0) { $assign($Prm0); }
+
+_ZZN5clang4Sema25diagnoseIgnoredQualifiersEjjNS_14SourceLocationES1_S1_S1_S1_S1_E4Qual = TEXT#public Qual(char$ptr Name, int Mask, SourceLocation Loc) {this.Name $EQ Name; this.Mask $EQ Mask; this.Loc $EQ Loc;}
+clang::ADLResult::select_second = IMPLEMENTS#Converter<std.pair<NamedDecl /*P*/ , NamedDecl /*P*/ >, NamedDecl /*P*/>
+clang::ActionResult = FILE#./extra_members/ActionResultExtraMembers.java
+clang::ActionResult<type-parameter-0-0, true> = IMPLEMENTS#NativeCloneable<ActionResultTTrue>
+clang::ActionResult<type-parameter-0-0, true> = FILE#./extra_members/ActionResultTTrueExtraMembers.java
+clang::CXXScopeSpec = FILE#./extra_members/CXXScopeSpecExtraMembers.java
+clang::CodeCompleteConsumer::OverloadCandidate = FILE#./extra_members/OverloadCandidateExtraMembers.java
+clang::CodeCompleteConsumer::OverloadCandidate = IMPLEMENTS#NativeCloneable<OverloadCandidate>
+clang::CodeCompleteConsumer::OverloadCandidate::(anonymous) = FILE#./extra_members/Unnamed_union1ExtraMembers.java
+
+clang::CodeCompletionResult=IMPLEMENTS#NativePOD<CodeCompletionResult>
+clang::CodeCompletionResult=TEXT#@Override public boolean $less(Object obj) { return $less(this, (CodeCompletionResult) obj); }
+clang::CodeCompletionResult=TEXT#@Override public CodeCompletionResult clone() { return new CodeCompletionResult(this); }
+clang::CodeCompletionString = TEXT#/*this + 1*/ private Object[] $this$plus$one;
+clang::CodeCompletionString=IMPLEMENTS#Iterable<CodeCompletionString.Chunk>
+clang::CodeCompletionString=TEXT#@Override public Iterator<Chunk> iterator() {return new JavaIterator(begin(), end());}
+
+clang::CodeCompletionString::Chunk=IMPLEMENTS#NativePOD<Chunk>
+clang::CodeCompletionString::Chunk=TEXT#@Override public Chunk clone() { return new Chunk().$assign(this); }
+clang::ConversionFixItGenerator = FILE#./extra_members/ConversionFixItGeneratorExtraMembers.java
+clang::ConversionFixItGenerator = IMPLEMENTS#NativePOD<ConversionFixItGenerator>
+clang::DeclFilterCCC = FILE#./extra_members/DeclFilterCCCExtraMembers.java
+clang::DeducedPack = IMPLEMENTS#NativeCloneable<DeducedPack>
+clang::DeducedPack = FILE#./extra_members/DeducedPackExtraMembers.java
+clang::DeducedTemplateArgument=TEXT#@Override public DeducedTemplateArgument clone() { return new DeducedTemplateArgument(this); }
+
+clang::DeductionFailureInfo=FILE#./extra_members/DeductionFailureInfoExtraMembers.java
+clang::Designator = IMPLEMENTS#NativeCloneable<Designator>
+clang::Designator = IMPLEMENTS#NativeMoveable<Designator>
+clang::Designator = FILE#./extra_members/DesignatorExtraMembers.java
+clang::Designator::(anonymous) = FILE#./extra_members/Unnamed_union4ExtraMembers.java
+clang::Designator::ArrayDesignatorInfo = FILE#./extra_members/ArrayDesignatorInfoExtraMembers.java
+clang::Designator::FieldDesignatorInfo = FILE#./extra_members/FieldDesignatorInfoExtraMembers.java
+clang::ExternalVTableUse = IMPLEMENTS#NativePOD<ExternalVTableUse>
+clang::ExternalVTableUse = FILE#./extra_members/ExternalVTableUseExtraMembers.java
+clang::FileNullability = IMPLEMENTS#NativePOD<FileNullability>
+clang::FileNullability = FILE#./extra_members/FileNullabilityExtraMembers.java
+clang::GlobalCodeCompletionAllocator = FILE#./extra_members/GlobalCodeCompletionAllocatorExtraMembers.java
+clang::IdentifierResolver::iterator = FILE#./extra_members/iteratorExtraMembers.java
+clang::IdentifierResolver::iterator = IMPLEMENTS#Native.assignable<iterator>
+clang::IdentifierResolver::iterator = IMPLEMENTS#type$iterator<iterator, NamedDecl /*P*/>
+clang::InitializationSequence::Step=IMPLEMENTS#NativePOD<Step>
+clang::InitializationSequence::Step=TEXT#@Override public Step clone() { return new Step().$assign(this); }
+clang::InitializedEntity=IMPLEMENTS#NativePOD<InitializedEntity>
+clang::InitializedEntity=TEXT#@Override public InitializedEntity clone() { return new InitializedEntity(this); }
+clang::LambdaIntroducer::LambdaCapture = IMPLEMENTS#NativePOD<LambdaCapture>
+clang::LambdaIntroducer::LambdaCapture = FILE#./extra_members/LambdaCaptureExtraMembers.java
+
+clang::LookupResult=IMPLEMENTS#NativeMoveable<LookupResult>
+clang::LookupResult=TEXT#@Override public LookupResult move() { return new LookupResult(JD$Move.INSTANCE, this); }
+clang::LookupResult=IMPLEMENTS#Iterable<NamedDecl>
+clang::LookupResult=TEXT#@Override public Iterator<NamedDecl> iterator() {return new JavaIterator(begin(), end());}
+clang::LookupResult = IMPLEMENTS#NativeIterable<UnresolvedSetIterator>
+
+clang::ObjCMethodList = IMPLEMENTS#NativePOD<ObjCMethodList>
+clang::ObjCMethodList = FILE#./extra_members/ObjCMethodListExtraMembers.java
+
+clang::OpaquePtr=IMPLEMENTS#NativeCloneable<OpaquePtr>
+clang::OpaquePtr=FILE#./extra_members/OpaquePtrExtraMembers.java
+clang::OverloadCandidate = IMPLEMENTS#NativePOD<OverloadCandidate>
+clang::OverloadCandidate = IMPLEMENTS#NativeMoveable<OverloadCandidate>
+clang::OverloadCandidate = FILE#./extra_members/OverloadCandidateExtraMembers.java
+clang::OverloadCandidate::(anonymous) = FILE#./extra_members/Unnamed_union2ExtraMembers.java
+clang::OverloadCandidateSet=IMPLEMENTS#Iterable<OverloadCandidate>
+clang::OverloadCandidateSet=TEXT#@Override public Iterator<OverloadCandidate> iterator() {return new JavaIterator(begin(), end());}
+
+clang::ParsedTemplateArgument=IMPLEMENTS#NativePOD<ParsedTemplateArgument>
+clang::ParsedTemplateArgument=TEXT#@Override public ParsedTemplateArgument clone() { return new ParsedTemplateArgument(this); }
+
+clang::PartialSpecMatchResult=IMPLEMENTS#NativePOD<PartialSpecMatchResult>
+clang::Sema = FILE#./extra_members/SemaExtraMembers.java
+clang::Sema::ActiveTemplateInstantiation = IMPLEMENTS#NativePOD<ActiveTemplateInstantiation>
+clang::Sema::ActiveTemplateInstantiation = FILE#./extra_members/ActiveTemplateInstantiationExtraMembers.java
+
+clang::Sema::LateInstantiatedAttribute=IMPLEMENTS#Native.NativePOD<LateInstantiatedAttribute>
+clang::Sema::LateInstantiatedAttribute=FILE#./extra_members/LateInstantiatedAttributeExtraMembers.java
+clang::Sema::OffsetOfComponent = IMPLEMENTS#NativeCloneable<OffsetOfComponent>
+clang::Sema::OffsetOfComponent = FILE#./extra_members/OffsetOfComponentExtraMembers.java
+clang::Sema::OffsetOfComponent::(anonymous) = FILE#./extra_members/Unnamed_union1ExtraMembers.java
+clang::Sema::OriginalCallArg = IMPLEMENTS#NativeCloneable<OriginalCallArg>
+clang::Sema::OriginalCallArg = FILE#./extra_members/OriginalCallArgExtraMembers.java
+clang::Sema::TypeTagData = FILE#./extra_members/TypeTagDataExtraMembers.java
+clang::Sema::TypeTagData = IMPLEMENTS#NativePOD<TypeTagData>
+clang::Sema::TypoExprState = IMPLEMENTS#NativeMoveable<TypoExprState>, NativeCloneable<TypoExprState>
+clang::TemplateArgumentLocContainerIterator = FILE#./extra_members/TemplateArgumentLocContainerIteratorExtraMembers.java
+clang::TemplateArgumentLocContainerIterator = IMPLEMENTS#type$iterator<TemplateArgumentLocContainerIterator, TemplateArgumentLoc>
+clang::TemplateArgumentLocInventIterator = FILE#./extra_members/TemplateArgumentLocInventIteratorExtraMembers.java
+clang::TemplateArgumentLocInventIterator = IMPLEMENTS#type$iterator<TemplateArgumentLocInventIterator, TemplateArgumentLoc>
+
+clang::TemplateIdAnnotation=TEXT#ParsedTemplateArgument[] parsedTemplateArguments; // this+1
+clang::TemplateIdAnnotation=FILE#./extra_members/TemplateIdAnnotationExtraMembers.java
+
+clang::TemplateSpecCandidate=IMPLEMENTS#NativeCloneable<TemplateSpecCandidate>
+clang::TemplateSpecCandidate=FILE#./extra_members/TemplateSpecCandidateExtraMembers.java
+clang::TreeTransform = FILE#./extra_members/TreeTransformExtraMembers.java
+clang::TypeLocBuilder = FILE#./extra_members/TypeLocBuilderExtraMembers.java
+clang::TypoCorrection = IMPLEMENTS#Iterable<NamedDecl>
+clang::TypoCorrection = IMPLEMENTS#NativeCloneable<TypoCorrection>
+clang::TypoCorrection = IMPLEMENTS#NativeMoveable<TypoCorrection>
+clang::TypoCorrection = FILE#./extra_members/TypoCorrectionExtraMembers.java
+#clang::TypoCorrection=IMPLEMENTS#NativeMoveable<TypoCorrection>
+clang::TypoCorrectionConsumer::NamespaceSpecifierSet = IMPLEMENTS#Iterable<NamespaceSpecifierSet.SpecifierInfo>
+clang::TypoCorrectionConsumer::NamespaceSpecifierSet = FILE#./extra_members/NamespaceSpecifierSetExtraMembers.java
+clang::TypoCorrectionConsumer::NamespaceSpecifierSet::SpecifierInfo = FILE#/extra_members/SpecifierInfoExtraMembers.java
+clang::UnionOpaquePtr=TEXT#protected UnionOpaquePtr() {}
+clang::UserDefinedConversionSequence = FILE#./extra_members/UserDefinedConversionSequenceExtraMembers.java
+clang::UserDefinedConversionSequence = IMPLEMENTS#NativeCloneable<UserDefinedConversionSequence>
+clang::WeakInfo=IMPLEMENTS#NativeCloneable<WeakInfo>
+clang::WeakInfo=TEXT#@Override public WeakInfo clone() { return new WeakInfo(this); }
+clang::sema::AccessedEntity = FILE#./extra_members/AccessedEntityExtraMembers.java
+clang::sema::CapturingScopeInfo::Capture = FILE#./extra_members/CaptureExtraMembers.java
+clang::sema::CapturingScopeInfo::Capture = IMPLEMENTS#NativeCloneable<Capture>
+clang::sema::CompoundScopeInfo = IMPLEMENTS#NativePOD<CompoundScopeInfo>
+clang::sema::CompoundScopeInfo = FILE#./extra_members/CompoundScopeInfoExtraMembers.java
+clang::sema::DelayedDiagnostic = IMPLEMENTS#NativePOD<DelayedDiagnostic>
+clang::sema::DelayedDiagnostic = IMPLEMENTS#NativeMoveable<DelayedDiagnostic>
+clang::sema::DelayedDiagnostic = FILE#./extra_members/DelayedDiagnosticExtraMembers.java
+clang::sema::DelayedDiagnostic::(anonymous) = FILE#./extra_members/Unnamed_union3ExtraMembers.java
+clang::sema::DelayedDiagnostic::(anonymous) = IMPLEMENTS#NativePOD<Unnamed_union3>
+clang::sema::DelayedDiagnosticPool=IMPLEMENTS#NativeMoveable<DelayedDiagnosticPool>
+clang::sema::DelayedDiagnosticPool=TEXT#@Override public DelayedDiagnosticPool move() { return new DelayedDiagnosticPool(JD$Move.INSTANCE, this); }
+clang::sema::FunctionScopeInfo::WeakUseTy = IMPLEMENTS#Native.NativePOD<WeakUseTy>
+clang::sema::FunctionScopeInfo::WeakUseTy = FILE#./extra_members/WeakUseTyExtraMembers.java
+clang::sema::PossiblyUnreachableDiag = IMPLEMENTS#NativeMoveable<PossiblyUnreachableDiag>
+clang::sema::PossiblyUnreachableDiag = IMPLEMENTS#NativeCloneable<PossiblyUnreachableDiag>
+clang::sema::PossiblyUnreachableDiag = IMPLEMENTS#Native.assignable<PossiblyUnreachableDiag>
+clang::sema::PossiblyUnreachableDiag = FILE#./extra_members/PossiblyUnreachableDiagExtraMembers.java
+
+llvm::DenseMapInfo<(anonymous)::CatchHandlerType> = IMPLEMENTS#org.llvm.adt.DenseMapInfo<CatchHandlerType>
+llvm::DenseMapInfo<(anonymous)::CatchHandlerType> = FILE#./extra_members/DenseMapInfoCatchHandlerTypeExtraMembers.java

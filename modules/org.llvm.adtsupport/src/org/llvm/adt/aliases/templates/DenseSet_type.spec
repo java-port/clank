@@ -1,0 +1,14 @@
+FILE_NAME = DenseSet
+CLASS_SUFFIX = <ValueT>
+DENSE_MAP_ITER = DenseMapIteratorTypeChar<ValueT>
+DENSE_MAP_ITSELF = DenseMapTypeChar<ValueT>
+DENSE_MAP_INFO = DenseMapInfo<ValueT>
+ITERATOR_TYPE = iterator<ValueT>
+REFERENCE_TO_VALUE = type$ref<ValueT>
+POINTER_TO_VALUE = type$ptr<ValueT>
+ITERATOR_INTERFACE = type$iterator<iterator<ValueT>, ValueT>
+GENERIC_ITERATOR = type$iterator<?, ValueT>
+VALUE_TYPE = ValueT
+MAKE_PAIR_VALUE_CHAR_FACTORY_MTD = std.make_pair_T_char
+BOXED_TYPE = ValueT
+JAVA_ITERATOR = JavaIterator

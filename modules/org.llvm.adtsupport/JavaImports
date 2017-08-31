@@ -1,0 +1,7 @@
+org.llvm.cl.*
+static org.llvm.support.impl.CommandLineStatics.*
+org.clank.java.stdimpl.aliases.*
+org.llvm.support.impl.*
+org.llvm.support.sys.*
+org.llvm.adt.ADTFunctionPointers.*
+org.llvm.adt.*

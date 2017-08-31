@@ -1,0 +1,5 @@
+/////////////////////////////////////////////
+/// MODULE org.llvm.profiledata
+
+/// Non virtual functions with the same name
+SampleProfileWriter.write()->SampleProfileWriterText.write() [2]

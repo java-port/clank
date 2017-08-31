@@ -1,0 +1,22 @@
+org.clang.basic.Module
+org.clank.java.*
+org.clank.support.*
+org.clank.support.aliases.*
+org.clank.support.JavaDifferentiators.*
+static org.clank.java.built_in.*
+static org.clank.support.Casts.*
+static org.clank.java.io.*
+static org.clank.java.std.*
+static org.llvm.adt.ADTAliases.*
+static org.llvm.support.llvm.*
+static org.clank.support.NativePointer.*
+static org.clank.support.NativeType.*
+static org.clank.support.Native.*
+static org.clank.support.Unsigned.*
+org.clank.support.NativeCallback.*
+org.llvm.support.*
+org.llvm.adt.*
+org.llvm.adt.aliases.*
+org.llvm.ir.*
+org.llvm.linker.*;
+org.llvm.transforms.utils.*

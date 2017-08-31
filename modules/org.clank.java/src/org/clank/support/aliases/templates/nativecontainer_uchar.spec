@@ -1,0 +1,3 @@
+FILE_NAME = NativeContainerUChar
+TEMPLATE_PARAMS =
+VALUE_TYPE = byte

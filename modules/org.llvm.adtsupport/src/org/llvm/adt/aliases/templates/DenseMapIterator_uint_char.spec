@@ -1,0 +1,9 @@
+FILE_NAME = DenseMapIteratorUIntChar
+CLASS_SUFFIX =
+PAIR_TYPE = std.pairUIntChar
+KEY_TYPE = int
+RAW_KEY_TYPE = int
+VALUE_TYPE = byte
+DENSE_MAP_INFO = DenseMapInfoUInt
+IS_DATA_POINTER_LIKE=false
+DENSE_MAP = DenseMapUIntChar

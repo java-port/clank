@@ -1,0 +1,9 @@
+FILE_NAME = SmallDenseMapTypeUShort
+CLASS_SUFFIX = <KeyT>
+PAIR_TYPE = std.pairTypeUShort<KeyT>
+PAIR_NAME = std.pairTypeUShort
+KEY_TYPE = KeyT
+RAW_KEY_TYPE = Object
+VALUE_TYPE = /*ushort*/char
+DENSE_MAP_INFO = DenseMapInfo<KeyT>
+DENSE_MAP_BASE = DenseMapBaseTypeUShort<SmallDenseMapTypeUShort<KeyT>, KeyT>

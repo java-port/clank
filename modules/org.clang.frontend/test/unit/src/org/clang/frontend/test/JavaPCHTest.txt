@@ -1,0 +1,11 @@
+  @Test
+  public void test_chain_cxx_java_cpp() throws Throwable {
+    setTestFile("${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/PCH/chain-cxx-java.cpp");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify -include ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/PCH/chain-cxx-java.cpp -include ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/PCH/chain-cxx-java.cpp ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/PCH/chain-cxx-java.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify -include %s -include %s %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/PCH/chain-cxx-java.cpp -chain-include ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/PCH/chain-cxx-java.cpp -chain-include ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/PCH/chain-cxx-java.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify %s -chain-include %s -chain-include %s");
+    // ${LLVM_SRC}/build/bin/clang -cc1 -internal-isystem ${LLVM_SRC}/build/lib/clang/3.9.0/include -nostdsysteminc -fsyntax-only -verify -fmodules ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/PCH/chain-cxx-java.cpp -chain-include ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/PCH/chain-cxx-java.cpp -chain-include ${SPUTNIK}/modules/org.clang.frontend/test/unit/data/org/clang/frontend/test/PCH/chain-cxx-java.cpp
+    RUN("%clang_cc1 -fsyntax-only -verify -fmodules %s -chain-include %s -chain-include %s");
+  }
+
