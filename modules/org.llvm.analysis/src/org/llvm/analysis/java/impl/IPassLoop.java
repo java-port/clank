@@ -73,65 +73,15 @@
  * ARM contributions   llvm/lib/Target/ARM/LICENSE.TXT
  * md5 contributions   llvm/lib/Support/MD5.cpp llvm/include/llvm/Support/MD5.h
  */
+package org.llvm.analysis.java.impl;
 
-package org.llvm.analysis;
+import org.llvm.analysis.Loop;
+import org.llvm.ir.AnalysisManager;
 
-import org.clank.support.*;
-import org.clank.support.JavaDifferentiators.*;
-import org.llvm.ir.*;
-import org.llvm.ir.java.IPassFunction;
-
-
-/// \brief Analysis pass which computes a \c DominanceFrontier.
-//<editor-fold defaultstate="collapsed" desc="llvm::DominanceFrontierAnalysis">
-@Converted(kind = Converted.Kind.AUTO,
- source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DominanceFrontier.h", line = 171,
- FQN="llvm::DominanceFrontierAnalysis", NM="_ZN4llvm25DominanceFrontierAnalysisE",
- cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DominanceFrontier.cpp -nm=_ZN4llvm25DominanceFrontierAnalysisE")
-//</editor-fold>
-public class DominanceFrontierAnalysis implements /*public*/ AnalysisInfoMixin<DominanceFrontierAnalysis>, IPassFunction<DominanceFrontier> {
-  /*friend  AnalysisInfoMixin<DominanceFrontierAnalysis>*/
-  private static /*char*/byte PassID;
-/*public:*/
-  /// \brief Provide the result typedef for this analysis pass.
-  // JAVA: typedef DominanceFrontier Result
-//  public final class Result extends DominanceFrontier{ };
-  
-  /// \brief Run the analysis pass over a function and produce a dominator tree.
-  //<editor-fold defaultstate="collapsed" desc="llvm::DominanceFrontierAnalysis::run">
-  @Converted(kind = Converted.Kind.AUTO,
-   source = "${LLVM_SRC}/llvm/lib/Analysis/DominanceFrontier.cpp", line = 61,
-   FQN="llvm::DominanceFrontierAnalysis::run", NM="_ZN4llvm25DominanceFrontierAnalysis3runERNS_8FunctionERNS_15AnalysisManagerIS1_EE",
-   cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DominanceFrontier.cpp -nm=_ZN4llvm25DominanceFrontierAnalysis3runERNS_8FunctionERNS_15AnalysisManagerIS1_EE")
-  //</editor-fold>
-  public DominanceFrontier run(final Function /*&*/ F, 
-     final AnalysisManager<Function> /*&*/ AM) {
-    DominanceFrontier DF = null;
-    try {
-      DF/*J*/= new DominanceFrontier();
-      DF.analyze(AM.getResult(DominatorTreeAnalysis.class, F));
-      return new DominanceFrontier(JD$Move.INSTANCE, DF);
-    } finally {
-      if (DF != null) { DF.$destroy(); }
-    }
-  }
-
-
-  //<editor-fold defaultstate="collapsed" desc="llvm::DominanceFrontierAnalysis::DominanceFrontierAnalysis">
-  @Converted(kind = Converted.Kind.AUTO,
-   source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DominanceFrontier.h", line = 171,
-   FQN="llvm::DominanceFrontierAnalysis::DominanceFrontierAnalysis", NM="_ZN4llvm25DominanceFrontierAnalysisC1EOS0_",
-   cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Passes/PassBuilder.cpp -nm=_ZN4llvm25DominanceFrontierAnalysisC1EOS0_")
-  //</editor-fold>
-  public /*inline*/ DominanceFrontierAnalysis(JD$Move _dparam, final DominanceFrontierAnalysis /*&&*/$Prm0) {
-    // : AnalysisInfoMixin<DominanceFrontierAnalysis>(static_cast<DominanceFrontierAnalysis &&>()) 
-    //START JInit
-    $AnalysisInfoMixin(JD$Move.INSTANCE, $Prm0);
-    //END JInit
-  }
-
-  
-  @Override public String toString() {
-    return "" + super.toString(); // NOI18N
-  }
+/**
+ *
+ * @author alex
+ */
+public interface IPassLoop<ResultT> {
+ ResultT run(final Loop /*&*/ IR, final AnalysisManager<Loop> /*&*/ AM);
 }

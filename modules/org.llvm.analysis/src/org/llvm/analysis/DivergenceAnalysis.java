@@ -76,31 +76,22 @@
 
 package org.llvm.analysis;
 
-import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
-import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
 import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
 import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
+import org.llvm.adt.aliases.DenseMapInfo$LikePtr;
+import org.llvm.adt.aliases.DenseSet;
 import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
 import org.llvm.ir.*;
 import org.llvm.pass.*;
-import static org.llvm.ir.PassManagerGlobals.*;
+import org.llvm.analysis.target.*;
+import org.llvm.analysis.impl.*;
+import static org.llvm.ir.java.IrRTTI.*;
+import static org.llvm.pass.IrLlvmGlobals.$out_raw_ostream_Value$C;
+import static org.llvm.pass.IrLlvmGlobals.instructions_Function$C$P;
 
 //<editor-fold defaultstate="collapsed" desc="llvm::DivergenceAnalysis">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DivergenceAnalysis.h", line = 23,
  FQN="llvm::DivergenceAnalysis", NM="_ZN4llvm18DivergenceAnalysisE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DivergenceAnalysis.cpp -nm=_ZN4llvm18DivergenceAnalysisE")
@@ -110,91 +101,160 @@ public class DivergenceAnalysis extends /*public*/ FunctionPass implements Destr
   /// end namespace anonymous
   
   // Register this pass.
-  public static final/*char*/Class<DivergenceAnalysis> ID = DivergenceAnalysis.class;
+  // JAVA: moved to extra/*public*/ static /*char*/byte ID = $int2char(0);
   
   //<editor-fold defaultstate="collapsed" desc="llvm::DivergenceAnalysis::DivergenceAnalysis">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DivergenceAnalysis.h", line = 27,
    FQN="llvm::DivergenceAnalysis::DivergenceAnalysis", NM="_ZN4llvm18DivergenceAnalysisC1Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DivergenceAnalysis.cpp -nm=_ZN4llvm18DivergenceAnalysisC1Ev")
   //</editor-fold>
   public DivergenceAnalysis() {
     // : FunctionPass(ID), DivergentValues() 
+    //START JInit
     super(ID);
-    throw new UnsupportedOperationException("EmptyBody");
+    this.DivergentValues = new DenseSet</*const*/ Value /*P*/ >(DenseMapInfo$LikePtr.$Info());
+    //END JInit
+    DivergenceAnalysisLlvmStatics.initializeDivergenceAnalysisPass($Deref(PassRegistry.getPassRegistry()));
   }
 
   
   //<editor-fold defaultstate="collapsed" desc="llvm::DivergenceAnalysis::getAnalysisUsage">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DivergenceAnalysis.cpp", line = 279,
    FQN="llvm::DivergenceAnalysis::getAnalysisUsage", NM="_ZNK4llvm18DivergenceAnalysis16getAnalysisUsageERNS_13AnalysisUsageE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DivergenceAnalysis.cpp -nm=_ZNK4llvm18DivergenceAnalysis16getAnalysisUsageERNS_13AnalysisUsageE")
   //</editor-fold>
   @Override public void getAnalysisUsage(final AnalysisUsage /*&*/ AU) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    AU.<DominatorTreeWrapperPass>addRequired(DominatorTreeWrapperPass.class);
+    AU.<PostDominatorTreeWrapperPass>addRequired(PostDominatorTreeWrapperPass.class);
+    AU.setPreservesAll();
   }
 
   
   //<editor-fold defaultstate="collapsed" desc="llvm::DivergenceAnalysis::runOnFunction">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DivergenceAnalysis.cpp", line = 285,
    FQN="llvm::DivergenceAnalysis::runOnFunction", NM="_ZN4llvm18DivergenceAnalysis13runOnFunctionERNS_8FunctionE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DivergenceAnalysis.cpp -nm=_ZN4llvm18DivergenceAnalysis13runOnFunctionERNS_8FunctionE")
   //</editor-fold>
   @Override public boolean runOnFunction(final Function /*&*/ F)/* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    DivergencePropagator DP = null;
+    try {
+      TargetTransformInfoWrapperPass /*P*/ TTIWP = this.<TargetTransformInfoWrapperPass>getAnalysisIfAvailable(TargetTransformInfoWrapperPass.class);
+      if (TTIWP == null) {
+        return false;
+      }
+      
+      final TargetTransformInfo /*&*/ TTI = TTIWP.getTTI(F);
+      // Fast path: if the target does not have branch divergence, we do not mark
+      // any branch as divergent.
+      if (!TTI.hasBranchDivergence()) {
+        return false;
+      }
+      
+      DivergentValues.clear();
+      final PostDominatorTree /*&*/ PDT = this.<PostDominatorTreeWrapperPass>getAnalysis(PostDominatorTreeWrapperPass.class).getPostDomTree();
+      DP/*J*/= new DivergencePropagator(F, TTI, 
+          this.<DominatorTreeWrapperPass>getAnalysis(DominatorTreeWrapperPass.class).getDomTree(), 
+          PDT, DivergentValues);
+      DP.populateWithSourcesOfDivergence();
+      DP.propagate();
+      return false;
+    } finally {
+      if (DP != null) { DP.$destroy(); }
+    }
   }
 
   
   // Print all divergent branches in the function.
   //<editor-fold defaultstate="collapsed" desc="llvm::DivergenceAnalysis::print">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DivergenceAnalysis.cpp", line = 306,
    FQN="llvm::DivergenceAnalysis::print", NM="_ZNK4llvm18DivergenceAnalysis5printERNS_11raw_ostreamEPKNS_6ModuleE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DivergenceAnalysis.cpp -nm=_ZNK4llvm18DivergenceAnalysis5printERNS_11raw_ostreamEPKNS_6ModuleE")
   //</editor-fold>
   @Override public void print(final raw_ostream /*&*/ OS, /*const*/ Module /*P*/ $Prm1) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    if (DivergentValues.empty()) {
+      return;
+    }
+    /*const*/ Value /*P*/ FirstDivergentValue = DivergentValues.begin$Const().$star();
+    /*const*/ Function /*P*/ F;
+    {
+      /*const*/ Argument /*P*/ Arg = dyn_cast_Argument(FirstDivergentValue);
+      if ((Arg != null)) {
+        F = Arg.getParent$Const();
+      } else {
+        /*const*/ Instruction /*P*/ I = dyn_cast_Instruction(FirstDivergentValue);
+        if ((I != null)) {
+          F = I.getParent$Const().getParent$Const();
+        } else {
+          throw new llvm_unreachable("Only arguments and instructions can be divergent");
+        }
+      }
+    }
+    
+    // Dumps all divergent values in F, arguments and then instructions.
+    for (final /*const*/ Argument /*&*/ Arg : F.args$Const()) {
+      if ((DivergentValues.count($AddrOf(Arg)) != 0)) {
+        $out_raw_ostream_Value$C(OS.$out(/*KEEP_STR*/"DIVERGENT:  "), Arg).$out(/*KEEP_STR*/$LF);
+      }
+    }
+    // Iterate instructions using instructions() to ensure a deterministic order.
+    for (final /*const*/ Instruction /*&*/ I : instructions_Function$C$P(F)) {
+      if ((DivergentValues.count($AddrOf(I)) != 0)) {
+        $out_raw_ostream_Value$C(OS.$out(/*KEEP_STR*/"DIVERGENT:"), I).$out(/*KEEP_STR*/$LF);
+      }
+    }
   }
 
   
   // Returns true if V is divergent.
   //<editor-fold defaultstate="collapsed" desc="llvm::DivergenceAnalysis::isDivergent">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DivergenceAnalysis.h", line = 39,
    FQN="llvm::DivergenceAnalysis::isDivergent", NM="_ZNK4llvm18DivergenceAnalysis11isDivergentEPKNS_5ValueE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DivergenceAnalysis.cpp -nm=_ZNK4llvm18DivergenceAnalysis11isDivergentEPKNS_5ValueE")
   //</editor-fold>
   public boolean isDivergent(/*const*/ Value /*P*/ V) /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return (DivergentValues.count(V) != 0);
   }
 
   
   // Returns true if V is uniform/non-divergent.
   //<editor-fold defaultstate="collapsed" desc="llvm::DivergenceAnalysis::isUniform">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DivergenceAnalysis.h", line = 42,
    FQN="llvm::DivergenceAnalysis::isUniform", NM="_ZNK4llvm18DivergenceAnalysis9isUniformEPKNS_5ValueE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DivergenceAnalysis.cpp -nm=_ZNK4llvm18DivergenceAnalysis9isUniformEPKNS_5ValueE")
   //</editor-fold>
   public boolean isUniform(/*const*/ Value /*P*/ V) /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return !isDivergent(V);
   }
 
 /*private:*/
   // Stores all divergent values.
   private DenseSet</*const*/ Value /*P*/ > DivergentValues;
   //<editor-fold defaultstate="collapsed" desc="llvm::DivergenceAnalysis::~DivergenceAnalysis">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DivergenceAnalysis.h", line = 23,
    FQN="llvm::DivergenceAnalysis::~DivergenceAnalysis", NM="_ZN4llvm18DivergenceAnalysisD0Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DivergenceAnalysis.cpp -nm=_ZN4llvm18DivergenceAnalysisD0Ev")
   //</editor-fold>
   @Override public /*inline*/ void $destroy() {
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JDestroy
+    DivergentValues.$destroy();
+    super.$destroy();
+    //END JDestroy
   }
 
+  //////////////////////////////////////////////////////////////
+  // EXTRA MEMBERS: BEGIN
+
+  public static final/*char*/Class<DivergenceAnalysis> ID = DivergenceAnalysis.class;
+
+  // EXTRA MEMBERS: END
+  //////////////////////////////////////////////////////////////
   
   @Override public String toString() {
     return "" + "DivergentValues=" + DivergentValues // NOI18N

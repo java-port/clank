@@ -466,6 +466,10 @@ public interface std_list {
     public void emplace_back(Object ... args) {
       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public void emplace_front(Object ... args) {
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     // Cyclic iterator
     public static class iterator<T> implements type$iterator<iterator<T>, T>, NativeSwappable {

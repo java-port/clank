@@ -499,6 +499,9 @@ public abstract class SmallVectorImplInt extends NativeTrace.CreateDestroy$Track
     assert checkAlive();
     return insert(I, From, To);
   }
+  public final int$ptr insert_iterator$T_T(int$ptr I, int$iterator<?> From, int$iterator<?> To) {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }  
   public final int$ptr insert(int$ptr I, int$iterator<?> From, int$iterator<?> To) {
     assert checkAlive();
     return insert_iterator$T$value_T(I, From, To);

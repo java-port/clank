@@ -76,80 +76,61 @@
 
 package org.llvm.analysis;
 
-import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
 import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
-import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import static org.clank.support.JavaCleaner.JC$Push;
-import static org.clank.support.JavaCleaner.JC$Pop;
-import static org.clank.support.JavaCleaner.JC$Top;
-import org.clank.support.NativeCallback.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import org.llvm.support.*;
 import org.llvm.ir.*;
-import org.llvm.pass.*;
-import static org.llvm.ir.PassManagerGlobals.*;
-import static org.llvm.analysis.java.AnalysisFunctionPointers.*;
-import org.llvm.analysis.*;
-import org.llvm.analysis.LibFunc.target.*;
 import org.llvm.analysis.target.*;
-import org.llvm.analysis.objcarc.*;
-import org.llvm.analysis.cflaa.impl.*;
-import org.llvm.analysis.bfi_detail.*;
-import org.llvm.analysis.impl.*;
-import static org.llvm.cl.ClGlobals.init;
-import org.llvm.cl.*;
-import static org.llvm.analysis.java.AnalysisRTTI.*;
+import org.llvm.ir.java.IPassModule;
 
 
 /// Analysis pass providing a never-invalidated alias analysis result.
 //<editor-fold defaultstate="collapsed" desc="llvm::GlobalsAA">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/GlobalsModRef.h", line = 121,
  FQN="llvm::GlobalsAA", NM="_ZN4llvm9GlobalsAAE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp -nm=_ZN4llvm9GlobalsAAE")
 //</editor-fold>
-public class GlobalsAA implements /*public*/ AnalysisInfoMixin<GlobalsAA> {
+public class GlobalsAA implements /*public*/ AnalysisInfoMixin<GlobalsAA>, IPassModule<GlobalsAAResult> {
   /*friend  AnalysisInfoMixin<GlobalsAA>*/
-  private static /*char*/byte PassID;
+  // JAVA: moved to extra/*private*/ static /*char*/byte PassID;
 /*public:*/
   // JAVA: typedef GlobalsAAResult Result
 //  public final class Result extends GlobalsAAResult{ };
-
+  
   //<editor-fold defaultstate="collapsed" desc="llvm::GlobalsAA::run">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_COMPILATION,
    source = "${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp", line = 942,
    FQN="llvm::GlobalsAA::run", NM="_ZN4llvm9GlobalsAA3runERNS_6ModuleERNS_15AnalysisManagerIS1_EE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp -nm=_ZN4llvm9GlobalsAA3runERNS_6ModuleERNS_15AnalysisManagerIS1_EE")
   //</editor-fold>
-  public GlobalsAAResult run(final Module /*&*/ M, final AnalysisManager<Module>/*&*/ AM) {
-    throw new UnsupportedOperationException("EmptyBody");
+  public GlobalsAAResult run(final Module /*&*/ M, final AnalysisManager<Module> /*&*/ AM) {
+    return GlobalsAAResult.analyzeModule(M, 
+        AM.getResult(TargetLibraryAnalysis.class, M), 
+        AM.getResult(CallGraphAnalysis.class, M));
   }
 
 
   //<editor-fold defaultstate="collapsed" desc="llvm::GlobalsAA::GlobalsAA">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/GlobalsModRef.h", line = 121,
    FQN="llvm::GlobalsAA::GlobalsAA", NM="_ZN4llvm9GlobalsAAC1EOS0_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Passes/PassBuilder.cpp -nm=_ZN4llvm9GlobalsAAC1EOS0_")
   //</editor-fold>
   public /*inline*/ GlobalsAA(JD$Move _dparam, final GlobalsAA /*&&*/$Prm0) {
-    // : AnalysisInfoMixin<GlobalsAA>(static_cast<GlobalsAA &&>())
+    // : AnalysisInfoMixin<GlobalsAA>(static_cast<GlobalsAA &&>()) 
+    //START JInit
     $AnalysisInfoMixin(JD$Move.INSTANCE, $Prm0);
-    throw new UnsupportedOperationException("EmptyBody");
+    //END JInit
   }
 
+  //////////////////////////////////////////////////////////////
+  // EXTRA MEMBERS: BEGIN
 
+  private static Class<GlobalsAA> PassID = GlobalsAA.class;
+
+  // EXTRA MEMBERS: END
+  //////////////////////////////////////////////////////////////
+  
   @Override public String toString() {
     return "" + super.toString(); // NOI18N
   }

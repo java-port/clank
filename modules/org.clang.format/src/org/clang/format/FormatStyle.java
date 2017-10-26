@@ -172,7 +172,7 @@ public class/*struct*/ FormatStyle implements Destructors.ClassWithDestructor, N
   ///
   /// This applies to round brackets (parentheses), angle brackets and square
   /// brackets.
-  public BracketAlignmentStyle AlignAfterOpenBracket;
+  public BracketAlignmentStyle AlignAfterOpenBracket = BracketAlignmentStyle.BAS_Align;
   
   /// \brief If ``true``, aligns consecutive assignments.
   ///
@@ -290,7 +290,7 @@ public class/*struct*/ FormatStyle implements Destructors.ClassWithDestructor, N
   
   /// \brief Dependent on the value, ``int f() { return 0; }`` can be put on a
   /// single line.
-  public ShortFunctionStyle AllowShortFunctionsOnASingleLine;
+  public ShortFunctionStyle AllowShortFunctionsOnASingleLine = ShortFunctionStyle.SFS_None;
   
   /// \brief If ``true``, ``if (a) return;`` can be put on a single line.
   public boolean AllowShortIfStatementsOnASingleLine;
@@ -426,10 +426,10 @@ public class/*struct*/ FormatStyle implements Destructors.ClassWithDestructor, N
   
   /// \brief The function definition return type breaking style to use.  This
   /// option is deprecated and is retained for backwards compatibility.
-  public DefinitionReturnTypeBreakingStyle AlwaysBreakAfterDefinitionReturnType;
+  public DefinitionReturnTypeBreakingStyle AlwaysBreakAfterDefinitionReturnType = DefinitionReturnTypeBreakingStyle.DRTBS_None;
   
   /// \brief The function declaration return type breaking style to use.
-  public ReturnTypeBreakingStyle AlwaysBreakAfterReturnType;
+  public ReturnTypeBreakingStyle AlwaysBreakAfterReturnType = ReturnTypeBreakingStyle.RTBS_None;
   
   /// \brief If ``true``, always break before multiline string literals.
   ///
@@ -511,7 +511,7 @@ public class/*struct*/ FormatStyle implements Destructors.ClassWithDestructor, N
   };
   
   /// \brief The way to wrap binary operators.
-  public BinaryOperatorStyle BreakBeforeBinaryOperators;
+  public BinaryOperatorStyle BreakBeforeBinaryOperators = BinaryOperatorStyle.BOS_None;
   
   /// \brief Different ways to attach braces to their surrounding context.
   //<editor-fold defaultstate="collapsed" desc="clang::format::FormatStyle::BraceBreakingStyle">
@@ -588,7 +588,7 @@ public class/*struct*/ FormatStyle implements Destructors.ClassWithDestructor, N
   };
   
   /// \brief The brace breaking style to use.
-  public BraceBreakingStyle BreakBeforeBraces;
+  public BraceBreakingStyle BreakBeforeBraces = BraceBreakingStyle.BS_Attach;
   
   /// \brief Precise control over the wrapping of braces.
   //<editor-fold defaultstate="collapsed" desc="clang::format::FormatStyle::BraceWrappingFlags">
@@ -1220,7 +1220,7 @@ public class/*struct*/ FormatStyle implements Destructors.ClassWithDestructor, N
   };
   
   /// \brief The JavaScriptQuoteStyle to use for JavaScript strings.
-  public JavaScriptQuoteStyle JavaScriptQuotes;
+  public JavaScriptQuoteStyle JavaScriptQuotes = JavaScriptQuoteStyle.JSQS_Leave;
   
   /// \brief Whether to wrap JavaScript import/export statements.
   public boolean JavaScriptWrapImports;
@@ -1299,7 +1299,7 @@ public class/*struct*/ FormatStyle implements Destructors.ClassWithDestructor, N
   };
   
   /// \brief Language, this format style is targeted at.
-  public LanguageKind Language;
+  public LanguageKind Language = LanguageKind.LK_None;
   
   /// \brief A regular expression matching macros that start a block.
   public std.string MacroBlockBegin;
@@ -1370,7 +1370,7 @@ public class/*struct*/ FormatStyle implements Destructors.ClassWithDestructor, N
   };
   
   /// \brief The indentation used for namespaces.
-  public NamespaceIndentationKind NamespaceIndentation;
+  public NamespaceIndentationKind NamespaceIndentation = NamespaceIndentationKind.NI_None;
   
   /// \brief The number of characters to use for indentation of ObjC blocks.
   public /*uint*/int ObjCBlockIndentWidth;
@@ -1462,7 +1462,7 @@ public class/*struct*/ FormatStyle implements Destructors.ClassWithDestructor, N
   };
   
   /// \brief Pointer and reference alignment style.
-  public PointerAlignmentStyle PointerAlignment;
+  public PointerAlignmentStyle PointerAlignment = PointerAlignmentStyle.PAS_Left;
   
   /// \brief If ``true``, clang-format will attempt to re-flow comments.
   public boolean ReflowComments;
@@ -1540,7 +1540,7 @@ public class/*struct*/ FormatStyle implements Destructors.ClassWithDestructor, N
   };
   
   /// \brief Defines in which cases to put a space before opening parentheses.
-  public SpaceBeforeParensOptions SpaceBeforeParens;
+  public SpaceBeforeParensOptions SpaceBeforeParens = SpaceBeforeParensOptions.SBPO_Never;
   
   /// \brief If ``true``, spaces may be inserted into ``()``.
   public boolean SpaceInEmptyParentheses;
@@ -1631,7 +1631,7 @@ public class/*struct*/ FormatStyle implements Destructors.ClassWithDestructor, N
   
   /// \brief Format compatible with this standard, e.g. use ``A<A<int> >``
   /// instead of ``A<A<int>>`` for ``LS_Cpp03``.
-  public LanguageStandard Standard;
+  public LanguageStandard Standard = LanguageStandard.LS_Cpp03;
   
   /// \brief The number of columns used for tab stops.
   public /*uint*/int TabWidth;
@@ -1699,7 +1699,7 @@ public class/*struct*/ FormatStyle implements Destructors.ClassWithDestructor, N
   };
   
   /// \brief The way to use tab characters in the resulting file.
-  public UseTabStyle UseTab;
+  public UseTabStyle UseTab = UseTabStyle.UT_Never;
   
   //<editor-fold defaultstate="collapsed" desc="clang::format::FormatStyle::operator==">
   @Converted(kind = Converted.Kind.AUTO,

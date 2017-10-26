@@ -76,33 +76,13 @@
 
 package org.llvm.analysis;
 
-import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
-import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
-import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
-import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
 import org.llvm.ir.*;
-import org.llvm.pass.*;
-import static org.llvm.ir.PassManagerGlobals.*;
 
 
 /// A call site that could be devirtualized.
 //<editor-fold defaultstate="collapsed" desc="llvm::DevirtCallSite">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/TypeMetadataUtils.h", line = 24,
  FQN="llvm::DevirtCallSite", NM="_ZN4llvm14DevirtCallSiteE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Transforms/IPO/WholeProgramDevirt.cpp -nm=_ZN4llvm14DevirtCallSiteE")
@@ -113,14 +93,17 @@ public class/*struct*/ DevirtCallSite {
   /// The call site itself.
   public CallSite CS;
   //<editor-fold defaultstate="collapsed" desc="llvm::DevirtCallSite::DevirtCallSite">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/TypeMetadataUtils.h", line = 24,
    FQN="llvm::DevirtCallSite::DevirtCallSite", NM="_ZN4llvm14DevirtCallSiteC1ERKS0_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Transforms/IPO/WholeProgramDevirt.cpp -nm=_ZN4llvm14DevirtCallSiteC1ERKS0_")
   //</editor-fold>
   public /*inline*/ DevirtCallSite(final /*const*/ DevirtCallSite /*&*/ $Prm0) {
     // : Offset(.Offset), CS(.CS) 
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JInit
+    this.Offset = $Prm0.Offset;
+    this.CS = new CallSite($Prm0.CS);
+    //END JInit
   }
 
   

@@ -76,34 +76,16 @@
 
 package org.llvm.analysis;
 
-import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
 import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
-import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
 import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
 import org.llvm.ir.*;
-import org.llvm.pass.*;
-import static org.llvm.ir.PassManagerGlobals.*;
 import org.llvm.ir.java.IPassFunction;
 
 
 /// \brief Printer pass for DemandedBits
 //<editor-fold defaultstate="collapsed" desc="llvm::DemandedBitsPrinterPass">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DemandedBits.h", line = 104,
  FQN="llvm::DemandedBitsPrinterPass", NM="_ZN4llvm23DemandedBitsPrinterPassE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp -nm=_ZN4llvm23DemandedBitsPrinterPassE")
@@ -112,39 +94,44 @@ public class DemandedBitsPrinterPass implements /*public*/ PassInfoMixin<Demande
   private final raw_ostream /*&*/ OS;
 /*public:*/
   //<editor-fold defaultstate="collapsed" desc="llvm::DemandedBitsPrinterPass::DemandedBitsPrinterPass">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DemandedBits.h", line = 108,
    FQN="llvm::DemandedBitsPrinterPass::DemandedBitsPrinterPass", NM="_ZN4llvm23DemandedBitsPrinterPassC1ERNS_11raw_ostreamE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp -nm=_ZN4llvm23DemandedBitsPrinterPassC1ERNS_11raw_ostreamE")
   //</editor-fold>
   public /*explicit*/ DemandedBitsPrinterPass(final raw_ostream /*&*/ OS) {
     // : PassInfoMixin<DemandedBitsPrinterPass>(), OS(OS) 
-    super();
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JInit
+    $PassInfoMixin();
+    this./*&*/OS=/*&*/OS;
+    //END JInit
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DemandedBitsPrinterPass::run">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_COMPILATION,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp", line = 399,
    FQN="llvm::DemandedBitsPrinterPass::run", NM="_ZN4llvm23DemandedBitsPrinterPass3runERNS_8FunctionERNS_15AnalysisManagerIS1_EE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp -nm=_ZN4llvm23DemandedBitsPrinterPass3runERNS_8FunctionERNS_15AnalysisManagerIS1_EE")
   //</editor-fold>
   public PreservedAnalyses run(final Function /*&*/ F, 
-     final AnalysisManager<Function>/*&*/ AM) {
-    throw new UnsupportedOperationException("EmptyBody");
+     final AnalysisManager<Function> /*&*/ AM) {
+    AM.getResult(DemandedBitsAnalysis.class, F).print(OS);
+    return PreservedAnalyses.all();
   }
 
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DemandedBitsPrinterPass::DemandedBitsPrinterPass">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DemandedBits.h", line = 104,
    FQN="llvm::DemandedBitsPrinterPass::DemandedBitsPrinterPass", NM="_ZN4llvm23DemandedBitsPrinterPassC1EOS0_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Passes/PassBuilder.cpp -nm=_ZN4llvm23DemandedBitsPrinterPassC1EOS0_")
   //</editor-fold>
   public /*inline*/ DemandedBitsPrinterPass(JD$Move _dparam, final DemandedBitsPrinterPass /*&&*/$Prm0) {
-    // : PassInfoMixin<DemandedBitsPrinterPass>(static_cast<DemandedBitsPrinterPass &&>()), OS(static_cast<DemandedBitsPrinterPass &&>().OS)
+    // : PassInfoMixin<DemandedBitsPrinterPass>(static_cast<DemandedBitsPrinterPass &&>()), OS(static_cast<DemandedBitsPrinterPass &&>().OS) 
+    //START JInit
     $PassInfoMixin(JD$Move.INSTANCE, $Prm0);
-    throw new UnsupportedOperationException("EmptyBody");
+    this./*&*/OS=/*&*/$Prm0.OS;
+    //END JInit
   }
 
   

@@ -76,43 +76,13 @@
 
 package org.llvm.analysis;
 
-import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
 import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
-import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
-import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
 import org.llvm.ir.*;
-import org.llvm.pass.*;
-import static org.llvm.ir.PassManagerGlobals.*;
-import static org.llvm.analysis.java.AnalysisFunctionPointers.*;
-import org.llvm.analysis.*;
 import org.llvm.analysis.DominanceFrontierGlobals.ForwardDominanceFrontierBase;
-import org.llvm.analysis.LibFunc.target.*;
-import org.llvm.analysis.target.*;
-import org.llvm.analysis.objcarc.*;
-import org.llvm.analysis.cflaa.impl.*;
-import org.llvm.analysis.bfi_detail.*;
-import org.llvm.analysis.impl.*;
-import static org.llvm.cl.ClGlobals.init;
-import org.llvm.cl.*;
-import static org.llvm.analysis.java.AnalysisRTTI.*;
 
 //<editor-fold defaultstate="collapsed" desc="llvm::DominanceFrontier">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DominanceFrontier.h", line = 137,
  FQN="llvm::DominanceFrontier", NM="_ZN4llvm17DominanceFrontierE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DominanceFrontier.cpp -nm=_ZN4llvm17DominanceFrontierE")
@@ -120,47 +90,49 @@ import static org.llvm.analysis.java.AnalysisRTTI.*;
 public class DominanceFrontier extends /*public*/ ForwardDominanceFrontierBase<BasicBlock> implements Destructors.ClassWithDestructor {
 /*public:*/
   // JAVA: typedef DominatorTreeBase<BasicBlock> DomTreeT
-//  public final class DomTreeT extends DominatorTreeBase$BasicBlock{ };
+//  public final class DomTreeT extends DominatorTreeBase$BasicBlock<BasicBlock>{ };
   // JAVA: typedef DomTreeNodeBase<BasicBlock> DomTreeNodeT
-//  public final class DomTreeNodeT extends DomTreeNodeBase$BasicBlock{ };
+//  public final class DomTreeNodeT extends DomTreeNodeBase$BasicBlock<BasicBlock>{ };
   // JAVA: typedef DominanceFrontierBase<BasicBlock>::DomSetType DomSetType
-//  public final class DomSetType extends std.set<BasicBlock /*P*/ >{ };
+//  public final class DomSetType extends std.setPtr<BasicBlock /*P*/ >{ };
   // JAVA: typedef DominanceFrontierBase<BasicBlock>::iterator iterator
-//  public final class iterator extends std._Rb_tree_iterator<std.pair<BasicBlock /*P*/ /*const*/, std.set<BasicBlock /*P*/ , std.less<BasicBlock /*P*/ >, default_ptr_allocator> > >{ };
+//  public final class iterator extends std._Rb_tree_iterator<std.pairPtrType<BasicBlock /*P*/ /*const*/, std.set<BasicBlock /*P*/ , std.less<BasicBlock /*P*/ >, default_ptr_allocator>> >{ };
   // JAVA: typedef DominanceFrontierBase<BasicBlock>::const_iterator const_iterator
-//  public final class const_iterator extends std._Rb_tree_const_iterator<std.pair<BasicBlock /*P*/ /*const*/, std.set<BasicBlock /*P*/ , std.less<BasicBlock /*P*/ >, default_ptr_allocator> > >{ };
+//  public final class const_iterator extends std.set.iterator<std.pairPtrType<BasicBlock /*P*/ /*const*/, std.set<BasicBlock /*P*/ , std.less<BasicBlock /*P*/ >, default_ptr_allocator>>>{ };
   //<editor-fold defaultstate="collapsed" desc="llvm::DominanceFrontier::~DominanceFrontier">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DominanceFrontier.h", line = 137,
    FQN="llvm::DominanceFrontier::~DominanceFrontier", NM="_ZN4llvm17DominanceFrontierD0Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DominanceFrontier.cpp -nm=_ZN4llvm17DominanceFrontierD0Ev")
   //</editor-fold>
   public /*inline*/ void $destroy() {
-    throw new UnsupportedOperationException("EmptyBody");
+    super.$destroy();
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DominanceFrontier::DominanceFrontier">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DominanceFrontier.h", line = 137,
    FQN="llvm::DominanceFrontier::DominanceFrontier", NM="_ZN4llvm17DominanceFrontierC1Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DominanceFrontier.cpp -nm=_ZN4llvm17DominanceFrontierC1Ev")
   //</editor-fold>
   public /*inline*/ DominanceFrontier() {
     // : ForwardDominanceFrontierBase<BasicBlock>() 
+    //START JInit
     super();
-    throw new UnsupportedOperationException("EmptyBody");
+    //END JInit
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DominanceFrontier::DominanceFrontier">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DominanceFrontier.h", line = 137,
    FQN="llvm::DominanceFrontier::DominanceFrontier", NM="_ZN4llvm17DominanceFrontierC1EOS0_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DominanceFrontier.cpp -nm=_ZN4llvm17DominanceFrontierC1EOS0_")
   //</editor-fold>
   public /*inline*/ DominanceFrontier(JD$Move _dparam, final DominanceFrontier /*&&*/$Prm0) {
     // : ForwardDominanceFrontierBase<BasicBlock>(static_cast<DominanceFrontier &&>()) 
-    //super(JD$Move.INSTANCE, $Prm0);
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JInit
+    super(JD$Move.INSTANCE, $Prm0);
+    //END JInit
   }
 
   

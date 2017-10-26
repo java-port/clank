@@ -80,24 +80,11 @@ import org.clank.java.*;
 import org.clank.support.*;
 import org.clank.support.aliases.*;
 import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
 import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
 import static org.clank.support.Native.*;
 import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
 import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
 import org.llvm.ir.*;
-import org.llvm.pass.*;
-import static org.llvm.ir.PassManagerGlobals.*;
 
 
 /// FullDependence - This class represents a dependence between two memory
@@ -109,7 +96,7 @@ import static org.llvm.ir.PassManagerGlobals.*;
 /// ordering, where the source must precede the destination; in contrast,
 /// input dependences are unordered.
 //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 220,
  FQN="llvm::FullDependence", NM="_ZN4llvm14FullDependenceE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm14FullDependenceE")
@@ -120,7 +107,7 @@ public final class FullDependence extends /*public*/ Dependence implements Destr
   //===----------------------------------------------------------------------===//
   // FullDependence methods
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::FullDependence">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_SEMANTIC,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 236,
    FQN="llvm::FullDependence::FullDependence", NM="_ZN4llvm14FullDependenceC1EPNS_11InstructionES2_bj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm14FullDependenceC1EPNS_11InstructionES2_bj")
@@ -129,34 +116,52 @@ public final class FullDependence extends /*public*/ Dependence implements Destr
       boolean PossiblyLoopIndependent, 
       /*uint*/int CommonLevels) {
     // : Dependence(Source, Destination), Levels(CommonLevels), LoopIndependent(PossiblyLoopIndependent), DV() 
+    //START JInit
     super(Source, Destination);
-    throw new UnsupportedOperationException("EmptyBody");
+    this.Levels = $uint2ushort(CommonLevels);
+    this.LoopIndependent = PossiblyLoopIndependent;
+    this.DV = new unique_ptr_array<Dependence.DVEntry>();
+    //END JInit
+    Consistent = true;
+    if ((CommonLevels != 0)) {
+      JavaCleaner $c$ = $createJavaCleaner();
+      try {
+        $c$.clean(DV.$assignMove($c$.track(llvm.make_unique(new Dependence.DVEntry[CommonLevels]))));
+      } finally {
+        $c$.$destroy();
+      }
+    }
   }
 
   
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::FullDependence">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_SEMANTIC,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 225,
    FQN="llvm::FullDependence::FullDependence", NM="_ZN4llvm14FullDependenceC1EOS0_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm14FullDependenceC1EOS0_")
   //</editor-fold>
   public FullDependence(JD$Move _dparam, final FullDependence /*&&*/RHS) {
     // : Dependence(std::move(RHS)), Levels(RHS.Levels), LoopIndependent(RHS.LoopIndependent), Consistent(RHS.Consistent), DV(std::move(RHS.DV)) 
+    //START JInit
     super(std.move(RHS));
-    throw new UnsupportedOperationException("EmptyBody");
+    this.Levels = RHS.Levels;
+    this.LoopIndependent = RHS.LoopIndependent;
+    this.Consistent = RHS.Consistent;
+    this.DV = new unique_ptr_array<Dependence.DVEntry>(JD$Move.INSTANCE, std.move(RHS.DV));
+    //END JInit
   }
 
   
   /// isLoopIndependent - Returns true if this is a loop-independent
   /// dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::isLoopIndependent">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 232,
    FQN="llvm::FullDependence::isLoopIndependent", NM="_ZNK4llvm14FullDependence17isLoopIndependentEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm14FullDependence17isLoopIndependentEv")
   //</editor-fold>
   @Override public boolean isLoopIndependent() /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return LoopIndependent;
   }
 
   
@@ -164,39 +169,39 @@ public final class FullDependence extends /*public*/ Dependence implements Destr
   /// (the compiler understands nothing and makes worst-case
   /// assumptions).
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::isConfused">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 237,
    FQN="llvm::FullDependence::isConfused", NM="_ZNK4llvm14FullDependence10isConfusedEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm14FullDependence10isConfusedEv")
   //</editor-fold>
   @Override public boolean isConfused() /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return false;
   }
 
   
   /// isConsistent - Returns true if this dependence is consistent
   /// (occurs every time the source and destination are executed).
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::isConsistent">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 241,
    FQN="llvm::FullDependence::isConsistent", NM="_ZNK4llvm14FullDependence12isConsistentEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm14FullDependence12isConsistentEv")
   //</editor-fold>
   @Override public boolean isConsistent() /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return Consistent;
   }
 
   
   /// getLevels - Returns the number of common loops surrounding the
   /// source and destination of the dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::getLevels">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 245,
    FQN="llvm::FullDependence::getLevels", NM="_ZNK4llvm14FullDependence9getLevelsEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm14FullDependence9getLevelsEv")
   //</editor-fold>
   @Override public /*uint*/int getLevels() /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return $ushort2uint(Levels);
   }
 
   
@@ -207,13 +212,14 @@ public final class FullDependence extends /*public*/ Dependence implements Destr
   
   // getDirection - Returns the direction associated with a particular level.
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::getDirection">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 249,
    FQN="llvm::FullDependence::getDirection", NM="_ZNK4llvm14FullDependence12getDirectionEj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm14FullDependence12getDirectionEj")
   //</editor-fold>
   @Override public /*uint*/int getDirection(/*uint*/int Level) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    assert ($less_uint(0, Level) && $lesseq_uint_char$C(Level, Levels)) : "Level out of range";
+    return $uchar2uint($3bits_uchar2uchar(DV.$at(Level - 1).Direction));
   }
 
   
@@ -222,13 +228,14 @@ public final class FullDependence extends /*public*/ Dependence implements Destr
   
   // Returns the distance (or NULL) associated with a particular level.
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::getDistance">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 256,
    FQN="llvm::FullDependence::getDistance", NM="_ZNK4llvm14FullDependence11getDistanceEj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm14FullDependence11getDistanceEj")
   //</editor-fold>
   @Override public /*const*/ SCEV /*P*/ getDistance(/*uint*/int Level) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    assert ($less_uint(0, Level) && $lesseq_uint_char$C(Level, Levels)) : "Level out of range";
+    return DV.$at(Level - 1).Distance;
   }
 
   
@@ -238,13 +245,14 @@ public final class FullDependence extends /*public*/ Dependence implements Destr
   // Returns true if peeling the first iteration from this loop
   // will break this dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::isPeelFirst">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 273,
    FQN="llvm::FullDependence::isPeelFirst", NM="_ZNK4llvm14FullDependence11isPeelFirstEj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm14FullDependence11isPeelFirstEj")
   //</editor-fold>
   @Override public boolean isPeelFirst(/*uint*/int Level) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    assert ($less_uint(0, Level) && $lesseq_uint_char$C(Level, Levels)) : "Level out of range";
+    return DV.$at(Level - 1).PeelFirst;
   }
 
   
@@ -254,13 +262,14 @@ public final class FullDependence extends /*public*/ Dependence implements Destr
   // Returns true if peeling the last iteration from this loop
   // will break this dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::isPeelLast">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 281,
    FQN="llvm::FullDependence::isPeelLast", NM="_ZNK4llvm14FullDependence10isPeelLastEj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm14FullDependence10isPeelLastEj")
   //</editor-fold>
   @Override public boolean isPeelLast(/*uint*/int Level) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    assert ($less_uint(0, Level) && $lesseq_uint_char$C(Level, Levels)) : "Level out of range";
+    return DV.$at(Level - 1).PeelLast;
   }
 
   
@@ -269,13 +278,14 @@ public final class FullDependence extends /*public*/ Dependence implements Destr
   
   // Returns true if splitting this loop will break the dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::isSplitable">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 288,
    FQN="llvm::FullDependence::isSplitable", NM="_ZNK4llvm14FullDependence11isSplitableEj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm14FullDependence11isSplitableEj")
   //</editor-fold>
   @Override public boolean isSplitable(/*uint*/int Level) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    assert ($less_uint(0, Level) && $lesseq_uint_char$C(Level, Levels)) : "Level out of range";
+    return DV.$at(Level - 1).Splitable;
   }
 
   
@@ -287,31 +297,59 @@ public final class FullDependence extends /*public*/ Dependence implements Destr
   // if no subscript in the source or destination mention the induction
   // variable associated with the loop at this level.
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::isScalar">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 265,
    FQN="llvm::FullDependence::isScalar", NM="_ZNK4llvm14FullDependence8isScalarEj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm14FullDependence8isScalarEj")
   //</editor-fold>
   @Override public boolean isScalar(/*uint*/int Level) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    assert ($less_uint(0, Level) && $lesseq_uint_char$C(Level, Levels)) : "Level out of range";
+    return DV.$at(Level - 1).Scalar;
   }
 
 /*private:*/
   private /*ushort*/char Levels;
-  private boolean LoopIndependent;
-  private boolean Consistent; // Init to true, then refine.
-  private unique_ptr_array<Dependence.DVEntry []> DV;
+  /*friend*/public/*private*/ boolean LoopIndependent;
+  /*friend*/public/*private*/ boolean Consistent; // Init to true, then refine.
+  @Converted(kind = Converted.Kind.MANUAL_SEMANTIC)
+  /*friend*/public/*private*/ unique_ptr_array<Dependence.DVEntry> DV;
   /*friend  class DependenceInfo*/
   //<editor-fold defaultstate="collapsed" desc="llvm::FullDependence::~FullDependence">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 220,
    FQN="llvm::FullDependence::~FullDependence", NM="_ZN4llvm14FullDependenceD0Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm14FullDependenceD0Ev")
   //</editor-fold>
   @Override public /*inline*/ void $destroy() {
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JDestroy
+    DV.$destroy();
+    super.$destroy();
+    //END JDestroy
   }
 
+  //////////////////////////////////////////////////////////////
+  // EXTRA MEMBERS: BEGIN
+
+  public bool$ref Consistent_ref = new bool$ref(){
+    @Override
+    public boolean $deref() {
+      return Consistent;
+    }
+  
+    @Override
+    public boolean $set(boolean value) {
+      Consistent = value;
+      return Consistent;
+    }
+  };
+  
+  public FullDependence(FullDependence Other) {
+    super(Other);
+  }
+
+
+  // EXTRA MEMBERS: END
+  //////////////////////////////////////////////////////////////
   
   @Override public String toString() {
     return "" + "Levels=" + $ushort2uint(Levels) // NOI18N

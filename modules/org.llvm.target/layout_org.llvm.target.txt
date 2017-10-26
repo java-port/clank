@@ -64,6 +64,10 @@ org.llvm.target.aarch64.impl
     AArch64FrameLoweringStatics.java
     AArch64FrameOffsetStatus.java
     AArch64FunctionInfo.java
+    AArch64GenAsmMatcherStatics.java
+    AArch64GenAsmWriter1Statics.java
+    AArch64GenAsmWriterStatics.java
+    AArch64GenCallingConvStatics.java
     AArch64ISelDAGToDAGLlvmStatics.java
     AArch64ISelDAGToDAGStatics.java
     AArch64ISelLoweringStatics.java
@@ -115,6 +119,44 @@ org.llvm.target.aarch64.instprinter.impl
     AArch64InstPrinter.java
     AArch64InstPrinterStatics.java
     LdStNInstrDesc.java
+org.llvm.target.aarch64.llvm.AArch64AT.impl
+    AArch64ATStatics.java
+    ATValues.java
+org.llvm.target.aarch64.llvm.AArch64DB.impl
+    AArch64DBStatics.java
+    DBValues.java
+org.llvm.target.aarch64.llvm.AArch64DC.impl
+    AArch64DCStatics.java
+    DCValues.java
+org.llvm.target.aarch64.llvm.AArch64IC.impl
+    AArch64ICStatics.java
+    ICValues.java
+org.llvm.target.aarch64.llvm.AArch64ISB.impl
+    AArch64ISBStatics.java
+    ISBValues.java
+org.llvm.target.aarch64.llvm.AArch64PRFM.impl
+    AArch64PRFMStatics.java
+    PRFMValues.java
+org.llvm.target.aarch64.llvm.AArch64PSBHint.impl
+    AArch64PSBHintStatics.java
+    PSBValues.java
+org.llvm.target.aarch64.llvm.AArch64PState.impl
+    AArch64PStateStatics.java
+    PStateValues.java
+org.llvm.target.aarch64.llvm.AArch64SysReg.impl
+    AArch64SysRegStatics.java
+    SysRegValues.java
+org.llvm.target.aarch64.llvm.AArch64TLBI.impl
+    AArch64TLBIStatics.java
+    TLBIValues.java
+org.llvm.target.aarch64.llvm.impl
+    AArch64GenInstrInfo.java
+    AArch64GenInstrInfoLlvmStatics.java
+    AArch64GenRegisterInfo.java
+    AArch64GenRegisterInfoLlvmStatics.java
+    AArch64GenSubtargetInfo.java
+    AArch64GenSubtargetInfoLlvmStatics.java
+    AArch64Statics.java
 org.llvm.target.aarch64.mctargetdesc.AArch64_AM.impl
     AArch64_AMStatics.java
     ShiftExtendType.java
@@ -146,7 +188,6 @@ org.llvm.target.aarch64.mctargetdesc.impl
     AsmWriterVariantTy.java
     DarwinAArch64AsmBackend.java
     ELFAArch64AsmBackend.java
-    Fixups.java
 org.llvm.target.aarch64.targetinfo.impl
     AArch64TargetInfoStatics.java
 org.llvm.target.aarch64.utils.AArch64AT.impl
@@ -175,7 +216,6 @@ org.llvm.target.aarch64.utils.AArch64PState.impl
 org.llvm.target.aarch64.utils.AArch64SE.impl
     ShiftExtSpecifiers.java
 org.llvm.target.aarch64.utils.AArch64SysReg.impl
-    AArch64SysRegStatics.java
     SysReg.java
 org.llvm.target.aarch64.utils.AArch64TLBI.impl
     TLBI.java
@@ -203,8 +243,6 @@ org.llvm.target.amdgpu.AMDGPU.SendMsg.impl
 org.llvm.target.amdgpu.AMDGPU.impl
     AMDGPUInstrInfoAMDGPUStatics.java
     OperandType.java
-    R600InstrInfoAMDGPUStatics.java
-    SIInstrInfoAMDGPUStatics.java
     TargetIndex.java
 org.llvm.target.amdgpu.AMDGPUAS.impl
     AddressSpaces.java
@@ -253,6 +291,8 @@ org.llvm.target.amdgpu.impl
     AMDGPUCodeGenPrepareStatics.java
     AMDGPUDAGToDAGISel.java
     AMDGPUFrameLowering.java
+    AMDGPUGenCallingConvStatics.java
+    AMDGPUGenIntrinsicsStatics.java
     AMDGPUISelDAGToDAGLlvmStatics.java
     AMDGPUISelDAGToDAGStatics.java
     AMDGPUISelLoweringStatics.java
@@ -389,6 +429,31 @@ org.llvm.target.amdgpu.impl
     hsa_ext_control_directives_s.java
 org.llvm.target.amdgpu.instprinter.impl
     AMDGPUInstPrinter.java
+org.llvm.target.amdgpu.llvm.AMDGPU.OpName.impl
+    OpNameStatics.java
+org.llvm.target.amdgpu.llvm.AMDGPU.Sched.impl
+    SchedStatics.java
+org.llvm.target.amdgpu.llvm.AMDGPU.impl
+    AMDGPUGenInstrInfoAMDGPUStatics.java
+    AMDGPUStatics.java
+    Channels.java
+    DisableEncoding.java
+    IsAddr64.java
+    IsOrig.java
+    IsRet.java
+    Size.java
+    Subtarget.java
+org.llvm.target.amdgpu.llvm.R600_VLIW4_ItinFU.impl
+    R600_VLIW4_ItinFUStatics.java
+org.llvm.target.amdgpu.llvm.R600_VLIW5_ItinFU.impl
+    R600_VLIW5_ItinFUStatics.java
+org.llvm.target.amdgpu.llvm.impl
+    AMDGPUGenInstrInfo.java
+    AMDGPUGenInstrInfoLlvmStatics.java
+    AMDGPUGenRegisterInfo.java
+    AMDGPUGenRegisterInfoLlvmStatics.java
+    AMDGPUGenSubtargetInfo.java
+    AMDGPUGenSubtargetInfoLlvmStatics.java
 org.llvm.target.amdgpu.mctargetdesc.AMDGPU.impl
     Fixups.java
 org.llvm.target.amdgpu.mctargetdesc.impl
@@ -422,7 +487,6 @@ org.llvm.target.amdgpu.utils.AMDGPU.SendMsg.impl
     SendMsgStatics.java
 org.llvm.target.amdgpu.utils.AMDGPU.impl
     AMDGPUBaseInfoAMDGPUStatics.java
-    AMDGPUStatics.java
     IsaVersion.java
 org.llvm.target.amdgpu.utils.impl
     AMDKernelCodeTUtilsLlvmStatics.java
@@ -479,15 +543,19 @@ org.llvm.target.arm.impl
     ARMExpandPseudoInstsLlvmStatics.java
     ARMExpandPseudoInstsStatics.java
     ARMFastISel.java
+    ARMFastISelARMStatics.java
     ARMFastISelStatics.java
     ARMFeaturesLlvmStatics.java
     ARMFrameLowering.java
     ARMFrameLoweringStatics.java
     ARMFunctionInfo.java
+    ARMGenAsmMatcherStatics.java
+    ARMGenCallingConvStatics.java
     ARMHazardRecognizer.java
     ARMHazardRecognizerStatics.java
     ARMISelDAGToDAGLlvmStatics.java
     ARMISelDAGToDAGStatics.java
+    ARMISelLoweringARMStatics.java
     ARMISelLoweringStatics.java
     ARMInstrInfo.java
     ARMLETargetMachine.java
@@ -546,6 +614,24 @@ org.llvm.target.arm.impl
 org.llvm.target.arm.instprinter.impl
     ARMInstPrinter.java
     ARMInstPrinterStatics.java
+org.llvm.target.arm.llvm.ARMV6ItinerariesFU.impl
+    ARMV6ItinerariesFUStatics.java
+org.llvm.target.arm.llvm.CortexA8ItinerariesFU.impl
+    CortexA8ItinerariesFUStatics.java
+org.llvm.target.arm.llvm.CortexA9ItinerariesBypass.impl
+    CortexA9ItinerariesBypassStatics.java
+org.llvm.target.arm.llvm.CortexA9ItinerariesFU.impl
+    CortexA9ItinerariesFUStatics.java
+org.llvm.target.arm.llvm.Sched.impl
+    SchedStatics.java
+org.llvm.target.arm.llvm.impl
+    ARMGenInstrInfo.java
+    ARMGenInstrInfoLlvmStatics.java
+    ARMGenRegisterInfo.java
+    ARMGenRegisterInfoLlvmStatics.java
+    ARMGenSubtargetInfo.java
+    ARMGenSubtargetInfoLlvmStatics.java
+    ARMStatics.java
 org.llvm.target.arm.mctargetdesc.ARMCC.impl
     ARMCCStatics.java
     CondCodes.java
@@ -644,8 +730,6 @@ org.llvm.target.bpf.mctargetdesc.impl
     BPFMCTargetDescStatics.java
 org.llvm.target.bpf.targetinfo.impl
     BPFTargetInfoStatics.java
-org.llvm.target.hexagon.Hexagon.impl
-    HexagonStatics.java
 org.llvm.target.hexagon.HexagonISD.impl
     NodeType.java
 org.llvm.target.hexagon.asmparser.impl
@@ -709,6 +793,7 @@ org.llvm.target.hexagon.impl
     HexagonFrameLowering.java
     HexagonFrameLoweringLlvmStatics.java
     HexagonFrameLoweringStatics.java
+    HexagonGenAsmMatcherStatics.java
     HexagonGenExtract.java
     HexagonGenExtractLlvmStatics.java
     HexagonGenExtractStatics.java
@@ -800,6 +885,30 @@ org.llvm.target.hexagon.impl
     VLIWResourceModel.java
     in_set.java
     printv.java
+org.llvm.target.hexagon.llvm.Hexagon.Sched.impl
+    SchedStatics.java
+org.llvm.target.hexagon.llvm.Hexagon.impl
+    HexagonStatics.java
+    InputType.java
+    InstrType.java
+    NValueST.java
+    PNewValue.java
+    PredSense.java
+    addrMode.java
+    isBrTaken.java
+org.llvm.target.hexagon.llvm.HexagonItinerariesV4FU.impl
+    HexagonItinerariesV4FUStatics.java
+org.llvm.target.hexagon.llvm.HexagonItinerariesV55FU.impl
+    HexagonItinerariesV55FUStatics.java
+org.llvm.target.hexagon.llvm.HexagonItinerariesV60FU.impl
+    HexagonItinerariesV60FUStatics.java
+org.llvm.target.hexagon.llvm.impl
+    HexagonGenInstrInfo.java
+    HexagonGenInstrInfoLlvmStatics.java
+    HexagonGenRegisterInfo.java
+    HexagonGenRegisterInfoLlvmStatics.java
+    HexagonGenSubtargetInfo.java
+    HexagonGenSubtargetInfoLlvmStatics.java
 org.llvm.target.hexagon.mctargetdesc.HEXAGON_MC.impl
     HEXAGON_MCStatics.java
 org.llvm.target.hexagon.mctargetdesc.Hexagon.impl
@@ -892,7 +1001,6 @@ org.llvm.target.impl
     CostTableLlvmGlobals.java
 org.llvm.target.mips.Mips.impl
     MipsFastISelMipsStatics.java
-    MipsStatics.java
 org.llvm.target.mips.Mips16HardFloatInfo.impl
     FPParamVariant.java
     FPReturnVariant.java
@@ -949,6 +1057,7 @@ org.llvm.target.mips.impl
     MipsFastISelStatics.java
     MipsFrameLowering.java
     MipsFunctionInfo.java
+    MipsGenCallingConvStatics.java
     MipsHazardSchedule.java
     MipsHazardScheduleLlvmStatics.java
     MipsHazardScheduleStatics.java
@@ -1004,6 +1113,21 @@ org.llvm.target.mips.instprinter.Mips.impl
 org.llvm.target.mips.instprinter.impl
     MipsInstPrinter.java
     MipsInstPrinterStatics.java
+org.llvm.target.mips.llvm.Mips.Sched.impl
+    SchedStatics.java
+org.llvm.target.mips.llvm.Mips.impl
+    Arch.java
+    MipsGenInstrInfoMipsStatics.java
+    MipsStatics.java
+org.llvm.target.mips.llvm.MipsGenericItinerariesFU.impl
+    MipsGenericItinerariesFUStatics.java
+org.llvm.target.mips.llvm.impl
+    MipsGenInstrInfo.java
+    MipsGenInstrInfoLlvmStatics.java
+    MipsGenRegisterInfo.java
+    MipsGenRegisterInfoLlvmStatics.java
+    MipsGenSubtargetInfo.java
+    MipsGenSubtargetInfoLlvmStatics.java
 org.llvm.target.mips.mctargetdesc.MIPS_MC.impl
     MIPS_MCStatics.java
 org.llvm.target.mips.mctargetdesc.Mips.impl
@@ -1054,6 +1178,7 @@ org.llvm.target.msp430.impl
     MSP430BranchSelectorStatics.java
     MSP430DAGToDAGISel.java
     MSP430FrameLowering.java
+    MSP430GenCallingConvStatics.java
     MSP430ISelAddressMode.java
     MSP430ISelDAGToDAGLlvmStatics.java
     MSP430ISelDAGToDAGStatics.java
@@ -1069,6 +1194,17 @@ org.llvm.target.msp430.impl
     MSP430TargetMachineStatics.java
 org.llvm.target.msp430.instprinter.impl
     MSP430InstPrinter.java
+org.llvm.target.msp430.llvm.MSP430.Sched.impl
+    SchedStatics.java
+org.llvm.target.msp430.llvm.MSP430.impl
+    MSP430Statics.java
+org.llvm.target.msp430.llvm.impl
+    MSP430GenInstrInfo.java
+    MSP430GenInstrInfoLlvmStatics.java
+    MSP430GenRegisterInfo.java
+    MSP430GenRegisterInfoLlvmStatics.java
+    MSP430GenSubtargetInfo.java
+    MSP430GenSubtargetInfoLlvmStatics.java
 org.llvm.target.msp430.mctargetdesc.impl
     MSP430MCAsmInfo.java
     MSP430MCTargetDescStatics.java
@@ -1161,12 +1297,22 @@ org.llvm.target.nvptx.impl
     NVVMReflectLlvmStatics.java
     NVVMReflectStatics.java
     OperandSignedness.java
-    TargetLlvmStatics.java
     cl_common_definesStatics.java
     clk_channel_type.java
     clk_sampler_type.java
 org.llvm.target.nvptx.instprinter.impl
     NVPTXInstPrinter.java
+org.llvm.target.nvptx.llvm.NVPTX.Sched.impl
+    SchedStatics.java
+org.llvm.target.nvptx.llvm.NVPTX.impl
+    NVPTXStatics.java
+org.llvm.target.nvptx.llvm.impl
+    NVPTXGenInstrInfo.java
+    NVPTXGenInstrInfoLlvmStatics.java
+    NVPTXGenRegisterInfo.java
+    NVPTXGenRegisterInfoLlvmStatics.java
+    NVPTXGenSubtargetInfo.java
+    NVPTXGenSubtargetInfoLlvmStatics.java
 org.llvm.target.nvptx.mctargetdesc.NVPTXII.impl
     NVPTXIIStatics.java
 org.llvm.target.nvptx.mctargetdesc.impl
@@ -1180,7 +1326,6 @@ org.llvm.target.nvptx.targetinfo.impl
 org.llvm.target.powerpc.PPC.impl
     PPCFastISelPPCStatics.java
     PPCISelLoweringPPCStatics.java
-    PPCStatics.java
 org.llvm.target.powerpc.PPCII.impl
     PPC970_Unit.java
     PPCIIStatics.java
@@ -1199,6 +1344,11 @@ org.llvm.target.powerpc.impl
     BitPermutationSelector.java
     Bucket.java
     BucketElement.java
+    InstructionConversionKind.java
+    LessOpcode.java
+    MatchClassKind.java
+    MatchEntry.java
+    OperatorConversionKind.java
     PPC32TargetMachine.java
     PPC64LinuxTargetObjectFile.java
     PPC64TargetMachine.java
@@ -1227,6 +1377,7 @@ org.llvm.target.powerpc.impl
     PPCFrameLowering.java
     PPCFrameLoweringStatics.java
     PPCFunctionInfo.java
+    PPCGenCallingConvStatics.java
     PPCHazardRecognizer970.java
     PPCISelDAGToDAGLlvmStatics.java
     PPCISelDAGToDAGStatics.java
@@ -1276,10 +1427,52 @@ org.llvm.target.powerpc.impl
     PPCVSXSwapRemovalLlvmStatics.java
     PPCVSXSwapRemovalStatics.java
     SHValues.java
+    SubtargetFeatureFlag.java
     TailCallArgumentInfo.java
 org.llvm.target.powerpc.instprinter.impl
     PPCInstPrinter.java
     PPCInstPrinterStatics.java
+org.llvm.target.powerpc.llvm.G3ItinerariesFU.impl
+    G3ItinerariesFUStatics.java
+org.llvm.target.powerpc.llvm.G4ItinerariesFU.impl
+    G4ItinerariesFUStatics.java
+org.llvm.target.powerpc.llvm.G4PlusItinerariesFU.impl
+    G4PlusItinerariesFUStatics.java
+org.llvm.target.powerpc.llvm.G5ItinerariesFU.impl
+    G5ItinerariesFUStatics.java
+org.llvm.target.powerpc.llvm.P7ItinerariesFU.impl
+    P7ItinerariesFUStatics.java
+org.llvm.target.powerpc.llvm.P8ItinerariesFU.impl
+    P8ItinerariesFUStatics.java
+org.llvm.target.powerpc.llvm.PPC.Sched.impl
+    SchedStatics.java
+org.llvm.target.powerpc.llvm.PPC.impl
+    IsVSXFMAAlt.java
+    PPCGenInstrInfoPPCStatics.java
+    PPCStatics.java
+    RC.java
+org.llvm.target.powerpc.llvm.PPC440ItinerariesBypass.impl
+    PPC440ItinerariesBypassStatics.java
+org.llvm.target.powerpc.llvm.PPC440ItinerariesFU.impl
+    PPC440ItinerariesFUStatics.java
+org.llvm.target.powerpc.llvm.PPCA2ItinerariesFU.impl
+    PPCA2ItinerariesFUStatics.java
+org.llvm.target.powerpc.llvm.PPCE500mcItinerariesBypass.impl
+    PPCE500mcItinerariesBypassStatics.java
+org.llvm.target.powerpc.llvm.PPCE500mcItinerariesFU.impl
+    PPCE500mcItinerariesFUStatics.java
+org.llvm.target.powerpc.llvm.PPCE5500ItinerariesBypass.impl
+    PPCE5500ItinerariesBypassStatics.java
+org.llvm.target.powerpc.llvm.PPCE5500ItinerariesFU.impl
+    PPCE5500ItinerariesFUStatics.java
+org.llvm.target.powerpc.llvm.impl
+    MaskRolOp.java
+    PPCGenInstrInfo.java
+    PPCGenInstrInfoLlvmStatics.java
+    PPCGenRegisterInfo.java
+    PPCGenRegisterInfoLlvmStatics.java
+    PPCGenSubtargetInfo.java
+    PPCGenSubtargetInfoLlvmStatics.java
 org.llvm.target.powerpc.mctargetdesc.PPC.impl
     BranchHintBit.java
     Fixups.java
@@ -1337,6 +1530,8 @@ org.llvm.target.sparc.impl
     InsertNOPsLoadStore.java
     LEONMachineFunctionPass.java
     LeonPassesStatics.java
+    LessOpcodeOperand.java
+    OperandMatchEntry.java
     PreventRoundChange.java
     ReplaceFMULS.java
     ReplaceSDIV.java
@@ -1346,6 +1541,7 @@ org.llvm.target.sparc.impl
     SparcELFTargetObjectFile.java
     SparcFrameLowering.java
     SparcFrameLoweringStatics.java
+    SparcGenCallingConvStatics.java
     SparcISelDAGToDAGLlvmStatics.java
     SparcISelLoweringStatics.java
     SparcInstrInfo.java
@@ -1369,6 +1565,25 @@ org.llvm.target.sparc.impl
     SparcelTargetMachine.java
 org.llvm.target.sparc.instprinter.impl
     SparcInstPrinter.java
+org.llvm.target.sparc.llvm.LEON2ItinerariesFU.impl
+    LEON2ItinerariesFUStatics.java
+org.llvm.target.sparc.llvm.LEON3ItinerariesFU.impl
+    LEON3ItinerariesFUStatics.java
+org.llvm.target.sparc.llvm.LEON4ItinerariesFU.impl
+    LEON4ItinerariesFUStatics.java
+org.llvm.target.sparc.llvm.SP.Sched.impl
+    SchedStatics.java
+org.llvm.target.sparc.llvm.SP.impl
+    SPStatics.java
+org.llvm.target.sparc.llvm.Sparc.impl
+    SparcStatics.java
+org.llvm.target.sparc.llvm.impl
+    SparcGenInstrInfo.java
+    SparcGenInstrInfoLlvmStatics.java
+    SparcGenRegisterInfo.java
+    SparcGenRegisterInfoLlvmStatics.java
+    SparcGenSubtargetInfo.java
+    SparcGenSubtargetInfoLlvmStatics.java
 org.llvm.target.sparc.mctargetdesc.Sparc.impl
     Fixups.java
 org.llvm.target.sparc.mctargetdesc.impl
@@ -1434,6 +1649,8 @@ org.llvm.target.systemz.impl
     SystemZElimCompareStatics.java
     SystemZFrameLowering.java
     SystemZFrameLoweringStatics.java
+    SystemZGenAsmMatcherStatics.java
+    SystemZGenCallingConvStatics.java
     SystemZISelDAGToDAGLlvmStatics.java
     SystemZISelDAGToDAGStatics.java
     SystemZISelLoweringStatics.java
@@ -1467,6 +1684,21 @@ org.llvm.target.systemz.impl
 org.llvm.target.systemz.instprinter.impl
     SystemZInstPrinter.java
     SystemZInstPrinterStatics.java
+org.llvm.target.systemz.llvm.SystemZ.Sched.impl
+    SchedStatics.java
+org.llvm.target.systemz.llvm.SystemZ.impl
+    DispSize.java
+    NumOpsValue.java
+    OpType.java
+    SystemZGenInstrInfoSystemZStatics.java
+org.llvm.target.systemz.llvm.impl
+    PPCGenDisassemblerTablesLlvmStatics.java
+    SystemZGenInstrInfo.java
+    SystemZGenInstrInfoLlvmStatics.java
+    SystemZGenRegisterInfo.java
+    SystemZGenRegisterInfoLlvmStatics.java
+    SystemZGenSubtargetInfo.java
+    SystemZGenSubtargetInfoLlvmStatics.java
 org.llvm.target.systemz.mctargetdesc.SystemZ.impl
     FixupKind.java
 org.llvm.target.systemz.mctargetdesc.SystemZMC.impl
@@ -1529,7 +1761,6 @@ org.llvm.target.x86.X86.impl
     X86FastISelX86Statics.java
     X86ISelLoweringX86Statics.java
     X86InstrInfoX86Statics.java
-    X86Statics.java
 org.llvm.target.x86.X86ISD.impl
     NodeType.java
 org.llvm.target.x86.asmparser.impl
@@ -1618,6 +1849,8 @@ org.llvm.target.x86.impl
     X86FrameLoweringStatics.java
     X86FrameSortingComparator.java
     X86FrameSortingObject.java
+    X86GenCallingConvStatics.java
+    X86GenDisassemblerTablesStatics.java
     X86ISelAddressMode.java
     X86ISelDAGToDAGLlvmStatics.java
     X86ISelDAGToDAGStatics.java
@@ -1663,6 +1896,20 @@ org.llvm.target.x86.instprinter.impl
     X86InstCommentsLlvmStatics.java
     X86InstCommentsStatics.java
     X86IntelInstPrinter.java
+org.llvm.target.x86.llvm.AtomItinerariesFU.impl
+    AtomItinerariesFUStatics.java
+org.llvm.target.x86.llvm.X86.Sched.impl
+    SchedStatics.java
+org.llvm.target.x86.llvm.X86.impl
+    X86Statics.java
+org.llvm.target.x86.llvm.impl
+    TargetLlvmStatics.java
+    X86GenInstrInfo.java
+    X86GenInstrInfoLlvmStatics.java
+    X86GenRegisterInfo.java
+    X86GenRegisterInfoLlvmStatics.java
+    X86GenSubtargetInfo.java
+    X86GenSubtargetInfoLlvmStatics.java
 org.llvm.target.x86.mctargetdesc.CU.impl
     CompactUnwindEncodings.java
 org.llvm.target.x86.mctargetdesc.DWARFFlavour.impl
@@ -1736,6 +1983,7 @@ org.llvm.target.xcore.impl
     XCoreFrameLoweringStatics.java
     XCoreFrameToArgsOffsetElimLlvmStatics.java
     XCoreFunctionInfo.java
+    XCoreGenCallingConvStatics.java
     XCoreISelDAGToDAGLlvmStatics.java
     XCoreISelDAGToDAGStatics.java
     XCoreISelLoweringStatics.java
@@ -1760,6 +2008,17 @@ org.llvm.target.xcore.impl
 org.llvm.target.xcore.instprinter.impl
     XCoreInstPrinter.java
     XCoreInstPrinterStatics.java
+org.llvm.target.xcore.llvm.XCore.Sched.impl
+    SchedStatics.java
+org.llvm.target.xcore.llvm.XCore.impl
+    XCoreStatics.java
+org.llvm.target.xcore.llvm.impl
+    XCoreGenInstrInfo.java
+    XCoreGenInstrInfoLlvmStatics.java
+    XCoreGenRegisterInfo.java
+    XCoreGenRegisterInfoLlvmStatics.java
+    XCoreGenSubtargetInfo.java
+    XCoreGenSubtargetInfoLlvmStatics.java
 org.llvm.target.xcore.mctargetdesc.impl
     XCoreMCAsmInfo.java
     XCoreMCTargetDescStatics.java

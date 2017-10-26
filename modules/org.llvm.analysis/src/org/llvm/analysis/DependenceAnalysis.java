@@ -76,39 +76,22 @@
 
 package org.llvm.analysis;
 
-import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
 import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
 import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
-import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
 import org.llvm.ir.*;
-import org.llvm.pass.*;
-import static org.llvm.ir.PassManagerGlobals.*;
+import org.llvm.ir.java.IPassFunction;
 
 // class DependenceInfo
 
 /// \brief AnalysisPass to compute dependence information in a function
 //<editor-fold defaultstate="collapsed" desc="llvm::DependenceAnalysis">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 928,
  FQN="llvm::DependenceAnalysis", NM="_ZN4llvm18DependenceAnalysisE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm18DependenceAnalysisE")
 //</editor-fold>
-public class DependenceAnalysis implements /*public*/ AnalysisInfoMixin<DependenceAnalysis> {
+public class DependenceAnalysis implements /*public*/ AnalysisInfoMixin<DependenceAnalysis>, IPassFunction<DependenceInfo> {
 /*public:*/
   // JAVA: typedef DependenceInfo Result
 //  public final class Result extends DependenceInfo{ };
@@ -116,31 +99,42 @@ public class DependenceAnalysis implements /*public*/ AnalysisInfoMixin<Dependen
   //===----------------------------------------------------------------------===//
   // basics
   //<editor-fold defaultstate="collapsed" desc="llvm::DependenceAnalysis::run">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_COMPILATION,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 117,
    FQN="llvm::DependenceAnalysis::run", NM="_ZN4llvm18DependenceAnalysis3runERNS_8FunctionERNS_15AnalysisManagerIS1_EE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm18DependenceAnalysis3runERNS_8FunctionERNS_15AnalysisManagerIS1_EE")
   //</editor-fold>
-  public DependenceInfo run(final Function /*&*/ F, final AnalysisManager<Function>/*&*/ FAM) {
-    throw new UnsupportedOperationException("EmptyBody");
+  public DependenceInfo run(final Function /*&*/ F, final AnalysisManager<Function> /*&*/ FAM) {
+    final AAResults /*&*/ AA = FAM.getResult(AAManager.class, F);
+    final ScalarEvolution /*&*/ SE = FAM.getResult(ScalarEvolutionAnalysis.class, F);
+    final LoopInfo /*&*/ LI = FAM.getResult(LoopAnalysis.class, F);
+    return new DependenceInfo($AddrOf(F), $AddrOf(AA), $AddrOf(SE), $AddrOf(LI));
   }
 
 /*private:*/
-  private static /*char*/byte PassID;
+  // JAVA: moved to extra/*private*/ static /*char*/byte PassID;
   /*friend  struct AnalysisInfoMixin<DependenceAnalysis>*/
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DependenceAnalysis::DependenceAnalysis">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 928,
    FQN="llvm::DependenceAnalysis::DependenceAnalysis", NM="_ZN4llvm18DependenceAnalysisC1EOS0_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Passes/PassBuilder.cpp -nm=_ZN4llvm18DependenceAnalysisC1EOS0_")
   //</editor-fold>
   public /*inline*/ DependenceAnalysis(JD$Move _dparam, final DependenceAnalysis /*&&*/$Prm0) {
-    // : AnalysisInfoMixin<DependenceAnalysis>(static_cast<DependenceAnalysis &&>())
+    // : AnalysisInfoMixin<DependenceAnalysis>(static_cast<DependenceAnalysis &&>()) 
+    //START JInit
     $AnalysisInfoMixin(JD$Move.INSTANCE, $Prm0);
-    throw new UnsupportedOperationException("EmptyBody");
+    //END JInit
   }
 
+  //////////////////////////////////////////////////////////////
+  // EXTRA MEMBERS: BEGIN
+
+  private static Class<DependenceAnalysis> PassID = DependenceAnalysis.class;
+
+  // EXTRA MEMBERS: END
+  //////////////////////////////////////////////////////////////
   
   @Override public String toString() {
     return "" + super.toString(); // NOI18N

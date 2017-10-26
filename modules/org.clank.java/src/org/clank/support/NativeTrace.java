@@ -306,9 +306,12 @@ public final class NativeTrace {
     }
   }
 
+  private static final ConcurrentHashMap<String, Boolean> tracedNotImplemented = new ConcurrentHashMap<String, Boolean>();
   public static final void traceNotImplemented(String message) {
-    if (!CLANG_MODE) {
-      System.err.println(message + " not yet implemented");
+    if (isDebugMode() && !CLANG_MODE) {
+      if (tracedNotImplemented.putIfAbsent(message, Boolean.TRUE) == null) {
+        System.err.println(message + " not yet implemented");
+      }
     }
   }
   

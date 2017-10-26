@@ -78,83 +78,80 @@ package org.llvm.analysis;
 
 import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
-import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
 import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
 import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
 import org.llvm.ir.*;
 import org.llvm.pass.*;
+import org.llvm.analysis.impl.*;
+import static org.llvm.analysis.impl.DependenceAnalysisStatics.dumpExampleDependence;
 
 // class DependenceAnalysis
 
 /// \brief Legacy pass manager pass to access dependence information
 //<editor-fold defaultstate="collapsed" desc="llvm::DependenceAnalysisWrapperPass">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 939,
  FQN="llvm::DependenceAnalysisWrapperPass", NM="_ZN4llvm29DependenceAnalysisWrapperPassE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm29DependenceAnalysisWrapperPassE")
 //</editor-fold>
 public class DependenceAnalysisWrapperPass extends /*public*/ FunctionPass implements Destructors.ClassWithDestructor {
 /*public:*/
-  public static final/*char*/Class<DependenceAnalysisWrapperPass> ID = DependenceAnalysisWrapperPass.class; // Class identification, replacement for typeinfo
+  // JAVA: moved to extra/*public*/ static /*char*/byte ID = $int2char(0); // Class identification, replacement for typeinfo
   //<editor-fold defaultstate="collapsed" desc="llvm::DependenceAnalysisWrapperPass::DependenceAnalysisWrapperPass">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 942,
    FQN="llvm::DependenceAnalysisWrapperPass::DependenceAnalysisWrapperPass", NM="_ZN4llvm29DependenceAnalysisWrapperPassC1Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm29DependenceAnalysisWrapperPassC1Ev")
   //</editor-fold>
   public DependenceAnalysisWrapperPass() {
     // : FunctionPass(ID), info() 
+    //START JInit
     super(ID);
-    throw new UnsupportedOperationException("EmptyBody");
+    this.info = new std.unique_ptr<DependenceInfo>();
+    //END JInit
+    DependenceAnalysisLlvmStatics.initializeDependenceAnalysisWrapperPassPass($Deref(PassRegistry.getPassRegistry()));
   }
 
   
   //<editor-fold defaultstate="collapsed" desc="llvm::DependenceAnalysisWrapperPass::runOnFunction">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 141,
    FQN="llvm::DependenceAnalysisWrapperPass::runOnFunction", NM="_ZN4llvm29DependenceAnalysisWrapperPass13runOnFunctionERNS_8FunctionE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm29DependenceAnalysisWrapperPass13runOnFunctionERNS_8FunctionE")
   //</editor-fold>
   @Override public boolean runOnFunction(final Function /*&*/ F)/* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    final AAResults /*&*/ AA = this.<AAResultsWrapperPass>getAnalysis(AAResultsWrapperPass.class).getAAResults();
+    final ScalarEvolution /*&*/ SE = this.<ScalarEvolutionWrapperPass>getAnalysis(ScalarEvolutionWrapperPass.class).getSE();
+    final LoopInfo /*&*/ LI = this.<LoopInfoWrapperPass>getAnalysis(LoopInfoWrapperPass.class).getLoopInfo();
+    info.reset(new DependenceInfo($AddrOf(F), $AddrOf(AA), $AddrOf(SE), $AddrOf(LI)));
+    return false;
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DependenceAnalysisWrapperPass::releaseMemory">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 151,
    FQN="llvm::DependenceAnalysisWrapperPass::releaseMemory", NM="_ZN4llvm29DependenceAnalysisWrapperPass13releaseMemoryEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm29DependenceAnalysisWrapperPass13releaseMemoryEv")
   //</editor-fold>
   @Override public void releaseMemory()/* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    info.reset();
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DependenceAnalysisWrapperPass::getAnalysisUsage">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 153,
    FQN="llvm::DependenceAnalysisWrapperPass::getAnalysisUsage", NM="_ZNK4llvm29DependenceAnalysisWrapperPass16getAnalysisUsageERNS_13AnalysisUsageE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm29DependenceAnalysisWrapperPass16getAnalysisUsageERNS_13AnalysisUsageE")
   //</editor-fold>
   @Override public void getAnalysisUsage(final AnalysisUsage /*&*/ AU) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    AU.setPreservesAll();
+    AU.<AAResultsWrapperPass>addRequiredTransitive(AAResultsWrapperPass.class);
+    AU.<ScalarEvolutionWrapperPass>addRequiredTransitive(ScalarEvolutionWrapperPass.class);
+    AU.<LoopInfoWrapperPass>addRequiredTransitive(LoopInfoWrapperPass.class);
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DependenceAnalysisWrapperPass::print">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_SEMANTIC,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 192,
    FQN="llvm::DependenceAnalysisWrapperPass::print", NM="_ZNK4llvm29DependenceAnalysisWrapperPass5printERNS_11raw_ostreamEPKNS_6ModuleE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm29DependenceAnalysisWrapperPass5printERNS_11raw_ostreamEPKNS_6ModuleE")
@@ -165,31 +162,41 @@ public class DependenceAnalysisWrapperPass extends /*public*/ FunctionPass imple
   }
   @Override public void print(final raw_ostream /*&*/ OS, 
        /*const*/ Module /*P*/ $Prm1/*= null*/) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    dumpExampleDependence(OS, info.get());
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DependenceAnalysisWrapperPass::getDI">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 149,
    FQN="llvm::DependenceAnalysisWrapperPass::getDI", NM="_ZNK4llvm29DependenceAnalysisWrapperPass5getDIEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm29DependenceAnalysisWrapperPass5getDIEv")
   //</editor-fold>
   public DependenceInfo /*&*/ getDI() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return info.$star();
   }
 
 /*private:*/
   private std.unique_ptr<DependenceInfo> info;
   //<editor-fold defaultstate="collapsed" desc="llvm::DependenceAnalysisWrapperPass::~DependenceAnalysisWrapperPass">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 939,
    FQN="llvm::DependenceAnalysisWrapperPass::~DependenceAnalysisWrapperPass", NM="_ZN4llvm29DependenceAnalysisWrapperPassD0Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm29DependenceAnalysisWrapperPassD0Ev")
   //</editor-fold>
   @Override public /*inline*/ void $destroy() {
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JDestroy
+    info.$destroy();
+    super.$destroy();
+    //END JDestroy
   }
 
+  //////////////////////////////////////////////////////////////
+  // EXTRA MEMBERS: BEGIN
+
+  public static final/*char*/Class<DependenceAnalysisWrapperPass> ID = DependenceAnalysisWrapperPass.class; // Class identification, replacement for typeinfo
+
+  // EXTRA MEMBERS: END
+  //////////////////////////////////////////////////////////////
   
   @Override public String toString() {
     return "" + "info=" + info // NOI18N

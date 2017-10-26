@@ -499,6 +499,9 @@ public abstract class SmallVectorImplUChar extends NativeTrace.CreateDestroy$Tra
     assert checkAlive();
     return insert(I, From, To);
   }
+  public final uchar$ptr insert_iterator$T_T(uchar$ptr I, uchar$iterator<?> From, uchar$iterator<?> To) {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }  
   public final uchar$ptr insert(uchar$ptr I, uchar$iterator<?> From, uchar$iterator<?> To) {
     assert checkAlive();
     return insert_iterator$T$value_T(I, From, To);

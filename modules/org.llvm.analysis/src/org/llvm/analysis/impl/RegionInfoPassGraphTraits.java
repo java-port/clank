@@ -111,14 +111,14 @@ import org.llvm.analysis.cflaa.impl.*;
  FQN="(anonymous namespace)::RegionInfoPassGraphTraits", NM="_ZN12_GLOBAL__N_125RegionInfoPassGraphTraitsE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/RegionPrinter.cpp -nm=_ZN12_GLOBAL__N_125RegionInfoPassGraphTraitsE")
 //</editor-fold>
-public class/*struct*/ RegionInfoPassGraphTraits {
+public class/*struct*/ RegionInfoPassGraphTraits extends DefaultAnalysisGraphTraits<RegionInfoPass, RegionInfo> {
   //<editor-fold defaultstate="collapsed" desc="(anonymous namespace)::RegionInfoPassGraphTraits::getGraph">
   @Converted(kind = Converted.Kind.AUTO_NO_BODY,
    source = "${LLVM_SRC}/llvm/lib/Analysis/RegionPrinter.cpp", line = 146,
    FQN="(anonymous namespace)::RegionInfoPassGraphTraits::getGraph", NM="_ZN12_GLOBAL__N_125RegionInfoPassGraphTraits8getGraphEPN4llvm14RegionInfoPassE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/RegionPrinter.cpp -nm=_ZN12_GLOBAL__N_125RegionInfoPassGraphTraits8getGraphEPN4llvm14RegionInfoPassE")
   //</editor-fold>
-  public static RegionInfo /*P*/ getGraph(RegionInfoPass /*P*/ RIP) {
+  public RegionInfo /*P*/ getGraph(RegionInfoPass /*P*/ RIP) {
     throw new UnsupportedOperationException("EmptyBody");
   }
 

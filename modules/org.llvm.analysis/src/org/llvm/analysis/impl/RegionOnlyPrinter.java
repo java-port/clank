@@ -121,7 +121,7 @@ public class/*struct*/ RegionOnlyPrinter extends /*public*/ DOTGraphTraitsPrinte
   //</editor-fold>
   public RegionOnlyPrinter() {
     // : DOTGraphTraitsPrinter<RegionInfoPass, true, RegionInfo * , RegionInfoPassGraphTraits>("reg", ID) 
-    /*ExprWithCleanups*/super(new StringRef(/*KEEP_STR*/"reg"), ID);
+    /*ExprWithCleanups*/super(RegionInfoPass.class, new RegionInfoPassGraphTraits(), true,new StringRef(/*KEEP_STR*/"reg"), ID);
     throw new UnsupportedOperationException("EmptyBody");
   }
 

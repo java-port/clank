@@ -2518,7 +2518,8 @@ public static final int		O_LARGEFILE	 = 0x2000;
       this.outStream.writeBytes(bytes);
     }
     
-    private static java.lang.reflect.Method SUN_NIO_CH_DIRECT_BUFFER_CLEANER = null;
+    private static java.lang.reflect.Method DIRECT_BUFFER_CLEANER_METHOD = null;
+    private static java.lang.reflect.Method DIRECT_BUFFER_CLEANER_CLEAN_METHOD = null;
     
     public char$ptr mmap(FileChannel.MapMode mode, long pos, long size) throws IOException {
       assert charPtr.$isNull() : "already in use";
@@ -2537,22 +2538,28 @@ public static final int		O_LARGEFILE	 = 0x2000;
         try {
           out.clear();
           if (out.isDirect()) {
-            if (out instanceof sun.nio.ch.DirectBuffer) {
-              // sun.misc.Cleaner in JDK8
-              // java.lang.ref.Cleaner in JDK9
-              Object cleaner = ((sun.nio.ch.DirectBuffer) out).cleaner();
-              if (cleaner != null) {
-                if (SUN_NIO_CH_DIRECT_BUFFER_CLEANER == null) { 
-                  Class<?> aClass = cleaner.getClass();
-                  cleanerClassName = aClass.getName();
-                  Method method = aClass.getMethod("clean");
-                  if (method != null) {
-                    SUN_NIO_CH_DIRECT_BUFFER_CLEANER = method;
+            // cache methods
+            if (DIRECT_BUFFER_CLEANER_CLEAN_METHOD == null) {
+              Method cleanerMethod = out.getClass().getMethod("cleaner"); //NOI18N
+              if (cleanerMethod != null) {
+                cleanerMethod.setAccessible(true);
+                // sun.misc.Cleaner in JDK8
+                // java.lang.ref.Cleaner in JDK9
+                Object cleaner = cleanerMethod.invoke(out);
+                if (cleaner != null) {
+                  Method cleanMethod = cleaner.getClass().getMethod("clean"); //NOI18N
+                  if (cleanMethod != null) {
+                    cleanMethod.setAccessible(true);
+                    DIRECT_BUFFER_CLEANER_METHOD = cleanerMethod;
+                    DIRECT_BUFFER_CLEANER_CLEAN_METHOD = cleanMethod;
                   }
-                }  
-                if (SUN_NIO_CH_DIRECT_BUFFER_CLEANER != null) {
-                  SUN_NIO_CH_DIRECT_BUFFER_CLEANER.invoke(cleaner);
                 }
+              }
+            }
+            if (DIRECT_BUFFER_CLEANER_CLEAN_METHOD != null) {
+              Object cleaner = DIRECT_BUFFER_CLEANER_METHOD.invoke(out);
+              if (cleaner != null) {
+                DIRECT_BUFFER_CLEANER_CLEAN_METHOD.invoke(cleaner);
               }
             }
           }

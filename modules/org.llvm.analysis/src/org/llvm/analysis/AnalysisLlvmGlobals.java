@@ -119,6 +119,7 @@ import org.llvm.cl.*;
 import static org.llvm.analysis.java.AnalysisRTTI.*;
 import org.llvm.analysis.bfi_detail.*;
 import org.llvm.analysis.impl.RegionInfoLlvmGlobals;
+import org.llvm.analysis.java.impl.IPassLoop;
 import static org.llvm.cl.ClGlobals.init;
 import org.llvm.cl.aliases.optUInt;
 import org.llvm.ir.java.IPassFunction;
@@ -3256,7 +3257,7 @@ public static PreservedAnalyses getLoopPassPreservedAnalyses() {
  FQN="llvm::createFunctionToLoopPassAdaptor", NM="Tpl__ZN4llvm31createFunctionToLoopPassAdaptorET_",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType -body-delegate ${LLVM_SRC}/llvm/lib/Analysis/IVUsers.cpp -nm=Tpl__ZN4llvm31createFunctionToLoopPassAdaptorET_")
 //</editor-fold>
-public static </*typename*/ LoopPassT> FunctionToLoopPassAdaptor<LoopPassT> createFunctionToLoopPassAdaptor(LoopPassT Pass) {
+public static </*typename*/ LoopPassT extends IPassLoop<PreservedAnalyses>> FunctionToLoopPassAdaptor<LoopPassT> createFunctionToLoopPassAdaptor(LoopPassT Pass) {
   return /*delegate*/org.llvm.analysis.impl.LoopPassManagerLlvmGlobals.
     createFunctionToLoopPassAdaptor(Pass);
 }

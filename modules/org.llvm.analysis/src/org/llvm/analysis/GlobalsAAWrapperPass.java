@@ -78,31 +78,16 @@ package org.llvm.analysis;
 
 import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
-import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
 import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
-import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
 import org.llvm.ir.*;
 import org.llvm.pass.*;
-import static org.llvm.ir.PassManagerGlobals.*;
+import org.llvm.analysis.target.*;
+import org.llvm.analysis.impl.*;
 
 
 /// Legacy wrapper pass to provide the GlobalsAAResult object.
 //<editor-fold defaultstate="collapsed" desc="llvm::GlobalsAAWrapperPass">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/GlobalsModRef.h", line = 132,
  FQN="llvm::GlobalsAAWrapperPass", NM="_ZN4llvm20GlobalsAAWrapperPassE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp -nm=_ZN4llvm20GlobalsAAWrapperPassE")
@@ -110,82 +95,100 @@ import static org.llvm.ir.PassManagerGlobals.*;
 public class GlobalsAAWrapperPass extends /*public*/ ModulePass implements Destructors.ClassWithDestructor {
   private std.unique_ptr<GlobalsAAResult> Result;
 /*public:*/
-  public static final/*char*/Class<GlobalsAAWrapperPass> ID = GlobalsAAWrapperPass.class;
+  // JAVA: moved to extra/*public*/ static /*char*/byte ID = $int2char(0);
   
   //<editor-fold defaultstate="collapsed" desc="llvm::GlobalsAAWrapperPass::GlobalsAAWrapperPass">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp", line = 960,
    FQN="llvm::GlobalsAAWrapperPass::GlobalsAAWrapperPass", NM="_ZN4llvm20GlobalsAAWrapperPassC1Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp -nm=_ZN4llvm20GlobalsAAWrapperPassC1Ev")
   //</editor-fold>
   public GlobalsAAWrapperPass() {
     // : ModulePass(ID), Result() 
+    //START JInit
     super(ID);
-    throw new UnsupportedOperationException("EmptyBody");
+    this.Result = new std.unique_ptr<GlobalsAAResult>();
+    //END JInit
+    GlobalsModRefLlvmStatics.initializeGlobalsAAWrapperPassPass($Deref(PassRegistry.getPassRegistry()));
   }
 
   
   //<editor-fold defaultstate="collapsed" desc="llvm::GlobalsAAWrapperPass::getResult">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/GlobalsModRef.h", line = 140,
    FQN="llvm::GlobalsAAWrapperPass::getResult", NM="_ZN4llvm20GlobalsAAWrapperPass9getResultEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp -nm=_ZN4llvm20GlobalsAAWrapperPass9getResultEv")
   //</editor-fold>
   public GlobalsAAResult /*&*/ getResult() {
-    throw new UnsupportedOperationException("EmptyBody");
+    return Result.$star();
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::GlobalsAAWrapperPass::getResult">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/GlobalsModRef.h", line = 141,
    FQN="llvm::GlobalsAAWrapperPass::getResult", NM="_ZNK4llvm20GlobalsAAWrapperPass9getResultEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp -nm=_ZNK4llvm20GlobalsAAWrapperPass9getResultEv")
   //</editor-fold>
   public /*const*/ GlobalsAAResult /*&*/ getResult$Const() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return Result.$star();
   }
 
   
   //<editor-fold defaultstate="collapsed" desc="llvm::GlobalsAAWrapperPass::runOnModule">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp", line = 964,
    FQN="llvm::GlobalsAAWrapperPass::runOnModule", NM="_ZN4llvm20GlobalsAAWrapperPass11runOnModuleERNS_6ModuleE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp -nm=_ZN4llvm20GlobalsAAWrapperPass11runOnModuleERNS_6ModuleE")
   //</editor-fold>
   @Override public boolean runOnModule(final Module /*&*/ M)/* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    Result.reset(GlobalsAAResult.analyzeModule(M, this.<TargetLibraryInfoWrapperPass>getAnalysis(TargetLibraryInfoWrapperPass.class).getTLI(), 
+            this.<CallGraphWrapperPass>getAnalysis(CallGraphWrapperPass.class).getCallGraph()));
+    return false;
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::GlobalsAAWrapperPass::doFinalization">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp", line = 971,
    FQN="llvm::GlobalsAAWrapperPass::doFinalization", NM="_ZN4llvm20GlobalsAAWrapperPass14doFinalizationERNS_6ModuleE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp -nm=_ZN4llvm20GlobalsAAWrapperPass14doFinalizationERNS_6ModuleE")
   //</editor-fold>
   @Override public boolean doFinalization(final Module /*&*/ M)/* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    Result.reset();
+    return false;
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::GlobalsAAWrapperPass::getAnalysisUsage">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp", line = 976,
    FQN="llvm::GlobalsAAWrapperPass::getAnalysisUsage", NM="_ZNK4llvm20GlobalsAAWrapperPass16getAnalysisUsageERNS_13AnalysisUsageE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp -nm=_ZNK4llvm20GlobalsAAWrapperPass16getAnalysisUsageERNS_13AnalysisUsageE")
   //</editor-fold>
   @Override public void getAnalysisUsage(final AnalysisUsage /*&*/ AU) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    AU.setPreservesAll();
+    AU.<CallGraphWrapperPass>addRequired(CallGraphWrapperPass.class);
+    AU.<TargetLibraryInfoWrapperPass>addRequired(TargetLibraryInfoWrapperPass.class);
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::GlobalsAAWrapperPass::~GlobalsAAWrapperPass">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/GlobalsModRef.h", line = 132,
    FQN="llvm::GlobalsAAWrapperPass::~GlobalsAAWrapperPass", NM="_ZN4llvm20GlobalsAAWrapperPassD0Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/GlobalsModRef.cpp -nm=_ZN4llvm20GlobalsAAWrapperPassD0Ev")
   //</editor-fold>
   @Override public /*inline*/ void $destroy() {
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JDestroy
+    Result.$destroy();
+    super.$destroy();
+    //END JDestroy
   }
 
+  //////////////////////////////////////////////////////////////
+  // EXTRA MEMBERS: BEGIN
+
+  public static final/*char*/Class<GlobalsAAWrapperPass> ID = GlobalsAAWrapperPass.class;
+
+  // EXTRA MEMBERS: END
+  //////////////////////////////////////////////////////////////
   
   @Override public String toString() {
     return "" + "Result=" + Result // NOI18N

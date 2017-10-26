@@ -76,83 +76,75 @@
 
 package org.llvm.analysis;
 
-import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
-import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
 import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
-import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
-import org.llvm.ir.*;
 import org.llvm.pass.*;
-import static org.llvm.ir.PassManagerGlobals.*;
+import org.llvm.analysis.impl.*;
 
 
 /// This pass is required by interprocedural register allocation. It forces
 /// codegen to follow bottom up order on call graph.
 //<editor-fold defaultstate="collapsed" desc="llvm::DummyCGSCCPass">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/CallGraphSCCPass.h", line = 119,
  FQN="llvm::DummyCGSCCPass", NM="_ZN4llvm14DummyCGSCCPassE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/CallGraphSCCPass.cpp -nm=_ZN4llvm14DummyCGSCCPassE")
 //</editor-fold>
 public class DummyCGSCCPass extends /*public*/ CallGraphSCCPass implements Destructors.ClassWithDestructor {
 /*public:*/
-  public static final/*char*/Class<DummyCGSCCPass> ID = DummyCGSCCPass.class;
+  // JAVA: moved to extra/*public*/ static /*char*/byte ID = $int2char(0);
   //<editor-fold defaultstate="collapsed" desc="llvm::DummyCGSCCPass::DummyCGSCCPass">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/CallGraphSCCPass.h", line = 122,
    FQN="llvm::DummyCGSCCPass::DummyCGSCCPass", NM="_ZN4llvm14DummyCGSCCPassC1Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/CallGraphSCCPass.cpp -nm=_ZN4llvm14DummyCGSCCPassC1Ev")
   //</editor-fold>
   public DummyCGSCCPass() {
     // : CallGraphSCCPass(ID) 
+    //START JInit
     super(ID);
-    throw new UnsupportedOperationException("EmptyBody");
+    //END JInit
+    final PassRegistry /*&*/ Registry = $Deref(PassRegistry.getPassRegistry());
+    CallGraphSCCPassLlvmGlobals.initializeDummyCGSCCPassPass(Registry);
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DummyCGSCCPass::runOnSCC">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/CallGraphSCCPass.h", line = 126,
    FQN="llvm::DummyCGSCCPass::runOnSCC", NM="_ZN4llvm14DummyCGSCCPass8runOnSCCERNS_12CallGraphSCCE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/CallGraphSCCPass.cpp -nm=_ZN4llvm14DummyCGSCCPass8runOnSCCERNS_12CallGraphSCCE")
   //</editor-fold>
   @Override public boolean runOnSCC(final CallGraphSCC /*&*/ SCC)/* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return false;
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DummyCGSCCPass::getAnalysisUsage">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/CallGraphSCCPass.h", line = 127,
    FQN="llvm::DummyCGSCCPass::getAnalysisUsage", NM="_ZNK4llvm14DummyCGSCCPass16getAnalysisUsageERNS_13AnalysisUsageE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/CallGraphSCCPass.cpp -nm=_ZNK4llvm14DummyCGSCCPass16getAnalysisUsageERNS_13AnalysisUsageE")
   //</editor-fold>
   @Override public void getAnalysisUsage(final AnalysisUsage /*&*/ AU) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    AU.setPreservesAll();
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DummyCGSCCPass::~DummyCGSCCPass">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/CallGraphSCCPass.h", line = 119,
    FQN="llvm::DummyCGSCCPass::~DummyCGSCCPass", NM="_ZN4llvm14DummyCGSCCPassD0Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/CallGraphSCCPass.cpp -nm=_ZN4llvm14DummyCGSCCPassD0Ev")
   //</editor-fold>
   @Override public /*inline*/ void $destroy() {
-    throw new UnsupportedOperationException("EmptyBody");
+    super.$destroy();
   }
 
+  //////////////////////////////////////////////////////////////
+  // EXTRA MEMBERS: BEGIN
+
+  public static final/*char*/Class<DummyCGSCCPass> ID = DummyCGSCCPass.class;
+
+  // EXTRA MEMBERS: END
+  //////////////////////////////////////////////////////////////
   
   @Override public String toString() {
     return "" + super.toString(); // NOI18N

@@ -420,20 +420,39 @@ public final class Unsigned {
       return out;
     }
 
+    public static /*ushort*/byte $int2uchar_3bits(int val) {
+      assert (val >>> 3) == 0 : "expected clean left bits " + val + ":" + Integer.toBinaryString(val);
+      return (byte)(val & 0x7);
+    }
+
     public static /*ushort*/byte $int2uchar_7bits(int val) {
       assert (val >>> 7) == 0 : "expected clean left bits " + val + ":" + Integer.toBinaryString(val);
       return (byte)(val & 0x7F);
+    }
+
+    public static /*ushort*/byte $uint2uchar_3bits(int val) {
+      return $int2uchar_3bits(val);
     }
 
     public static /*ushort*/byte $uint2uchar_7bits(int val) {
       return $int2uchar_7bits(val);
     }
 
+    public static /*ushort*/byte $uchar2uchar_3bits(/*uchar*/int val) {
+      assert (val >>> 3) == 0 : "expected clean left bits " + val + ":" + Integer.toBinaryString(val);
+      return (byte)(val & 0x7);
+    }
+    
     public static /*ushort*/byte $uchar2uchar_7bits(/*uchar*/byte val) {
       assert (val >>> 7) == 0 : "expected clean left bits " + val + ":" + Integer.toBinaryString(Byte.toUnsignedInt(val));
       return (byte)(val & 0x7F);
     }
-    
+
+    public static /*uchar*/byte $3bits_uchar2uchar(/*uchar*/byte val) {
+      assert (val >>> 3) == 0 : "expected clean left bits " + val + ":" + Integer.toBinaryString(Byte.toUnsignedInt(val));
+      return val;
+    }
+
     public static /*uchar*/byte $7bits_uchar2uchar(/*uchar*/byte val) {
       assert (val >>> 7) == 0 : "expected clean left bits " + val + ":" + Integer.toBinaryString(Byte.toUnsignedInt(val));
       return val;
@@ -948,7 +967,11 @@ public final class Unsigned {
     public static boolean $lesseq_uint_ushort(/*uint*/int u1, /*ushort*/char u2) {
       return $compare_uint_ushort(u1, u2) <= 0;
     }
-    
+
+    public static boolean $lesseq_uint_char$C(/*uint*/int u1, char i2) {
+      return $compare_uint_ushort(u1, i2) <= 0;
+    }
+                
     public static boolean $greater_uint_ushort(/*uint*/int u1, /*ushort*/char u2) {
       return $compare_uint_ushort(u1, u2) > 0;
     }
@@ -956,7 +979,7 @@ public final class Unsigned {
     public static boolean $greatereq_uint_ushort(/*uint*/int u1, /*ushort*/char u2) {
       return $compare_uint_ushort(u1, u2) >= 0;
     }
-        
+
     /////////////////////////////////////////////////////////////////////////
     // unsigned uint vs int
     

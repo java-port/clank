@@ -112,6 +112,9 @@ public class DFCalculateWorkObject</*class*/ BlockT>  {
   public BlockT /*P*/ parentBB;
   public /*const*/ DomTreeNodeBase<BlockT> /*P*/ Node;
   public /*const*/ DomTreeNodeBase<BlockT> /*P*/ parentNode;
+
+  public DFCalculateWorkObject() {
+  }
   
   @Override public String toString() {
     return "" + "currentBB=" + currentBB // NOI18N

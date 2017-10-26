@@ -2149,12 +2149,12 @@ public class Lexer extends /*public*/ PreprocessorLexer implements Destructors.C
       // If Microsoft extensions are disabled, this is just random garbage.
       Kind = tok.TokenKind.unknown;
       break;
-     case '\n':
      case '\r':
-      CurPtr$star = CurPtr.$star(); // JAVA PERF: extraced for reuse
-      if (CurPtr$star != Char && (CurPtr$star == '\n' || CurPtr$star == '\r')) {
+      if (CurPtr.$star() == '\n') {
         Char = getAndAdvanceChar(CurPtr, Result);
       }
+      // LLVM_FALLTHROUGH
+     case '\n':
       // If we are inside a preprocessor directive and we see the end of line,
       // we know we are done with the directive, so return an EOD token.
       if (ParsingPreprocessorDirective) {

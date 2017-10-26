@@ -113,7 +113,7 @@ public abstract class SCEVPredicate implements /*public*/ FoldingSetImpl.Node, D
   
   /// A reference to an Interned FoldingSetNodeID for this node.  The
   /// ScalarEvolution's BumpPtrAllocator holds the data.
-  private FoldingSetNodeIDRef FastID;
+  /*friend*/public FoldingSetNodeIDRef FastID;
 /*public:*/
   //<editor-fold defaultstate="collapsed" desc="llvm::SCEVPredicate::SCEVPredicateKind">
   @Converted(kind = Converted.Kind.AUTO,

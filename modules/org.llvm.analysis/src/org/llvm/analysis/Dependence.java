@@ -76,27 +76,13 @@
 
 package org.llvm.analysis;
 
-import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
-import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
 import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
 import static org.clank.support.Native.*;
 import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
 import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
 import org.llvm.ir.*;
-import org.llvm.pass.*;
+import org.llvm.analysis.impl.*;
 
 
 /// Dependence - This class represents a dependence between two memory
@@ -114,7 +100,7 @@ import org.llvm.pass.*;
 /// as singly-linked lists, with the "next" fields stored in the dependence
 /// itelf.
 //<editor-fold defaultstate="collapsed" desc="llvm::Dependence">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 71,
  FQN="llvm::Dependence", NM="_ZN4llvm10DependenceE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm10DependenceE")
@@ -122,14 +108,19 @@ import org.llvm.pass.*;
 public class Dependence implements Destructors.ClassWithDestructor {
 /*protected:*/
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::Dependence">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 73,
    FQN="llvm::Dependence::Dependence", NM="_ZN4llvm10DependenceC1ERKS0_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm10DependenceC1ERKS0_")
   //</editor-fold>
   protected Dependence(final /*const*/ Dependence /*&*/ $Prm0) {
     // : Src(.Src), Dst(.Dst), NextPredecessor(.NextPredecessor), NextSuccessor(.NextSuccessor)/* = default*/ 
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JInit
+    this.Src = $Prm0.Src;
+    this.Dst = $Prm0.Dst;
+    this.NextPredecessor = $Prm0.NextPredecessor;
+    this.NextSuccessor = $Prm0.NextSuccessor;
+    //END JInit
   }
 
 
@@ -140,7 +131,7 @@ public class Dependence implements Destructors.ClassWithDestructor {
   // Dependence(Dependence &&) = default;
   /*public:*/
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::Dependence">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 82,
    FQN="llvm::Dependence::Dependence", NM="_ZN4llvm10DependenceC1EPNS_11InstructionES2_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm10DependenceC1EPNS_11InstructionES2_")
@@ -148,17 +139,21 @@ public class Dependence implements Destructors.ClassWithDestructor {
   public Dependence(Instruction /*P*/ Source, 
       Instruction /*P*/ Destination) {
     // : Src(Source), Dst(Destination), NextPredecessor(null), NextSuccessor(null) 
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JInit
+    this.Src = Source;
+    this.Dst = Destination;
+    this.NextPredecessor = null;
+    this.NextSuccessor = null;
+    //END JInit
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::~Dependence">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 88,
    FQN="llvm::Dependence::~Dependence", NM="_ZN4llvm10DependenceD0Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm10DependenceD0Ev")
   //</editor-fold>
   public /*virtual*/ void $destroy() {
-    throw new UnsupportedOperationException("EmptyBody");
   }
 
   
@@ -166,7 +161,7 @@ public class Dependence implements Destructors.ClassWithDestructor {
   /// has a direction (or perhaps a union of several directions), and
   /// perhaps a distance.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::DVEntry">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 93,
    FQN="llvm::Dependence::DVEntry", NM="_ZN4llvm10Dependence7DVEntryE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm10Dependence7DVEntryE")
@@ -238,14 +233,21 @@ public class Dependence implements Destructors.ClassWithDestructor {
     public /*JBIT bool*/ boolean Splitable /*: 1*/; // Splitting the loop will break dependence.
     public /*const*/ SCEV /*P*/ Distance; // NULL implies no distance available.
     //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::DVEntry::DVEntry">
-    @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+    @Converted(kind = Converted.Kind.AUTO,
      source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 108,
      FQN="llvm::Dependence::DVEntry::DVEntry", NM="_ZN4llvm10Dependence7DVEntryC1Ev",
      cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm10Dependence7DVEntryC1Ev")
     //</editor-fold>
     public DVEntry() {
       // : Direction(ALL), Scalar(true), PeelFirst(false), PeelLast(false), Splitable(false), Distance(null) 
-      throw new UnsupportedOperationException("EmptyBody");
+      //START JInit
+      this.Direction = $uchar2uchar_3bits(Unnamed_enum.ALL.getValue());
+      this.Scalar = true;
+      this.PeelFirst = false;
+      this.PeelLast = false;
+      this.Splitable = false;
+      this.Distance = null;
+      //END JInit
     }
 
     
@@ -262,26 +264,26 @@ public class Dependence implements Destructors.ClassWithDestructor {
   /// getSrc - Returns the source instruction for this dependence.
   ///
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::getSrc">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 114,
    FQN="llvm::Dependence::getSrc", NM="_ZNK4llvm10Dependence6getSrcEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence6getSrcEv")
   //</editor-fold>
   public Instruction /*P*/ getSrc() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return Src;
   }
 
   
   /// getDst - Returns the destination instruction for this dependence.
   ///
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::getDst">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 118,
    FQN="llvm::Dependence::getDst", NM="_ZNK4llvm10Dependence6getDstEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence6getDstEv")
   //</editor-fold>
   public Instruction /*P*/ getDst() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return Dst;
   }
 
   
@@ -293,13 +295,13 @@ public class Dependence implements Destructors.ClassWithDestructor {
   
   // Returns true if this is an input dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isInput">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 201,
    FQN="llvm::Dependence::isInput", NM="_ZNK4llvm10Dependence7isInputEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence7isInputEv")
   //</editor-fold>
   public boolean isInput() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return Src.mayReadFromMemory() && Dst.mayReadFromMemory();
   }
 
   
@@ -308,13 +310,13 @@ public class Dependence implements Destructors.ClassWithDestructor {
   
   // Returns true if this is an output dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isOutput">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 207,
    FQN="llvm::Dependence::isOutput", NM="_ZNK4llvm10Dependence8isOutputEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence8isOutputEv")
   //</editor-fold>
   public boolean isOutput() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return Src.mayWriteToMemory() && Dst.mayWriteToMemory();
   }
 
   
@@ -323,13 +325,13 @@ public class Dependence implements Destructors.ClassWithDestructor {
   
   // Returns true if this is an flow (aka true)  dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isFlow">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 213,
    FQN="llvm::Dependence::isFlow", NM="_ZNK4llvm10Dependence6isFlowEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence6isFlowEv")
   //</editor-fold>
   public boolean isFlow() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return Src.mayWriteToMemory() && Dst.mayReadFromMemory();
   }
 
   
@@ -338,52 +340,52 @@ public class Dependence implements Destructors.ClassWithDestructor {
   
   // Returns true if this is an anti dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isAnti">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 219,
    FQN="llvm::Dependence::isAnti", NM="_ZNK4llvm10Dependence6isAntiEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence6isAntiEv")
   //</editor-fold>
   public boolean isAnti() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return Src.mayReadFromMemory() && Dst.mayWriteToMemory();
   }
 
   
   /// isOrdered - Returns true if dependence is Output, Flow, or Anti
   ///
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isOrdered">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 138,
    FQN="llvm::Dependence::isOrdered", NM="_ZNK4llvm10Dependence9isOrderedEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence9isOrderedEv")
   //</editor-fold>
   public boolean isOrdered() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return isOutput() || isFlow() || isAnti();
   }
 
   
   /// isUnordered - Returns true if dependence is Input
   ///
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isUnordered">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 142,
    FQN="llvm::Dependence::isUnordered", NM="_ZNK4llvm10Dependence11isUnorderedEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence11isUnorderedEv")
   //</editor-fold>
   public boolean isUnordered() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return isInput();
   }
 
   
   /// isLoopIndependent - Returns true if this is a loop-independent
   /// dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isLoopIndependent">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 146,
    FQN="llvm::Dependence::isLoopIndependent", NM="_ZNK4llvm10Dependence17isLoopIndependentEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence17isLoopIndependentEv")
   //</editor-fold>
   public /*virtual*/ boolean isLoopIndependent() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return true;
   }
 
   
@@ -391,104 +393,104 @@ public class Dependence implements Destructors.ClassWithDestructor {
   /// (the compiler understands nothing and makes worst-case
   /// assumptions).
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isConfused">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 151,
    FQN="llvm::Dependence::isConfused", NM="_ZNK4llvm10Dependence10isConfusedEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence10isConfusedEv")
   //</editor-fold>
   public /*virtual*/ boolean isConfused() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return true;
   }
 
   
   /// isConsistent - Returns true if this dependence is consistent
   /// (occurs every time the source and destination are executed).
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isConsistent">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 155,
    FQN="llvm::Dependence::isConsistent", NM="_ZNK4llvm10Dependence12isConsistentEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence12isConsistentEv")
   //</editor-fold>
   public /*virtual*/ boolean isConsistent() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return false;
   }
 
   
   /// getLevels - Returns the number of common loops surrounding the
   /// source and destination of the dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::getLevels">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 159,
    FQN="llvm::Dependence::getLevels", NM="_ZNK4llvm10Dependence9getLevelsEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence9getLevelsEv")
   //</editor-fold>
   public /*virtual*/ /*uint*/int getLevels() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return 0;
   }
 
   
   /// getDirection - Returns the direction associated with a particular
   /// level.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::getDirection">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 163,
    FQN="llvm::Dependence::getDirection", NM="_ZNK4llvm10Dependence12getDirectionEj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence12getDirectionEj")
   //</editor-fold>
   public /*virtual*/ /*uint*/int getDirection(/*uint*/int Level) /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return DVEntry.Unnamed_enum.ALL.getValue();
   }
 
   
   /// getDistance - Returns the distance (or NULL) associated with a
   /// particular level.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::getDistance">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 167,
    FQN="llvm::Dependence::getDistance", NM="_ZNK4llvm10Dependence11getDistanceEj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence11getDistanceEj")
   //</editor-fold>
   public /*virtual*/ /*const*/ SCEV /*P*/ getDistance(/*uint*/int Level) /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return null;
   }
 
   
   /// isPeelFirst - Returns true if peeling the first iteration from
   /// this loop will break this dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isPeelFirst">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 171,
    FQN="llvm::Dependence::isPeelFirst", NM="_ZNK4llvm10Dependence11isPeelFirstEj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence11isPeelFirstEj")
   //</editor-fold>
   public /*virtual*/ boolean isPeelFirst(/*uint*/int Level) /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return false;
   }
 
   
   /// isPeelLast - Returns true if peeling the last iteration from
   /// this loop will break this dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isPeelLast">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 175,
    FQN="llvm::Dependence::isPeelLast", NM="_ZNK4llvm10Dependence10isPeelLastEj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence10isPeelLastEj")
   //</editor-fold>
   public /*virtual*/ boolean isPeelLast(/*uint*/int Level) /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return false;
   }
 
   
   /// isSplitable - Returns true if splitting this loop will break
   /// the dependence.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isSplitable">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 179,
    FQN="llvm::Dependence::isSplitable", NM="_ZNK4llvm10Dependence11isSplitableEj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence11isSplitableEj")
   //</editor-fold>
   public /*virtual*/ boolean isSplitable(/*uint*/int Level) /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return false;
   }
 
   
@@ -501,65 +503,65 @@ public class Dependence implements Destructors.ClassWithDestructor {
   // variable associated with the loop at this level.
   // Leave this out of line, so it will serve as a virtual method anchor
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::isScalar">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 228,
    FQN="llvm::Dependence::isScalar", NM="_ZNK4llvm10Dependence8isScalarEj",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence8isScalarEj")
   //</editor-fold>
   public boolean isScalar(/*uint*/int level) /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return false;
   }
 
   
   /// getNextPredecessor - Returns the value of the NextPredecessor
   /// field.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::getNextPredecessor">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 188,
    FQN="llvm::Dependence::getNextPredecessor", NM="_ZNK4llvm10Dependence18getNextPredecessorEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence18getNextPredecessorEv")
   //</editor-fold>
   public /*const*/ Dependence /*P*/ getNextPredecessor() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return NextPredecessor;
   }
 
   
   /// getNextSuccessor - Returns the value of the NextSuccessor
   /// field.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::getNextSuccessor">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 192,
    FQN="llvm::Dependence::getNextSuccessor", NM="_ZNK4llvm10Dependence16getNextSuccessorEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence16getNextSuccessorEv")
   //</editor-fold>
   public /*const*/ Dependence /*P*/ getNextSuccessor() /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    return NextSuccessor;
   }
 
   
   /// setNextPredecessor - Sets the value of the NextPredecessor
   /// field.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::setNextPredecessor">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 196,
    FQN="llvm::Dependence::setNextPredecessor", NM="_ZN4llvm10Dependence18setNextPredecessorEPKS0_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm10Dependence18setNextPredecessorEPKS0_")
   //</editor-fold>
   public void setNextPredecessor(/*const*/ Dependence /*P*/ pred) {
-    throw new UnsupportedOperationException("EmptyBody");
+    NextPredecessor = pred;
   }
 
   
   /// setNextSuccessor - Sets the value of the NextSuccessor
   /// field.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::setNextSuccessor">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DependenceAnalysis.h", line = 200,
    FQN="llvm::Dependence::setNextSuccessor", NM="_ZN4llvm10Dependence16setNextSuccessorEPKS0_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZN4llvm10Dependence16setNextSuccessorEPKS0_")
   //</editor-fold>
   public void setNextSuccessor(/*const*/ Dependence /*P*/ succ) {
-    throw new UnsupportedOperationException("EmptyBody");
+    NextSuccessor = succ;
   }
 
   
@@ -571,13 +573,74 @@ public class Dependence implements Destructors.ClassWithDestructor {
   
   // For debugging purposes. Dumps a dependence to OS.
   //<editor-fold defaultstate="collapsed" desc="llvm::Dependence::dump">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp", line = 570,
    FQN="llvm::Dependence::dump", NM="_ZNK4llvm10Dependence4dumpERNS_11raw_ostreamE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DependenceAnalysis.cpp -nm=_ZNK4llvm10Dependence4dumpERNS_11raw_ostreamE")
   //</editor-fold>
   public void dump(final raw_ostream /*&*/ OS) /*const*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    boolean Splitable = false;
+    if (isConfused()) {
+      OS.$out(/*KEEP_STR*/"confused");
+    } else {
+      if (isConsistent()) {
+        OS.$out(/*KEEP_STR*/"consistent ");
+      }
+      if (isFlow()) {
+        OS.$out(/*KEEP_STR*/"flow");
+      } else if (isOutput()) {
+        OS.$out(/*KEEP_STR*/"output");
+      } else if (isAnti()) {
+        OS.$out(/*KEEP_STR*/"anti");
+      } else if (isInput()) {
+        OS.$out(/*KEEP_STR*/"input");
+      }
+      /*uint*/int Levels = getLevels();
+      OS.$out(/*KEEP_STR*/" [");
+      for (/*uint*/int II = 1; $lesseq_uint(II, Levels); ++II) {
+        if (isSplitable(II)) {
+          Splitable = true;
+        }
+        if (isPeelFirst(II)) {
+          OS.$out_char($$p);
+        }
+        /*const*/ SCEV /*P*/ Distance = getDistance(II);
+        if ((Distance != null)) {
+          ScalarEvolutionLlvmGlobals.$out_raw_ostream_SCEV$C(OS, $Deref(Distance));
+        } else if (isScalar(II)) {
+          OS.$out(/*KEEP_STR*/$S);
+        } else {
+          /*uint*/int Direction = getDirection(II);
+          if (Direction == DVEntry.Unnamed_enum.ALL.getValue()) {
+            OS.$out(/*KEEP_STR*/$STAR);
+          } else {
+            if (((Direction & DVEntry.Unnamed_enum.LT.getValue()) != 0)) {
+              OS.$out(/*KEEP_STR*/$LT);
+            }
+            if (((Direction & DVEntry.Unnamed_enum.EQ.getValue()) != 0)) {
+              OS.$out(/*KEEP_STR*/$EQ);
+            }
+            if (((Direction & DVEntry.Unnamed_enum.GT.getValue()) != 0)) {
+              OS.$out(/*KEEP_STR*/$GT);
+            }
+          }
+        }
+        if (isPeelLast(II)) {
+          OS.$out_char($$p);
+        }
+        if ($less_uint(II, Levels)) {
+          OS.$out(/*KEEP_STR*/$SPACE);
+        }
+      }
+      if (isLoopIndependent()) {
+        OS.$out(/*KEEP_STR*/"|<");
+      }
+      OS.$out(/*KEEP_STR*/$RSQUARE);
+      if (Splitable) {
+        OS.$out(/*KEEP_STR*/" splitable");
+      }
+    }
+    OS.$out(/*KEEP_STR*/"!\n");
   }
 
 /*private:*/

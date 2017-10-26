@@ -114,14 +114,14 @@ import static org.llvm.analysis.java.AnalysisRTTI.*;
  FQN="(anonymous namespace)::PostDominatorTreeWrapperPassAnalysisGraphTraits", NM="_ZN12_GLOBAL__N_147PostDominatorTreeWrapperPassAnalysisGraphTraitsE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DomPrinter.cpp -nm=_ZN12_GLOBAL__N_147PostDominatorTreeWrapperPassAnalysisGraphTraitsE")
 //</editor-fold>
-public class/*struct*/ PostDominatorTreeWrapperPassAnalysisGraphTraits {
+public class/*struct*/ PostDominatorTreeWrapperPassAnalysisGraphTraits extends DefaultAnalysisGraphTraits<PostDominatorTreeWrapperPass, PostDominatorTree> {
   //<editor-fold defaultstate="collapsed" desc="(anonymous namespace)::PostDominatorTreeWrapperPassAnalysisGraphTraits::getGraph">
   @Converted(kind = Converted.Kind.AUTO_NO_BODY,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DomPrinter.cpp", line = 115,
    FQN="(anonymous namespace)::PostDominatorTreeWrapperPassAnalysisGraphTraits::getGraph", NM="_ZN12_GLOBAL__N_147PostDominatorTreeWrapperPassAnalysisGraphTraits8getGraphEPN4llvm28PostDominatorTreeWrapperPassE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DomPrinter.cpp -nm=_ZN12_GLOBAL__N_147PostDominatorTreeWrapperPassAnalysisGraphTraits8getGraphEPN4llvm28PostDominatorTreeWrapperPassE")
   //</editor-fold>
-  public static PostDominatorTree /*P*/ getGraph(PostDominatorTreeWrapperPass /*P*/ PDTWP) {
+  public PostDominatorTree /*P*/ getGraph(PostDominatorTreeWrapperPass /*P*/ PDTWP) {
     throw new UnsupportedOperationException("EmptyBody");
   }
 

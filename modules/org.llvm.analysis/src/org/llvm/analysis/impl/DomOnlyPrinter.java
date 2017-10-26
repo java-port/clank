@@ -124,7 +124,7 @@ public class/*struct*/ DomOnlyPrinter extends /*public*/ DOTGraphTraitsPrinter<D
   //</editor-fold>
   public DomOnlyPrinter() {
     // : DOTGraphTraitsPrinter<DominatorTreeWrapperPass, true, DominatorTree * , DominatorTreeWrapperPassAnalysisGraphTraits>("domonly", ID) 
-    /*ExprWithCleanups*/super(new StringRef(/*KEEP_STR*/"domonly"), ID);
+    /*ExprWithCleanups*/super(DominatorTreeWrapperPass.class, new DominatorTreeWrapperPassAnalysisGraphTraits(), true, new StringRef(/*KEEP_STR*/"domonly"), ID);
     throw new UnsupportedOperationException("EmptyBody");
   }
 

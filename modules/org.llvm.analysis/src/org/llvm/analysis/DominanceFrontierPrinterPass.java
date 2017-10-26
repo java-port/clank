@@ -76,73 +76,64 @@
 
 package org.llvm.analysis;
 
-import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
 import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
 import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
-import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
 import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
 import org.llvm.ir.*;
-import org.llvm.pass.*;
-import static org.llvm.ir.PassManagerGlobals.*;
+import org.llvm.ir.java.IPassFunction;
 
 
 /// \brief Printer pass for the \c DominanceFrontier.
 //<editor-fold defaultstate="collapsed" desc="llvm::DominanceFrontierPrinterPass">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DominanceFrontier.h", line = 185,
  FQN="llvm::DominanceFrontierPrinterPass", NM="_ZN4llvm28DominanceFrontierPrinterPassE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DominanceFrontier.cpp -nm=_ZN4llvm28DominanceFrontierPrinterPassE")
 //</editor-fold>
-public class DominanceFrontierPrinterPass implements /*public*/ PassInfoMixin<DominanceFrontierPrinterPass> {
+public class DominanceFrontierPrinterPass implements /*public*/ PassInfoMixin<DominanceFrontierPrinterPass>, IPassFunction<PreservedAnalyses> {
   private final raw_ostream /*&*/ OS;
 /*public:*/
   //<editor-fold defaultstate="collapsed" desc="llvm::DominanceFrontierPrinterPass::DominanceFrontierPrinterPass">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DominanceFrontier.cpp", line = 68,
    FQN="llvm::DominanceFrontierPrinterPass::DominanceFrontierPrinterPass", NM="_ZN4llvm28DominanceFrontierPrinterPassC1ERNS_11raw_ostreamE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DominanceFrontier.cpp -nm=_ZN4llvm28DominanceFrontierPrinterPassC1ERNS_11raw_ostreamE")
   //</editor-fold>
   public DominanceFrontierPrinterPass(final raw_ostream /*&*/ OS) {
     // : PassInfoMixin<DominanceFrontierPrinterPass>(), OS(OS) 
-    super();
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JInit
+    $PassInfoMixin();
+    this./*&*/OS=/*&*/OS;
+    //END JInit
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DominanceFrontierPrinterPass::run">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DominanceFrontier.cpp", line = 71,
    FQN="llvm::DominanceFrontierPrinterPass::run", NM="_ZN4llvm28DominanceFrontierPrinterPass3runERNS_8FunctionERNS_15AnalysisManagerIS1_EE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DominanceFrontier.cpp -nm=_ZN4llvm28DominanceFrontierPrinterPass3runERNS_8FunctionERNS_15AnalysisManagerIS1_EE")
   //</editor-fold>
-  public PreservedAnalyses run(final Function /*&*/ F, final AnalysisManager<Function>/*&*/ AM) {
-    throw new UnsupportedOperationException("EmptyBody");
+  public PreservedAnalyses run(final Function /*&*/ F, final AnalysisManager<Function> /*&*/ AM) {
+    OS.$out(/*KEEP_STR*/"DominanceFrontier for function: ").$out(F.getName()).$out(/*KEEP_STR*/$LF);
+    AM.getResult(DominanceFrontierAnalysis.class, F).print(OS);
+    
+    return PreservedAnalyses.all();
   }
 
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DominanceFrontierPrinterPass::DominanceFrontierPrinterPass">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DominanceFrontier.h", line = 185,
    FQN="llvm::DominanceFrontierPrinterPass::DominanceFrontierPrinterPass", NM="_ZN4llvm28DominanceFrontierPrinterPassC1EOS0_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Passes/PassBuilder.cpp -nm=_ZN4llvm28DominanceFrontierPrinterPassC1EOS0_")
   //</editor-fold>
   public /*inline*/ DominanceFrontierPrinterPass(JD$Move _dparam, final DominanceFrontierPrinterPass /*&&*/$Prm0) {
-    // : PassInfoMixin<DominanceFrontierPrinterPass>(static_cast<DominanceFrontierPrinterPass &&>()), OS(static_cast<DominanceFrontierPrinterPass &&>().OS)
+    // : PassInfoMixin<DominanceFrontierPrinterPass>(static_cast<DominanceFrontierPrinterPass &&>()), OS(static_cast<DominanceFrontierPrinterPass &&>().OS) 
+    //START JInit
     $PassInfoMixin(JD$Move.INSTANCE, $Prm0);
-    throw new UnsupportedOperationException("EmptyBody");
+    this./*&*/OS=/*&*/$Prm0.OS;
+    //END JInit
   }
 
   

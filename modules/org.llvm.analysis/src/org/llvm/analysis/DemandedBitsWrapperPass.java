@@ -76,30 +76,16 @@
 
 package org.llvm.analysis;
 
-import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
-import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
 import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
+import org.llvm.adt.Optional;
 import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
 import org.llvm.ir.*;
 import org.llvm.pass.*;
+import org.llvm.analysis.impl.*;
 
 //<editor-fold defaultstate="collapsed" desc="llvm::DemandedBitsWrapperPass">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DemandedBits.h", line = 71,
  FQN="llvm::DemandedBitsWrapperPass", NM="_ZN4llvm23DemandedBitsWrapperPassE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp -nm=_ZN4llvm23DemandedBitsWrapperPassE")
@@ -108,84 +94,103 @@ public class DemandedBitsWrapperPass extends /*public*/ FunctionPass implements 
 /*private:*/
   private /*mutable */Optional<DemandedBits> DB;
 /*public:*/
-  public static final/*char*/Class<DemandedBitsWrapperPass> ID = DemandedBitsWrapperPass.class; // Pass identification, replacement for typeid
+  // JAVA: moved to extra/*public*/ static /*char*/byte ID = $int2char(0); // Pass identification, replacement for typeid
   //<editor-fold defaultstate="collapsed" desc="llvm::DemandedBitsWrapperPass::DemandedBitsWrapperPass">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp", line = 53,
    FQN="llvm::DemandedBitsWrapperPass::DemandedBitsWrapperPass", NM="_ZN4llvm23DemandedBitsWrapperPassC1Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp -nm=_ZN4llvm23DemandedBitsWrapperPassC1Ev")
   //</editor-fold>
   public DemandedBitsWrapperPass() {
     // : FunctionPass(ID), DB() 
+    //START JInit
     super(ID);
-    throw new UnsupportedOperationException("EmptyBody");
+    this.DB = new Optional<DemandedBits>();
+    //END JInit
+    DemandedBitsLlvmStatics.initializeDemandedBitsWrapperPassPass($Deref(PassRegistry.getPassRegistry()));
   }
 
   
   //<editor-fold defaultstate="collapsed" desc="llvm::DemandedBitsWrapperPass::runOnFunction">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp", line = 250,
    FQN="llvm::DemandedBitsWrapperPass::runOnFunction", NM="_ZN4llvm23DemandedBitsWrapperPass13runOnFunctionERNS_8FunctionE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp -nm=_ZN4llvm23DemandedBitsWrapperPass13runOnFunctionERNS_8FunctionE")
   //</editor-fold>
   @Override public boolean runOnFunction(final Function /*&*/ F)/* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    final AssumptionCache /*&*/ AC = this.<AssumptionCacheTracker>getAnalysis(AssumptionCacheTracker.class).getAssumptionCache(F);
+    final DominatorTree /*&*/ DT = this.<DominatorTreeWrapperPass>getAnalysis(DominatorTreeWrapperPass.class).getDomTree();
+    DB.emplace(new DemandedBits(F, AC, DT));
+    return false;
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DemandedBitsWrapperPass::getAnalysisUsage">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp", line = 57,
    FQN="llvm::DemandedBitsWrapperPass::getAnalysisUsage", NM="_ZNK4llvm23DemandedBitsWrapperPass16getAnalysisUsageERNS_13AnalysisUsageE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp -nm=_ZNK4llvm23DemandedBitsWrapperPass16getAnalysisUsageERNS_13AnalysisUsageE")
   //</editor-fold>
   @Override public void getAnalysisUsage(final AnalysisUsage /*&*/ AU) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    AU.setPreservesCFG();
+    AU.<AssumptionCacheTracker>addRequired(AssumptionCacheTracker.class);
+    AU.<DominatorTreeWrapperPass>addRequired(DominatorTreeWrapperPass.class);
+    AU.setPreservesAll();
   }
 
   
   /// Clean up memory in between runs
   //<editor-fold defaultstate="collapsed" desc="llvm::DemandedBitsWrapperPass::releaseMemory">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp", line = 257,
    FQN="llvm::DemandedBitsWrapperPass::releaseMemory", NM="_ZN4llvm23DemandedBitsWrapperPass13releaseMemoryEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp -nm=_ZN4llvm23DemandedBitsWrapperPass13releaseMemoryEv")
   //</editor-fold>
   @Override public void releaseMemory()/* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    DB.reset();
   }
 
   
   //<editor-fold defaultstate="collapsed" desc="llvm::DemandedBitsWrapperPass::getDemandedBits">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DemandedBits.h", line = 84,
    FQN="llvm::DemandedBitsWrapperPass::getDemandedBits", NM="_ZN4llvm23DemandedBitsWrapperPass15getDemandedBitsEv",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp -nm=_ZN4llvm23DemandedBitsWrapperPass15getDemandedBitsEv")
   //</editor-fold>
   public DemandedBits /*&*/ getDemandedBits() {
-    throw new UnsupportedOperationException("EmptyBody");
+    return DB.$star();
   }
 
   
   //<editor-fold defaultstate="collapsed" desc="llvm::DemandedBitsWrapperPass::print">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp", line = 64,
    FQN="llvm::DemandedBitsWrapperPass::print", NM="_ZNK4llvm23DemandedBitsWrapperPass5printERNS_11raw_ostreamEPKNS_6ModuleE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp -nm=_ZNK4llvm23DemandedBitsWrapperPass5printERNS_11raw_ostreamEPKNS_6ModuleE")
   //</editor-fold>
   @Override public void print(final raw_ostream /*&*/ OS, /*const*/ Module /*P*/ M) /*const*//* override*/ {
-    throw new UnsupportedOperationException("EmptyBody");
+    DB.$arrow().print(OS);
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::DemandedBitsWrapperPass::~DemandedBitsWrapperPass">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/DemandedBits.h", line = 71,
    FQN="llvm::DemandedBitsWrapperPass::~DemandedBitsWrapperPass", NM="_ZN4llvm23DemandedBitsWrapperPassD0Ev",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DemandedBits.cpp -nm=_ZN4llvm23DemandedBitsWrapperPassD0Ev")
   //</editor-fold>
   @Override public /*inline*/ void $destroy() {
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JDestroy
+    DB.$destroy();
+    super.$destroy();
+    //END JDestroy
   }
 
+  //////////////////////////////////////////////////////////////
+  // EXTRA MEMBERS: BEGIN
+
+  public static final/*char*/Class<DemandedBitsWrapperPass> ID = DemandedBitsWrapperPass.class; // Pass identification, replacement for typeid
+
+  // EXTRA MEMBERS: END
+  //////////////////////////////////////////////////////////////
   
   @Override public String toString() {
     return "" + "DB=" + DB // NOI18N

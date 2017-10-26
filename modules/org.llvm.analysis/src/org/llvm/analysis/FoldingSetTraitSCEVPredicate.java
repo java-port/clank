@@ -76,34 +76,16 @@
 
 package org.llvm.analysis;
 
-import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
-import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
-import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
-import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
-import org.llvm.ir.*;
-import org.llvm.pass.*;
-import static org.llvm.ir.PassManagerGlobals.*;
+import org.llvm.adt.DefaultFoldingSetTrait;
+import org.llvm.adt.FoldingSetNodeID;
+import org.llvm.adt.FoldingSetNodeIDRef;
 
 
 // Specialize FoldingSetTrait for SCEVPredicate to avoid needing to compute
 // temporary FoldingSetNodeID values.
 //<editor-fold defaultstate="collapsed" desc="llvm::FoldingSetTrait<SCEVPredicate>">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.AUTO,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/ScalarEvolution.h", line = 222,
  FQN="llvm::FoldingSetTrait<SCEVPredicate>", NM="_ZN4llvm15FoldingSetTraitINS_13SCEVPredicateEEE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/ScalarEvolution.cpp -nm=_ZN4llvm15FoldingSetTraitINS_13SCEVPredicateEEE")
@@ -111,36 +93,36 @@ import static org.llvm.ir.PassManagerGlobals.*;
 public class/*struct*/ FoldingSetTraitSCEVPredicate extends /**/ DefaultFoldingSetTrait<SCEVPredicate> {
   
   //<editor-fold defaultstate="collapsed" desc="llvm::FoldingSetTrait<SCEVPredicate>::Profile">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_SEMANTIC,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/ScalarEvolution.h", line = 226,
    FQN="llvm::FoldingSetTrait<SCEVPredicate>::Profile", NM="_ZN4llvm15FoldingSetTraitINS_13SCEVPredicateEE7ProfileERKS1_RNS_16FoldingSetNodeIDE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/ScalarEvolution.cpp -nm=_ZN4llvm15FoldingSetTraitINS_13SCEVPredicateEE7ProfileERKS1_RNS_16FoldingSetNodeIDE")
   //</editor-fold>
   public /*static*/ void Profile(final /*const*/ SCEVPredicate /*&*/ X, final FoldingSetNodeID /*&*/ ID) {
-    throw new UnsupportedOperationException("EmptyBody");
+    ID.$assignMove(new FoldingSetNodeID(new FoldingSetNodeIDRef(X.FastID)));
   }
 
   
   //<editor-fold defaultstate="collapsed" desc="llvm::FoldingSetTrait<SCEVPredicate>::Equals">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_SEMANTIC,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/ScalarEvolution.h", line = 230,
    FQN="llvm::FoldingSetTrait<SCEVPredicate>::Equals", NM="_ZN4llvm15FoldingSetTraitINS_13SCEVPredicateEE6EqualsERKS1_RKNS_16FoldingSetNodeIDEjRS5_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/ScalarEvolution.cpp -nm=_ZN4llvm15FoldingSetTraitINS_13SCEVPredicateEE6EqualsERKS1_RKNS_16FoldingSetNodeIDEjRS5_")
   //</editor-fold>
   public /*static*/ boolean Equals(final /*const*/ SCEVPredicate /*&*/ X, final /*const*/ FoldingSetNodeID /*&*/ ID, 
         /*uint*/int IDHash, final FoldingSetNodeID /*&*/ TempID) {
-    throw new UnsupportedOperationException("EmptyBody");
+    return ID.$eq(/*NO_COPY*/X.FastID);
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::FoldingSetTrait<SCEVPredicate>::ComputeHash">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_SEMANTIC,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/ScalarEvolution.h", line = 234,
    FQN="llvm::FoldingSetTrait<SCEVPredicate>::ComputeHash", NM="_ZN4llvm15FoldingSetTraitINS_13SCEVPredicateEE11ComputeHashERKS1_RNS_16FoldingSetNodeIDE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/ScalarEvolution.cpp -nm=_ZN4llvm15FoldingSetTraitINS_13SCEVPredicateEE11ComputeHashERKS1_RNS_16FoldingSetNodeIDE")
   //</editor-fold>
   public /*static*/ /*uint*/int ComputeHash(final /*const*/ SCEVPredicate /*&*/ X, 
              final FoldingSetNodeID /*&*/ TempID) {
-    throw new UnsupportedOperationException("EmptyBody");
+    return X.FastID.ComputeHash();
   }
 
   

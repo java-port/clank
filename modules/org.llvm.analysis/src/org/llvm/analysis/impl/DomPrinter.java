@@ -125,7 +125,7 @@ public class/*struct*/ DomPrinter extends /*public*/ DOTGraphTraitsPrinter<Domin
   //</editor-fold>
   public DomPrinter() {
     // : DOTGraphTraitsPrinter<DominatorTreeWrapperPass, false, DominatorTree * , DominatorTreeWrapperPassAnalysisGraphTraits>("dom", ID) 
-    /*ExprWithCleanups*/super(new StringRef(/*KEEP_STR*/"dom"), ID);
+    /*ExprWithCleanups*/super(DominatorTreeWrapperPass.class, new DominatorTreeWrapperPassAnalysisGraphTraits(), false, new StringRef(/*KEEP_STR*/"dom"), ID);
     throw new UnsupportedOperationException("EmptyBody");
   }
 

@@ -87,6 +87,7 @@ import org.llvm.ir.AnalysisManager;
 import org.llvm.ir.Function;
 import static org.llvm.ir.PassManagerGlobals.*;
 import org.llvm.ir.Type;
+import org.llvm.ir.Value;
 import org.llvm.pass.Pass;
 /**
  *
@@ -153,5 +154,10 @@ public class AnalysisFunctionPointers {
   @FunctionalInterface
   public static interface UIntInt2Void {
     void $call(/*uint*/int P1, /*uint*/int P2);
+  }
+
+  @FunctionalInterface
+  public static interface UIntValueValue2Void {
+    void $call(/*uint*/int P1, /*const*/ Value /*P*/  P2, /*const*/ Value /*P*/  P3);
   }
 }

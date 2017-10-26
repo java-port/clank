@@ -78,26 +78,15 @@ package org.llvm.analysis;
 
 import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
 import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
 import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
-import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
+import org.llvm.adt.aliases.SmallVector;
+import static org.llvm.support.llvm.*;
 import org.llvm.ir.*;
-import org.llvm.pass.*;
 import static org.llvm.ir.PassManagerGlobals.*;
+import org.llvm.analysis.impl.*;
+import org.llvm.ir.java.IPassFunction;
+import org.llvm.analysis.java.impl.IPassLoop;
 
 
 /// \brief Adaptor that maps from a function to its loops.
@@ -109,79 +98,139 @@ import static org.llvm.ir.PassManagerGlobals.*;
 /// LoopAnalysisManager to be used within this run safely.
 /*template <typename LoopPassT> TEMPLATE*/
 //<editor-fold defaultstate="collapsed" desc="llvm::FunctionToLoopPassAdaptor">
-@Converted(kind = Converted.Kind.AUTO_NO_BODY,
+@Converted(kind = Converted.Kind.MANUAL_SEMANTIC,
  source = "${LLVM_SRC}/llvm/include/llvm/Analysis/LoopPassManager.h", line = 61,
  FQN="llvm::FunctionToLoopPassAdaptor", NM="_ZN4llvm25FunctionToLoopPassAdaptorE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/LoopPassManager.cpp -nm=_ZN4llvm25FunctionToLoopPassAdaptorE")
 //</editor-fold>
-public class FunctionToLoopPassAdaptor</*typename*/ LoopPassT>  implements /*public*/ PassInfoMixin<FunctionToLoopPassAdaptor<LoopPassT> > {
+public class FunctionToLoopPassAdaptor</*typename*/ LoopPassT extends IPassLoop<PreservedAnalyses>>  implements /*public*/ PassInfoMixin<FunctionToLoopPassAdaptor<LoopPassT> >, IPassFunction<PreservedAnalyses> {
 /*public:*/
   //<editor-fold defaultstate="collapsed" desc="llvm::FunctionToLoopPassAdaptor::FunctionToLoopPassAdaptor<LoopPassT>">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_SEMANTIC,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/LoopPassManager.h", line = 65,
    FQN="llvm::FunctionToLoopPassAdaptor::FunctionToLoopPassAdaptor<LoopPassT>", NM="_ZN4llvm25FunctionToLoopPassAdaptorC1ET_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/LoopPassManager.cpp -nm=_ZN4llvm25FunctionToLoopPassAdaptorC1ET_")
   //</editor-fold>
   public /*explicit*/ FunctionToLoopPassAdaptor(LoopPassT Pass) {
     // : Pass(std::move(Pass)) 
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JInit
+    this.Pass = std.move(Pass);///*ParenListExpr*/new LoopPassT(std.move(Pass));
+    //END JInit
   }
 
   // We have to explicitly define all the special member functions because MSVC
   // refuses to generate them.
   //<editor-fold defaultstate="collapsed" desc="llvm::FunctionToLoopPassAdaptor::FunctionToLoopPassAdaptor<LoopPassT>">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_SEMANTIC,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/LoopPassManager.h", line = 69,
    FQN="llvm::FunctionToLoopPassAdaptor::FunctionToLoopPassAdaptor<LoopPassT>", NM="_ZN4llvm25FunctionToLoopPassAdaptorC1ERKNS_25FunctionToLoopPassAdaptorIT_EE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/LoopPassManager.cpp -nm=_ZN4llvm25FunctionToLoopPassAdaptorC1ERKNS_25FunctionToLoopPassAdaptorIT_EE")
   //</editor-fold>
   public FunctionToLoopPassAdaptor(final /*const*/ FunctionToLoopPassAdaptor<LoopPassT> /*&*/ Arg) {
     // : Pass(Arg.Pass) 
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JInit
+    this.Pass = Arg.Pass;///*ParenListExpr*/new LoopPassT(Arg.Pass);
+    //END JInit
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::FunctionToLoopPassAdaptor::FunctionToLoopPassAdaptor<LoopPassT>">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_SEMANTIC,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/LoopPassManager.h", line = 71,
    FQN="llvm::FunctionToLoopPassAdaptor::FunctionToLoopPassAdaptor<LoopPassT>", NM="_ZN4llvm25FunctionToLoopPassAdaptorC1EONS_25FunctionToLoopPassAdaptorIT_EE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/LoopPassManager.cpp -nm=_ZN4llvm25FunctionToLoopPassAdaptorC1EONS_25FunctionToLoopPassAdaptorIT_EE")
   //</editor-fold>
   public FunctionToLoopPassAdaptor(JD$Move _dparam, final FunctionToLoopPassAdaptor<LoopPassT> /*&&*/Arg) {
     // : Pass(std::move(Arg.Pass)) 
-    throw new UnsupportedOperationException("EmptyBody");
+    //START JInit
+    this.Pass = std.move(Arg.Pass);///*ParenListExpr*/new LoopPassT(std.move(Arg.Pass));
+    //END JInit
   }
 
   /*friend*///<editor-fold defaultstate="collapsed" desc="llvm::swap">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_SEMANTIC,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/LoopPassManager.h", line = 73,
    FQN="llvm::swap", NM="_ZN4llvm4swapERNS_25FunctionToLoopPassAdaptorIT_EES4_",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/LoopPassManager.cpp -nm=_ZN4llvm4swapERNS_25FunctionToLoopPassAdaptorIT_EES4_")
   //</editor-fold>
-  public static </*typename*/ LoopPassT> void swap(final FunctionToLoopPassAdaptor<LoopPassT> /*&*/ LHS, 
+  public static </*typename*/ LoopPassT extends IPassLoop<PreservedAnalyses>> void swap(final FunctionToLoopPassAdaptor<LoopPassT> /*&*/ LHS, 
       final FunctionToLoopPassAdaptor<LoopPassT> /*&*/ RHS) {
-    throw new UnsupportedOperationException("EmptyBody");
+    //JAVA: using std::swap;
+    LoopPassT tmp = LHS.Pass;
+    LHS.Pass = RHS.Pass;
+    RHS.Pass = tmp;
+    //swap(LHS.Pass, RHS.Pass);
   }
 
   //<editor-fold defaultstate="collapsed" desc="llvm::FunctionToLoopPassAdaptor::operator=">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.AUTO,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/LoopPassManager.h", line = 78,
    FQN="llvm::FunctionToLoopPassAdaptor::operator=", NM="_ZN4llvm25FunctionToLoopPassAdaptoraSENS_25FunctionToLoopPassAdaptorIT_EE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/LoopPassManager.cpp -nm=_ZN4llvm25FunctionToLoopPassAdaptoraSENS_25FunctionToLoopPassAdaptorIT_EE")
   //</editor-fold>
   public FunctionToLoopPassAdaptor<LoopPassT> /*&*/ $assign(FunctionToLoopPassAdaptor<LoopPassT> RHS) {
-    throw new UnsupportedOperationException("EmptyBody");
+    swap(/*Deref*/this, RHS);
+    return /*Deref*/this;
   }
 
   
   /// \brief Runs the loop passes across every loop in the function.
   //<editor-fold defaultstate="collapsed" desc="llvm::FunctionToLoopPassAdaptor::run">
-  @Converted(kind = Converted.Kind.AUTO_NO_BODY,
+  @Converted(kind = Converted.Kind.MANUAL_SEMANTIC,
    source = "${LLVM_SRC}/llvm/include/llvm/Analysis/LoopPassManager.h", line = 84,
    FQN="llvm::FunctionToLoopPassAdaptor::run", NM="_ZN4llvm25FunctionToLoopPassAdaptor3runERNS_8FunctionERNS_15AnalysisManagerIS1_EE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/LoopPassManager.cpp -nm=_ZN4llvm25FunctionToLoopPassAdaptor3runERNS_8FunctionERNS_15AnalysisManagerIS1_EE")
   //</editor-fold>
-  public PreservedAnalyses run(final Function /*&*/ F, final AnalysisManager<Function>/*&*/ AM) {
-    throw new UnsupportedOperationException("EmptyBody");
+  public PreservedAnalyses run(final Function /*&*/ F, final AnalysisManager<Function> /*&*/ AM) {
+    PreservedAnalyses PA = null;
+    try {
+      // Setup the loop analysis manager from its proxy.
+      final AnalysisManager<Loop> /*&*/ LAM = AM.getResult((Class<InnerAnalysisManagerProxy<AnalysisManager<Loop>, Function>>)(Class<?>)InnerAnalysisManagerProxy.class, F).getManager();
+      // Get the loop structure for this function
+      final LoopInfo /*&*/ LI = AM.getResult(LoopAnalysis.class, F);
+      
+      PA = PreservedAnalyses.all();
+      
+      // We want to visit the loops in reverse post-order. We'll build the stack
+      // of loops to visit in Loops by first walking the loops in pre-order.
+      SmallVector<Loop /*P*/ > Loops/*J*/= new SmallVector<Loop /*P*/ >(2, (Loop /*P*/ )null);
+      SmallVector<Loop /*P*/ > WorkList/*J*/= new SmallVector<Loop /*P*/ >(JD$T.INSTANCE, 2, LI.begin(), LI.end(), (Loop /*P*/ )null);
+      while (!WorkList.empty()) {
+        Loop /*P*/ L = WorkList.pop_back_val();
+        WorkList.insert_iterator$T_T(WorkList.end(), L.begin(), L.end());
+        Loops.push_back(L);
+      }
+      
+      // Now pop each element off of the stack to visit the loops in reverse
+      // post-order.
+      for (Loop /*P*/ L : reverse$NotHasRBegin(Loops)) {
+        JavaCleaner $c$ = $createJavaCleaner();
+        try {
+          PreservedAnalyses PassPA = Pass.run($Deref(L), LAM);
+          assert (PassPA.preserved($c$.track(LoopPassManagerLlvmGlobals.getLoopPassPreservedAnalyses()))) : "Loop passes must preserve all relevant analyses"; $c$.clean();
+          
+          // We know that the loop pass couldn't have invalidated any other loop's
+          // analyses (that's the contract of a loop pass), so directly handle the
+          // loop analysis manager's invalidation here.  Also, update the
+          // preserved analyses to reflect that once invalidated these can again
+          // be preserved.
+          $c$.clean(PassPA.$assign($c$.track(LAM.invalidate($Deref(L), $c$.track(new PreservedAnalyses(JD$Move.INSTANCE, std.move(PassPA)))))));
+          
+          // Then intersect the preserved set so that invalidation of module
+          // analyses will eventually occur when the module pass completes.
+          PA.intersect_PreservedAnalyses(std.move(PassPA));
+        } finally {
+          $c$.$destroy();
+        }
+      }
+      
+      // By definition we preserve the proxy. This precludes *any* invalidation of
+      // loop analyses by the proxy, but that's OK because we've taken care to
+      // invalidate analyses in the loop analysis manager incrementally above.
+      PA.<InnerAnalysisManagerProxy<AnalysisManager<Loop>, Function> >preserve((Class<InnerAnalysisManagerProxy<AnalysisManager<Loop>, Function>>)(Class<?>)InnerAnalysisManagerProxy.class);
+      return new PreservedAnalyses(JD$Move.INSTANCE, PA);
+    } finally {
+      if (PA != null) { PA.$destroy(); }
+    }
   }
 
 /*private:*/

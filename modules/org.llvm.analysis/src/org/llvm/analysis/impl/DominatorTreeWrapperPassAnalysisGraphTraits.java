@@ -76,28 +76,9 @@
 
 package org.llvm.analysis.impl;
 
-import org.clank.java.*;
 import org.clank.support.*;
-import org.clank.support.aliases.*;
-import org.clank.support.JavaDifferentiators.*;
-import static org.clank.java.built_in.*;
-import static org.clank.support.Casts.*;
-import static org.clank.java.io.*;
-import static org.clank.java.std.*;
-import static org.clank.java.std_pair.*;
-import static org.llvm.adt.ADTAliases.*;
-import static org.llvm.support.llvm.*;
-import static org.clank.support.NativePointer.*;
-import static org.clank.support.NativeType.*;
-import static org.clank.support.Native.*;
-import static org.clank.support.Unsigned.*;
-import org.clank.support.NativeCallback.*;
-import org.llvm.support.*;
-import org.llvm.adt.*;
-import org.llvm.adt.aliases.*;
+import org.llvm.analysis.DefaultAnalysisGraphTraits;
 import org.llvm.ir.*;
-import org.llvm.pass.*;
-import static org.llvm.ir.PassManagerGlobals.*;
 
 //<editor-fold defaultstate="collapsed" desc="(anonymous namespace)::DominatorTreeWrapperPassAnalysisGraphTraits">
 @Converted(kind = Converted.Kind.AUTO_NO_BODY,
@@ -105,14 +86,14 @@ import static org.llvm.ir.PassManagerGlobals.*;
  FQN="(anonymous namespace)::DominatorTreeWrapperPassAnalysisGraphTraits", NM="_ZN12_GLOBAL__N_143DominatorTreeWrapperPassAnalysisGraphTraitsE",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DomPrinter.cpp -nm=_ZN12_GLOBAL__N_143DominatorTreeWrapperPassAnalysisGraphTraitsE")
 //</editor-fold>
-public class/*struct*/ DominatorTreeWrapperPassAnalysisGraphTraits {
+public class/*struct*/ DominatorTreeWrapperPassAnalysisGraphTraits extends DefaultAnalysisGraphTraits<DominatorTreeWrapperPass,DominatorTree>{
   //<editor-fold defaultstate="collapsed" desc="(anonymous namespace)::DominatorTreeWrapperPassAnalysisGraphTraits::getGraph">
   @Converted(kind = Converted.Kind.AUTO_NO_BODY,
    source = "${LLVM_SRC}/llvm/lib/Analysis/DomPrinter.cpp", line = 85,
    FQN="(anonymous namespace)::DominatorTreeWrapperPassAnalysisGraphTraits::getGraph", NM="_ZN12_GLOBAL__N_143DominatorTreeWrapperPassAnalysisGraphTraits8getGraphEPN4llvm24DominatorTreeWrapperPassE",
    cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/DomPrinter.cpp -nm=_ZN12_GLOBAL__N_143DominatorTreeWrapperPassAnalysisGraphTraits8getGraphEPN4llvm24DominatorTreeWrapperPassE")
   //</editor-fold>
-  public static DominatorTree /*P*/ getGraph(DominatorTreeWrapperPass /*P*/ DTWP) {
+  public DominatorTree /*P*/ getGraph(DominatorTreeWrapperPass /*P*/ DTWP) {
     throw new UnsupportedOperationException("EmptyBody");
   }
 

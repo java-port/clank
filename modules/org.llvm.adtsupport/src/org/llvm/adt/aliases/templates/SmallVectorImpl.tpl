@@ -499,6 +499,9 @@ public ${CLASS_SPECIFIER} class ${FILE_NAME}${CLASS_SUFFIX} extends NativeTrace.
     assert checkAlive();
     return insert(I, From, To);
   }
+  public final ${ITERATOR_TYPE} insert_iterator$T_T(${ITERATOR_TYPE} I, ${GENERIC_ITERATOR} From, ${GENERIC_ITERATOR} To) {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }  
   public final ${ITERATOR_TYPE} insert(${ITERATOR_TYPE} I, ${GENERIC_ITERATOR} From, ${GENERIC_ITERATOR} To) {
     assert checkAlive();
     return insert_iterator$T$value_T(I, From, To);

@@ -99,6 +99,7 @@ import org.llvm.pass.*;
 import static org.llvm.ir.PassManagerGlobals.*;
 import static org.llvm.analysis.java.AnalysisFunctionPointers.*;
 import org.llvm.analysis.*;
+import org.llvm.analysis.java.impl.IPassLoop;
 
 
 //<editor-fold defaultstate="collapsed" desc="static type LoopPassManagerLlvmGlobals">
@@ -130,7 +131,7 @@ public static PreservedAnalyses getLoopPassPreservedAnalyses() {
  FQN="llvm::createFunctionToLoopPassAdaptor", NM="Tpl__ZN4llvm31createFunctionToLoopPassAdaptorET_",
  cmd="jclank.sh -java-options=${SPUTNIK}/modules/org.llvm.analysis/llvmToClangType ${LLVM_SRC}/llvm/lib/Analysis/LoopPassManager.cpp -nm=Tpl__ZN4llvm31createFunctionToLoopPassAdaptorET_")
 //</editor-fold>
-public static </*typename*/ LoopPassT> FunctionToLoopPassAdaptor<LoopPassT> createFunctionToLoopPassAdaptor(LoopPassT Pass) {
+public static </*typename*/ LoopPassT extends IPassLoop<PreservedAnalyses>> FunctionToLoopPassAdaptor<LoopPassT> createFunctionToLoopPassAdaptor(LoopPassT Pass) {
   throw new UnsupportedOperationException("EmptyBody");
 }
 

@@ -124,7 +124,7 @@ public class/*struct*/ PostDomPrinter extends /*public*/ DOTGraphTraitsPrinter<P
   //</editor-fold>
   public PostDomPrinter() {
     // : DOTGraphTraitsPrinter<PostDominatorTreeWrapperPass, false, PostDominatorTree * , PostDominatorTreeWrapperPassAnalysisGraphTraits>("postdom", ID) 
-    /*ExprWithCleanups*/super(new StringRef(/*KEEP_STR*/"postdom"), ID);
+    /*ExprWithCleanups*/super(PostDominatorTreeWrapperPass.class, new PostDominatorTreeWrapperPassAnalysisGraphTraits(), false, new StringRef(/*KEEP_STR*/"postdom"), ID);
     throw new UnsupportedOperationException("EmptyBody");
   }
 

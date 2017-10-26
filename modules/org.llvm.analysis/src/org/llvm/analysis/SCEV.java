@@ -114,7 +114,7 @@ public class SCEV implements /*public*/ FoldingSetImpl.Node {
   
   /// A reference to an Interned FoldingSetNodeID for this node.  The
   /// ScalarEvolution's BumpPtrAllocator holds the data.
-  private FoldingSetNodeIDRef FastID;
+  /*friend*/public FoldingSetNodeIDRef FastID;
   
   // The SCEV baseclass this node corresponds to
   private /*const*//*ushort*/char SCEVType;
